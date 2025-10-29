@@ -1,0 +1,80 @@
+# DANDI Analysis Template
+
+## Dataset Discovery and Setup:
+* Search DANDI Archive using the neurosift-tools MCP to find datasets relevant to the requested phenomenon
+* Create dedicated analysis folders with descriptive README files documenting the analysis goal
+* Use pynapple to inspect NWB file contents and structure (see code examples below)
+* Use repo-search MCP to find relevant Pynapple functions and examples for the specific analysis type
+* Install required packages and configure the analysis environment
+* Use streaming access with local caching rather than full file downloads for efficiency
+* DO NOT USE SYNTHETIC DATA - this framework is for analyzing real experimental data
+
+## Data Access Strategy:
+* For .lindi.json files: Use LINDI with local caching
+* For direct S3 URLs: Use remfile with disk caching
+* DO NOT use try/except blocks - let errors surface so they can be identified and fixed
+* If one dataset lacks required data types, search for alternatives before proceeding
+
+## Analysis Progression:
+* Start with a single session to prototype the analysis
+* Use Pynapple for both data access AND analysis computations
+* Implement a modular pipeline: separate files for data loading, preprocessing, analysis functions, and visualization
+* Use plot-vision MCP to verify figure quality and content
+* Inspect and visualize each data stream as it is loaded to ensure correctness before analyzing
+* Execute code frequently during development, generating intermediate plots for validation
+* Handle missing data, NaNs, and edge cases as they arise rather than assuming clean data
+* DO NOT use try/except blocks during development - let errors surface so issues can be properly diagnosed and fixed
+* Include progress bars (tqdm) for operations taking >10 seconds
+
+## Visualization Requirements:
+* Generate time series plots showing raw neural activity
+* Create analysis-specific visualizations (tuning curves, raster plots, correlation matrices, etc.)
+* Include statistical summaries and distribution plots
+* Save all figures with descriptive filenames
+
+## Output:
+* Create a final consolidated script in jupytext format (.py with markdown cells)
+* Include clear documentation of the phenomenon being demonstrated
+* Convert to Jupyter notebook using nbconvert for easy sharing
+* Ensure the final script can run end-to-end without manual intervention
+
+## Example code for loading NWB files
+
+### Using LINDI (preferred for .lindi.json files):
+```python
+import h5py
+from pynwb import NWBHDF5IO
+import lindi
+import pynapple as nap
+
+# Create a local cache
+local_cache = lindi.LocalCache()
+
+# Load a LINDI file with caching enabled
+f = lindi.LindiH5pyFile.from_lindi_file('path/to/file.nwb.lindi.json', local_cache=local_cache)
+
+io = NWBHDF5IO(file=f)
+nwbfile = io.read()
+nwb = nap.NWBFile(nwbfile)
+print(nwb)
+```
+
+### Using remfile (for direct S3 URLs):
+```python
+import h5py
+from pynwb import NWBHDF5IO
+import remfile
+import pynapple as nap
+
+# Create a disk cache to store downloaded chunks
+cache_dirname = '/tmp/remfile_cache'
+disk_cache = remfile.DiskCache(cache_dirname)
+
+# Open the file from S3
+rem_file = remfile.File(s3_url, disk_cache=disk_cache)
+h5py_file = h5py.File(rem_file, "r")
+io = NWBHDF5IO(file=h5py_file)
+nwbfile = io.read()
+nwb = nap.NWBFile(nwbfile)
+print(nwb)
+```
