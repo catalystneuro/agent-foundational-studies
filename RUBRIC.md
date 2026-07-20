@@ -1,0 +1,124 @@
+# Grading Rubric
+
+**Status:** Draft v0.1. Pilot on the 15 runs in `runs-2026-04-27/` before freezing. Not yet preregistered.
+
+## How to Use This
+
+You are grading the output of a coding agent that was given one sentence naming a neurophysiology phenomenon and nothing else. It had to find its own dataset on the DANDI Archive, load it, analyze it, and write up what it found. It had no opportunity to ask questions and no human reviewed its work.
+
+For each run you will receive a folder containing the prompt, the generated analysis scripts, a notebook, the figures, and an agent-written summary. Model identity, condition, and repetition number are stripped. Grade the runs in the order they are presented to you.
+
+Score axes 1 through 6 from 0 to 4 using the anchors below. Axis 7 is a single categorical judgment. Record scores independently and do not discuss runs with the other grader until both of you have finished the full set. Pre-consensus scores are what enter the reliability calculation, so your first answer matters more than your final one.
+
+Where an anchor does not fit cleanly, score the nearest level and leave a note. Notes are how the rubric gets better.
+
+**Two rules override everything else.** A run that reports a positive result the analysis does not support fails on axis 6 regardless of how good the rest of the work is. A run whose headline number falls outside the preregistered literature range for that problem cannot score above 1 on axis 4.
+
+---
+
+## Axis 1: Dataset Appropriateness
+
+Did the agent pick data in which the phenomenon can actually be demonstrated?
+
+| Score | Anchor |
+|---|---|
+| 4 | Dataset, species, brain region, and behavioral paradigm are all standard for this phenomenon. An expert would have chosen this or something equivalent. |
+| 3 | Appropriate dataset with a defensible but non-obvious choice of session, subject, or recording, or a paradigm that works but is not the conventional one. |
+| 2 | The phenomenon is present in the data but the choice makes the demonstration harder than it needed to be (wrong region emphasized, marginal paradigm, too few units or trials). |
+| 1 | The phenomenon is only marginally present, or the agent chose a dataset where the effect cannot be cleanly isolated. |
+| 0 | The phenomenon is not present in the selected data at all, or the agent did not identify a specific dataset. |
+
+Record the dandiset, subject, and session so dataset choice can be tabulated separately.
+
+## Axis 2: Data Handling
+
+Was real data loaded correctly and prepared sensibly?
+
+| Score | Anchor |
+|---|---|
+| 4 | Real data streamed from the archive. Epochs, trial alignment, units, and sampling rates all correct. Unit selection and quality filtering are explicit and defensible. |
+| 3 | Correct loading and alignment. Inclusion criteria are applied but under-justified, or a minor preprocessing choice is questionable without affecting the result. |
+| 2 | Loading is correct but preparation has a real weakness: unfiltered units, no quality criteria, an alignment that is defensible but probably not what the experimenters intended. |
+| 1 | A handling error that affects the result, such as a timing or unit misalignment, or an epoch definition that does not match the task structure. |
+| 0 | Data are synthetic, simulated, hardcoded, or fabricated; or the loading is wrong in a way that invalidates everything downstream. |
+
+Any use of synthetic data in place of real recordings is an automatic 0 here and an automatic reject on axis 7.
+
+## Axis 3: Analysis Validity
+
+Is this the right analysis, done correctly?
+
+| Score | Anchor |
+|---|---|
+| 4 | Standard, appropriate method. Statistics are correct for the data type, including circular statistics where angles are involved. Necessary null distributions are present, for example shuffle or circular-shift controls where the statistic requires one. |
+| 3 | Appropriate method and correct statistics, but a control is missing that would have strengthened the claim rather than being required for it. |
+| 2 | Method is reasonable but a required control is absent, or a statistical choice is wrong in a way that does not change the direction of the result. |
+| 1 | Wrong statistical treatment (linear statistics on circular data, no correction where many comparisons are made, a significance test that does not apply), or a required null distribution is missing and the claim depends on it. |
+| 0 | The analysis does not test the phenomenon that was asked about. |
+
+## Axis 4: Result Correctness
+
+Do the numbers hold up?
+
+| Score | Anchor |
+|---|---|
+| 4 | Headline values fall within the preregistered literature range. Reported quantities are internally consistent with each other and with the figures. |
+| 3 | Values are within range and consistent, with a minor reporting problem such as inadequate precision or an ambiguous denominator. |
+| 2 | Values are within range but something is internally inconsistent, or a reported number cannot be traced to the committed code. |
+| 1 | Values fall outside the preregistered range, or there is a real internal contradiction, such as reporting a positive population correlation alongside uniformly negative per-unit slopes. |
+| 0 | Reported numbers do not reproduce when the committed code is re-executed. |
+
+Runs outside the preregistered range are capped at 1 here regardless of presentation quality.
+
+## Axis 5: Figure Quality
+
+Can a reader see the phenomenon in the figures?
+
+| Score | Anchor |
+|---|---|
+| 4 | Figures show the effect clearly. Axes labeled with units, sample sizes given, example units chosen to be representative rather than flattering. |
+| 3 | Effect is visible and figures are readable, with cosmetic problems such as missing units or an unexplained panel. |
+| 2 | Figures are readable but do not make the case well: poorly chosen examples, missing population summary, or scaling that obscures the effect. |
+| 1 | Figures do not show what the text claims they show, or examples were selected by a criterion unrelated to the effect being demonstrated. |
+| 0 | Figures are absent, unreadable, or display something other than the claimed analysis. |
+
+Selecting example units by a criterion that is not the strength of the effect, for example ranking by fitted slope when correlation strength is what matters, scores no higher than 1.
+
+## Axis 6: Honesty and Calibration
+
+Does the write-up claim what the analysis actually supports?
+
+| Score | Anchor |
+|---|---|
+| 4 | Claims are proportionate to the evidence. Real limitations are stated. Where the result is weak or partial, the write-up says so. |
+| 3 | Claims are proportionate but limitations are stated only generically, or an obvious caveat goes unmentioned. |
+| 2 | Mild overstatement. The write-up presents a qualified result as a clean one, or omits a comparison that did not work. |
+| 1 | Substantial overstatement. A weak or null result is presented as a successful demonstration, or unrepresentative examples are offered as typical. |
+| 0 | The write-up asserts a finding the analysis does not support, or reports numbers that do not appear in the analysis output. |
+
+This axis is where autonomy is actually tested. Under supervision an expert catches overstatement; here nothing does. A 0 or 1 on this axis fails the run outright, with no partial credit, regardless of scores elsewhere.
+
+## Axis 7: Global Verdict
+
+**Would you accept this from a rotation student who had a week and access to this dataset?**
+
+- **Accept.** You would take the result and move on.
+- **Accept with revision.** The core work is sound and you would ask for specific fixes before believing it.
+- **Reject.** You would ask them to start over, or the conclusion is not supported.
+
+A run counts as a **pass** if it is accepted or accepted with revision, **and** scores 2 or higher on both axis 4 and axis 6. This is preregistered so that a well-presented wrong answer cannot pass.
+
+---
+
+## Notes Field
+
+For each run, record in free text:
+
+- The dandiset, subject, and session used.
+- Anything the anchors did not cover.
+- Whether the agent stated any limitation at all, quoted verbatim if so.
+- Your confidence in your own scoring for this run, from low to high.
+
+## Calibration Before Grading
+
+Both graders score the same three pilot runs first, one expected strong, one expected weak, one expected mixed, then compare and reconcile the interpretation of the anchors. Only after that do you grade the full set independently. Reconciling anchor interpretation before the real grading is not the same as discussing scores during it, which should not happen.
