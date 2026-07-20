@@ -157,7 +157,7 @@ These measures are objective and computed for every run without human involvemen
 5. **Real-data verification.** Confirmation that data was streamed from the archive rather than synthesized, by inspecting network access in the transcript and scanning generated code for synthetic data construction.
 6. **Reference-range check.** Whether the headline reported statistic falls within the preregistered literature range for that problem (below).
 7. **Resource accounting.** Input, output, cache-read, and cache-write tokens separately, per model; wall-clock duration; API duration separately from local tool execution time; and imputed cost in USD (see below).
-8. **Skill invocation.** Which skills were actually invoked, logged separately from which were available. In the pilot, only one of the three named skills was ever invoked, so availability is not a valid proxy for use.
+8. **Skill invocation, and library use, logged separately from skill availability.** All three named skills were confirmed visible in the session initialization event of every pilot run, yet only `analyzing-dandi-datasets` was ever invoked, exactly once per run and as the first tool call in twelve of fifteen runs. `using-pynapple` and `using-nemos` were never invoked. Pynapple nonetheless appears in the generated code of all fifteen runs and NeMoS in two, so the model applies these libraries from prior knowledge without consulting the skill. Availability, invocation, and use are three distinct things and we record all three. This also implies the scaffolding factor should not be treated as monolithic: the discovery skill and the library skills are doing different jobs, and a single skills-on versus skills-off contrast would average a plausible effect together with two likely null ones.
 
 ### Cost Accounting and Billing Mode
 
@@ -275,9 +275,9 @@ The pilot ran under an uncontrolled environment, and we treat correcting this as
 - Pin and record the Claude Code CLI version and the model version string.
 - Disable all MCP servers not required by the task.
 - Restrict visible skills to the declared set for the condition, and log invocation separately from availability.
-- Suppress user-level and project-level instruction files, which in the pilot silently injected a writing-style directive into every run and therefore shaped the very summaries we intended to grade.
-- Archive the session initialization event for each run as the provenance record.
-- Run each agent in an isolated working directory with no shared memory across runs.
+- Suppress or explicitly declare user-level and project-level instruction files. We could not reconstruct what, if anything, was in scope during the pilot: the current user-level instruction file postdates the pilot runs by roughly three months, and the streamed transcript does not capture the assembled system prompt, so its April contents cannot be recovered. That gap is itself the reason for the next item.
+- Archive the assembled system prompt alongside the session initialization event. The pilot's `system/init` event records the model, CLI version, permission mode, connected MCP servers, visible skills, and declared memory paths, which is a good provenance record, but it does not include the system prompt text. Without that, a reader cannot verify what instructions the agent actually received.
+- Run each agent in an isolated working directory with no shared memory across runs. The per-project memory directory did not exist during the pilot, so no cross-run memory carried over, but the mechanism was available and needs to be explicitly disabled or logged rather than left to chance.
 
 ---
 
