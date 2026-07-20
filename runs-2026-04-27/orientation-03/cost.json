@@ -1,0 +1,69 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 541440,
+  "duration_api_ms": 307972,
+  "num_turns": 34,
+  "result": "All deliverables are produced in `/Users/bdichter/dev/agent-foundational-studies/runs-2026-04-27/orientation-03/`:\n\n**Dataset**: DANDI 000021 — *Allen Institute Visual Coding — Neuropixels (Brain Observatory 1.1)* — session `sub-699733573_ses-715093703`, streamed via `remfile` (no full download).\n\n**Pipeline**: 810 good units in `{VISp, VISl, VISrl, VISam, VISpm, LGd}` → trial-aligned spike counts on 598 drifting-grating presentations (8 directions × 5 TFs) using `pynapple.TsGroup.count(IntervalSet)` → tuning curves → OSI / DSI / gOSI + 200-shuffle permutation test.\n\n**Key result**: 578/810 units (71.4%) are significantly orientation-tuned (gOSI permutation p<0.05); VISp leads at 84%; example V1 unit has classical OSI=0.88, gOSI=0.63, preferred orientation 90°.\n\n**Outputs**:\n- `orientation_selectivity_analysis.py` — final jupytext script (runs end-to-end).\n- `orientation_selectivity_analysis.ipynb` — Jupyter notebook conversion.\n- `fig1_example_v1_unit.png` … `fig5_preferred_orientation_hist.png` — five figures.\n- `unit_orientation_summary.csv`, `area_selectivity_summary.csv` — per-unit and per-area metrics.\n- `README.md` — dataset summary, methods, key findings.",
+  "stop_reason": "end_turn",
+  "session_id": "957cfe6c-c3cf-499d-9551-2f6923bbebb9",
+  "total_cost_usd": 1.8838202499999999,
+  "usage": {
+    "input_tokens": 233,
+    "cache_creation_input_tokens": 78481,
+    "cache_read_input_tokens": 1655596,
+    "output_tokens": 21895,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 78481,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 545,
+        "cache_read_input_tokens": 74824,
+        "cache_creation_input_tokens": 552,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 552
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 10071,
+      "outputTokens": 1381,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.016975999999999998,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-opus-4-7": {
+      "inputTokens": 233,
+      "outputTokens": 21895,
+      "cacheReadInputTokens": 1655596,
+      "cacheCreationInputTokens": 78481,
+      "webSearchRequests": 0,
+      "costUSD": 1.8668442499999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "eb5f8a1e-0ea5-4a51-970c-13965f6bf332"
+}

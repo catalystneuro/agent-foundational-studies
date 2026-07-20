@@ -1,0 +1,23 @@
+# Streaming caches written by remfile/LINDI during agent runs.
+# These are regenerable byte-range caches, not results. reach-03/cache alone is 306 MB.
+cache/
+*/cache/
+**/cache/
+.lindi_cache/
+remfile_cache/
+
+# Deblinding keys. Withheld while grading is in progress so that a grader who
+# clones the repo does not receive them; regenerate with make_grading_sheet.py
+# and release with the data once scoring is complete.
+.blind_key_*.csv
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
