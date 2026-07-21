@@ -11,6 +11,12 @@ remfile_cache/
 # and release with the data once scoring is complete.
 .blind_key_*.csv
 
+# Per-run grading scratch written by grading/grade_run.sh. Regenerable; the
+# aggregate grades.csv from grade_all.sh is kept, the per-run judge output is not.
+grade.json
+grade.stderr.log
+grade.transcript.jsonl
+
 # macOS
 .DS_Store
 
