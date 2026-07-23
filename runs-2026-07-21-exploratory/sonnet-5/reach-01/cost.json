@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 868192,
+  "duration_api_ms": 732803,
+  "ttft_ms": 9018,
+  "ttft_stream_ms": 6533,
+  "time_to_request_ms": 30,
+  "num_turns": 94,
+  "result": "## Summary\n\nI demonstrated reach direction and velocity tuning in primary motor cortex using Dandiset [000129](https://dandiarchive.org/dandiset/000129) (MC_RTT: macaque M1 spiking during self-paced reaching), streamed directly from DANDI S3 via `remfile`. The session has 130 M1 units and 1 kHz cursor kinematics during 545 continuous, self-paced reaches.\n\nUsing two independent methods — continuous velocity-based tuning curves (cosine-fit, à la Georgopoulos) and discrete per-reach direction binning keyed to target-acquisition events — I found strong, pervasive directional tuning (83/130 units R²>0.3, up to R²=0.91) and speed tuning (99/130 units |ρ|>0.5, mostly positive). The two methods agreed well (median 18° preferred-direction offset), and a peri-reach raster for the best-tuned unit visually confirmed ~2.5x rate modulation across direction quadrants.\n\nDeliverables in the working directory:\n- `reach_direction_velocity_tuning.py` — jupytext script (runs end-to-end)\n- `reach_direction_velocity_tuning.ipynb` — executed notebook, no errors\n- `fig1`–`fig8` PNGs — raw data validation, kinematics, direction/speed tuning curves, population summaries, cross-method validation, and direction-split rasters\n- `README.md` — dataset, methods, and findings summary",
+  "stop_reason": "end_turn",
+  "session_id": "5ba128d5-9931-41d1-b3eb-e3c5c9432c71",
+  "total_cost_usd": 3.8048592000000014,
+  "usage": {
+    "input_tokens": 128,
+    "cache_creation_input_tokens": 141993,
+    "cache_read_input_tokens": 7159064,
+    "output_tokens": 53599,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 141993,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 498,
+        "cache_read_input_tokens": 172621,
+        "cache_creation_input_tokens": 150,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 150
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 733,
+      "outputTokens": 16,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.000813,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-5": {
+      "inputTokens": 128,
+      "outputTokens": 53599,
+      "cacheReadInputTokens": 7159064,
+      "cacheCreationInputTokens": 141993,
+      "webSearchRequests": 0,
+      "costUSD": 3.8040462000000015,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "d898125a-6b3d-4eed-bc67-a431c0085fb9"
+}

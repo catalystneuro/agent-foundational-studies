@@ -1,0 +1,6 @@
+subject,session,maze,track_length_m,n_pyramidal,n_place_cells,frac_place_cells,median_si,median_field_width_cm,median_peak_rate_hz,median_abs_DI,decode_err_cm,chance_err_cm,run_time_s,n_traversals
+Achilles,10252013,1.6mLinearMaze,1.6,114,99,0.868,0.8,23.0,6.44,0.54,6.7,47.3,227.1,110
+Buddy,06272013,1.6mLinearMaze,1.6,36,29,0.806,0.84,18.0,3.86,0.5,12.5,46.5,148.9,78
+Cicero,09012014,1.6mLinearMaze,1.6,50,32,0.64,0.32,29.0,4.11,0.27,10.1,43.1,513.5,317
+Gatsby,08022013,1.6mLinearMaze,1.6,51,44,0.863,0.61,26.0,4.47,0.39,8.0,49.7,303.2,140
+Cicero,09172014,2mLinearMaze,2.0,51,44,0.863,0.45,25.0,4.55,0.25,10.4,56.0,490.9,351

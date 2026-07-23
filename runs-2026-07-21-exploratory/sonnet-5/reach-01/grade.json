@@ -1,0 +1,32 @@
+{
+  "dandiset": "000129",
+  "subject_session": "sub-Indy, session 20170202_02 (sub-Indy_desc-train_behavior+ecephys.nwb), 649 s, 130 M1 units, 545 reaches",
+  "headline_stat": {
+    "name": "Fraction of M1 units directionally tuned (cosine-fit R^2 > 0.3)",
+    "value": 0.64,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 3,
+    "handling": 3,
+    "analysis": 2,
+    "correctness": 4,
+    "figures": 3,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Preferred directions were not uniformly distributed across the population but clustered into a few preferred sectors (visible in the rose histogram and the blocky, rather than perfectly diagonal, structure of the sorted tuning-curve heatmap).",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Dandiset 000129 (MC_RTT) is real macaque M1 with 1 kHz hand kinematics and is a legitimate sibling of the listed NLB reach dandisets, but the self-paced random-target paradigm with no discrete instructed directions or delay period is a defensible rather than conventional choice for demonstrating directional tuning.",
+    "handling": "Data are correctly streamed from S3 with remfile, NaNs dropped, velocity derived and smoothed with a stated rationale, movement epochs speed-thresholded, and per-reach windows correctly truncated at the next target onset, but no unit quality or firing-rate criterion is applied to any of the 130 units.",
+    "analysis": "The cosine fit and circular preferred-direction handling (including the proper angular difference via np.angle(exp(i*delta))) are standard and correct and the two-method PD comparison is a genuine control, but there is no shuffle null validating the R^2>0.3 cutoff that the tuning fraction rests on, and the speed Spearman is computed over 20 bin-averaged points rather than samples, which inflates rho.",
+    "correctness": "The 64% headline sits inside the preregistered 0.50-0.95 range and every reported quantity, including the 18 deg cross-method offset and the ~2.5x raster modulation, reproduces exactly from the committed notebook output and matches the figures.",
+    "figures": "The effect is clearly visible across polar tuning curves, the sorted heatmap's diagonal band, the cross-method scatter, and the peri-reach PSTHs, with sample sizes in titles; cosmetic faults are missing radial tick labels in fig3, unlabeled speed units in fig5, and independent y-scales across fig8's quadrant panels that visually understate the claimed 2.5x difference.",
+    "honesty": "Nothing is misrepresented and no claim is contradicted by the figures, the example units are explicitly labeled as the top 6 by R^2 rather than as typical, and the write-up volunteers two non-textbook features (the 14 negatively speed-tuned units and the clustered rather than uniform preferred directions), but it states no limitation about the single session, the unvalidated R^2 threshold, or the unfiltered units, and the 76% speed-tuning figure is presented more cleanly than the binned correlation supports.",
+    "verdict": "The core direction-tuning result is sound, in range, fully traceable, and independently cross-validated, so I would accept it after a permutation null for the tuning fraction, a unit quality filter, and sample-level rather than bin-level speed statistics."
+  }
+}

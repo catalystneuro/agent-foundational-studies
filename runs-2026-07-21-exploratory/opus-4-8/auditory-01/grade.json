@@ -1,0 +1,32 @@
+{
+  "dandiset": "000986",
+  "subject_session": "All 15 sessions from 5 mice (LA3, LA8, LA9, LA11, LA12); examples and GLM from sub-LA11/ses-1",
+  "headline_stat": {
+    "name": "Fraction of A1 units with significant frequency tuning (Kruskal-Wallis, BH-FDR<0.05)",
+    "value": 0.849,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 3,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Two caveats are worth stating. The NWB units table in this dandiset carries no spike-sorting quality metrics or channel positions, so no quality filter was applied and no depth-resolved tonotopy could be examined; every sorted unit enters the population statistics. The stimulus set is also coarse, five frequencies one octave apart at a single level, so this analysis establishes that units prefer different frequencies but cannot measure tuning bandwidth or a rate-level function.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000986 is a canonical A1 Neuropixels pure-tone dandiset from the approved list, and the run used all 15 sessions from 5 mice rather than cherry-picking one.",
+    "handling": "All sessions were streamed over HTTP with remfile and a disk cache, trials aligned via the NWB trials table start_time/stim_frequency, spike counts computed exactly by searchsorted, and the absence of any quality filter is explicitly attributed to the units table carrying no quality metrics, which the transcript confirms.",
+    "analysis": "Kruskal-Wallis selectivity and Wilcoxon responsiveness with BH-FDR across the whole population, backed by a 200-iteration frequency-label permutation null, split-half cross-validated tuning, a sparseness-versus-shuffle comparison, single-trial decoding with a shuffled-label control, and a window-independent Poisson GLM: more controls than the claim requires.",
+    "correctness": "The 84.9% headline sits inside the 0.40 to 0.90 prereg range and every reported number reproduces exactly from the committed CSV and pickles, but the GLM agreement figures (median r = 0.99, 92% BF match) come from an undisclosed subset of 24 strongly driven units in one session, and the preferred-frequency counts in fig03b differ from the README's because one uses held-out and the other full-data assignment.",
+    "figures": "The effect is unmistakable across six well-labeled figures with sample sizes, a cross-validated tuning heatmap, and visible shuffle and chance controls, but the fig02 example units are the top-drive units per best frequency, a flattering selection the write-up does not disclose, and one of them (unit 78) has a nearly flat tuning curve.",
+    "honesty": "Claims track the evidence, the permutation control is reported alongside the parametric result, and the write-up volunteers specific, verifiable limitations including the impossibility of depth-resolved tonotopy in this file set and a mechanistic explanation of the negative non-preferred responses rather than hiding them.",
+    "verdict": "Sound dataset choice, real streamed data, a headline in range that reproduces from the committed outputs, strong controls and a candid write-up; the only fixes I would ask for are stating the GLM subset denominator and the example-unit selection criterion."
+  }
+}

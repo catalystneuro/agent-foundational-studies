@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Five linear-maze sessions: Achilles_10252013, Buddy_06272013, Cicero_09012014, Cicero_09172014, Gatsby_08022013 (example session Achilles_10252013)",
+  "headline_stat": {
+    "name": "Fraction of place fields with significant negative phase-position slope (and median slope)",
+    "value": "0.70 significant-and-negative (116/155 significant at p<0.05, 93% of those negative); median slope -0.54 cycles = -3.4 rad per field",
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The main caveat is that the phase reference is a single LFP channel picked by theta/delta ratio with no independent depth calibration, so the absolute preferred phases reported here are not directly comparable to studies referenced to the pyramidal-layer trough. Relative phase, which is what both phenomena depend on, is unaffected. ... Finally, spikes are assigned to the field on the basis of the smoothed rate map from the same data used for the fit; the effect is far too large to be an artefact of that circularity, but the exact fraction of fields reaching significance would shift somewhat under a cross-validated field definition.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki CA1 linear maze) is the canonical dataset for theta phase precession, and the run analyzed all five linear-maze sessions while giving a stated reason for excluding the three circular-maze ones.",
+    "handling": "Real NWB files streamed via remfile with correct 1250 Hz LFP indexing, and the run caught and documented three genuine data quirks (the NWB rate field holding a sampling period, out-of-order spike times in unit 2, NaN linearization gaps as reward-zone dwell), with explicit place-field and spike-count inclusion criteria and an empirical alignment check showing theta amplitude rising with running speed.",
+    "analysis": "Circular statistics are used correctly throughout (Rayleigh/MRL, Kempter et al. circular-linear regression) with a per-field permutation null computed on exactly the statistic the slope search maximizes plus a population-level shuffled-rho control, but the shuffle treats spikes as i.i.d. rather than preserving within-cycle autocorrelation, no chance-rate or FDR accounting is given for 155 simultaneous field tests, and the supplementary Wilcoxon pools both running directions of the same unit as independent samples.",
+    "correctness": "All reported values reproduce from the committed CSVs and logs and all three relevant preregistered statistics fall in range (0.70 significant-and-negative fields, -3.4 rad per field, 0.59 of pyramidal cells theta-entrained), with only the unmentioned detail that 4 of 155 fits rail at the +/-2 slope-grid boundary.",
+    "figures": "Figures are publication-grade with units, sample sizes, and per-session reproducibility panels; fig05 shows the canonical negative diagonal band, and the fig04 examples are ranked by circular-linear correlation strength, which is the effect being demonstrated rather than a proxy for it.",
+    "honesty": "Every quantitative claim traces to the committed output, the write-up names three specific limitations of this particular result including the circularity of defining fields from the same data used for the fit and states that the significant fraction would shift under cross-validation, and no claim is contradicted by the figures.",
+    "verdict": "This is a complete, correct, well-documented demonstration of both theta entrainment and phase precession that I would take and move on from, with only minor statistical refinements (autocorrelation-preserving shuffle, multiple-comparison accounting) left as optional strengthening."
+  }
+}

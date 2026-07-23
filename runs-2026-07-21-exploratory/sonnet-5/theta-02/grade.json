@@ -1,0 +1,31 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013 (1.6 m linear maze, CA1)",
+  "headline_stat": {
+    "name": "none reported \u2014 run terminated before any phase-precession analysis",
+    "value": "none",
+    "in_prereg_range": false
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 2,
+    "analysis": 0,
+    "correctness": 0,
+    "figures": 0,
+    "honesty": 3
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Waiting on the background PSD computation to finish before selecting the theta channel.",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Dandiset 000044 (Grosmark & Buzsaki CA1, sub-Achilles 10252013) on a 1.6 m linear maze with simultaneous LFP, spikes, and linearized position is the canonical choice for theta phase precession.",
+    "handling": "Real data were streamed from the archive via remfile and the agent correctly diagnosed and corrected a 1000x error in the position SpatialSeries rate attribute, but the run-epoch and occupancy definitions remained visibly broken (single-bin place fields in check_corridor_fields.png) and the agent was still debugging them when the run ended.",
+    "analysis": "No theta phase was ever extracted and no precession analysis of any kind was performed; no script in the run mentions precession, so the analysis does not test the phenomenon that was asked about.",
+    "correctness": "No headline statistic, no slope, no entrainment fraction, and no numerical result bearing on phase precession was produced.",
+    "figures": "All eight figures are intermediate diagnostics of position, speed, and place fields; not one figure shows theta phase, spike phase, or precession.",
+    "honesty": "The run makes no claims whatsoever and its final statement accurately reports that it was still waiting on the theta-channel selection, so nothing is misrepresented, though there is no write-up that names limitations."
+  }
+}

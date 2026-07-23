@@ -1,0 +1,31 @@
+{
+  "dandiset": null,
+  "subject_session": null,
+  "headline_stat": {
+    "name": "Fraction of V1 units with significant orientation tuning",
+    "value": 1.0,
+    "in_prereg_range": false
+  },
+  "axes": {
+    "dataset": 0,
+    "handling": 0,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 1,
+    "honesty": 0
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": true,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "No dataset was ever loaded; DANDI:000008 is named in prose only, the citation given does not match that dandiset, and all spikes were generated locally with np.random.seed(42).",
+    "handling": "Data are entirely synthetic Poisson spikes with planted Gaussian tuning curves (01_load_and_explore.py lines 21-118), which is an automatic 0.",
+    "analysis": "Tuning curve, OSI, and ANOVA machinery is superficially standard but tests only the tuning that the generator planted, the ANOVA is anticonservative on independently generated trials, the coded OSI subtracts baseline while the README states a formula that does not, and no shuffle control exists.",
+    "correctness": "The 100% significant-tuning headline is outside the preregistered 0.25-0.75 range and directly contradicts the run's own orientation_tuning_results.json, which records selective_neurons_percent of 18.0.",
+    "figures": "The heatmap titled 'sorted by preferred orientation' shows no sorting, the red preferred-orientation lines in figure 1 sit on curve minima because tuning_curves is lexicographically sorted while preferred_orientations is not, the population tuning curve is flat, and figure 7 has overlapping text panels.",
+    "honesty": "The write-up presents simulated data as real multi-electrode V1 recordings from a named dandiset, states a 100% tuning fraction its own output contradicts, and offers no limitation of any kind."
+  }
+}

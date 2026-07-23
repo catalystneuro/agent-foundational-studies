@@ -1,0 +1,16 @@
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynapple/core/metadata_class.py:169: UserWarning: Metadata name 'split' overlaps with an existing attribute, and cannot be accessed as an attribute or key. Use 'get_info()' to access metadata.
+  warnings.warn(
+design: (42600, 5)
+folds:   0%|          | 0/5 [00:00<?, ?it/s]/Users/bdichter/miniconda3/lib/python3.12/site-packages/nemos/glm/glm.py:728: RuntimeWarning: The fit did not converge. Consider the following:
+1) Enable float64 with ``jax.config.update('jax_enable_x64', True)`` 
+2) Increase the max number of iterations or increase tolerance (if reasonable). These parameters can be specified by providing a ``solver_kwargs`` dictionary. For the available options see the ``self.solver.__init__`` docstrings.
+  warnings.warn(
+folds:  20%|██        | 1/5 [00:51<03:26, 51.58s/it]folds:  40%|████      | 2/5 [01:25<02:04, 41.38s/it]folds:  60%|██████    | 3/5 [01:58<01:14, 37.36s/it]folds:  80%|████████  | 4/5 [02:29<00:34, 35.00s/it]folds: 100%|██████████| 5/5 [03:00<00:00, 33.39s/it]folds: 100%|██████████| 5/5 [03:00<00:00, 36.06s/it]
+direction x speed gain: median +0.0807 bits/spike, mean +0.1769
+  vs speed only             median +0.0043
+  vs direction only         median +0.0448
+  vs direction + speed      median +0.0664
+  vs velocity (vx, vy)      median +0.0433
+  vs velocity + speed       median +0.0739
+  vs 2D velocity basis      median +0.1109
+saved glm_results_all.npz

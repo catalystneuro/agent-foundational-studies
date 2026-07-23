@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles_10252013 (primary) plus Cicero_09012014, Cicero_09172014, Gatsby_08022013, Buddy_06272013; 3 ring-track sessions excluded",
+  "headline_stat": {
+    "name": "fraction of place fields with significant negative phase-position slope; median slope",
+    "value": "0.51 (114/223); -177 deg = -3.09 rad per field",
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "One methodological caveat is worth stating: fields were taken from the pooled direction-specific rate map rather than lap by lap, and spikes were pooled across laps, so lap-to-lap variability in where a field begins adds phase jitter. The reported correlations are therefore, if anything, a lower bound on the strength of precession within single traversals.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (hc-11, Grosmark & Buzsaki) dorsal CA1 linear-track recordings are the canonical dataset for theta entrainment and phase precession, and the agent used five sessions across four rats.",
+    "handling": "Data were streamed with LINDI, units filtered by the file's excitatory/inhibitory label plus explicit spike-count, peak-rate and spatial-information criteria, and three real NWB conversion pitfalls (rate-as-period, a mostly-NaN stored linearized series, gap-bridging derivatives) were identified, worked around, and cross-validated at r = 0.99999.",
+    "analysis": "Circular statistics are used correctly throughout (Rayleigh test, Kempter circular-linear regression with a within-field phase permutation null), and the leftward-run coordinate reversal that many analyses get wrong was caught and fixed, though the permutation control was only run in one of the five sessions and no multiple-comparison correction is applied.",
+    "correctness": "Every headline number reproduces exactly from the committed pickle and all three headline statistics fall inside the preregistered ranges, with no internal contradictions between text, figures and code.",
+    "figures": "The precession band is unmistakable in the single-field examples, the pooled density maps and the across-session panel, axes carry units, sample sizes are given, and examples are ranked by circular-linear correlation rather than slope; only cosmetic faults remain (a 1.6 m title over a 1.9 m axis, an unexplained reference cosine).",
+    "honesty": "Claims are proportionate to what the figures show, the excluded ring-track sessions are named and justified with a dedicated figure, and the pooled-lap field definition is flagged as a specific limitation with its expected direction of bias.",
+    "verdict": "This is a careful, reproducible, well-documented demonstration of both phenomena on the canonical dataset that I would take and move on from."
+  }
+}

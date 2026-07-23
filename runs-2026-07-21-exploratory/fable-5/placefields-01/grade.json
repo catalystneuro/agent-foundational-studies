@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "primary: Achilles / ses-Achilles-10252013 (1.6 m linear track); all 8 sessions from 4 rats (Achilles, Buddy, Cicero, Gatsby) also analyzed",
+  "headline_stat": {
+    "name": "fraction of CA1 excitatory units with a significant place field (primary session)",
+    "value": 0.683,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "raw spatial information in bits per spike is not comparable across cells with different spike counts. In this data set the excitatory units that *fail* the place-cell test have a higher median raw spatial information (1.03 bits/spike) than the units that pass it (0.65 bits/spike), because sparse firing produces noisy, spiky rate maps that score well on any map-shape statistic, including sparsity and in-field to out-of-field rate contrast. Only the comparison against each cell's own shuffle null, or a reliability measure such as the fraction of laps on which the field is active, separates the two populations.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki CA1 linear/circular track with pre- and post-sleep) is the canonical choice for place fields, and the run analyzed all eight sessions across four rats rather than cherry-picking one.",
+    "handling": "Real data streamed with remfile; the NWB quirk where the SpatialSeries rate field holds the sampling period is identified and corrected, NaN off-track samples are dropped, laps are segmented by coverage and monotonicity and shown to be correct in fig00, a 5 cm/s speed mask is applied, and unit inclusion (file-labelled excitatory, >=50 on-track spikes, >=1 Hz peak) is explicit.",
+    "analysis": "Skaggs information tested against a per-cell circular-shift null that preserves spike count and occupancy, backed by split-half stability, lap participation, odd/even-lap cross-validated Bayesian decoding, and a lap-fold cross-validated Poisson GLM that separates position from the speed profile; the only omissions are a multiple-comparison correction over 240 unit-direction tests and a marginally anticonservative p-value denominator, neither of which the claim depends on.",
+    "correctness": "The 68% place-cell fraction and 0.68 bits/spike median spatial information both fall inside the preregistered ranges, and every headline number I recomputed from the committed CSVs (322 cells, 412 fields, 32 cm width, 87% participation, r=0.94 stability, r=0.18 directional correlation, 5.2 cm decoding error) reproduces exactly.",
+    "figures": "All eight figures are labelled with units and sample sizes, show the phenomenon directly (single-cell rasters and rate maps, sorted population maps, per-cell null distributions, decoded posteriors), and the example cells are chosen by field compactness, split-half stability and peak rate, which is the strength of the effect being demonstrated rather than an unrelated criterion.",
+    "honesty": "No claim is contradicted by the figures and the run volunteers a result that undercuts a naive version of its own analysis, but it states no limitations at all: no multiple-comparison caveat, no note that fig02's examples were selected for quality, and no statement of what the shift control leaves unaddressed.",
+    "verdict": "This is publishable-quality rotation work: the right dataset, correct streaming and preprocessing, a proper null plus three independent converging controls, numbers that all reproduce from the committed output, and a write-up whose only real fault is the absence of an explicit limitations section."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "dandiset": "001754",
+  "subject_session": "sub-Rat1 / ses-19980425T124500 (Rat 1, Flight Day 9), BL epoch 4871-7535 s",
+  "headline_stat": {
+    "name": "Fraction of CA1 units with significant spatial information",
+    "value": 0.083,
+    "in_prereg_range": false
+  },
+  "axes": {
+    "dataset": 1,
+    "handling": 2,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 1,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": false,
+  "stated_limitation": "This session has a modest number of well-isolated units and only ~34 minutes of continuous open-field locomotion, so statistical power is limited",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:001754 is CA1 tetrode data but from rats in microgravity aboard STS-90 with a sparse, blob-like foraging trajectory (fig03) and only 39 units, a dataset where place fields cannot be cleanly isolated when canonical alternatives (000044, 000447, 000940) exist.",
+    "handling": "Real data were streamed with remfile and the BL epoch, tracker-dropout code, and zero-order-hold repeats were correctly identified and handled, but no unit quality or pyramidal/interneuron criteria were applied and occupancy time was derived from irregular spike-timed position samples via a single nominal fs, which biases the rate maps.",
+    "analysis": "The Skaggs-information plus 500-shuffle circular-shift framework is appropriate and correctly implemented, but no correction is applied across 36 simultaneous tests and the headline claim rests entirely on that omission, since 3 hits at uncorrected p<0.05 is indistinguishable from the 1.8 expected by chance.",
+    "correctness": "The 8.3% selective fraction falls far below the preregistered 0.30-0.75 range (capping this axis at 1), and two of the three 'place cells' carry 0.06-0.08 bits/spike, below the 0.4-2.5 bits/spike range; separately, the README's counts and p-value cannot be traced to the committed output.",
+    "figures": "The figures are legibly drawn but contradict the text: fig07 shows unit 10's spikes scattered across the whole arena rather than 'almost exclusively in one corner,' and units 0 and 34 have essentially uniform rate maps while being labeled significant.",
+    "honesty": "The README reports 'two of 36 ... with one more trending' and 'p = 0.008' when the executed notebook records 3 of 36, 0 trending, and p = 0.014; it describes a visibly scattered unit as firing almost exclusively in one corner; and it presents a chance-level hit rate as 'consistent with genuine hippocampal place cells,' each of which independently caps this axis at 1."
+  }
+}

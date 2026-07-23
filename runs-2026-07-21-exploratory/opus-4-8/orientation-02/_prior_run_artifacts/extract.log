@@ -1,0 +1,29 @@
+=== 719161530
+selected units: 237 {'VISp': 52, 'VISl': 41, 'VISrl': 15, 'VISam': 40, 'VISpm': 18, 'LGd': 71}
+running speed: (365065,)
+saved cache_719161530.pkl 153.467279 MB
+=== 732592105
+selected units: 285 {'VISp': 112, 'VISl': 40, 'VISrl': 65, 'VISam': 0, 'VISpm': 68, 'LGd': 0}
+running speed: (365066,)
+saved cache_732592105.pkl 133.786223 MB
+=== 742951821
+selected units: 189 {'VISp': 34, 'VISl': 52, 'VISrl': 80, 'VISam': 0, 'VISpm': 23, 'LGd': 0}
+running speed: (366301,)
+saved cache_742951821.pkl 80.566135 MB
+=== 750332458
+selected units: 241 {'VISp': 67, 'VISl': 39, 'VISrl': 50, 'VISam': 62, 'VISpm': 19, 'LGd': 4}
+running speed: (365258,)
+saved cache_750332458.pkl 125.512438 MB
+=== 751348571
+selected units: 346 {'VISp': 50, 'VISl': 30, 'VISrl': 98, 'VISam': 73, 'VISpm': 38, 'LGd': 57}
+running speed: (366391,)
+saved cache_751348571.pkl 180.725534 MB
+=== 760693773
+selected units: 283 {'VISp': 91, 'VISl': 0, 'VISrl': 66, 'VISam': 71, 'VISpm': 55, 'LGd': 0}
+running speed: (363865,)
+saved cache_760693773.pkl 131.659406 MB
+=== 762120172
+selected units: 198 {'VISp': 88, 'VISl': 77, 'VISrl': 0, 'VISam': 33, 'VISpm': 0, 'LGd': 0}
+running speed: (388303,)
+saved cache_762120172.pkl 103.155003 MB
+ALLDONE

@@ -1,0 +1,5 @@
+1199497 bins x 213 units over 5997 s in 4 blocks
+train bins 622626, test bins 576631
+fitting frequency-specific model
+  unit batches:   0%|          | 0/5 [00:00<?, ?it/s]  unit batches:  20%|██        | 1/5 [00:31<02:04, 31.07s/it]  unit batches:  40%|████      | 2/5 [01:04<01:36, 32.22s/it]  unit batches:  60%|██████    | 3/5 [01:24<00:53, 26.83s/it]  unit batches:  80%|████████  | 4/5 [01:46<00:24, 24.90s/it]  unit batches: 100%|██████████| 5/5 [02:02<00:00, 21.70s/it]                                                             fitting tone-only (reduced) model
+  unit batches:   0%|          | 0/5 [00:00<?, ?it/s]  unit batches:  20%|██        | 1/5 [00:23<01:32, 23.22s/it]  unit batches:  40%|████      | 2/5 [00:44<01:06, 22.09s/it]  unit batches:  60%|██████    | 3/5 [00:59<00:37, 18.70s/it]  unit batches:  80%|████████  | 4/5 [01:14<00:17, 17.32s/it]  unit batches: 100%|██████████| 5/5 [01:29<00:00, 16.45s/it]                                                             held-out delta log-likelihood (full - reduced), nats/s: median 0.047, 84% of units improved

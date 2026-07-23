@@ -1,0 +1,32 @@
+{
+  "dandiset": "000986",
+  "subject_session": "15 sessions from 5 mice (LA3, LA8, LA9, LA11, LA12); single-session panels use LA11_ses1",
+  "headline_stat": {
+    "name": "Fraction of auditory cortex units with significant frequency tuning (all criteria; 87% by Kruskal-Wallis alone)",
+    "value": 0.59,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "An important limitation is that the stimulus set is coarse: five octave-spaced frequencies at a single sound level. \"Best frequency\" here therefore means the best of five options rather than a characteristic frequency estimated from a fine frequency-by-level grid, and tuning bandwidth and threshold cannot be quantified. The dandiset also provides no channel or depth annotation for the sorted units, so tonotopic organisation along the probe could not be tested.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000986 is a prereg-listed auditory dandiset (mouse auditory cortex Neuropixels, passive pure tones at 2-32 kHz, ~1,500 repeats per frequency), exactly the standard paradigm for frequency tuning, though it lacks the depth annotation needed for the tonotopy sub-question.",
+    "handling": "Real data streamed with remfile, trials and stim_frequency read from the NWB trials table, and the spike-count method explicitly validated against pynapple's restrict, but no spike-sorting quality filtering is applied or discussed (defensible since the units table carries only spike_times, yet the README never says so).",
+    "analysis": "Non-parametric within-unit tests (Wilcoxon for responsiveness, Kruskal-Wallis across frequencies) with BH-FDR correction across all 1,564 units, a 200-permutation frequency-label shuffle null for lifetime sparseness, split-half reliability, a label-shuffled decoding control, and an independent Poisson GLM cross-check together cover every control the claim requires.",
+    "correctness": "The 59% strict (and 87% Kruskal-only) tuned fraction sits inside the 0.40-0.90 prereg range, and every reported quantity is traceable verbatim to the committed run log and consistent with the figures, with only a minor unstated denominator (the 81% GLM best-frequency agreement is over 149 session-1 units).",
+    "figures": "Rasters, PSTHs, per-unit tuning curves, a 926-unit peak-normalised heatmap, the shuffle-null sparseness comparison, per-session consistency, decoding confusion matrix and GLM kernels all show the effect with labelled units and stated sample sizes; examples are picked by response selectivity and are honestly captioned as the most selective rather than as typical.",
+    "honesty": "Claims are proportionate throughout, the write-up volunteers the 208 frequency-selective but suppressed units it excluded, and it names the specific limitations of this result (coarse five-frequency single-level stimulus set, best-of-five rather than characteristic frequency, tonotopy untestable for lack of depth annotation, no cell-type split, no arousal control), a claim I confirmed against the file's actual metadata.",
+    "verdict": "Sound dataset choice, correct real-data handling, appropriately controlled statistics, in-range and fully reproducible headline numbers, and a calibrated write-up: I would take this result and move on."
+  }
+}

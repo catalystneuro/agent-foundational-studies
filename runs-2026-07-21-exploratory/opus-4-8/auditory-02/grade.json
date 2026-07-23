@@ -1,0 +1,31 @@
+{
+  "dandiset": "000986",
+  "subject_session": "5 mice (LA3, LA8, LA9, LA11, LA12), all 15 sessions; example session sub-LA11/ses-1",
+  "headline_stat": {
+    "name": "Fraction of A1 units with significant frequency tuning (FDR q<0.05)",
+    "value": 0.83,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Two caveats limit how far the tuning-curve shapes should be pushed. The stimulus set contains only five frequencies at octave spacing and a single intensity, so best frequency is quantized to octaves and cannot be localized more finely, and no frequency-response area can be measured. The units table in this dandiset carries no spike-sorting quality metrics and the electrodes table is absent, so no isolation-quality screen beyond the firing-rate threshold was possible and tonotopic organization along the probe could not be examined.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000986 is a canonical mouse A1 Neuropixels pure-tone dataset on the approved list, and the run used all 15 sessions from 5 mice rather than cherry-picking one.",
+    "handling": "Real data streamed from S3 with remfile plus disk cache, trial onsets taken from the NWB trials table and independently verified by a grand-average PSTH with a sharp 22.5 ms peak and flat baseline; the only inclusion criterion is a 0.5 Hz rate screen, which is explicitly justified by the verified absence of any quality-metric columns in the units table.",
+    "analysis": "Kruskal-Wallis across the five frequency groups with Benjamini-Hochberg FDR per session is the right primary test, and it is backed by three independent converging analyses (split-half reliability against a label-shuffled null, cross-validated Poisson decoding against a shuffled control, and a nested held-out GLM) plus an arousal control, well beyond what the claim requires.",
+    "correctness": "83% tuned falls inside the 0.40 to 0.90 preregistered range and every reported number (91% responsive, r = 0.98 vs -0.03, 0.806 decoding, 84% GLM improvement, 74% BF agreement, 2.96 to 3.46 Hz) reproduces exactly in the committed notebook and log output, with only a trivial 17 vs 18 ms rounding discrepancy on median latency.",
+    "figures": "The effect is unmistakable across raster, PSTH, tuning-curve, population-heatmap and decoding panels, axes carry units and sample sizes, and example units were selected by omega-squared, which is the strength of the very effect being demonstrated, with the GLM panel explicitly labeling its selection criterion.",
+    "honesty": "Specific dataset limitations are named plainly and the weak-side numbers are reported rather than hidden, but the claim that decoding errors are concentrated on adjacent octaves is not supported by fig06d once the differing number of confusion-matrix cells per octave distance is accounted for, and the figure title asserts it as established."
+  }
+}

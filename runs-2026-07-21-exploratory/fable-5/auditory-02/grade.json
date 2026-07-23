@@ -1,0 +1,32 @@
+{
+  "dandiset": "000986",
+  "subject_session": "000986: 15 sessions from subjects LA3, LA8, LA9, LA11, LA12 (example figures use sub-LA9_ses-1); plus DANDI:001262, 398 gerbil auditory-nerve fibres",
+  "headline_stat": {
+    "name": "Fraction of auditory-cortex units with significant frequency tuning (permutation test, p<0.01)",
+    "value": 0.863,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "**We do not claim that cortical tuning is broader than peripheral tuning**, even though that is the textbook expectation. Both width estimates are biased downwards by their own measurement limits: the cortical tuning curve is sampled at only five octave-spaced frequencies, so widths below one octave cannot be resolved, and the nerve width is only measurable for fibres whose curve fell to half maximum inside the frequency range the experimenter chose, which drops the broadly tuned fibres from the sample.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000986 (mouse auditory-cortex Neuropixels, pure tones) is on the canonical list and is paired with DANDI:001262 single auditory-nerve fibres, a textbook-standard preparation for frequency tuning, with the better-stimulus-set dandiset 001419 correctly rejected after verifying its spike times are rounded to whole seconds.",
+    "handling": "Both dandisets are streamed with remfile, tone windows are derived from the measured PSTH rather than assumed, a raw-data figure checks that spikes, tones, pupil and running share one clock, and the ANF sweep tags are parsed and cleaned of NaN padding; the only unit criterion is a 0.5 Hz rate floor because the 000986 files carry no quality or electrode columns, a constraint the write-up does not mention.",
+    "analysis": "Per-unit permutation nulls on between-frequency variance, a Wilcoxon responsiveness test, five-fold cross-validated Bayesian decoding with a shuffled-label control, and a NeMoS Poisson GLM with spike history are all appropriate and correctly implemented, with median filtering and at-edge exclusion justified for the bandwidth estimates; no formal multiple-comparison correction is applied, but the H0 expectation is plotted and the effect sizes dwarf it.",
+    "correctness": "Every reported value reproduces exactly from the committed pickles and sits inside the preregistered range (0.86 tuned fraction), but the Q10 sentence attaches a range and median computed from 21 fibres to a stated denominator of 59, and the final chat summary drops the n = 21 entirely.",
+    "figures": "Figures are publication-grade with units, sample sizes in titles, log-frequency axes, and example fibres and units chosen by spanning the best-frequency range rather than by effect magnitude; the population heatmap shows the expected diagonal band and fig11 explicitly marks the resolution limit that makes the two width distributions non-comparable.",
+    "honesty": "The caveats section names the specific weaknesses of this result (iso-level versus threshold-defined best frequency, the 2 kHz onset-transient confound, smoothing bias, unmeasurable widths) and explicitly declines the textbook cortex-versus-nerve width claim the data cannot support, and the run discloses both the rejected dandiset and the pre-existing unrelated files in its directory; the only loose statement is that the GLM 'reproduces the same frequency preferences' when fig10 shows matching profile shapes but differing peaks for two of three units.",
+    "verdict": "This is thorough, honest, fully reproducible work across two stages of the auditory pathway that I would take and move on from, with the only real gap being the absent tonotopic-gradient demonstration, which the chosen dandiset's missing electrode table made impossible and which the write-up should have said out loud."
+  }
+}

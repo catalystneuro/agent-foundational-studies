@@ -1,0 +1,16 @@
+import time, numpy as np
+import ov_data as ov
+t0=time.time()
+spikes, info = ov.load_spikes(ov.SESSIONS[0])
+print('load time %.1f s' % (time.time()-t0))
+print(spikes)
+print('\narea counts:'); print(info['selected']['area'].value_counts())
+dg = ov.stimulus_table(info['nwbfile'], 'drifting_gratings_presentations')
+sg = ov.stimulus_table(info['nwbfile'], 'static_gratings_presentations')
+print('\nDG n=%d, ori counts:' % len(dg)); print(dg['orientation'].value_counts(dropna=False))
+print('DG blank (nan ori):', dg['orientation'].isna().sum())
+print('TF counts:'); print(dg['temporal_frequency'].value_counts(dropna=False))
+print('\nSG n=%d ori:' % len(sg)); print(sg['orientation'].value_counts(dropna=False))
+rs = ov.running_speed(info['nwbfile'])
+print('\nrunning speed', rs.shape, float(np.nanmean(rs.d)), rs.t[0], rs.t[-1])
+print('spikes t range', min(v.t[0] for v in spikes.values()), max(v.t[-1] for v in spikes.values()))

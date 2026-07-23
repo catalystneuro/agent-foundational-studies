@@ -1,0 +1,17 @@
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynapple/core/metadata_class.py:169: UserWarning: Metadata name 'split' overlaps with an existing attribute, and cannot be accessed as an attribute or key. Use 'get_info()' to access metadata.
+  warnings.warn(
+moving bins: 42634 / 340687 (12.5%)
+using 42600 bins, 426 per block, fold sizes [8520 8520 8520 8520 8520]
+{'speed only': (42600, 1), 'direction only': (42600, 2), 'direction + speed': (42600, 3), 'velocity (vx, vy)': (42600, 2), 'velocity + speed': (42600, 3), '2D velocity basis': (42600, 36)}
+models:   0%|          | 0/6 [00:00<?, ?it/s]/Users/bdichter/miniconda3/lib/python3.12/site-packages/nemos/glm/glm.py:728: RuntimeWarning: The fit did not converge. Consider the following:
+1) Enable float64 with ``jax.config.update('jax_enable_x64', True)`` 
+2) Increase the max number of iterations or increase tolerance (if reasonable). These parameters can be specified by providing a ``solver_kwargs`` dictionary. For the available options see the ``self.solver.__init__`` docstrings.
+  warnings.warn(
+  speed only             mean bits/spike = +0.0426
+models:  17%|█▋        | 1/6 [03:53<19:26, 233.34s/it]  direction only         mean bits/spike = +0.1397
+models:  33%|███▎      | 2/6 [08:04<16:14, 243.68s/it]  direction + speed      mean bits/spike = +0.1807
+models:  50%|█████     | 3/6 [11:45<11:40, 233.40s/it]  velocity (vx, vy)      mean bits/spike = +0.1277
+models:  67%|██████▋   | 4/6 [15:34<07:43, 231.60s/it]  velocity + speed       mean bits/spike = +0.1837
+models:  83%|████████▎ | 5/6 [19:21<03:50, 230.16s/it]  2D velocity basis      mean bits/spike = +0.2354
+models: 100%|██████████| 6/6 [24:19<00:00, 253.09s/it]models: 100%|██████████| 6/6 [24:19<00:00, 243.25s/it]
+saved glm_results.npz

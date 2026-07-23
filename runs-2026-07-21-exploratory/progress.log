@@ -1,0 +1,4 @@
+[launch] fable-5 model=claude-fable-5 2026-07-21T14:18:55-04:00
+[launch] sonnet-5 model=claude-sonnet-5 2026-07-21T14:18:55-04:00
+[launch] opus-4-8 model=claude-opus-4-8 2026-07-21T14:18:55-04:00
+[model-done] sonnet-5 2026-07-21T15:33:14-04:00

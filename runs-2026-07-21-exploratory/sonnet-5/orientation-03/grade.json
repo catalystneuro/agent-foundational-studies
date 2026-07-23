@@ -1,0 +1,32 @@
+{
+  "dandiset": "000039",
+  "subject_session": "10 sessions pooled; prototype sub-673647168 / ses-698273664; also sub-760940732/ses-792319003, sub-661968859/ses-682746585, sub-678530120/ses-697383979, sub-760933183/ses-789270340, sub-759066288/ses-773643161, sub-669165768/ses-695640480, sub-763248171/ses-790073891, sub-664605504/ses-694856258, sub-673580710/ses-692496401",
+  "headline_stat": {
+    "name": "Fraction of ROIs significantly direction-tuned (Kruskal-Wallis p<0.05); median OSI = 0.33",
+    "value": 0.58,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 3,
+    "handling": 3,
+    "analysis": 2,
+    "correctness": 3,
+    "figures": 2,
+    "honesty": 1
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "README states none; the notebook markdown contains only 'a non-uniform distribution instead reflects genuine (if imperfect, given the small sample of neurons per session) tiling of direction space by the population, with any systematic asymmetry likely reflecting sampling of nearby, functionally similar neurons within a session.'",
+  "pass": false,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "DANDI:000039 is a real Allen mouse visual cortex drifting-grating dataset in which orientation selectivity is genuinely present, but it is a contrast-tuning study yielding only ~11-15 ROIs per session (114 total), a defensible but non-obvious choice that made the demonstration harder than the canonical Allen visual-coding dandisets would have.",
+    "handling": "Real data were streamed with remfile and the non-obvious frame-index interpretation of the epoch start/stop columns is corroborated by the printed trial times (2 s stimulus, ~1 s gap, 693 trials spanning the session), but no ROI quality criterion, visual-responsiveness filter, or verification of imaging-plane area was applied.",
+    "analysis": "Vector OSI/DSI with doubled angles is the correct circular treatment and Kruskal-Wallis is an appropriate per-cell test, but there is no shuffle or permutation null, no multiple-comparison correction across 114 cells, no test of the claimed OSI group difference, and OSI is inflated for weakly driven cells by clipping negative means to zero.",
+    "correctness": "58% tuned and median OSI 0.33 both fall inside the preregistered ranges and reproduce the notebook output and figure titles, with the reporting fault that the denominator is all ROIs rather than visually responsive units and the README describes the contrast selection as 'the contrast that drove the strongest responses' when the code simply takes the maximum contrast.",
+    "figures": "Fig3 shows the real effect but as stacked histograms that impede the comparison being claimed, fig2's polar row is rendered over leftover cartesian axes and includes two noise-dominated examples, and fig5's diagonal is tautological, so the figures are readable but do not make the case well.",
+    "honesty": "The write-up states no limitation at all for a partial result (42% of ROIs untuned, uncorrected tests, no null control), presents a cell with a 0.04 dF/F peak and p=0.028 and another with SEMs spanning its range as the top examples of orientation selectivity, and asserts that the peak-normalized argmax-sorted heatmap shows responses 'concentrated near' each cell's preferred direction, a claim the figure cannot support because the diagonal is guaranteed by construction.",
+    "verdict": "The core pipeline is sound and the headline number is real and in range, so I would ask for specific fixes (representative examples, a shuffle null, a uniformity test, dropping the circular heatmap claim, an explicit limitations section) rather than a restart, but the unqualified presentation of weak examples and an unsupported figure claim caps honesty at 1 and the run does not pass."
+  }
+}

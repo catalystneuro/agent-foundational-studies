@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Buddy_06272013 (prototype) plus Achilles_10252013, Cicero_09012014, Gatsby_08022013",
+  "headline_stat": {
+    "name": "Fraction of putative excitatory CA1 units classified as place cells",
+    "value": "0.51-0.69 across 4 sessions",
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 3,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "consistent with very sparsely-firing pyramidal cells not producing enough spikes during a single session to reach significance, rather than with place cells per se being high-rate",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki dorsal CA1, 1.6 m linear track) is the canonical choice for place cells, and the run used four sessions from four rats on matched track geometry.",
+    "handling": "Real NWB files streamed from S3 with remfile, correct MazeEpoch restriction and running-speed gating, and the agent caught and corrected a genuine dataset quirk (the SpatialSeries rate field storing a period), validating its PCA linearization against the sparse provided channel at r = -1.000.",
+    "analysis": "Skaggs spatial information with a per-unit circular-shift shuffle null is the right method and the required control is present, but running directions were not separated (standard on a linear track), no multiple-comparison correction was applied across ~70-140 units per session, and the test is visibly lenient for high-rate units (fig4d shows 10-70 Hz units with SI near 0.02 passing).",
+    "correctness": "51-69% of excitatory units and place-cell spatial information around 0.9-1.5 bits/spike both sit inside the preregistered ranges, but fig4c reports 0.71 for Buddy where the multi-session printout says 69%, and the multi-session seeds use Python's per-process-salted hash() so those exact numbers are not reproducible from the committed code.",
+    "figures": "The effect is unmistakable (fig2's diagonal tiling band, fig3's tight fields, fig4b's observed value far outside the null) with sample sizes and units labeled, but the examples are the six most informative cells rather than representative ones and fig5b's heavily overlapping distributions are described in the notebook as showing a clear excess.",
+    "honesty": "Every quantitative claim in the README traces to the notebook output and nothing is contradicted by the figures, but the write-up offers no limitation about the result itself: no mention of the missing direction split, the uncorrected per-unit threshold, or the 30% of interneurons the test flags as place cells.",
+    "verdict": "The core result is sound, canonical, and replicated across four animals; I would ask for direction-split place fields, a fixed reproducible seed, and a note on the shuffle test's leniency at high firing rates before treating the exact fractions as final."
+  }
+}

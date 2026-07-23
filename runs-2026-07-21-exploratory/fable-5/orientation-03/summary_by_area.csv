@@ -1,0 +1,7 @@
+area,units passing QC,responsive (%),orientation selective (%),median gOSI,median gDSI,median split-half r
+VISl,178,69.1,61.8,0.256,0.078,0.933
+VISam,150,70.7,58.7,0.244,0.087,0.915
+VISal,116,69.0,57.8,0.213,0.117,0.839
+VISp,315,62.2,51.7,0.24,0.092,0.906
+VISpm,138,60.9,49.3,0.283,0.083,0.884
+VISrl,299,56.5,45.8,0.214,0.082,0.881

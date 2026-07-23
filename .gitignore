@@ -10,12 +10,21 @@ remfile_cache/
 # clones the repo does not receive them; regenerate with make_grading_sheet.py
 # and release with the data once scoring is complete.
 .blind_key_*.csv
+.validation_key.csv
 
-# Per-run grading scratch written by grading/grade_run.sh. Regenerable; the
-# aggregate grades.csv from grade_all.sh is kept, the per-run judge output is not.
-grade.json
+# Per-run grader scratch. grade.json IS kept (it carries the judge's per-axis
+# justifications, which are study evidence); only the raw judge trace/stderr are dropped.
 grade.stderr.log
 grade.transcript.jsonl
+
+# Monitor dedup markers.
+.mon*_seen/
+
+# Bulky raw artifacts from the 2026-07-21 exploratory sweep: retained locally and
+# published as a separate data release, not committed to the repo (transcripts
+# ~450MB, figures ~90MB). The code, write-ups, and grades ARE committed.
+runs-2026-07-21-exploratory/**/transcript.jsonl
+runs-2026-07-21-exploratory/**/*.png
 
 # macOS
 .DS_Store

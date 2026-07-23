@@ -1,0 +1,31 @@
+{
+  "dandiset": "000986",
+  "subject_session": "prototype sub-LA3_ses-3; population across all 15 sessions from 5 mice (LA3, LA8, LA9, LA11, LA12)",
+  "headline_stat": {
+    "name": "Fraction of A1 units with significant frequency tuning (one-way ANOVA across 5 tone frequencies, p<0.01)",
+    "value": 0.856,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 3,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "By construction the value at 0 octaves is 1.0 for every unit (that is where its own maximum is), so the curve's peak is not itself informative; what demonstrates genuine band-pass frequency tuning is the systematic, roughly symmetric fall-off in response at +/-1 and +/-2 octaves from BF. [notebook markdown only; the README states no limitation]",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000986 is a canonical auditory frequency-tuning dandiset (mouse A1 Neuropixels, passive pure tones one octave apart), and the run used all 15 sessions from 5 mice rather than a single cherry-picked recording.",
+    "handling": "Real data streamed via remfile with correct tone-onset alignment and verified stimulus amplitude/duration, but no unit inclusion criteria are applied and the write-up never says that the units table contains only spike_times so no quality metrics were available.",
+    "analysis": "One-way ANOVA across five frequency groups on trial-wise evoked rates is appropriate and well powered at ~1100 trials per frequency, but the BF-aligned population curve lacks a shuffle null for its normalization-induced bias and no tonotopic gradient along the probe is shown (the NWB units table carries no depth column).",
+    "correctness": "85.6% sits inside the 0.40-0.90 preregistered range and every reported number traces to committed notebook output, with the minor blemish that figure 5A's 82% session-mean and the README's 85.6% pooled value are never reconciled.",
+    "figures": "Figures 2-4 make the phenomenon unmistakable with labelled axes and sample sizes, but figure 1's running speed is in unexplained arbitrary units, figure 3's error bars are invisible, and figure 5C's by-construction peak is explained only in the notebook and not in the figure or README.",
+    "honesty": "No claim is contradicted by the run's own figures or output and the notebook proactively flags the 5C alignment artifact, but the README offers no limitations section at all and overgeneralizes 'each with ... a several-fold increase in evoked rate over baseline' to all 25 tuned units when only three were shown."
+  }
+}

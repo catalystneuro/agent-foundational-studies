@@ -1,0 +1,32 @@
+{
+  "dandiset": "000021",
+  "subject_session": "8 sessions / 8 mice: 715093703, 719161530, 721123822, 732592105, 742951821, 750332458, 760693773, 762120172 (prototype figures from 715093703)",
+  "headline_stat": {
+    "name": "median classic OSI in VISp (and fraction of visually responsive cortical units significantly orientation tuned = 0.600; VISp 0.647)",
+    "value": 0.667,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Unit counts are very unequal across areas because probe placement targeted cortex, so LGd is the most sparsely sampled structure here and its confidence intervals are correspondingly wide. Subtracting a per-unit permutation noise floor corrects the leading rate-dependent bias in gOSI but is not a complete correction. Receptive-field position relative to the monitor is not controlled, so units whose receptive field falls near the screen edge see a truncated grating; this adds noise to the tuning estimates in every area.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 Allen Visual Coding Neuropixels with the Brain Observatory drifting- and static-grating blocks, eight sessions covering V1, five higher visual areas, LGd and LP, is the canonical choice for this phenomenon.",
+    "handling": "Real NWB files are streamed from S3 with remfile, Allen-recommended quality metrics are applied and stated, per-probe invalid-data epochs are NaN-masked, counting windows are offset for response latency and explicitly truncated to prevent interval merging (with assertions), and blank sweeps provide a matched baseline.",
+    "analysis": "Circular statistics are used throughout (vector-based gOSI, Jammalamadaka circular correlation with a permutation p-value, Rayleigh test on doubled angles), the permutation null re-runs the preferred-temporal-frequency selection so the selection bias is present in the null, and the claim is backed by a noise-floor correction, a cross-validated population tuning curve, a shuffle-controlled decoder and a held-out GLM whose basis is blind to direction; the only gaps are no multiple-comparison correction across units and mild circularity in computing split-half reliability on units selected as significant from the same data.",
+    "correctness": "Median classic OSI in VISp is 0.667 and the fraction of visually responsive cortical units significantly tuned is 0.600 (VISp 0.647), both inside the preregistered ranges, and every README number matches stats_summary.txt, the figure annotations and glm_results.csv.",
+    "figures": "All seven figures are labeled with units and sample sizes, the raw-activity panel serves as an alignment check, the polar gallery shows most-selective, median and LGd units with the spontaneous rate drawn as a reference circle and an explicit caption about how gOSI can be inflated, and the population panels show the effect and its area comparison clearly.",
+    "honesty": "Claims are proportionate and specifically hedged: the LGd comparison is presented as graded rather than all-or-none, the limitations section names sparse LGd sampling, incomplete noise correction and uncontrolled receptive-field position, and the run even discloses that prior interrupted-attempt files sit in the directory and are unused; the only lapse is not repeating in the README that the reliability correlations are computed on the significantly-tuned subset, which the stats file does state.",
+    "verdict": "This is well beyond what a rotation student would produce in a week: correct data handling, appropriate circular statistics with real null distributions, converging descriptive, decoding and model-based measures, and a write-up whose claims match its own output."
+  }
+}

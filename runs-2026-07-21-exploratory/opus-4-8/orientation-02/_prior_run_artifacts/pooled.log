@@ -1,0 +1,15 @@
+7 sessions
+sessions:   0%|          | 0/7 [00:00<?, ?it/s]sessions:  14%|█▍        | 1/7 [00:06<00:39,  6.55s/it]sessions:  29%|██▊       | 2/7 [00:10<00:26,  5.28s/it]sessions:  43%|████▎     | 3/7 [00:16<00:21,  5.27s/it]sessions:  57%|█████▋    | 4/7 [00:19<00:13,  4.59s/it]sessions:  71%|███████▏  | 5/7 [00:24<00:09,  4.53s/it]sessions:  86%|████████▌ | 6/7 [00:30<00:05,  5.18s/it]sessions: 100%|██████████| 7/7 [00:35<00:00,  5.21s/it]sessions: 100%|██████████| 7/7 [00:35<00:00,  5.13s/it]
+pooled units per region: {'VISp': 468, 'VISl': 249, 'VISrl': 451, 'VISam': 277, 'VISpm': 272, 'LGd': 214}
+fig08 done
+fig09 done
+fig10 done
+sessions: 7
+VISp   n= 468 tuned= 63.9% median gOSI=0.216 median DSI=0.147 median gOSI(static)=0.147
+VISl   n= 249 tuned= 56.6% median gOSI=0.192 median DSI=0.112 median gOSI(static)=0.155
+VISrl  n= 451 tuned= 47.7% median gOSI=0.148 median DSI=0.143 median gOSI(static)=0.103
+VISam  n= 277 tuned= 54.9% median gOSI=0.163 median DSI=0.138 median gOSI(static)=0.114
+VISpm  n= 272 tuned= 54.4% median gOSI=0.207 median DSI=0.141 median gOSI(static)=0.143
+LGd    n= 214 tuned= 46.3% median gOSI=0.113 median DSI=0.103 median gOSI(static)=0.072
+VISp vs LGd gOSI Mann-Whitney U=66815 p=2.370e-12
+

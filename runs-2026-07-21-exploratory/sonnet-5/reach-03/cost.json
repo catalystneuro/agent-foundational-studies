@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 968100,
+  "duration_api_ms": 585745,
+  "ttft_ms": 2179,
+  "ttft_stream_ms": 1137,
+  "time_to_request_ms": 46,
+  "num_turns": 75,
+  "result": "## Summary\n\nI analyzed session `sub-Jenkins_ses-20090912` from DANDI Dandiset [000070](https://dandiarchive.org/dandiset/000070) (Churchland lab center-out reaching task with 192 M1/PMd units, streamed via `remfile`), demonstrating both reach-direction and velocity tuning:\n\n- **Discrete direction tuning**: fit a Georgopoulos cosine model to 348 straight single-target reaches; found units with up to R²=0.91, preferred directions spread across the full circle in both M1 and PMd.\n- **Continuous velocity/speed tuning**: computed instantaneous hand velocity across all 1573 successful reaches (including curved obstacle trials) and built Pynapple tuning curves — 116/192 units showed |correlation| > 0.7 between firing rate and speed (max r=0.98), and units also showed continuous movement-direction tuning.\n\nAll 7 figures were visually inspected and two layout bugs (polar-plot title overlap, a doubled axes frame from mixing `plt.subplot` with `subplots()`) were found and fixed.\n\nOutputs in this directory: `reach_tuning_analysis.py` (jupytext script), `reach_tuning_analysis.ipynb` (executed notebook, no errors), `fig01`–`fig07.png`, and `README.md`.",
+  "stop_reason": "end_turn",
+  "session_id": "f56daaa8-a891-4a08-aa73-c0b6f677bd72",
+  "total_cost_usd": 3.3593780999999994,
+  "usage": {
+    "input_tokens": 116,
+    "cache_creation_input_tokens": 139379,
+    "cache_read_input_tokens": 6164427,
+    "output_tokens": 44841,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 139379,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 456,
+        "cache_read_input_tokens": 162778,
+        "cache_creation_input_tokens": 148,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 148
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 733,
+      "outputTokens": 16,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.000813,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-5": {
+      "inputTokens": 116,
+      "outputTokens": 44841,
+      "cacheReadInputTokens": 6164427,
+      "cacheCreationInputTokens": 139379,
+      "webSearchRequests": 0,
+      "costUSD": 3.3585650999999994,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "3f600407-d317-48ce-85bd-49c97effe4fc"
+}

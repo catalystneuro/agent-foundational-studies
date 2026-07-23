@@ -1,0 +1,31 @@
+{
+  "dandiset": "000021",
+  "subject_session": "six sessions: sub-730760263_ses-755434585, sub-769360771_ses-791319847, sub-730756767_ses-757970808, sub-739783158_ses-760345702, sub-742602884_ses-763673393, sub-719828686_ses-754312389",
+  "headline_stat": {
+    "name": "Fraction of visually responsive visual-cortex units orientation selective (drifting gratings, permutation p<0.05)",
+    "value": 0.736,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Two caveats are worth stating. Tuning widths are fit to only 8 sampled directions spaced 45 degrees apart, so widths below roughly 20 degrees are not resolvable and the reported median is best read as an upper bound on sharpness. And while the hippocampal control behaves as expected for drifting gratings, its static-grating rate is 19% (13 of 69 responsive units) rather than the nominal 5%. Permutation nulls that preserve slow drift (block shuffling) and short-lag correlations (circular shifts) did not remove that excess, so it is not explained by firing-rate nonstationarity. The effect size is nonetheless negligible, with a median hippocampal z-score of 0.24 against 9.78 in cortex, so the regional contrast the argument rests on is unaffected.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 Allen Visual Coding Neuropixels with drifting and static gratings in V1, higher visual areas, LGd/LP and a hippocampal negative control on the same probes is the canonical choice for this phenomenon, and the six sessions were selected by a documented survey (session_survey.csv) for joint regional coverage.",
+    "handling": "Files are streamed with remfile rather than downloaded, areas are resolved through the electrodes table, Allen standard QC (quality=good, ISI violations, amplitude cutoff, presence ratio) is applied explicitly, response windows are justified by a measured PSTH latency figure, and the TsGroup-versus-metadata ordering hazard is both documented and asserted at runtime.",
+    "analysis": "gOSI is computed as a circular vector strength on the doubled angle with a per-unit label-shuffle null giving both p and a rate-bias-free z, the population heatmap is backed by an odd/even cross-validated alignment that removes the sort circularity, decoding and nested GLM comparisons are cross-validated, and a self-diagnosed responsiveness-selection circularity was corrected.",
+    "correctness": "Every headline value reproduces exactly from the committed parquet files, 73.6% sits inside the 0.25 to 0.75 preregistered band (VISp alone is 81.4%, also inside), and the regional, cross-stimulus, decoding and GLM numbers are mutually consistent and consistent with the figures.",
+    "figures": "All nine figures show the effect with labeled units, sample sizes and error bars, and the population panels carry the argument; the example units are the highest-gOSI cells rather than typical ones, but the text labels them as strongly tuned and the raster caption slightly overstates bidirectional firing for two of the four.",
+    "honesty": "Claims track the evidence, a failed control is reported rather than buried (19% hippocampal static-grating rate with two alternative nulls that did not fix it), the raw-data figure is described as noisy, and the tuning-width median is explicitly called an upper bound."
+  }
+}

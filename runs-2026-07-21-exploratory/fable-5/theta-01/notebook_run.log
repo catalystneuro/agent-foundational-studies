@@ -1,0 +1,253 @@
+Achilles_10252013 | Buzsaki | Rattus norvegicus domestica - Long Evans
+    start_time   stop_time      label
+id                                   
+0          0.0  18079.5000   PREEpoch
+1      18079.5  20147.0000  MazeEpoch
+2      20147.0  34861.1032  POSTEpoch
+
+137 sorted units: {'excitatory': 120, 'inhibitory': 17}
+regions: {'rCA1': 72, 'lCA1': 65}
+theta/delta scan:   0%|          | 0/128 [00:00<?, ?it/s]theta/delta scan:   2%|▏         | 2/128 [00:00<00:07, 17.13it/s]theta/delta scan:   4%|▍         | 5/128 [00:00<00:06, 19.92it/s]theta/delta scan:   6%|▋         | 8/128 [00:00<00:05, 21.47it/s]theta/delta scan:   9%|▊         | 11/128 [00:00<00:05, 21.66it/s]theta/delta scan:  11%|█         | 14/128 [00:00<00:05, 21.87it/s]theta/delta scan:  13%|█▎        | 17/128 [00:00<00:04, 22.97it/s]theta/delta scan:  16%|█▌        | 20/128 [00:00<00:04, 23.18it/s]theta/delta scan:  18%|█▊        | 23/128 [00:01<00:04, 22.92it/s]theta/delta scan:  20%|██        | 26/128 [00:01<00:04, 21.79it/s]theta/delta scan:  23%|██▎       | 29/128 [00:01<00:04, 22.20it/s]theta/delta scan:  25%|██▌       | 32/128 [00:01<00:04, 22.14it/s]theta/delta scan:  27%|██▋       | 35/128 [00:01<00:04, 22.37it/s]theta/delta scan:  30%|██▉       | 38/128 [00:01<00:03, 23.02it/s]theta/delta scan:  32%|███▏      | 41/128 [00:01<00:03, 23.66it/s]theta/delta scan:  34%|███▍      | 44/128 [00:01<00:03, 23.58it/s]theta/delta scan:  37%|███▋      | 47/128 [00:02<00:03, 23.42it/s]theta/delta scan:  39%|███▉      | 50/128 [00:02<00:03, 23.54it/s]theta/delta scan:  41%|████▏     | 53/128 [00:02<00:03, 24.06it/s]theta/delta scan:  44%|████▍     | 56/128 [00:02<00:03, 23.83it/s]theta/delta scan:  46%|████▌     | 59/128 [00:02<00:03, 22.36it/s]theta/delta scan:  48%|████▊     | 62/128 [00:02<00:02, 22.33it/s]theta/delta scan:  51%|█████     | 65/128 [00:02<00:02, 22.97it/s]theta/delta scan:  53%|█████▎    | 68/128 [00:02<00:02, 23.66it/s]theta/delta scan:  55%|█████▌    | 71/128 [00:03<00:02, 24.20it/s]theta/delta scan:  58%|█████▊    | 74/128 [00:03<00:02, 24.73it/s]theta/delta scan:  60%|██████    | 77/128 [00:03<00:02, 25.00it/s]theta/delta scan:  62%|██████▎   | 80/128 [00:03<00:01, 24.85it/s]theta/delta scan:  65%|██████▍   | 83/128 [00:03<00:01, 22.57it/s]theta/delta scan:  67%|██████▋   | 86/128 [00:03<00:01, 22.09it/s]theta/delta scan:  70%|██████▉   | 89/128 [00:03<00:01, 22.47it/s]theta/delta scan:  72%|███████▏  | 92/128 [00:04<00:01, 21.94it/s]theta/delta scan:  74%|███████▍  | 95/128 [00:04<00:01, 18.32it/s]theta/delta scan:  76%|███████▌  | 97/128 [00:04<00:01, 18.39it/s]theta/delta scan:  78%|███████▊  | 100/128 [00:04<00:01, 18.80it/s]theta/delta scan:  80%|████████  | 103/128 [00:04<00:01, 18.95it/s]theta/delta scan:  83%|████████▎ | 106/128 [00:04<00:01, 19.62it/s]theta/delta scan:  84%|████████▍ | 108/128 [00:04<00:01, 19.53it/s]theta/delta scan:  86%|████████▌ | 110/128 [00:05<00:00, 19.20it/s]theta/delta scan:  88%|████████▊ | 113/128 [00:05<00:00, 19.75it/s]theta/delta scan:  90%|████████▉ | 115/128 [00:05<00:00, 19.43it/s]theta/delta scan:  92%|█████████▏| 118/128 [00:05<00:00, 20.54it/s]theta/delta scan:  95%|█████████▍| 121/128 [00:05<00:00, 21.19it/s]theta/delta scan:  97%|█████████▋| 124/128 [00:05<00:00, 21.64it/s]theta/delta scan:  99%|█████████▉| 127/128 [00:05<00:00, 22.51it/s]                                                                   theta reference channel: 117  (theta/delta = 4.01)
+LFP: 2,584,375 samples at 1250 Hz over 2068 s
+track length 1.6 m, position sampled at 39.1 Hz
+83 laps (41 left→right, 42 right→left)
+running time used: 205 s (R 108 s, L 98 s)
+median speed while running: 0.64 m/s
+sessions:   0%|          | 0/5 [00:00<?, ?it/s]
+theta/delta scan:   0%|          | 0/128 [00:00<?, ?it/s][A
+theta/delta scan:   2%|▏         | 3/128 [00:00<00:05, 24.66it/s][A
+theta/delta scan:   5%|▍         | 6/128 [00:00<00:04, 25.05it/s][A
+theta/delta scan:   7%|▋         | 9/128 [00:00<00:04, 25.70it/s][A
+theta/delta scan:   9%|▉         | 12/128 [00:00<00:04, 26.71it/s][A
+theta/delta scan:  12%|█▏        | 15/128 [00:00<00:04, 27.64it/s][A
+theta/delta scan:  14%|█▍        | 18/128 [00:00<00:03, 27.72it/s][A
+theta/delta scan:  16%|█▋        | 21/128 [00:00<00:03, 27.25it/s][A
+theta/delta scan:  19%|█▉        | 24/128 [00:00<00:03, 26.05it/s][A
+theta/delta scan:  21%|██        | 27/128 [00:01<00:03, 25.41it/s][A
+theta/delta scan:  23%|██▎       | 30/128 [00:01<00:03, 25.12it/s][A
+theta/delta scan:  26%|██▌       | 33/128 [00:01<00:03, 25.08it/s][A
+theta/delta scan:  28%|██▊       | 36/128 [00:01<00:03, 24.89it/s][A
+theta/delta scan:  30%|███       | 39/128 [00:01<00:03, 24.93it/s][A
+theta/delta scan:  33%|███▎      | 42/128 [00:01<00:03, 25.67it/s][A
+theta/delta scan:  35%|███▌      | 45/128 [00:01<00:03, 26.26it/s][A
+theta/delta scan:  38%|███▊      | 48/128 [00:01<00:02, 26.87it/s][A
+theta/delta scan:  40%|███▉      | 51/128 [00:01<00:03, 24.14it/s][A
+theta/delta scan:  42%|████▏     | 54/128 [00:02<00:03, 24.16it/s][A
+theta/delta scan:  45%|████▍     | 57/128 [00:02<00:02, 24.40it/s][A
+theta/delta scan:  47%|████▋     | 60/128 [00:02<00:02, 25.13it/s][A
+theta/delta scan:  50%|█████     | 64/128 [00:02<00:02, 26.73it/s][A
+theta/delta scan:  53%|█████▎    | 68/128 [00:02<00:02, 27.93it/s][A
+theta/delta scan:  55%|█████▌    | 71/128 [00:02<00:02, 28.29it/s][A
+theta/delta scan:  59%|█████▊    | 75/128 [00:02<00:01, 29.14it/s][A
+theta/delta scan:  61%|██████    | 78/128 [00:02<00:01, 28.55it/s][A
+theta/delta scan:  64%|██████▍   | 82/128 [00:03<00:01, 29.12it/s][A
+theta/delta scan:  66%|██████▋   | 85/128 [00:03<00:01, 28.34it/s][A
+theta/delta scan:  70%|██████▉   | 89/128 [00:03<00:01, 29.25it/s][A
+theta/delta scan:  72%|███████▏  | 92/128 [00:03<00:01, 28.64it/s][A
+theta/delta scan:  75%|███████▌  | 96/128 [00:03<00:01, 29.33it/s][A
+theta/delta scan:  78%|███████▊  | 100/128 [00:03<00:00, 29.63it/s][A
+theta/delta scan:  80%|████████  | 103/128 [00:03<00:00, 28.72it/s][A
+theta/delta scan:  84%|████████▎ | 107/128 [00:03<00:00, 29.60it/s][A
+theta/delta scan:  87%|████████▋ | 111/128 [00:04<00:00, 30.20it/s][A
+theta/delta scan:  90%|████████▉ | 115/128 [00:04<00:00, 29.84it/s][A
+theta/delta scan:  93%|█████████▎| 119/128 [00:04<00:00, 30.24it/s][A
+theta/delta scan:  96%|█████████▌| 123/128 [00:04<00:00, 29.27it/s][A
+theta/delta scan:  98%|█████████▊| 126/128 [00:04<00:00, 29.27it/s][A
+                                                                   [AAchilles_10252013: 83 laps, 205 s running, 117 units (81 theta-locked), 78 place fields (63 precessing)
+sessions:  20%|██        | 1/5 [00:19<01:18, 19.60s/it]
+theta/delta scan:   0%|          | 0/128 [00:00<?, ?it/s][A
+theta/delta scan:   2%|▏         | 2/128 [00:00<00:06, 18.86it/s][A
+theta/delta scan:   4%|▍         | 5/128 [00:00<00:05, 22.21it/s][A
+theta/delta scan:   6%|▋         | 8/128 [00:00<00:05, 22.69it/s][A
+theta/delta scan:   9%|▊         | 11/128 [00:00<00:05, 22.55it/s][A
+theta/delta scan:  11%|█         | 14/128 [00:00<00:04, 24.15it/s][A
+theta/delta scan:  13%|█▎        | 17/128 [00:00<00:04, 24.47it/s][A
+theta/delta scan:  16%|█▌        | 20/128 [00:00<00:04, 23.89it/s][A
+theta/delta scan:  18%|█▊        | 23/128 [00:01<00:04, 22.19it/s][A
+theta/delta scan:  20%|██        | 26/128 [00:01<00:04, 22.64it/s][A
+theta/delta scan:  23%|██▎       | 29/128 [00:01<00:04, 21.62it/s][A
+theta/delta scan:  25%|██▌       | 32/128 [00:01<00:04, 21.73it/s][A
+theta/delta scan:  27%|██▋       | 35/128 [00:01<00:04, 21.68it/s][A
+theta/delta scan:  30%|██▉       | 38/128 [00:01<00:04, 22.07it/s][A
+theta/delta scan:  32%|███▏      | 41/128 [00:01<00:03, 22.37it/s][A
+theta/delta scan:  34%|███▍      | 44/128 [00:01<00:03, 22.56it/s][A
+theta/delta scan:  37%|███▋      | 47/128 [00:02<00:03, 22.58it/s][A
+theta/delta scan:  39%|███▉      | 50/128 [00:02<00:03, 23.05it/s][A
+theta/delta scan:  41%|████▏     | 53/128 [00:02<00:03, 22.48it/s][A
+theta/delta scan:  44%|████▍     | 56/128 [00:02<00:03, 22.36it/s][A
+theta/delta scan:  46%|████▌     | 59/128 [00:02<00:02, 23.57it/s][A
+theta/delta scan:  48%|████▊     | 62/128 [00:02<00:02, 23.87it/s][A
+theta/delta scan:  51%|█████     | 65/128 [00:02<00:02, 23.50it/s][A
+theta/delta scan:  53%|█████▎    | 68/128 [00:02<00:02, 24.17it/s][A
+theta/delta scan:  55%|█████▌    | 71/128 [00:03<00:02, 24.66it/s][A
+theta/delta scan:  58%|█████▊    | 74/128 [00:03<00:02, 24.88it/s][A
+theta/delta scan:  60%|██████    | 77/128 [00:03<00:02, 24.68it/s][A
+theta/delta scan:  62%|██████▎   | 80/128 [00:03<00:01, 24.82it/s][A
+theta/delta scan:  65%|██████▍   | 83/128 [00:03<00:01, 24.20it/s][A
+theta/delta scan:  67%|██████▋   | 86/128 [00:03<00:01, 24.26it/s][A
+theta/delta scan:  70%|██████▉   | 89/128 [00:03<00:01, 24.31it/s][A
+theta/delta scan:  72%|███████▏  | 92/128 [00:03<00:01, 24.11it/s][A
+theta/delta scan:  74%|███████▍  | 95/128 [00:04<00:01, 24.66it/s][A
+theta/delta scan:  77%|███████▋  | 98/128 [00:04<00:01, 24.75it/s][A
+theta/delta scan:  79%|███████▉  | 101/128 [00:04<00:01, 24.90it/s][A
+theta/delta scan:  81%|████████▏ | 104/128 [00:04<00:00, 25.47it/s][A
+theta/delta scan:  84%|████████▎ | 107/128 [00:04<00:00, 25.33it/s][A
+theta/delta scan:  86%|████████▌ | 110/128 [00:04<00:00, 25.18it/s][A
+theta/delta scan:  88%|████████▊ | 113/128 [00:04<00:00, 25.50it/s][A
+theta/delta scan:  91%|█████████ | 116/128 [00:04<00:00, 23.72it/s][A
+theta/delta scan:  93%|█████████▎| 119/128 [00:05<00:00, 23.08it/s][A
+theta/delta scan:  95%|█████████▌| 122/128 [00:05<00:00, 22.73it/s][A
+theta/delta scan:  98%|█████████▊| 125/128 [00:05<00:00, 22.76it/s][A
+theta/delta scan: 100%|██████████| 128/128 [00:05<00:00, 21.81it/s][A
+                                                                   [ABuddy_06272013: 53 laps, 131 s running, 44 units (32 theta-locked), 14 place fields (10 precessing)
+sessions:  40%|████      | 2/5 [00:34<00:49, 16.63s/it]
+theta/delta scan:   0%|          | 0/128 [00:00<?, ?it/s][A
+theta/delta scan:   2%|▏         | 3/128 [00:00<00:06, 20.02it/s][A
+theta/delta scan:   5%|▍         | 6/128 [00:00<00:06, 19.99it/s][A
+theta/delta scan:   7%|▋         | 9/128 [00:00<00:05, 21.34it/s][A
+theta/delta scan:   9%|▉         | 12/128 [00:00<00:05, 21.94it/s][A
+theta/delta scan:  12%|█▏        | 15/128 [00:00<00:04, 22.62it/s][A
+theta/delta scan:  14%|█▍        | 18/128 [00:00<00:04, 23.42it/s][A
+theta/delta scan:  16%|█▋        | 21/128 [00:00<00:04, 24.66it/s][A
+theta/delta scan:  20%|█▉        | 25/128 [00:01<00:03, 26.25it/s][A
+theta/delta scan:  22%|██▏       | 28/128 [00:01<00:03, 26.73it/s][A
+theta/delta scan:  24%|██▍       | 31/128 [00:01<00:03, 27.58it/s][A
+theta/delta scan:  27%|██▋       | 34/128 [00:01<00:03, 27.13it/s][A
+theta/delta scan:  29%|██▉       | 37/128 [00:01<00:03, 27.73it/s][A
+theta/delta scan:  31%|███▏      | 40/128 [00:01<00:03, 28.25it/s][A
+theta/delta scan:  34%|███▎      | 43/128 [00:01<00:02, 28.40it/s][A
+theta/delta scan:  36%|███▌      | 46/128 [00:01<00:02, 28.78it/s][A
+theta/delta scan:  39%|███▉      | 50/128 [00:01<00:02, 29.26it/s][A
+theta/delta scan:  42%|████▏     | 54/128 [00:02<00:02, 29.92it/s][A
+theta/delta scan:  45%|████▍     | 57/128 [00:02<00:02, 29.86it/s][A
+theta/delta scan:  47%|████▋     | 60/128 [00:02<00:02, 29.53it/s][A
+theta/delta scan:  50%|█████     | 64/128 [00:02<00:02, 30.26it/s][A
+theta/delta scan:  53%|█████▎    | 68/128 [00:02<00:02, 28.51it/s][A
+theta/delta scan:  55%|█████▌    | 71/128 [00:02<00:02, 27.57it/s][A
+theta/delta scan:  58%|█████▊    | 74/128 [00:02<00:02, 26.55it/s][A
+theta/delta scan:  60%|██████    | 77/128 [00:02<00:01, 26.18it/s][A
+theta/delta scan:  62%|██████▎   | 80/128 [00:03<00:01, 26.29it/s][A
+theta/delta scan:  65%|██████▍   | 83/128 [00:03<00:01, 25.34it/s][A
+theta/delta scan:  67%|██████▋   | 86/128 [00:03<00:01, 25.30it/s][A
+theta/delta scan:  70%|██████▉   | 89/128 [00:03<00:01, 25.51it/s][A
+theta/delta scan:  72%|███████▏  | 92/128 [00:03<00:01, 26.27it/s][A
+theta/delta scan:  74%|███████▍  | 95/128 [00:03<00:01, 26.19it/s][A
+theta/delta scan:  77%|███████▋  | 98/128 [00:03<00:01, 19.04it/s][A
+theta/delta scan:  79%|███████▉  | 101/128 [00:04<00:01, 18.77it/s][A
+theta/delta scan:  81%|████████▏ | 104/128 [00:04<00:01, 20.39it/s][A
+theta/delta scan:  84%|████████▎ | 107/128 [00:04<00:01, 20.04it/s][A
+theta/delta scan:  86%|████████▌ | 110/128 [00:04<00:01, 17.56it/s][A
+theta/delta scan:  88%|████████▊ | 112/128 [00:04<00:00, 17.53it/s][A
+theta/delta scan:  89%|████████▉ | 114/128 [00:04<00:00, 17.60it/s][A
+theta/delta scan:  91%|█████████ | 116/128 [00:05<00:01, 10.53it/s][A
+theta/delta scan:  92%|█████████▏| 118/128 [00:05<00:00, 10.38it/s][A
+theta/delta scan:  94%|█████████▍| 120/128 [00:05<00:00, 11.52it/s][A
+theta/delta scan:  95%|█████████▌| 122/128 [00:05<00:00, 12.93it/s][A
+theta/delta scan:  98%|█████████▊| 125/128 [00:05<00:00, 15.34it/s][A
+theta/delta scan:  99%|█████████▉| 127/128 [00:05<00:00, 12.39it/s][A
+                                                                   [ACicero_09012014: 84 laps, 365 s running, 65 units (39 theta-locked), 20 place fields (14 precessing)
+sessions:  60%|██████    | 3/5 [01:07<00:48, 24.49s/it]
+theta/delta scan:   0%|          | 0/128 [00:00<?, ?it/s][A
+theta/delta scan:   3%|▎         | 4/128 [00:00<00:03, 34.63it/s][A
+theta/delta scan:   6%|▋         | 8/128 [00:00<00:03, 32.58it/s][A
+theta/delta scan:   9%|▉         | 12/128 [00:00<00:03, 34.43it/s][A
+theta/delta scan:  12%|█▎        | 16/128 [00:00<00:03, 33.81it/s][A
+theta/delta scan:  16%|█▌        | 20/128 [00:00<00:03, 32.81it/s][A
+theta/delta scan:  19%|█▉        | 24/128 [00:00<00:03, 33.53it/s][A
+theta/delta scan:  22%|██▏       | 28/128 [00:00<00:02, 33.76it/s][A
+theta/delta scan:  25%|██▌       | 32/128 [00:00<00:02, 34.19it/s][A
+theta/delta scan:  28%|██▊       | 36/128 [00:01<00:02, 33.75it/s][A
+theta/delta scan:  31%|███▏      | 40/128 [00:01<00:02, 33.55it/s][A
+theta/delta scan:  34%|███▍      | 44/128 [00:01<00:02, 32.34it/s][A
+theta/delta scan:  38%|███▊      | 48/128 [00:01<00:02, 31.98it/s][A
+theta/delta scan:  41%|████      | 52/128 [00:01<00:02, 30.74it/s][A
+theta/delta scan:  44%|████▍     | 56/128 [00:01<00:02, 29.63it/s][A
+theta/delta scan:  46%|████▌     | 59/128 [00:01<00:02, 27.86it/s][A
+theta/delta scan:  48%|████▊     | 62/128 [00:01<00:02, 27.82it/s][A
+theta/delta scan:  51%|█████     | 65/128 [00:02<00:02, 28.15it/s][A
+theta/delta scan:  53%|█████▎    | 68/128 [00:02<00:02, 27.45it/s][A
+theta/delta scan:  55%|█████▌    | 71/128 [00:02<00:02, 27.03it/s][A
+theta/delta scan:  58%|█████▊    | 74/128 [00:02<00:02, 26.31it/s][A
+theta/delta scan:  60%|██████    | 77/128 [00:02<00:01, 25.90it/s][A
+theta/delta scan:  62%|██████▎   | 80/128 [00:02<00:01, 26.21it/s][A
+theta/delta scan:  65%|██████▍   | 83/128 [00:02<00:01, 26.62it/s][A
+theta/delta scan:  67%|██████▋   | 86/128 [00:02<00:01, 26.60it/s][A
+theta/delta scan:  70%|██████▉   | 89/128 [00:02<00:01, 26.45it/s][A
+theta/delta scan:  72%|███████▏  | 92/128 [00:03<00:01, 26.35it/s][A
+theta/delta scan:  74%|███████▍  | 95/128 [00:03<00:01, 26.51it/s][A
+theta/delta scan:  77%|███████▋  | 99/128 [00:03<00:01, 28.06it/s][A
+theta/delta scan:  80%|███████▉  | 102/128 [00:03<00:00, 26.76it/s][A
+theta/delta scan:  82%|████████▏ | 105/128 [00:03<00:01, 17.42it/s][A
+theta/delta scan:  84%|████████▍ | 108/128 [00:04<00:02,  9.94it/s][A
+theta/delta scan:  86%|████████▌ | 110/128 [00:04<00:01,  9.32it/s][A
+theta/delta scan:  88%|████████▊ | 112/128 [00:04<00:01, 10.11it/s][A
+theta/delta scan:  89%|████████▉ | 114/128 [00:04<00:01, 11.47it/s][A
+theta/delta scan:  91%|█████████▏| 117/128 [00:05<00:00, 13.09it/s][A
+theta/delta scan:  93%|█████████▎| 119/128 [00:05<00:00, 13.90it/s][A
+theta/delta scan:  95%|█████████▍| 121/128 [00:05<00:00, 14.72it/s][A
+theta/delta scan:  96%|█████████▌| 123/128 [00:05<00:00, 15.34it/s][A
+theta/delta scan:  98%|█████████▊| 125/128 [00:05<00:00, 14.99it/s][A
+theta/delta scan: 100%|██████████| 128/128 [00:05<00:00, 17.10it/s][A
+                                                                   [ACicero_09172014: 48 laps, 295 s running, 63 units (38 theta-locked), 20 place fields (12 precessing)
+sessions:  80%|████████  | 4/5 [01:35<00:25, 25.53s/it]
+theta/delta scan:   0%|          | 0/128 [00:00<?, ?it/s][A
+theta/delta scan:   2%|▏         | 3/128 [00:00<00:04, 27.54it/s][A
+theta/delta scan:   5%|▍         | 6/128 [00:00<00:04, 24.84it/s][A
+theta/delta scan:   7%|▋         | 9/128 [00:00<00:05, 22.50it/s][A
+theta/delta scan:   9%|▉         | 12/128 [00:00<00:05, 22.71it/s][A
+theta/delta scan:  12%|█▏        | 15/128 [00:00<00:04, 22.80it/s][A
+theta/delta scan:  14%|█▍        | 18/128 [00:00<00:04, 22.65it/s][A
+theta/delta scan:  16%|█▋        | 21/128 [00:00<00:04, 22.83it/s][A
+theta/delta scan:  19%|█▉        | 24/128 [00:01<00:04, 22.73it/s][A
+theta/delta scan:  21%|██        | 27/128 [00:01<00:04, 23.00it/s][A
+theta/delta scan:  23%|██▎       | 30/128 [00:01<00:04, 22.87it/s][A
+theta/delta scan:  26%|██▌       | 33/128 [00:01<00:04, 21.81it/s][A
+theta/delta scan:  28%|██▊       | 36/128 [00:01<00:04, 21.25it/s][A
+theta/delta scan:  30%|███       | 39/128 [00:01<00:04, 19.56it/s][A
+theta/delta scan:  33%|███▎      | 42/128 [00:01<00:04, 19.66it/s][A
+theta/delta scan:  35%|███▌      | 45/128 [00:02<00:04, 19.57it/s][A
+theta/delta scan:  38%|███▊      | 48/128 [00:02<00:03, 20.86it/s][A
+theta/delta scan:  40%|███▉      | 51/128 [00:02<00:03, 19.97it/s][A
+theta/delta scan:  42%|████▏     | 54/128 [00:02<00:03, 19.26it/s][A
+theta/delta scan:  44%|████▍     | 56/128 [00:02<00:03, 18.89it/s][A
+theta/delta scan:  45%|████▌     | 58/128 [00:02<00:03, 18.93it/s][A
+theta/delta scan:  48%|████▊     | 61/128 [00:02<00:03, 20.88it/s][A
+theta/delta scan:  50%|█████     | 64/128 [00:03<00:02, 21.48it/s][A
+theta/delta scan:  52%|█████▏    | 67/128 [00:03<00:02, 22.79it/s][A
+theta/delta scan:  55%|█████▍    | 70/128 [00:03<00:02, 23.73it/s][A
+theta/delta scan:  57%|█████▋    | 73/128 [00:03<00:02, 21.90it/s][A
+theta/delta scan:  59%|█████▉    | 76/128 [00:03<00:02, 21.58it/s][A
+theta/delta scan:  62%|██████▏   | 79/128 [00:03<00:02, 22.47it/s][A
+theta/delta scan:  64%|██████▍   | 82/128 [00:03<00:02, 22.00it/s][A
+theta/delta scan:  66%|██████▋   | 85/128 [00:03<00:01, 21.79it/s][A
+theta/delta scan:  69%|██████▉   | 88/128 [00:04<00:01, 23.20it/s][A
+theta/delta scan:  71%|███████   | 91/128 [00:04<00:01, 23.87it/s][A
+theta/delta scan:  73%|███████▎  | 94/128 [00:04<00:01, 24.82it/s][A
+theta/delta scan:  77%|███████▋  | 98/128 [00:04<00:01, 26.73it/s][A
+theta/delta scan:  80%|███████▉  | 102/128 [00:04<00:00, 28.24it/s][A
+theta/delta scan:  83%|████████▎ | 106/128 [00:04<00:00, 29.52it/s][A
+theta/delta scan:  86%|████████▌ | 110/128 [00:04<00:00, 31.75it/s][A
+theta/delta scan:  89%|████████▉ | 114/128 [00:04<00:00, 33.28it/s][A
+theta/delta scan:  92%|█████████▏| 118/128 [00:05<00:00, 33.10it/s][A
+theta/delta scan:  95%|█████████▌| 122/128 [00:05<00:00, 31.02it/s][A
+theta/delta scan:  98%|█████████▊| 126/128 [00:05<00:00, 26.63it/s][A
+                                                                   [AGatsby_08022013: 83 laps, 289 s running, 57 units (43 theta-locked), 23 place fields (17 precessing)
+sessions: 100%|██████████| 5/5 [01:56<00:00, 23.90s/it]sessions: 100%|██████████| 5/5 [01:56<00:00, 23.23s/it]
+          session  track_len_m  theta_ch  theta_freq_Hz  laps  run_time_s  units  units_tested  theta_locked_p01  place_fields  precessing_p05  median_slope
+Achilles_10252013          1.6       117           9.34    83       205.2    137           117                81            78              63        -0.630
+   Buddy_06272013          1.6        81           8.57    53       130.9     68            44                32            14              10        -0.420
+  Cicero_09012014          1.6        21           7.93    84       365.4     73            65                39            20              14        -0.420
+  Cicero_09172014          2.0        52           8.01    48       295.3     72            63                38            20              12        -0.325
+  Gatsby_08022013          1.6        42           8.13    83       288.8     80            57                43            23              17        -0.570
+Units tested:            346
+Theta-locked (p < 0.01): 233 (67%)
+  excitatory   156/266 locked, median MRL 0.152
+  inhibitory   77/80 locked, median MRL 0.213
+
+Place fields:            155
+Significant precession:  116 (75%)
+Negative slope:          86% of all fields, 93% of significant ones
+Median slope:            -0.54 theta cycles per field (-194° across the field)
+Median |rho|:            observed 0.255 vs shuffled 0.052
+MRL inhibitory > excitatory: Mann-Whitney U = 13419, p = 1.99e-04
+Precession slopes < 0:       Wilcoxon W = 1568, p = 6.31e-16

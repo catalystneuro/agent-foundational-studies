@@ -1,0 +1,32 @@
+{
+  "dandiset": "000021",
+  "subject_session": "6 sessions: sub-699733573/ses-715093703 (example), sub-703279277/ses-719161530, sub-707296975/ses-721123822, sub-716813540/ses-739448407, sub-717038285/ses-732592105, sub-718643564/ses-737581020",
+  "headline_stat": {
+    "name": "fraction of QC-passing visual cortical units orientation-selective (633/1196; 84% of the 758 ANOVA-direction-modulated subset); median ratio-based OSI in VISp = 0.457, median gOSI = 0.240",
+    "value": 0.53,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Firing rates are computed over the whole presentation without baseline subtraction, so units with a purely transient onset response are under-weighted. Running speed modulates visual cortical gain in mice and is not regressed out; because running bouts are not locked to grating direction this adds trial to trial variance rather than creating apparent orientation tuning, but it does depress the measured selectivity of some units. The permutation test on gOSI establishes that a unit's response depends on the stimulus, not specifically that orientation rather than direction is the relevant variable, which is why the opposite-versus-orthogonal comparison and the drifting-versus-static cross-check are reported alongside it.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 Allen Visual Coding Neuropixels with drifting and static gratings in VISp plus five higher visual areas is the canonical choice for orientation selectivity, and six sessions with 1196 QC-passing units give ample power.",
+    "handling": "Sessions are streamed over HTTP with remfile rather than downloaded or simulated, units are assigned to areas via the peak channel of the electrode table, quality criteria are explicit (quality=good, SNR>1, ISI violations<0.5, presence ratio>0.9, amplitude cutoff<0.1, rate>0.5 Hz), trials come from the NWB stimulus interval tables with blank sweeps used as baseline, and the drifting/static orientation convention was checked empirically rather than assumed.",
+    "analysis": "Circular vector-strength indices at the correct harmonics, a 500-permutation trial-shuffled null for gOSI, split-half reliability, a cross-stimulus generalization test against a unit-shuffled control, a fourth-harmonic Rayleigh test for the cardinal bias, and a cross-validated Poisson GLM together form an unusually complete control set; the only real gaps are the absence of multiplicity correction across 1196 units at p<0.01 (expected false positives are ~2% of the 633 claimed) and the fact that the gOSI permutation test conditions on already-direction-modulated units, which the write-up itself names.",
+    "correctness": "Every headline number reproduces exactly from the committed CSVs and the stored notebook output, the figures agree with the text (aligned-curve values 1.00/0.17/0.68 match fig06), and the prereg-comparable quantities (0.53 of QC units selective, median OSI 0.457 in V1) fall inside the reference ranges; the 84% figure is above 0.75 only because its denominator is the stricter ANOVA-modulated subset rather than 'visually responsive'.",
+    "figures": "All eight figures are readable with labeled axes, units and sample sizes; fig02's example is the highest-gOSI well-driven V1 unit and is described as such, fig03 deliberately spans the full selectivity range including clearly untuned units, and fig05/fig06/fig08 give the population summary, the observed-versus-null comparison and both validations.",
+    "honesty": "No claim I checked is contradicted or unsupported, the caveats section names concrete limitations specific to this analysis, including the crucial admission that the gOSI permutation test does not by itself separate orientation from direction, which is why the opposite-versus-orthogonal and cross-stimulus tests are reported; unmentioned minor issues (no FDR correction, peak-alignment bias in the aligned population curve) do not affect the conclusion.",
+    "verdict": "This is work I would take and move on from: canonical dataset, correctly streamed real data, correct circular statistics with proper nulls, an independent cross-stimulus validation, figures that show the effect plainly, and numbers that reproduce from the committed artifacts."
+  }
+}

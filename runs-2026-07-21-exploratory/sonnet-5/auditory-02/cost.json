@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 923888,
+  "duration_api_ms": 563643,
+  "ttft_ms": 3506,
+  "ttft_stream_ms": 2378,
+  "time_to_request_ms": 17,
+  "num_turns": 80,
+  "result": "Analysis complete. Summary:\n\n**Dataset**: DANDI:000986 — Neuropixels recordings from mouse auditory cortex during passive pure-tone presentation (2–32 kHz, 5 mice, 15 sessions), streamed via `remfile` with disk caching.\n\n**Method**: For each unit/trial, evoked rate = post-tone rate (80 ms) minus pre-tone baseline rate (80 ms); tuning curves built by averaging evoked rate per frequency; one-way ANOVA tests significance of frequency dependence.\n\n**Result**: 1222/1564 units (78%) across all 5 mice show significant frequency tuning (p<0.01), with classic bell-shaped tuning curves in log-frequency space, and the tuned population collectively tiles the full 2–32 kHz range (block-diagonal structure when sorted by best frequency). The effect is consistent across every individual session (52–96% tuned fraction), not driven by outliers.\n\nDeliverables in this directory:\n- `auditory_frequency_tuning.py` — consolidated jupytext script (runs end-to-end, ~2m45s from a cold cache)\n- `auditory_frequency_tuning.ipynb` — executed notebook with inline outputs\n- `fig01`–`fig06` — raw data overview, PSTH/window justification, example tuning curves, frequency-sorted raster, single-session and pooled population summaries\n- `README.md`",
+  "stop_reason": "end_turn",
+  "session_id": "e9bb29cb-6b79-456d-b367-95a5074dcce7",
+  "total_cost_usd": 3.3522538999999996,
+  "usage": {
+    "input_tokens": 130,
+    "cache_creation_input_tokens": 125386,
+    "cache_read_input_tokens": 6542703,
+    "output_tokens": 42394,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 125386,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 480,
+        "cache_read_input_tokens": 148781,
+        "cache_creation_input_tokens": 152,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 152
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 732,
+      "outputTokens": 19,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.000827,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-5": {
+      "inputTokens": 130,
+      "outputTokens": 42394,
+      "cacheReadInputTokens": 6542703,
+      "cacheCreationInputTokens": 125386,
+      "webSearchRequests": 0,
+      "costUSD": 3.3514268999999994,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "3595dccb-3202-47dc-a4fa-3baf8867681c"
+}

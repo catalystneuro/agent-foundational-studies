@@ -1,0 +1,31 @@
+{
+  "dandiset": "000128",
+  "subject_session": "sub-Jenkins, ses-full desc-train (asset 26e85f09-39b7-480f-b337-278a8f034007); replication in 000129 sub-Indy desc-train",
+  "headline_stat": {
+    "name": "Fraction of M1/PMd units significantly directionally tuned during movement",
+    "value": 0.84,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 3,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Two honest caveats. Single-unit R\u00b2 for the continuous velocity model is small (median 0.02) because restricting the analysis to movement bins removes the largest source of rate variance, the difference between rest and movement; and per-unit optimal lags are broadly distributed even though the population estimate is sharp, so 80 ms is a population property rather than a per-neuron one. Also, although the MC_Maze electrode table lists 96 PMd and 96 M1 channels, all 182 units index into the first 96 rows, so the array of origin cannot be recovered from the file. No M1-versus-PMd comparison is attempted anywhere in this analysis.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000128 MC_Maze (Jenkins, M1/PMd Utah arrays, delayed reaching) is the canonical choice for reach direction tuning, the barrier-free-trial subselection is exactly right for defining unambiguous reach directions, and 000129 MC_RTT adds a second animal and task.",
+    "handling": "Real data streamed with remfile, trials aligned to move_onset_time with a separate pre-go delay window, gapped kinematics handled by explicit contiguous-epoch construction so nothing is interpolated across trial boundaries, unit inclusion is explicit (>=300 spikes during movement), and the unrecoverable unit-to-array mapping is detected in code rather than assumed.",
+    "analysis": "Cosine fits with a 1000-fold permutation null, circular statistics throughout, split-half PD reliability, cross-validated nested Poisson GLMs with trial-block folds and a replication dataset are all appropriate, but the near/away PD split for the speed-gain claim reuses the PD estimated from the same bins, there is no multiple-comparison correction across 182 units, no CI on the 80 ms lag, and the fig04 chance level is computed wrongly (50% where uniform difference gives 25%).",
+    "correctness": "Every headline number reproduces exactly from the committed notebook output and 84% (movement) and 58% (delay) both fall inside the preregistered ranges, with minor reporting problems: the mislabeled chance level and the description of a declining depth-vs-speed curve as saturating.",
+    "figures": "Nine figures with labeled units, sample sizes in titles, raw-data validation panels, and both example units and population summaries; the direction-dependent speed gain in fig06 is unmistakable, but fig05 has colliding axis labels and fig04 carries the wrong chance annotation.",
+    "honesty": "The write-up names specific, result-level limitations (small single-unit R\u00b2 and why, broadly spread per-unit lags, the unrecoverable array assignment and its refusal to make a bogus M1/PMd comparison) and reports its tiny pseudo-R\u00b2 values plainly, but 'Every effect reproduces in MC_RTT' omits the weaker 59/87 per-unit consistency there and 'saturates above roughly 500 mm/s' softens a decline the figure actually shows."
+  }
+}

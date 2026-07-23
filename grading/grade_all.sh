@@ -13,15 +13,18 @@ complete() { [ -s "$1" ] && jq -e -s 'map(select(.type=="result" and .subtype=="
 
 # A run dir is any directory containing transcript.jsonl. Grade only genuine successes
 # that are not already graded.
-mapfile -t runs < <(find "$root" -name transcript.jsonl -not -path '*/cache/*' -print | while read -r t; do
+# bash 3.2 (macOS default) has no mapfile; write the worklist to a temp file.
+worklist="$(mktemp)"
+find "$root" -name transcript.jsonl -not -path '*/cache/*' -print | while read -r t; do
   d="$(dirname "$t")"
   complete "$t" || continue
   [ -f "$d/grade.json" ] && continue
   echo "$d"
-done)
+done > "$worklist"
 
-echo "grading ${#runs[@]} runs with judge=$judge at concurrency=$N"
-printf '%s\n' "${runs[@]}" | xargs -P "$N" -I{} bash "$GRADING_DIR/grade_run.sh" {} "$judge"
+echo "grading $(wc -l < "$worklist" | tr -d ' ') runs with judge=$judge at concurrency=$N"
+xargs -P "$N" -I{} bash "$GRADING_DIR/grade_run.sh" {} "$judge" < "$worklist"
+rm -f "$worklist"
 
 # Collect into grades.csv
 out="$root/grades.csv"

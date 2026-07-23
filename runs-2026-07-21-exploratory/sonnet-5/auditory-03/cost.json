@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 588938,
+  "duration_api_ms": 426492,
+  "ttft_ms": 2245,
+  "ttft_stream_ms": 1164,
+  "time_to_request_ms": 20,
+  "num_turns": 54,
+  "result": "The analysis is complete. Summary:\n\n**Dataset:** DANDI:000986 — mouse auditory cortex Neuropixels recordings during passive pure-tone exposure (2-32 kHz, 15 sessions, 5 mice), streamed via `remfile` with disk caching (no full downloads).\n\n**Analysis:** Computed evoked (100 ms post-tone) vs. baseline (100 ms pre-tone) firing rates per unit per frequency using vectorized spike-time lookups, then tested frequency selectivity with one-way ANOVA. Prototyped on one session, then scaled to all 15 sessions (cheap since only spike times/trial tables stream, not raw ephys).\n\n**Key finding:** 85.6% of 1564 units across the dataset show statistically significant frequency tuning (p<0.01), with best frequencies spanning the full 2-32 kHz range and a population tuning curve (aligned to each unit's own best frequency) showing the classic symmetric band-pass fall-off over ±2 octaves.\n\n**Outputs in the working directory:**\n- `auditory_frequency_tuning.py` (jupytext source) and `.ipynb` (executed, no errors)\n- 5 figures: raw data overview, example PSTHs/rasters, example tuning curves, single-session population heatmap, and cross-session population summary\n- `README.md` summarizing dataset and findings",
+  "stop_reason": "end_turn",
+  "session_id": "b611b714-0469-49c4-ba25-ae6505a6abef",
+  "total_cost_usd": 2.2558615,
+  "usage": {
+    "input_tokens": 78,
+    "cache_creation_input_tokens": 111156,
+    "cache_read_input_tokens": 3416265,
+    "output_tokens": 37532,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 111156,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 464,
+        "cache_read_input_tokens": 133051,
+        "cache_creation_input_tokens": 1652,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1652
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 732,
+      "outputTokens": 20,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0008320000000000001,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-5": {
+      "inputTokens": 78,
+      "outputTokens": 37532,
+      "cacheReadInputTokens": 3416265,
+      "cacheCreationInputTokens": 111156,
+      "webSearchRequests": 0,
+      "costUSD": 2.2550294999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "e5adce64-4f87-4114-8774-9ba3bfd5cd99"
+}

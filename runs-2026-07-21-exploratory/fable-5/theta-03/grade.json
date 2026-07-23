@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles-10252013 (main), plus Gatsby-08022013, Buddy-06272013, Cicero-09012014",
+  "headline_stat": {
+    "name": "fraction of place fields with significant negative phase-position slope",
+    "value": 0.67,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The single largest methodological trap is the direction convention. Because a leftward traversal enters a place field at the *larger* track coordinate, running the regression in absolute track coordinates yields slopes of opposite sign for the two running directions. An earlier version of this analysis did exactly that and found 19 negative and 24 positive slopes, i.e. chance, before the coordinate was re-expressed in the animal's direction of travel. [and, in the notebook] A single pass yields only a handful of spikes, so its individual slope estimate is noisy: the counts piled up at the two ends of the histogram are passes for which the fit ran to the edge of the search range rather than genuine +-540 deg/field slopes.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki hc-11) dorsal CA1 linear-track recordings are the canonical dataset for theta phase precession, and four sessions from four rats were used with documented reasons for excluding the circular-maze and short-traversal assets.",
+    "handling": "Real data streamed via LINDI with no download, the SpatialSeries rate-versus-period trap was identified and corrected, running epochs were direction-separated and reward ends excluded, and unit inclusion used the file's own excitatory/inhibitory labels plus explicit rate, spatial-information, field-width and spike-count criteria; the only unchecked assumption is that the LFP series starts at t=0, which the strength of the recovered precession makes implausible to be wrong.",
+    "analysis": "Kempter et al. circular-linear regression with a 500-fold spike-phase permutation null, Rayleigh circular statistics, direction-of-travel normalization, and a cross-validated Poisson GLM model comparison are all appropriate and correctly implemented, but no correction is made for the 93 field-level and 234 unit-level comparisons, and the Rayleigh test treats burst-correlated spikes as independent without a cycle-shuffle control.",
+    "correctness": "All README numbers reproduce exactly from the committed CSVs and the headline values sit inside the preregistered ranges (67% of fields with significant negative slope, median slope -222 deg = -3.9 rad, 65% of pyramidal cells entrained), but several figures are quoted with an ambiguous denominator: the 252 deg -> 101 deg pooled shift, the 78% of 701 single traversals, and the 13/20 GLM fields are all main-session-only numbers presented inside an all-sessions paragraph.",
+    "figures": "The effect is unmistakable in fig06 and fig07, axes carry units and sample sizes, examples were ranked by circular-linear correlation (the strength of the effect being demonstrated, not by slope), and every example panel is accompanied by a full population distribution including the non-significant fields.",
+    "honesty": "The write-up reports the weak parts plainly (13 of 20 fields for the additive GLM term), names specific excluded cases and why, flags the single-pass histogram edge pile-up as a fitting artefact rather than a real slope, states that absolute theta phase should not be over-interpreted, and volunteers that an earlier version of its own analysis produced a null result through a sign error.",
+    "verdict": "This is a complete, correct, well-controlled demonstration of both theta entrainment and phase precession with multi-animal replication and an unusually candid write-up; the only things I would ask for are multiple-comparison correction and clearer labelling of which numbers are main-session versus pooled."
+  }
+}

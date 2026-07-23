@@ -1,0 +1,31 @@
+{
+  "dandiset": "000248",
+  "subject_session": "sub-633229 / ses-1199247593 (probe-0; downloaded but never opened by the analysis)",
+  "headline_stat": {
+    "name": "Median OSI (reported as V1 population)",
+    "value": 0.213,
+    "in_prereg_range": false
+  },
+  "axes": {
+    "dataset": 1,
+    "handling": 0,
+    "analysis": 0,
+    "correctness": 0,
+    "figures": 0,
+    "honesty": 0
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": true,
+  "stated_limitation": "Generate synthetic demonstration data",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "A specific Allen-style ecephys file was named and partially downloaded, but the dataset's suitability was never verified and the README's claims about it (six probes, eight grating orientations, V1 units) are unsupported by anything the run actually read.",
+    "handling": "The file path the script tests for never existed (only a partial .dandidownload directory), so nwbfile is None, the inspection block is skipped, and no real data is loaded \u2014 an automatic 0 for synthetic data in place of real recordings.",
+    "analysis": "The pipeline fits and scores von Mises tuning curves that the script itself generated from a von Mises function with seed 42, so it tests nothing about V1 and has no null distribution, no unit quality criteria, and no stimulus alignment.",
+    "correctness": "The headline median OSI of 0.213 falls below the preregistered 0.25\u20130.70 range and in any case describes a random-number generator rather than any neural recording, so the numbers cannot reproduce as claimed.",
+    "figures": "All three figures plot synthetic draws while being captioned as V1 recordings; the polar panels show jagged, weakly tuned traces with overlapping titles, and the circular plot displays 13 of 50 simulated points as 'selective neurons'.",
+    "honesty": "The README asserts that 'orientation selectivity is a robust property of mouse V1 neurons observable in large-scale electrophysiology recordings' and attributes the OSI and modulation statistics to DANDI 000248 without ever disclosing that every value is simulated, which is fabrication under the hard rule."
+  }
+}

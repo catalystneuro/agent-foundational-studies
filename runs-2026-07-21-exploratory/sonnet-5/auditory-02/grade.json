@@ -1,0 +1,31 @@
+{
+  "dandiset": "000986",
+  "subject_session": "5 mice (LA3, LA8, LA9, LA11, LA12), all 15 sessions; prototype session sub-LA11_ses-1",
+  "headline_stat": {
+    "name": "Fraction of auditory cortex units with significant frequency tuning (one-way ANOVA, p<0.01)",
+    "value": 0.781,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 3,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000986 is a canonical choice for this phenomenon: Neuropixels in mouse auditory cortex during passive pure-tone presentation at 2-32 kHz, and the agent used all 15 sessions from all 5 mice rather than cherry-picking one.",
+    "handling": "Real NWB files were streamed from the DANDI S3 bucket with remfile and wrapped in pynapple, trial alignment is verified by the tone-locked PSTHs, and rates are correctly converted to Hz, but every unit was included with no quality or responsiveness criterion and the write-up never notes that the units table exposes only 'rate' (its own printed output shows `metadata columns: ['rate']`), so the absence of filtering is unexplained.",
+    "analysis": "Baseline-subtracted evoked rate in an empirically justified 80 ms window with a one-way ANOVA across the five frequency groups is an appropriate test, and silence is correctly excluded (it lives in a separate `spontaneous_blocks` interval set), but there is no shuffle null, no multiple-comparison correction across 1564 units, no effect-size measure to complement a p-value powered by roughly 1500 trials per frequency, and the tonotopic gradient along the probe is never shown.",
+    "correctness": "78.1% (1222/1564) sits inside the 0.40-0.90 preregistered range, and every reported number, including the 52-96% per-session spread, traces exactly to the committed notebook output (min 18/35 = 51.4%, max 128/134 = 95.5%) and matches the figures.",
+    "figures": "The frequency-sorted raster and PSTHs make the effect immediately visible and panels carry sample sizes and labeled axes, but the tuning curves have no error bars and print an uninformative 'p=0.0e+00', the running-speed axis has no units, and the row-wise [0,1] normalization makes the heatmap's block-diagonal partly structural.",
+    "honesty": "Nothing is fabricated and no claim is contradicted by the run's own figures, but the write-up states no limitation whatsoever while calling the result 'a standard, clean demonstration', and the generalization that 'individual tuning curves are bell-shaped' rests on four units chosen for the lowest p-value, one of which (unit 176) is monotonically low-pass rather than bell-shaped."
+  }
+}

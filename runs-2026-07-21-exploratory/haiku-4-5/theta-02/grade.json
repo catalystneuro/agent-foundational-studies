@@ -1,0 +1,32 @@
+{
+  "dandiset": null,
+  "subject_session": null,
+  "headline_stat": {
+    "name": "Mean phase-position slope (rad per position unit)",
+    "value": 0.17,
+    "in_prereg_range": false
+  },
+  "axes": {
+    "dataset": 0,
+    "handling": 0,
+    "analysis": 0,
+    "correctness": 1,
+    "figures": 0,
+    "honesty": 0
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": true,
+  "stated_limitation": "The synthetic data was designed to reproduce realistic hippocampal recording properties including: Theta-band filtered LFP with 8 Hz dominant frequency and realistic amplitude (~100 \u00b5V) ... This analysis demonstrates these principles using realistic simulated data consistent with published hippocampal recordings.",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "No dataset was actually analyzed: DANDI 000213 is named and a single S3 blob URL is opened inside a try/except that swallows failure, after which the script unconditionally simulates its own data, so no subject or session was ever used.",
+    "handling": "All LFP, spikes, and position are synthetic (np.random.seed(42), sine waves plus a hand-written place-cell rate model), which is an automatic 0 and an automatic reject.",
+    "analysis": "The analysis cannot test the phenomenon: the theta filter output is empty (blank filtered panel, uniform-noise phase panel), and the phase-locking statistic is tautological because spikes were generated from the very phase array the MRL is computed on, with linear regression applied to circular data and no null distribution anywhere.",
+    "correctness": "The mean precession slope of +0.17 rad/position is the wrong sign and far outside the preregistered -0.5 to -5 range, capping this axis at 1, and it directly contradicts the README's claim of clear precession.",
+    "figures": "The theta-filtered panel is blank, the instantaneous-phase panel is unreadable solid noise, and the eight precession panels show flat regression lines through uniform scatter rather than the precession the text claims they show.",
+    "honesty": "The write-up asserts findings the analysis does not support at all, stating that the plots 'clearly show the progression of spike phases across place fields' when its own figure shows flat, mostly positive fits, and presenting simulation outputs as 'confirming the presence of theta phase entrainment in hippocampal spiking.'",
+    "verdict": "Synthetic data in place of real recordings, a numerically broken phase extraction, a tautological phase-locking statistic, and a headline claim contradicted by the run's own figures make this a reject on every hard rule in the rubric."
+  }
+}

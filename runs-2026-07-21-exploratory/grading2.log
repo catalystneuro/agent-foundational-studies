@@ -1,0 +1,16 @@
+grading 14 runs with judge=claude-opus-4-8 at concurrency=8
+graded reach-02: verdict=accept pass=True axes=[4, 4, 4, 4, 4, 4]
+graded theta-02: verdict=accept pass=True axes=[4, 4, 4, 3, 4, 4]
+graded theta-03: verdict=accept pass=True axes=[4, 4, 3, 3, 4, 4]
+graded reach-03: verdict=accept pass=True axes=[4, 4, 3, 3, 3, 3]
+graded auditory-03: verdict=accept pass=True axes=[4, 3, 4, 4, 4, 4]
+graded auditory-03: verdict=accept pass=True axes=[4, 3, 4, 4, 4, 4]
+graded auditory-02: verdict=accept pass=True axes=[4, 4, 4, 4, 4, 3]
+graded reach-02: verdict=accept pass=True axes=[4, 4, 3, 4, 3, 3]
+graded auditory-02: verdict=accept pass=True axes=[4, 4, 4, 3, 4, 4]
+graded orientation-03: verdict=accept pass=True axes=[4, 4, 4, 3, 4, 4]
+graded orientation-02: verdict=accept pass=True axes=[4, 4, 4, 4, 4, 4]
+graded theta-03: verdict=accept pass=True axes=[4, 4, 4, 4, 4, 4]
+graded theta-02: verdict=accept pass=True axes=[4, 4, 4, 4, 4, 4]
+graded reach-03: verdict=accept pass=True axes=[4, 4, 3, 4, 4, 4]
+wrote /Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/grades.csv (45 graded)

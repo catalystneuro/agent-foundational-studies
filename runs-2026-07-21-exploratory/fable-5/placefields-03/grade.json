@@ -1,0 +1,31 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles / Achilles_10252013 as example; pooled over 5 linear-track sessions (Achilles_10252013, Buddy_06272013, Cicero_09012014, Cicero_09172014, Gatsby_08022013) from 4 rats",
+  "headline_stat": {
+    "name": "Fraction of CA1 pyramidal cells classified as place cells (pooled)",
+    "value": 0.67,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Because the linearization used here assumes a straight track, the analysis is scoped to the five linear-track sessions, which together contribute 348 pyramidal cells and 82 interneurons.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki dorsal CA1, freely moving rats on a linear track) is the canonical choice for place cells, and the run uses five linear-track sessions across four rats rather than a single recording.",
+    "handling": "Data are streamed from the archive with LINDI, the SpatialSeries `rate`-as-period defect is diagnosed and corrected with an independent check (corrected last sample lands one frame before the maze-epoch end; reconstructed linearization matches the file's own at r = 1.0000), and unit inclusion (excitatory cell_type label, >=50 spikes, >=1 Hz peak, 10 cm/s speed gate, direction-split laps) is explicit.",
+    "analysis": "Skaggs information tested against a per-unit circular-shift null, plus odd/even-lap stability, held-out Bayesian decoding trained on interleaved laps, and a Poisson GLM separating position from speed; the only gap is no explicit multiple-comparison correction on the shuffle test, which the conjunctive stability and rate criteria largely absorb.",
+    "correctness": "67 % place cells pooled and median 0.79 bits/spike both sit inside the preregistered ranges, and every README number reproduces exactly in the executed notebook cells and session_summary.csv.",
+    "figures": "All seven figures are legible with labelled units and stated sample sizes, the population sort produces the classic diagonal with an unstructured leftward control, and example cells are picked among significant place cells spread across track positions rather than ranked to flatter the effect.",
+    "honesty": "No claim is contradicted by the figures and per-session variability (52-81 %) is reported openly, but the write-up offers no limitations section for the result itself: the median pyramidal SI (0.786) sits essentially at the 95th percentile of the pooled null (0.833), and the interneuron comparison in bits/spike is rate-confounded, neither of which is acknowledged."
+  }
+}

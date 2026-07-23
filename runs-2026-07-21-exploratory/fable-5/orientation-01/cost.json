@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 3563015,
+  "duration_api_ms": 1619050,
+  "ttft_ms": 5466,
+  "ttft_stream_ms": 5465,
+  "time_to_request_ms": 14,
+  "num_turns": 123,
+  "result": "Done. Here's what happened.\n\n## Result\n\nOrientation selectivity is demonstrated cleanly in **DANDI:000021** (Allen Institute Visual Coding, Neuropixels), using six sessions and 3,142 quality-controlled units. Among visually responsive cortical neurons, **73.6% have a significant orientation preference** on drifting gratings and 87.9% on static gratings, with a median tuning half-width of 37°. The same measurement on **hippocampal** units recorded on the same probes in the same sessions returns **6.2%**, essentially the 5% false-positive rate the permutation test is designed to produce. Visual thalamus sits in between at 36.6%, matching the classical picture of weak tuning in thalamic input that is sharpened in cortex.\n\nA naive-Bayes decoder reading 128 cortical units identifies which of 8 grating directions was shown on a **single 2-second trial 72% of the time** (chance 12.5%), while the same decoder on hippocampal populations stays flat at chance. A neuron's preferred orientation is the same whether measured with 2 s drifting gratings or 0.25 s static gratings (median difference 15° against a chance value of 45°).\n\n## Two real bugs I found and fixed\n\nThe directory already contained a partially-complete pipeline from an interrupted earlier session, so I audited it rather than trusting it. Two defects would have corrupted the conclusions:\n\n**The cached response data was stale and misaligned.** `responses.pkl` was written at 10:22, but the loader was fixed at 10:23–10:24 to reorder unit metadata onto pynapple's sorted `TsGroup` ordering. The cached metadata rows therefore followed raw file order while the firing-rate matrix columns followed sorted order, so brain-area labels were scrambled across units. I re-ran extraction with the corrected loader and verified alignment across all six sessions.\n\n**The GLM's pseudo-R² was meaningless.** The Poisson log-likelihood dropped the `log(k!)` term. That term cancels in a likelihood *difference* but not in McFadden's *ratio*, and without it the log-likelihood goes positive for any unit firing more than about one spike per trial. Medians were negative and values ranged from −36 to +88. With the term restored, the model comparison is orderly: 0.034 for temporal frequency alone, 0.169 for direction plus temporal frequency.\n\nI also found and fixed a statistical circularity of my own diagnosis: responsiveness was being tested using each unit's *best* direction, which pre-selects for the very orientation contrast the selectivity test then measures. Pooling over all directions dropped the hippocampal false-positive rate from 17% to 6.2%.\n\n## Honest caveats, stated in the outputs\n\nTuning widths are fit to only 8 directions spaced 45° apart, so widths below ~20° aren't resolvable; I added a rejection rule for fits that extrapolate a peak taller than anything measured (this moved the median from an implausible 26° to 37°). The hippocampal control is *not* clean for static gratings: 19% (13 of 69 units) rather than 5%. I tested block-shuffled and circular-shift nulls to see whether firing-rate nonstationarity explained it; neither did. The effect size is negligible regardless (median z of 0.24 versus 9.78 in cortex), so the regional contrast holds, but I did not paper over it.\n\n## Deliverables in the working directory\n\n`orientation_selectivity_dandi.py` (1,594-line jupytext script, self-contained, verified to run from a completely cleared cache and reproduce every number exactly), `orientation_selectivity_dandi.ipynb` (executed, 0 errors), nine `.png` figures, and `README.md`. Every figure was visually inspected and several were revised for label collisions, an overshooting fit, and a noisy population trace whose caption overstated what it showed.",
+  "stop_reason": "end_turn",
+  "session_id": "3872cb33-5de4-46a5-9824-289a46141d9a",
+  "total_cost_usd": 14.333899999999996,
+  "usage": {
+    "input_tokens": 214,
+    "cache_creation_input_tokens": 244943,
+    "cache_read_input_tokens": 17978022,
+    "output_tokens": 115743,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 244943,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1486,
+        "cache_read_input_tokens": 264125,
+        "cache_creation_input_tokens": 809,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 809
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 734,
+      "outputTokens": 16,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0008139999999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-opus-4-8": {
+      "inputTokens": 214,
+      "outputTokens": 115743,
+      "cacheReadInputTokens": 17978022,
+      "cacheCreationInputTokens": 244943,
+      "webSearchRequests": 0,
+      "costUSD": 14.333085999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "99a86759-24d6-4923-a152-652517e658b8"
+}

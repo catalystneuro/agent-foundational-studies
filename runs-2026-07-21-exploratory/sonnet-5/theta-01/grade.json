@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles / Achilles_10252013 (MazeEpoch, 1.6 m linear track)",
+  "headline_stat": {
+    "name": "pooled circular-linear phase-position slope",
+    "value": "-0.557 cycles/field (-3.50 rad/field); theta entrainment 55% of 120 pyramidal cells",
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 2,
+    "correctness": 3,
+    "figures": 2,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "individual place cells showed variable and often statistically weak single-cell relationships (a known feature of real data with limited per-cell sampling \u2014 tens to a few hundred field-crossing spikes over 20-40 laps)",
+  "pass": true,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "DANDI 000044 (Grosmark & Buzsaki CA1, Achilles linear track) is the canonical dataset for theta entrainment and phase precession and an expert would have chosen it or an equivalent.",
+    "handling": "Real NWB streamed from S3 with remfile, correct MazeEpoch restriction, correct excitatory/inhibitory unit split, and a genuine catch that the position series' 'rate' attribute is actually a sampling interval; against that, the LFP t0 and 1250 Hz rate are hardcoded rather than read from the file, position tracking gaps are never assessed, and the 0.3-1.3 m analysis window truncates several fields at its boundary.",
+    "analysis": "Circular statistics are correctly chosen throughout (Rayleigh, Kempter circular-linear fit, a permutation null that properly refits the slope), but the pooled null shuffles individual spikes as if independent despite strong within-lap and within-cell clustering, which inflates significance in the one test the headline depends on, and the standard per-cell fraction-of-significant-fields statistic is never computed.",
+    "correctness": "Both headline values sit inside the preregistered ranges and every reported number traces to the committed code's printed output, with minor reporting problems: rho=0.137 is omitted from the README and the claim that MRLs are 'mostly in the 0.1-0.5 range' is loose given the all-cell median is ~0.105.",
+    "figures": "Figures are readable and well labeled with units and sample sizes, but they do not make the case well: the four single-cell panels are chosen by spatial information and show no visible precession (one has a positive slope), and the pooled panel is a near-uniform scatter with only a faint diagonal band and no binned circular-mean overlay that would have shown the effect.",
+    "honesty": "Nothing is misrepresented and no claim is contradicted by the figures or output, and the write-up volunteers the weak single-cell result rather than hiding it, but obvious caveats about this particular result go unmentioned, namely the tiny pooled correlation, the single session, and the fraction of fields that actually reached significance.",
+    "verdict": "The core work is sound and honestly reported, but before believing the headline I would ask for a dependence-respecting null (lap-level or circular-shift), per-cell slope and significance distributions instead of a pooled common-intercept fit, and fields not truncated by the analysis window."
+  }
+}

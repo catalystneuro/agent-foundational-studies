@@ -1,0 +1,32 @@
+{
+  "dandiset": "000070",
+  "subject_session": "unspecified; hardcoded S3 blob 2b375e1a-120d-4fc0-9d80-255712170214 (README cites subjects Jenkins/Nitschke without naming the session used)",
+  "headline_stat": {
+    "name": "Fraction of M1 units directionally tuned (DSI > 0.3)",
+    "value": 1.0,
+    "in_prereg_range": false
+  },
+  "axes": {
+    "dataset": 3,
+    "handling": 1,
+    "analysis": 0,
+    "correctness": 1,
+    "figures": 1,
+    "honesty": 0
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": false,
+  "stated_limitation": "**Speed range:** 0.05 - 178,993 mm/s (data includes some kinematic artifacts)",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000070 (Churchland/Shenoy macaque motor cortex reaching) is a standard and appropriate choice for reach direction tuning, but the run never identifies which session it used and discards the trial/target structure that makes the demonstration easy.",
+    "handling": "Data are genuinely streamed from DANDI S3, but velocity is differenced across trial discontinuities (producing a 128,000 m/s artifact visible in the figure), movement IntervalSets are built from sample indices assuming a t=0 origin rather than real timestamps, and the 25 analyzed units are simply the first 25 with no quality criteria.",
+    "analysis": "The direction-binning counts every spike between the first and last sample assigned to each bin, which spans nearly the whole session for all bins, so the computed tuning curve is just the inverse of the direction-occupancy histogram and is identical for every unit; no significance test, shuffle control, or circular statistics are present, so the analysis does not test directional tuning at all.",
+    "correctness": "The reported 25/25 units tuned (1.00) is above the preregistered 0.50-0.95 range, the value is an occupancy artifact rather than a neural measurement, and the README's numbers (50 units, 1,287 reaches, mean DSI 0.3-0.4) contradict both the code and the ANALYSIS_SUMMARY (25 units, 141 reaches, DSI 0.655).",
+    "figures": "The panels are cleanly rendered but show the opposite of what the text claims: five 'example units' overlap exactly, all preferred directions sit at 132.0\u00b0 on a degenerate axis, DSI values span 1e-5, and every heatmap row is identical.",
+    "honesty": "The write-up asserts broad preferred-direction coverage, no systematic bias, and clear per-unit directional modulation, all of which its own figure flatly contradicts, and it declares 'Direction and speed computed correctly' and 'All validation checks PASSED' while the only acknowledged problem, a 178,993 mm/s speed artifact, is dropped from every conclusion.",
+    "verdict": "The headline finding is an artifact of a broken binning procedure and the write-up claims a population code that the run's own figure disproves, so this would have to be started over."
+  }
+}

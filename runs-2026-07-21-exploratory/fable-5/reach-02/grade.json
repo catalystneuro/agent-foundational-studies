@@ -1,0 +1,31 @@
+{
+  "dandiset": "000128",
+  "subject_session": "Jenkins, MC_Maze full session (asset 26e85f09-39b7-480f-b337-278a8f034007); replication in DANDI:000129 MC_RTT, monkey Indy (asset 2ae6bf3c-788b-4ece-8c01-4b4a5680b25b)",
+  "headline_stat": {
+    "name": "Fraction of motor-cortical units significantly directionally tuned near movement onset",
+    "value": 0.82,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The unit-to-array mapping in the MC_Maze file is internally inconsistent, so no M1-versus-PMd comparison was attempted. Direction sampling in MC_Maze is uneven, which leaves two of twelve 30\u00b0 bins too sparse to use and probably contributes to the non-uniform distribution of preferred directions. The GLMs model instantaneous kinematics only and include no spike-history term, so a unit's own refractoriness and bursting are not accounted for. Finally, all of this is correlational: tuning to velocity in this sense is a statement about what firing rate predicts, not a claim that velocity is the variable the cortex explicitly represents.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000128 MC_Maze (Jenkins, delayed centre-out reaching) is the canonical dataset for reach direction tuning, and the run adds an independent replication in DANDI:000129 MC_RTT with a different monkey and task.",
+    "handling": "Both files are streamed with remfile, spikes are restricted to the stored observation intervals, kinematic units and sampling are checked explicitly, the spike-count and velocity bin grids are asserted to match, and reach direction is measured from the hand and validated against target direction (median 3.4\u00b0 discrepancy).",
+    "analysis": "Cosine fits with a trial-label permutation null for trial data, a circular-shift null for the continuous MC_RTT data, block-wise cross-validation that prevents autocorrelation leakage, nested cross-validated Poisson GLMs, and a lag scan together support the velocity claim; the only mild flaw is that the 300 ms window was chosen to maximise population modulation on the same data used for the per-unit permutation test, an undisclosed but numerically negligible circularity.",
+    "correctness": "The 82% tuned fraction and the 55% delay-period fraction both sit inside the preregistered ranges, and every number in the README reproduces verbatim in the committed notebook output with consistent denominators (all-bin R\u00b2 0.41 versus movement-bin R\u00b2 0.55 are each labelled correctly).",
+    "figures": "Figures are labelled with units and sample sizes, include a raw-data validation panel, show population distributions alongside the four example units (which are ranked by directional modulation depth, the effect actually being demonstrated), and the speed-by-relative-direction fan-out makes the velocity claim visible directly.",
+    "honesty": "Claims are proportionate throughout: the delay-to-movement PD correspondence is reported as a failure, the population-vector length/speed relation is called weak (r = 0.25), the exponential-link handicap of the linear velocity GLM is flagged, the file's inconsistent electrode-to-area mapping is disclosed and acted on, and the limitations section names the specific weaknesses of this result."
+  }
+}

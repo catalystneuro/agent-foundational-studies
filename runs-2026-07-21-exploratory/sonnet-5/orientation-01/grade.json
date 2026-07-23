@@ -1,0 +1,32 @@
+{
+  "dandiset": "000021",
+  "subject_session": "sub-699733573/ses-715093703",
+  "headline_stat": {
+    "name": "median gOSI among significantly tuned VISp units (and fraction tuned: 29/114 = 25%)",
+    "value": 0.197,
+    "in_prereg_range": false
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 2,
+    "correctness": 1,
+    "figures": 3,
+    "honesty": 2
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The example is chosen as the highest-gOSI unit *among the significantly tuned units* (ANOVA p<0.01): ranking by gOSI alone would be dominated by near-silent units, whose tuning curves are estimated from a handful of spikes and can show spuriously large (but non-significant) gOSI values.",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 Allen Visual Coding Neuropixels with drifting gratings in VISp is the canonical choice for orientation selectivity and an expert would have picked this or an equivalent.",
+    "handling": "Real data streamed from S3 with remfile, units correctly localized via peak_channel_id to the electrodes location column, blank sweeps excluded and 'good' QC applied, but no visual-responsiveness or firing-rate screen was applied even though the headline fraction depends on that denominator.",
+    "analysis": "Doubled-angle vector strength is correct circular treatment and ANOVA on per-trial rates is reasonable, but pooling all five temporal frequencies into each direction condition inflates within-group variance and deflates both metrics, and there is no baseline subtraction, no shuffle control, and no multiple-comparison correction across 114 units.",
+    "correctness": "Every reported number reproduces from the committed notebook output, but the median gOSI of 0.20 among tuned units falls below the preregistered 0.25-0.70 range, which caps this axis at 1.",
+    "figures": "Fig 2 and Fig 3 show the effect clearly with a defensible example-selection rule and Fig 1 validates alignment, but the Fig 4 heatmap's 'diagonal band' is an argmax-sorting artifact over all units rather than evidence of tiling, and the polar radial tick labels are garbled with no units on the radial axis.",
+    "honesty": "Numbers match the output and the example units are honestly chosen and justified, but the write-up offers no limitations at all, silently pools over temporal frequency, and the notebook summary calls a 25% / median-gOSI-0.20 result 'substantial' and 'strongly tuned' while resting a population claim on a sorting artifact.",
+    "verdict": "The core pipeline is sound and reproducible and the phenomenon is genuinely visible in the example units, so I would ask for specific fixes (split by temporal frequency, subtract baseline, screen for visual responsiveness, state limitations) rather than a restart, but the out-of-range headline means it does not pass."
+  }
+}

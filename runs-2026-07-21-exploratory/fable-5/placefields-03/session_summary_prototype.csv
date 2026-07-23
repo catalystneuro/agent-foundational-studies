@@ -1,0 +1,6 @@
+subject,session,maze,extent_m,laps,run_s,n_exc,n_inh,n_place,pct_place,si_med,si_inh_med,dec_err_cm,chance_cm,secs
+Achilles,Achilles_10252013,1.6m linear,1.97,84,338,120,17,100,83,0.77,0.035,4.7,56.6,5.0
+Buddy,Buddy_06272013,1.6m linear,2.58,40,238,48,20,26,54,1.14,0.037,10.4,77.7,2.2
+Cicero,Cicero_09012014,1.6m linear,2.11,78,558,55,18,36,65,0.53,0.021,10.7,66.5,4.6
+Cicero,Cicero_09172014,2m linear,2.27,57,429,59,13,35,59,0.57,0.026,10.0,67.3,3.0
+Gatsby,Gatsby_08022013,1.6m linear,2.04,82,405,66,14,38,58,0.76,0.023,6.9,62.4,2.8

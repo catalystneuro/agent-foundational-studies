@@ -1,0 +1,32 @@
+{
+  "dandiset": "000128",
+  "subject_session": "sub-Jenkins, ses-full (desc-train, 2009-09-25), sub-Jenkins_ses-full_desc-train_behavior+ecephys.nwb",
+  "headline_stat": {
+    "name": "Fraction of motor cortical units significantly direction-tuned during movement (permutation p<0.01)",
+    "value": 0.901,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 3,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "One caveat about the file: the units table maps every unit onto electrode rows 0 through 95, all of which carry the label PMd, even though the electrode table describes 96 M1 and 96 PMd contacts. That mapping cannot be used to separate the two areas, so all units are treated together as motor cortex.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000128 MC_Maze sub-Jenkins is the canonical primate reaching dataset for directional tuning, with 182 motor cortical units and 2295 trials including both straight and curved reaches.",
+    "handling": "Real data streamed with remfile from the archive, mm-to-cm conversions applied via the NWB conversion factors, spikes supported on the observation interval, movement onset taken from the trial table, and lagged/binned analyses explicitly reject sample pairs that span inter-trial gaps.",
+    "analysis": "Cosine fits with a 500-shuffle permutation null, Rayleigh and Jammalamadaka circular statistics, cross-validated nested linear and Poisson GLM comparisons, a lag scan, and a split-half control against preferred-direction circularity are all appropriate, but the population-vector decode is not cross-validated and no multiple-comparison correction is applied across the 182 per-unit tests (neither changes the direction of the result).",
+    "correctness": "The 90% tuned fraction and 0.47 median modulation depth fall inside the preregistered ranges, and every reported number matches the committed notebook output to rounding, with figures internally consistent with the text.",
+    "figures": "All seven figures are readable, labeled with units and sample sizes, and pair single-unit examples with population summaries, but the example units in figs 2, 4, and 6 are selected as the strongest cases (fig06 additionally filters to units whose rate grows with speed, a caveat stated only in a code comment).",
+    "honesty": "Nothing is misrepresented and the write-up volunteers the electrode-label problem, the still-climbing decoding curve, and an explicit split-half control against a confound it names, but it omits the obvious caveat that the 17-degree population-vector error is computed with preferred directions fit on the same trials.",
+    "verdict": "The core claim is standard, well controlled, quantitatively in range, and reproducible from the committed code, so I would take the result and move on while noting the population-vector circularity as a nit."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "dandiset": "000128",
+  "subject_session": "sub-Jenkins, ses-full (sub-Jenkins_ses-full_desc-train_behavior+ecephys.nwb), 2295 trials, 182 units",
+  "headline_stat": {
+    "name": "Fraction of M1/PMd units significantly directionally tuned during movement (permutation p<0.01, unobstructed reaches)",
+    "value": 0.83,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Everything here comes from a single session of one animal. Every unit in this NWB release points at an electrode in the 1-87 range even though the electrode table spans both arrays, so unit-level M1 versus PMd identity is not recoverable and no area comparison is made. The decoding analysis is restricted to within-reach bins with speed above 100 mm/s, an easier regime than decoding the whole session continuously. The GLMs contain no spike-history or condition-invariant terms, so their absolute pseudo-$R^2$ values understate the total explainable variance; only the relative comparison among the nested models is meant to be read.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "MC_Maze (DANDI:000128), monkey Jenkins, 182 M1/PMd units with 1 kHz hand kinematics over 2295 delayed reaches, is the canonical choice for reach-direction tuning.",
+    "handling": "Real data streamed with remfile, trial alignment verified (rate matrix 2295 x 182 matches the trial count), movement onset taken from the dataset, kinematic unit mislabeling (m vs mm) caught, and the unusable unit-to-electrode mapping investigated and reported rather than silently assumed.",
+    "analysis": "Cosine fits with a trial-shuffle permutation null, circular statistics for preferred directions (vector sums, Rayleigh test, circular error), reach-grouped cross-validation for both the nested NeMoS GLMs and the decoders are all appropriate, but the speed-gain analysis aligns each unit by a preferred direction estimated from the same high-speed bins it then evaluates, a circularity that no split-half control rules out, and no multiple-comparison correction is applied across the 182 units.",
+    "correctness": "83% tuned during movement and 70% during the delay both sit inside the preregistered ranges, and every quoted number (median R2 0.081, max 0.639, 60 ms lag, +0.18 vs -0.08 Hz per 100 mm/s, pseudo-R2 0.022 to 0.030, decoding R2 0.716/0.619, 19.3 and 22.2 degree errors) matches the committed code's printed output from a clean end-to-end rerun that regenerated all nine figures.",
+    "figures": "Axes carry units, sample sizes appear in panel titles, examples are ranked by cosine R2 (the effect being demonstrated), and the population panels show the full R2 distribution including the non-significant units, so the reader can see both the strong examples and the modest median.",
+    "honesty": "The write-up reports the more conservative 83% rather than the 91% all-trial figure, quotes the low median R2 alongside it, calls the planning-to-execution preferred-direction result only 'partially preserved' with its weak resultant length, explains the trial-level speed/direction confound it found and how it worked around it, and states specific rather than generic limitations; the unacknowledged circularity in the preferred-direction alignment is the one gap.",
+    "verdict": "This is careful, reproducible, well-controlled work whose claims track its evidence; I would take the result and move on, asking only for a split-half check on the gain analysis."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Buddy, 2013-06-27 (s3 blob 98b25cb1-310c-45f7-97cc-669fce2057b7)",
+  "headline_stat": {
+    "name": "Fraction of hippocampal units classified as place cells",
+    "value": 0.059,
+    "in_prereg_range": false
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 1,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 1,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Dandiset 000044 (Grosmark & Buzsaki CA1, 1.6 m linear maze) is the canonical choice for place cells and an expert would accept it.",
+    "handling": "Real data were streamed correctly, but position timestamps were rebuilt from a misread rate of 0.03 Hz, yielding a 3,552,406 s 'session' that inflates occupancy ~1500x, disables the low-occupancy guard, and destroys spike-position alignment, invalidating everything downstream.",
+    "analysis": "Spatial information is the right metric but there is no shuffle or circular-shift null, no pyramidal/interneuron or quality filtering, no split by running direction on a linear track, and the mean_rate > 0.05 gate silently forces SI = 0 for 61 of 68 units so the classification is a spike-count filter rather than a spatial test.",
+    "correctness": "The headline 5.9% place cells falls far below the preregistered 0.30-0.75 range, and the write-up internally contradicts itself by placing all fields near 1.0 m while its own occupancy map shows near-zero time spent between 0.4 and 1.2 m.",
+    "figures": "Axes are labeled but figure 3 shows four identical single-bin spikes in a near-zero-occupancy region rather than the 'clear localization' the text claims, leaves two panels blank, and figure 1 displays 300,000 s occupancy bins without comment.",
+    "honesty": "The write-up presents an entirely artifactual result as clean with no limitation of any kind, rationalizing the impossible 5.9% as biology and reporting a 0.03 Hz position rate and a 3.5-million-second duration as if plausible, which is exactly the disqualifying act this axis exists to catch (no numbers were invented, but the asserted positive result is unsupported by the run's own output).",
+    "verdict": "A timing bug the run itself printed and ignored makes the reported place cells occupancy artifacts, and the write-up presents them as a finding, so the work would have to start over."
+  }
+}

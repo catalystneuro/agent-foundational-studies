@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 1549160,
+  "duration_api_ms": 321406,
+  "ttft_ms": 2764,
+  "ttft_stream_ms": 1498,
+  "time_to_request_ms": 31,
+  "num_turns": 41,
+  "result": "Done. Here is what happened and what the analysis shows.\n\n## Important context on this run\n\nThe working directory was **not** empty at session start: it contained a complete prior pipeline (a 1479-line jupytext script, an executed notebook, 8 figures, CSVs, README) written at 11:23–11:35, plus a warm 6.7 GB stream cache. Rather than discard it or claim it uncritically, I audited the code, re-ran it end-to-end myself, and fixed a defect I found. Everything below is verified against runs I executed in this session.\n\n## Verification performed\n\n- **Code audit.** Real DANDI streaming only (no synthetic data anywhere), Allen default QC criteria, non-overlapping response windows asserted, permutation null that re-does the preferred-temporal-frequency selection inside every shuffle (so selection can't inflate the statistic), and a static-grating cross-check that is genuinely non-circular (units selected on drifting gratings, agreement measured on static).\n- **Full re-run**, exit 0, reproduced every statistic bit-for-bit (e.g. Mann-Whitney U = 87387, p = 3.751e-43).\n- **Read all 8 figures as images.** Found one real defect: in figure 2a the unconstrained double-von-Mises fit ran to ~100 Hz against a 15.6 Hz measured peak, because with 45° sampling a very large kappa needs a huge amplitude to match at the sampled points. It rescaled the polar axis and squashed the actual tuning curve to near-invisibility.\n- **Fixed it** by capping kappa at the half-width the 45° sampling can resolve (kappa = ln2/(1−cos 22.5°) = 9.1), letting the measured points set the radial limit, and thinning the radial tick labels. Re-inspected: the two-lobed 90°/270° structure is now clearly legible.\n- **Final notebook execution**: 38 cells, 0 errors, all figures regenerated from the final script.\n\n## Result\n\nUsing **DANDI:000021** (Allen Institute Visual Coding, Neuropixels), six sessions with simultaneous LGd/VISp/higher-area coverage, 2516 QC-passing units:\n\nMedian global OSI rises from **0.091 in LGd to 0.252 in VISp** (p = 3.8e-43), and the significantly tuned fraction from **44.9% to 81.2%** (p = 6.9e-22). The ordering holds in all six mice individually. The preference is genuinely for orientation, not motion: preferred angle from 2 s drifting gratings and 250 ms static gratings differ by a median of 9.7° against a chance value of 45°. A cross-validated Poisson GLM shows direction still improves held-out prediction after running speed and temporal frequency are in the model. Thirty VISp units decode which of eight directions was shown at 63% (chance 12.5%), and the decoder's errors are **17× enriched at 180°**, which is the signature of an orientation code rather than a direction code.\n\nOne caveat the README states plainly: LGd is not perfectly untuned. A substantial minority reaches significance, so the thalamus-to-cortex difference is one of degree, though a large one.\n\nDeliverables in the working directory: `orientation_selectivity_dandi.py`, `orientation_selectivity_dandi.ipynb`, `fig01`–`fig08` PNGs, `README.md`, plus `unit_metrics.csv` and `summary_by_area.csv`.",
+  "stop_reason": "end_turn",
+  "session_id": "4bf4ca0b-fa0f-40b6-82dd-18b4b64a7c7b",
+  "total_cost_usd": 3.060708000000001,
+  "usage": {
+    "input_tokens": 62,
+    "cache_creation_input_tokens": 118916,
+    "cache_read_input_tokens": 2856048,
+    "output_tokens": 17696,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 118916,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1420,
+        "cache_read_input_tokens": 132860,
+        "cache_creation_input_tokens": 1115,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1115
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 734,
+      "outputTokens": 16,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0008139999999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-opus-4-8": {
+      "inputTokens": 62,
+      "outputTokens": 17696,
+      "cacheReadInputTokens": 2856048,
+      "cacheCreationInputTokens": 118916,
+      "webSearchRequests": 0,
+      "costUSD": 3.059894000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "f3721a15-83eb-4007-8bb1-a49dc22f1f15"
+}

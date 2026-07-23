@@ -1,0 +1,32 @@
+{
+  "dandiset": "000128",
+  "subject_session": "sub-Jenkins, ses-full desc-train (asset 26e85f09-39b7-480f-b337-278a8f034007); replication on 000129 sub-Indy desc-train",
+  "headline_stat": {
+    "name": "Fraction of M1/PMd units significantly cosine-tuned for reach direction (peri-movement, p<0.01)",
+    "value": 0.93,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 3,
+    "honesty": 4
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "It is worth being explicit that this is a comparison across two datasets that differ in more than target placement (different monkey, different array, different laboratory, and a session about a tenth as long), so the inference rests on the measured mediator, the position-to-velocity $R^2$ of 0.49 against 0.00, rather than on the dataset contrast alone. A within-animal test, in which target placement was randomised for part of a session, would settle it more firmly than anything available here.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "MC_Maze (DANDI:000128, monkey Jenkins, 182 M1/PMd units, 2295 delayed center-out trials) is the canonical dataset for reach-direction tuning, and MC_RTT (000129) was added as a second-animal, second-task replication chosen specifically because random target placement breaks the position/velocity confound.",
+    "handling": "Real data streamed via LINDI with no full download, trial alignment taken from the NWB trials table (target_on/go_cue/move_onset), 1 kHz kinematics with a documented switch to cursor_pos because hand_pos is offset ~35 mm in y, 20 ms binning restricted to trial intervals, lag pairing that never crosses trial boundaries, and an explicit rate>1 Hz inclusion criterion (115/182 units), though no unit-quality metric beyond firing rate is applied and M1 is not separated from PMd.",
+    "analysis": "Standard Georgopoulos cosine fit with an F test plus a pre-target negative control (3% tuned), circular statistics for preferred directions and their differences, a lag sweep, cross-validated Poisson GLMs and decoders grouped by trial or block, and a volunteered circular block-shift null that correctly addresses the anticonservative per-bin F test; the main gap is that the 27-degree straight-versus-curved PD shift has no split-half noise floor and the GLM comparison uses one fixed ridge penalty across models of 5 to 65 features.",
+    "correctness": "Every number I spot-checked reproduces exactly from the committed cache files and logs and the 0.93 headline sits inside the 0.50-0.95 band, but the median direction error of 21/20 degrees is silently restricted to bins above 100 mm/s and the 83% delay-period fraction exceeds the PMd-specific preregistered band (the population here is pooled M1+PMd, so I did not treat it as the headline).",
+    "figures": "The five present figures are excellent, with units on every axis, sample sizes in titles, example units ranked by cosine R2 and spread over preferred directions, and a clear population summary, but fig05, fig06 and fig07 listed in the README were deleted for a final clean re-run that the harness truncated, so the GLM, replication and null-control claims ship without any figure.",
+    "honesty": "The write-up is unusually well calibrated: it flags that the per-unit optimal lag IQR is -100 to +240 ms so 100 ms describes only the population, that the speed contribution replicates for only 42 of 94 MC_RTT units, that the F test it originally used was anticonservative and needed a null, that delay and movement preferred directions are essentially unrelated, and that the cross-dataset confound argument rests on a measured mediator rather than the dataset contrast; I found no claim contradicted by the figures or the committed output.",
+    "verdict": "The core work is sound, thoroughly controlled, and honestly reported, but I would ask for the three missing figures to be regenerated and for the speed restriction on the direction-error statistic to be stated before taking it as final."
+  }
+}

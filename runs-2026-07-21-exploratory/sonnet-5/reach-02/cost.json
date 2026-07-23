@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 1334173,
+  "duration_api_ms": 878111,
+  "ttft_ms": 2721,
+  "ttft_stream_ms": 1266,
+  "time_to_request_ms": 48,
+  "num_turns": 116,
+  "result": "## Summary\n\nI analyzed **Dandiset 000129** (\"MC_RTT\") from the DANDI Archive — 130 M1 units recorded with a Utah array during a self-paced, continuous random-target reaching task, streamed directly via `remfile` (no full download).\n\n**Pipeline:** built nonparametric direction/speed tuning curves with Pynapple, fit a linear (\"cosine\") velocity tuning model for all units simultaneously with a circular-shift shuffle significance test, and fit NeMoS Poisson GLMs (linear-velocity vs. flexible spline-based direction+speed) evaluated on held-out data.\n\n**Result:** 92/130 units (71%) show significant velocity tuning (p<0.01); example units show clear cosine-shaped direction tuning and monotonic speed tuning, and the NeMoS GLM predictions closely track the empirical tuning curves out of sample.\n\n**Deliverables** (in `runs-2026-07-21-exploratory/sonnet-5/reach-02/`):\n- `reach_direction_velocity_tuning.py` — consolidated jupytext script, runs end-to-end (~50s)\n- `reach_direction_velocity_tuning.ipynb` — executed notebook, no errors\n- `fig01`–`fig07_*.png` — 7 figures, all visually verified for overlap/readability issues (found and fixed two polar-plot title collisions)\n- `README.md` — dataset and findings summary",
+  "stop_reason": "end_turn",
+  "session_id": "65240511-db06-4a88-89bc-e08dcf2165f8",
+  "total_cost_usd": 5.976659400000002,
+  "usage": {
+    "input_tokens": 176,
+    "cache_creation_input_tokens": 198420,
+    "cache_read_input_tokens": 12619528,
+    "output_tokens": 66596,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 198420,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 488,
+        "cache_read_input_tokens": 221771,
+        "cache_creation_input_tokens": 196,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 196
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 733,
+      "outputTokens": 16,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.000813,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-5": {
+      "inputTokens": 176,
+      "outputTokens": 66596,
+      "cacheReadInputTokens": 12619528,
+      "cacheCreationInputTokens": 198420,
+      "webSearchRequests": 0,
+      "costUSD": 5.975846400000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "df5860f3-498a-4478-b1d9-33006971cfb0"
+}

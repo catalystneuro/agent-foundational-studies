@@ -1,0 +1,16 @@
+path,n_units,n_ok_trials,dur_s,size_mb
+sub-C/sub-C_ses-CO-20150313_behavior+ecephys.nwb,86,1039,3743,405
+sub-C/sub-C_ses-CO-20150319_behavior+ecephys.nwb,72,1026,3749,399
+sub-C/sub-C_ses-CO-20150311_behavior+ecephys.nwb,88,912,3634,340
+sub-C/sub-C_ses-CO-20150312_behavior+ecephys.nwb,91,907,3467,408
+sub-M/sub-M_ses-CO-20140929_behavior+ecephys.nwb,145,733,4400,299
+sub-M/sub-M_ses-CO-20140626_behavior+ecephys.nwb,26,671,5072,166
+sub-M/sub-M_ses-CO-20140627_behavior+ecephys.nwb,25,609,5215,172
+sub-M/sub-M_ses-CO-20150511_behavior+ecephys.nwb,68,536,4506,226
+sub-M/sub-M_ses-CO-20150512_behavior+ecephys.nwb,90,443,6380,362
+sub-T/sub-T_ses-CO-20130909_behavior+ecephys.nwb,59,218,1241,46
+sub-T/sub-T_ses-CO-20130823_behavior+ecephys.nwb,45,213,1092,32
+sub-C/sub-C_ses-CO-20160914_behavior+ecephys.nwb,353,195,1075,377
+sub-T/sub-T_ses-CO-20130905_behavior+ecephys.nwb,65,175,910,34
+sub-T/sub-T_ses-CO-20130903_behavior+ecephys.nwb,53,168,943,33
+sub-T/sub-T_ses-CO-20130821_behavior+ecephys.nwb,59,164,900,35

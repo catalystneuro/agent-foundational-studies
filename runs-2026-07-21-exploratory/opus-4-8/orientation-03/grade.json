@@ -1,0 +1,31 @@
+{
+  "dandiset": "000021",
+  "subject_session": "8 sessions, one per mouse: 715093703, 750749662, 751348571, 754829445, 755434585, 756029989, 763673393, 799864342; single-unit example figures from 715093703",
+  "headline_stat": {
+    "name": "median OSI in V1 (classic Allen definition; README features noise-corrected gOSI = 0.219 and 94% permutation-significant)",
+    "value": 0.446,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Firing rates were averaged over the whole presentation, so the analysis measures mean rate and ignores the F1 component that distinguishes simple from complex cells. Running speed and pupil size modulate gain throughout the mouse visual system; because stimulus conditions are randomly interleaved this adds variance rather than apparent orientation tuning, but it was not regressed out. Area assignments come from the Allen CCF registration stored in the NWB electrode table and are taken at face value, so units near a boundary may be mislabelled. The eight sessions were chosen for having usable LGd yield, which is a selection on probe placement rather than on any response property.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 (Allen Visual Coding Neuropixels), drifting and static gratings in VISp plus five higher visual areas and LGd across eight mice, is the canonical choice for this phenomenon and the screening script documents why those sessions were picked.",
+    "handling": "Real streaming from S3 with remfile, explicit Allen QC cutoffs plus a stated responsiveness criterion (1346/2696 units), a 50 ms onset lag, a separate 220 ms window for the 250 ms static gratings, spike counting validated against pynapple's own counter, and an asserted fix for a TsGroup key-ordering bug that had been attaching each unit's tuning to another unit's area.",
+    "analysis": "Circular statistics throughout (harmonic-2 vector average for gOSI, circular distance for preference agreement), a 500-permutation shuffled-stimulus null used both for p-values and for bias correction, split-half and cross-stimulus replication, and a cross-validated Poisson GLM comparison with its own shuffled-label false-positive control.",
+    "correctness": "Every reported value reproduces exactly from the committed per-unit CSVs and matches the figures, but the featured indices (noise-corrected gOSI 0.219, 94% permutation-significant) sit just outside the prereg windows while the conventional OSI the run also computes lands mid-range at 0.446, an ambiguity of criterion rather than a wrong result.",
+    "figures": "Tuning curves are textbook bimodal with peaks 180 degrees apart, axes carry units and sample sizes, examples are ranked by the effect itself and honestly labelled as the most selective units, and every claim also has a population-level panel behind it.",
+    "honesty": "Claims are proportionate and self-limiting: the liberal GLM direction label is flagged in the notebook and its 11% shuffled false-positive rate is reported alongside the 97% figure, LGd is described as weakly but genuinely biased rather than untuned, and the caveats name the F1 component, unregressed running and pupil gain, CCF boundary error, and the LGd-yield session selection."
+  }
+}

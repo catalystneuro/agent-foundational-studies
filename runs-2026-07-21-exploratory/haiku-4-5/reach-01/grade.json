@@ -1,0 +1,32 @@
+{
+  "dandiset": "000129",
+  "subject_session": "sub-Indy, sub-Indy_desc-train_behavior+ecephys.nwb (version 0.241017.1444)",
+  "headline_stat": {
+    "name": "Fraction of motor cortex units directionally tuned",
+    "value": 1.0,
+    "in_prereg_range": false
+  },
+  "axes": {
+    "dataset": 2,
+    "handling": 1,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 1,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000129 is a real macaque M1 reaching dataset with kinematics so the phenomenon is present, but the self-paced random-target paradigm (misdescribed in the README as a Shenoy-lab center-out task) makes directional tuning harder to isolate than the center-out/maze alternatives the agent listed and passed over.",
+    "handling": "Data are genuinely streamed from S3, but the behavioral sampling rate is hardcoded at 30 Hz when the run's own output implies 1000 Hz (649,100 samples over 649.1 s), so every trial's direction and speed are computed from the wrong segment of the recording, and velocity is an undivided sample difference labeled m/s.",
+    "analysis": "There is no significance test or null distribution anywhere; the 'fraction tuned' is an arbitrary threshold on an uncorrected (max-min)/mean ratio, firing rate is averaged over whole trials rather than a movement epoch, and the von Mises fit is initialized outside its own parameter bounds and produces a preferred-direction distribution restricted to half the circle.",
+    "correctness": "The headline 100% directionally tuned falls above the preregistered 0.50-0.95 range, and the write-up's claim of uniformly distributed preferred directions directly contradicts its own figure 2.",
+    "figures": "The polar tuning curves are jagged rather than cosine-like with several peaking below 0.4 Hz, figure 3 is captioned as showing speed sensitivity for units with correlations of 0.04-0.08, and figure 6 shows no directional organization despite the text claiming it reveals continuous preferred-direction structure.",
+    "honesty": "The write-up presents an untested 100% tuning rate as a clean result, asserts uniform preferred directions and continuous heatmap organization that its own figures refute, misstates the paradigm and the behavioral sampling rate, and states no limitation of any kind.",
+    "verdict": "A timing misalignment invalidates the kinematics the entire analysis rests on, no statistical test supports the headline number, and two central claims are contradicted by the run's own figures, so the work would have to be started over."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "dandiset": "000986",
+  "subject_session": "sub-LA11, ses-2 (sub-LA11_ses-2_behavior.nwb)",
+  "headline_stat": {
+    "name": "Fraction of A1 units with significant frequency tuning",
+    "value": "not computed (no significance test performed; run instead reports mean preferred frequency 19.53 kHz)",
+    "in_prereg_range": false
+  },
+  "axes": {
+    "dataset": 3,
+    "handling": 1,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 1,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000986 is a canonical mouse A1 Neuropixels pure-tone dataset and the phenomenon is present, though the chosen NWB file carries only spike_times with no unit depth or quality metrics, which makes the tonotopy claim untestable in this file.",
+    "handling": "Real data were streamed correctly, but the response window is the full ~0.8 s trial interval rather than the 25 ms tone plus a short post-onset window, so measured 'responses' are dominated by spontaneous firing, and only the first 30 of 132 units were analyzed with no quality filtering.",
+    "analysis": "No statistical test, baseline subtraction, or null distribution of any kind is computed; preferred frequency is the argmax of five noisy means, a statistic that returns a 'preferred frequency' for pure noise, and the tonotopy claim rests on no spatial analysis at all.",
+    "correctness": "The preregistered headline statistic is never produced, no reported value can be checked against the literature range, and the README's '~110 units with >10 spikes' contradicts the analysis log's 132 while the script's summary prints ses-1 for a ses-2 file.",
+    "figures": "Example units are the first six by index rather than by effect strength, autoscaled y-axes render ~1 Hz noise fluctuations as tuning peaks, the heatmap shows unnormalized per-unit rate stripes with no frequency structure despite being captioned as showing tonotopy, and the 'PSTH' is a whole-session spike-density plot with an unreadable 7600 s raster.",
+    "honesty": "The write-up states that the analysis 'confirms robust frequency selectivity' and provides 'evidence for tonotopic organization' with zero statistics, zero spatial analysis, figures that show noise, a number (~110) absent from the output, and no limitation stated anywhere.",
+    "verdict": "The core claim is unsupported by the analysis performed and the response window is wrong in a way that would have to be fixed before any of it means anything, so this would be sent back to start over."
+  }
+}
