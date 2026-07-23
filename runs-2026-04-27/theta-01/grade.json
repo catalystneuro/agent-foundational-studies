@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013 (behavior+ecephys), maze epoch",
+  "headline_stat": {
+    "name": "Fraction of place fields with significant negative phase-position slope",
+    "value": 0.76,
+    "in_prereg_range": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 1,
+    "correctness": 2,
+    "figures": 1,
+    "honesty": 1
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Key findings (single session, Achilles 10/25/2013)",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Dandiset 000044 Grosmark & Buzsaki CA1 silicon-probe recording of a rat on a 1.6 m linear track is the canonical dataset for theta phase precession and an expert would have chosen it.",
+    "handling": "Real data streamed with remfile, the maze epoch and direction-split run bouts are correct, and the agent correctly noticed that the position TimeSeries stores period rather than rate, but unit inclusion rests only on the file's cell_type label plus a 0.2 Hz rate floor with no quality metrics, the chosen LFP channel is assumed to be CA1 despite an 'unknown' location field, and fig02's x-axis is drawn as 0-1.6 m when the bins span 0.10-1.50 m.",
+    "analysis": "Circular-linear regression, 50%-peak field bounds and direction splitting are all appropriate, but the permutation null in circ_lin_fit compares shuffled-phase resultant length at the fixed fitted slope against the slope-optimized Rmax, which makes the test anticonservative by construction and yields p = 0.000 even for cells with zero or negative correlation, and the 76% headline depends entirely on that test.",
+    "correctness": "The 76% fraction and -2.64 rad/field median both fall inside the preregistered ranges and reproduce from the committed CSV, but the 'significant' set is internally inconsistent, containing unit 109 with rho = -0.005 and, in the p < 0.05 pool at large, unit 220 with a +11.6 rad/field slope and p = 0.000.",
+    "figures": "Figure 4's nine example cells are ranked by most-negative fitted slope rather than by correlation strength, which the rubric caps at 1, and the consequence is visible: the lead panel (unit 7, rho = -0.19) shows no precession at all while genuinely precessing cells sit in the bottom row.",
+    "honesty": "No limitation beyond a parenthetical 'single session' is stated, non-precessing cells are labeled the top phase-precessing examples, and a permutation test the run's own output shows to be broken is presented as a clean p < 0.05 result underpinning the headline claim, each of which independently caps this axis at 1.",
+    "verdict": "The dataset choice, streaming, and place-field pipeline are sound and the phenomenon is really present, so this is fixable rather than a restart, but the significance test must be rebuilt to re-fit the slope under permutation and the examples re-selected by rho before the 76% figure is believable, and the honesty score of 1 fails the run under the preregistered criterion."
+  }
+}
