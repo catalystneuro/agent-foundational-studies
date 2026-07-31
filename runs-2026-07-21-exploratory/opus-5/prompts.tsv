@@ -1,0 +1,10 @@
+placefields	Demonstrate hippocampal place cells using data from the DANDI Archive
+orientation	Demonstrate orientation selectivity in the visual system using data from the DANDI Archive
+auditory	Demonstrate auditory frequency tuning using data from the DANDI Archive
+reach	Demonstrate reach direction and velocity tuning with data on the DANDI Archive
+entrainment	Demonstrate theta phase entrainment of hippocampal neurons using data from the DANDI Archive
+precession	Demonstrate theta phase precession in hippocampal place cells using data from the DANDI Archive
+strf	Demonstrate spectrotemporal receptive fields in the auditory system using data from the DANDI Archive
+grid	Demonstrate grid cells in the medial entorhinal cortex using data from the DANDI Archive
+headdirection	Demonstrate head direction cells using data from the DANDI Archive
+ripples	Demonstrate sharp-wave ripples and replay in the hippocampus using data from the DANDI Archive

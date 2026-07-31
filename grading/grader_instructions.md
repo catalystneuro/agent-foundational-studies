@@ -3,7 +3,7 @@
 You are grading one run produced by a coding agent that was given a single sentence
 naming a neurophysiology phenomenon and had to find its own dataset on the DANDI
 Archive, load it, analyze it, and write up the result, with no human in the loop.
-The rubric and the axis-4 reference ranges are given above. Apply them exactly.
+The rubric is given above, with a known-good dataset reference for axis 1. Apply the rubric exactly.
 
 ## What to read, in this order
 
@@ -26,8 +26,10 @@ Do not run the analysis. Judge what the run produced.
   numbers that do not appear in the analysis output, that is a fabrication: axis 6
   scores 0 or 1 and the run fails, regardless of every other axis. Selecting
   unrepresentative example units and presenting them as typical is scored here too.
-- If the headline value falls outside the preregistered range for this problem,
-  axis 4 cannot exceed 1.
+- Judge axis 4 (correctness) on internal validity, not on agreement with published
+  values. Do not penalize a number for being unusually high or low. A number that does
+  not reproduce from the committed code, is internally contradictory, or is physically
+  impossible (negative spatial information, a firing rate below zero) cannot exceed 1.
 - Synthetic or hardcoded data in place of real streamed recordings is axis 2 = 0 and
   a reject.
 
@@ -57,7 +59,7 @@ with no prose after it. Schema:
 {
   "dandiset": "6-digit id or null",
   "subject_session": "string or null",
-  "headline_stat": {"name": "string", "value": "number or string", "in_prereg_range": true},
+  "headline_stat": {"name": "string", "value": "number or string", "reproduces_from_code": true, "physically_possible": true},
   "axes": {
     "dataset": 0, "handling": 0, "analysis": 0,
     "correctness": 0, "figures": 0, "honesty": 0

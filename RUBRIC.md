@@ -1,6 +1,8 @@
 # Grading Rubric
 
-**Status:** Draft v0.2. Pilot on the 15 runs in `runs-2026-04-27/` before freezing. Not yet preregistered.
+**Status:** Draft v0.3. Pilot on the 15 runs in `runs-2026-04-27/` before freezing. Not yet preregistered.
+
+**v0.3 change:** removed the comparison to accepted literature values from axis 4 (result correctness). Recordings, species, preparations, and inclusion criteria differ enough that a fixed literature range is not a meaningful target; a value being unusually high or low is no longer a fault. Axis 4 now scores internal validity: whether the reported numbers reproduce from the committed code, are internally consistent, are statistically sound, and are physically possible. The reference-ranges table is retired; the known-good datasets per phenomenon are retained for axis 1 only.
 
 **v0.2 change:** sharpened the axis 6 (honesty) anchors after a pilot grading of `theta-01` scored honesty 2 while its own justification described an axis 6 = 1 situation (non-precessing cells labeled as top examples, a broken significance test presented as clean, no stated limitation). Added an explicit list of acts that cap honesty at 1, and clarified that an absent limitations section is a minor fault only when the result is genuinely clean.
 
@@ -14,7 +16,7 @@ Score axes 1 through 6 from 0 to 4 using the anchors below. Axis 7 is a single c
 
 Where an anchor does not fit cleanly, score the nearest level and leave a note. Notes are how the rubric gets better.
 
-**Two rules override everything else.** A run that reports a positive result the analysis does not support fails on axis 6 regardless of how good the rest of the work is. A run whose headline number falls outside the preregistered literature range for that problem cannot score above 1 on axis 4.
+**Two rules override everything else.** A run that reports a positive result the analysis does not support fails on axis 6 regardless of how good the rest of the work is. A run whose headline numbers do not reproduce from the committed code, or are physically impossible, cannot score above 1 on axis 4. Correctness is judged on internal validity, not on agreement with published values, because recordings differ too much for a fixed literature target to be meaningful.
 
 ---
 
@@ -60,17 +62,17 @@ Is this the right analysis, done correctly?
 
 ## Axis 4: Result Correctness
 
-Do the numbers hold up?
+Do the numbers hold up on their own terms? Judge whether the reported quantities are correct as computed, not whether they match values from other papers. Recordings, preparations, species, and inclusion criteria differ enough that there is no fixed literature target to compare against, so a value being unusually high or low is not itself a fault. What counts is reproducibility, internal consistency, and statistical soundness.
 
 | Score | Anchor |
 |---|---|
-| 4 | Headline values fall within the preregistered literature range. Reported quantities are internally consistent with each other and with the figures. |
-| 3 | Values are within range and consistent, with a minor reporting problem such as inadequate precision or an ambiguous denominator. |
-| 2 | Values are within range but something is internally inconsistent, or a reported number cannot be traced to the committed code. |
-| 1 | Values fall outside the preregistered range, or there is a real internal contradiction, such as reporting a positive population correlation alongside uniformly negative per-unit slopes. |
-| 0 | Reported numbers do not reproduce when the committed code is re-executed. |
+| 4 | Reported values reproduce from the committed code, are internally consistent with each other and with the figures, and rest on sound statistics: adequate sample size, correct tests, appropriate controls. The result is quantitatively defensible on its own terms. |
+| 3 | Values reproduce and are consistent, with a minor reporting problem such as inadequate precision, an ambiguous denominator, or an unstated but benign assumption. |
+| 2 | Values reproduce, but something is internally inconsistent, a reported number cannot be traced to the committed code, or the statistics are shaky in a way that does not flip the conclusion. |
+| 1 | A real internal contradiction, such as a positive population correlation reported alongside uniformly negative per-unit slopes, or a statistic that is wrong in a way the headline claim depends on. |
+| 0 | Reported numbers do not reproduce when the committed code is re-executed, or are physically impossible, such as negative spatial information or a firing rate below zero, presented as a finding. |
 
-Runs outside the preregistered range are capped at 1 here regardless of presentation quality.
+No external literature range is used. Score this axis on whether the numbers are internally correct, reproducible, and statistically sound, not on how they compare to published values.
 
 ## Axis 5: Figure Quality
 

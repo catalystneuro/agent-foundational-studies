@@ -13,7 +13,7 @@ judge="${2:-claude-opus-4-8}"
 run_dir="$(cd "$run_dir" && pwd)"
 
 # System prompt = rubric (single source of truth) + reference ranges + grader procedure.
-sys="$(cat "$REPO/RUBRIC.md" "$GRADING_DIR/reference_ranges.md" "$GRADING_DIR/grader_instructions.md")"
+sys="$(cat "$REPO/RUBRIC.md" "$GRADING_DIR/dataset_reference.md" "$GRADING_DIR/grader_instructions.md")"
 
 prompt="Grade the single run in the directory: ${run_dir}
 Read the README, the analysis code, and every figure (open the .png files with Read),

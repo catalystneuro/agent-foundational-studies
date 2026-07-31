@@ -13,6 +13,7 @@ case "$d" in
   opus-4-8)  m=claude-opus-4-8 ;;
   sonnet-5)  m=claude-sonnet-5 ;;
   haiku-4-5) m=claude-haiku-4-5 ;;
+  opus-5)    m=claude-opus-5 ;;
   *) echo "[err ] unknown model dir $d" >&2; exit 2 ;;
 esac
 

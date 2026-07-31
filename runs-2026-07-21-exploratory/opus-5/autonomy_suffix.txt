@@ -1,0 +1,3 @@
+
+
+Work fully autonomously. The user will not respond again in this session. Do not ask questions, do not propose a plan for approval, and do not stop for confirmation. Use the analyzing-dandi-datasets, using-pynapple, and using-nemos skills as needed. Produce a final jupytext .py, a converted .ipynb, all figures as .png, and a short README.md in the current working directory.
