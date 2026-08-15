@@ -46,9 +46,15 @@ The runner was the Claude Code command-line agent [TODO: pinned version] invoked
 
 [TODO: this subsection needs author confirmation of the final controlled environment.] For each run we recorded the initialization event as a provenance record, including the model served, the available skills and connected tools, and the runner version. The pilot ran with a broad set of tools and skills available and a global instruction file injected into every run; for the study we [TODO: describe the pinned and restricted environment actually used, which tools and skills were available, and how the global instruction file was handled]. We log skill invocation separately from skill availability, because only a subset of the nominally available skills was ever invoked.
 
+### Analysis skills and tools
+
+The agents had access to three domain skills packaged for this task. The first, for dataset discovery and access, guided searching the DANDI Archive, streaming NWB files without full download, and inspecting them with the Pynapple library. The second wrapped Pynapple [TODO: cite Viejo et al.] for representing and analyzing spike times, epochs, and tuning curves. The third wrapped NeMoS [TODO: cite NeMoS], a library for fitting generalized linear models to neural data. All three were available in every run for every model, and the fixed prompt suffix named all three. The skills provided guidance and idiom rather than analysis code, so the agent still had to choose and write the analysis itself.
+
+We logged skill invocation separately from availability, because the two diverge in a way that is itself informative (see Results). The discovery skill was invoked in nearly every run across all models (39 of 39 Opus 5 runs, 53 of 54 Opus 4.8, 35 of 39 Sonnet 5, and 39 of 39 Haiku 4.5). Invocation of the modeling skills was far more uneven. The generalized-linear-model skill was invoked in 12 and 17 runs by the two Opus models, in 2 runs by Sonnet 5, and in no run by Haiku 4.5. The Pynapple skill was invoked in 4, 11, 10, and 2 runs for the four models respectively. The set of available tools was therefore held fixed while their use varied with the model, and the weakest model never once invoked the statistical-modeling skill.
+
 ### Data access
 
-All data were read from the DANDI Archive by streaming from the archive's cloud storage rather than by full download, using [TODO: confirm remfile / LINDI as observed in transcripts] with local caching, so that runs read only the portions of each NWB file they needed. Analyses used the Python neurophysiology stack available to the agents, including [TODO: confirm and cite pynapple, NeMoS, and any others actually invoked].
+All data were read from the DANDI Archive by streaming from the archive's cloud storage rather than by full download, using remfile and LINDI [TODO: confirm both, and cite] with local caching, so that runs read only the portions of each NWB file they needed. One exception is noted in the Results: in a small number of runs an agent downloaded an entire NWB file rather than streaming it.
 
 ### Grading rubric
 
