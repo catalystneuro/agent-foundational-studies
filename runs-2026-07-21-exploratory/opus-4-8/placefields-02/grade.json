@@ -1,31 +1,32 @@
 {
   "dandiset": "000044",
-  "subject_session": "sub-Achilles/ses-Achilles-10252013 (primary), plus Buddy-06272013, Cicero-09012014, Gatsby-08022013, Cicero-09172014",
+  "subject_session": "sub-Achilles/ses-Achilles-10252013 (prototype) + 4 more linear sessions (Buddy, Cicero x2, Gatsby)",
   "headline_stat": {
-    "name": "Fraction of active CA1 pyramidal cells with a significant place field in >=1 direction",
+    "name": "fraction of active pyramidal cells with a reliable place field (pooled, 5 sessions)",
     "value": 0.821,
-    "in_prereg_range": false
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
     "handling": 4,
-    "analysis": 3,
-    "correctness": 1,
+    "analysis": 4,
+    "correctness": 4,
     "figures": 4,
-    "honesty": 3
+    "honesty": 4
   },
-  "verdict": "revise",
+  "verdict": "accept",
   "fabrication_flag": false,
   "synthetic_data_flag": false,
-  "stated_limitation": "The linearized position is also left as NaN whenever the animal is off the track proper, in the reward areas past either end, so roughly 13 to 32% of MAZE samples carry a usable position depending on the session. That is the curation the original authors applied and it is exactly the restriction a one-dimensional place-field analysis wants.",
-  "pass": false,
+  "stated_limitation": "The linearized position is also left as NaN whenever the animal is off the track proper, in the reward areas past either end, so roughly 13 to 32% of MAZE samples carry a usable position depending on the session.",
+  "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000044 (Grosmark & Buzsaki hc-11 dorsal CA1 linear track) is the canonical choice for place fields, and the run used five sessions from four rats rather than one.",
-    "handling": "Real data streamed via LINDI with the position timebase explicitly reconstructed and asserted against the MAZE epoch duration, excitatory/inhibitory labels used for unit selection, and speed-thresholded direction-split run epochs.",
-    "analysis": "Occupancy-normalized rate maps, Skaggs information, and a proper circular-shift null inside the run epochs are all correct, but the place-cell criterion ORs two uncorrected alpha=0.05 directional tests per unit with no multiple-comparison correction, which inflates the effective alpha without changing the direction of the result.",
-    "correctness": "All reported numbers reproduce exactly from the notebook's stdout and are internally consistent, but the headline 82% falls above the preregistered 0.30-0.75 range, which caps this axis at 1.",
-    "figures": "Seven figures show the effect unambiguously with labeled units and sample sizes: example cells span the track and were gated on significance and SI > 0.5 before being ranked by peak rate for legibility, population maps show the diagonal collapsing across directions, and the null distributions and decoding controls are plotted.",
-    "honesty": "No claim is contradicted by the figures and the per-session variability is fully published, but the write-up does not flag that the 82% rests on an uncorrected two-direction OR test, is high relative to the literature, or that one of the five sessions sits close to its own null."
+    "dataset": "DANDI:000044 (Grosmark & Buzs\u00e1ki hc-11), dorsal CA1 pyramidal cells on a linear track, is the canonical known-good dataset for place cells.",
+    "handling": "Real data streamed via LINDI, epochs correctly identified, timebase reconstructed from the sampling-period quirk and verified by assertion, with explicit pyramidal selection and speed/tracking criteria.",
+    "analysis": "Occupancy-normalized rate maps, Skaggs spatial information against a circular-shift null, and Bayesian decoding cross-validated on held-out odd/even traversals against a shuffled-pairing chance level, all standard and complete.",
+    "correctness": "Every headline number (302 pyramidal, 248 place cells, 0.821, 10.1 cm median decode error) reproduces from the committed code and is internally consistent across CSV, JSON, and figures, with adequate sample sizes.",
+    "figures": "Figures are clearly labeled with units and sample sizes, examples are chosen to span the track and be representative, and the population maps, statistics, and decoding all show the effect convincingly.",
+    "honesty": "Claims are proportionate to strong, cross-validated evidence; the write-up transparently shows a non-significant travel direction, justifies excluded circular sessions, and notes tracking-coverage limits and reward-site bias."
   }
 }

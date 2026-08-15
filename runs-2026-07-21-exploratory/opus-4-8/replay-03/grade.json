@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles/sub-Achilles_ses-Achilles-10252013 (POST epoch)",
+  "headline_stat": {
+    "name": "significant replays p<0.05",
+    "value": "202/696 (29%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 Grosmark & Buzs\u00e1ki CA1 (Achilles) is the canonical dataset for hippocampal replay, with a linear track and long flanking rest epochs.",
+    "handling": "Real NWB streamed from S3 via remfile, pyramidal units selected by cell_type, place fields built from >5 cm/s running, ripple channel chosen by 150-250 Hz power, all correctly aligned.",
+    "analysis": "Standard Bayesian decoding with a posterior-weighted correlation replay score benchmarked against a per-column position shuffle null (500/event), an appropriate and correctly applied method.",
+    "correctness": "Every headline number (696 events, 202/29%, 117/17%, 121 forward, 81 reverse, mean |wc| 0.422) reproduces exactly from the committed CSV and is internally consistent with the figures.",
+    "figures": "Place fields tile the track, ripple morphology is textbook, and example replays show coherent sweeps; examples are ranked by weighted-correlation strength, which is the effect itself, so no cap applies.",
+    "honesty": "Nothing is misrepresented and examples are honestly labeled as the strongest cases with the full distribution shown, but no explicit limitations (single session, liberal column-shuffle null) are stated for this clean result."
+  }
+}

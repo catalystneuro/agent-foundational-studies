@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles / Achilles-10252013",
+  "headline_stat": {
+    "name": "mean MRL, inhibitory vs excitatory",
+    "value": "0.25 vs 0.12; 115/137 (84%) Rayleigh p<0.05",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "One data-quality issue was identified and corrected along the way: the `1.6mLinearMazePosition` and `1.6mLinearMazeLinearizedPosition` TimeSeries in this NWB file store the reciprocal of the sampling rate in their `rate` field (0.0256 instead of ~39.06 Hz), which silently corrupts timestamp reconstruction if used as-is.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Grosmark & Buzsaki CA1 recording (000044, Achilles) is the canonical dataset for hippocampal theta phase entrainment.",
+    "handling": "Real data streamed via remfile, correct maze-epoch restriction, speed thresholding, cell-type labels, 50-spike minimum, and a correctly diagnosed and fixed position-rate bug.",
+    "analysis": "Band-pass + Hilbert phase with proper circular stats (MRL, Rayleigh) is standard and correct, but no surrogate/circular-shift control and no accounting for the anticonservative Rayleigh test at very large spike counts.",
+    "correctness": "Every reported number (137 units, 115 significant, MRL 0.25 vs 0.12) reproduces exactly from the committed CSV and matches the figures; the only shakiness is the large-n significance inflation, which does not flip the substantive MRL comparison.",
+    "figures": "Figures are clearly labeled with units and sample sizes, the PSD confirms genuine ~8 Hz theta, and polar histograms honestly show strong and non-significant examples.",
+    "honesty": "Claims are proportionate and the weak unit is honestly labeled as non-significant, but there is no limitations section (single session, no surrogate control, large-n significance) so it sits at generic rather than specific disclosure."
+  }
+}

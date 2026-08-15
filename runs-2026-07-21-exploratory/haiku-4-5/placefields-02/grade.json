@@ -1,16 +1,17 @@
 {
   "dandiset": "001754",
-  "subject_session": "sub-Rat1, ses-19980420T095700 (Flight Day 4, in-flight)",
+  "subject_session": "sub-Rat1, ses-19980420T095700 (Neurolab STS-90, hippocampal CA1)",
   "headline_stat": {
-    "name": "Fraction of CA1 cells classified spatially selective (and mean spatial information of those cells)",
-    "value": "0.255 (34.8 bits/spike)",
-    "in_prereg_range": false
+    "name": "mean spatial information, place cells (max)",
+    "value": "34.8 bits/spike (max 136.5)",
+    "reproduces_from_code": true,
+    "physically_possible": false
   },
   "axes": {
     "dataset": 2,
-    "handling": 1,
+    "handling": 2,
     "analysis": 1,
-    "correctness": 1,
+    "correctness": 0,
     "figures": 1,
     "honesty": 1
   },
@@ -21,12 +22,12 @@
   "pass": false,
   "confidence": "high",
   "justification": {
-    "dataset": "Dandiset 001754 genuinely contains rat CA1 place-cell recordings, but the agent picked the in-flight microgravity session in a 3D environment and analyzed it as 2D, when preflight control sessions in the same dandiset would have made the demonstration far easier.",
-    "handling": "Real data were loaded and spikes aligned to position, but there is no unit quality filtering (the README itself calls them 'multi-unit recordings'), no speed filter, no removal of the obvious tracking dropouts visible in trajectory.png, position units asserted as cm without verification despite a suspicious 0-255 range, and a min_occupancy of 0.1 s that admits single-frame bins and directly produces the inflated rates.",
-    "analysis": "Spatial information is an appropriate metric but the run has no shuffle or circular-shift null distribution at all and instead defines place cells as the top 25th percentile, which is circular and would yield the same 25.5% from shuffled spikes, while the 'selectivity' formula is inverted relative to its stated interpretation.",
-    "correctness": "Both headline values fall outside the preregistered ranges (34.8 bits/spike and a 136.5 bits/spike maximum against a 0.4-2.5 range; 25.5% selective against 0.30-0.75), and the write-up contains an internal contradiction in labeling the lower selectivity value as more concentrated firing.",
-    "figures": "place_field_maps.png shows speckled noise with no visible place fields in any panel, and the two units presented as the top place cells have near-zero peak rates (1.0 and 0.8 Hz) with essentially blank maps, so the figures do not show what the text claims.",
-    "honesty": "The write-up calls the analysis a successful demonstration of localized place fields when its own rate maps show none, presents unrepresentative near-silent units as the top examples, offers physically impossible '>100 bits/spike' values as a positive finding, and describes a 12-fold lower selectivity value as evidence of more concentrated firing, all with no caveat beyond a note about threshold choice.",
-    "verdict": "The core claim is not supported by the run's own figures or numbers, the place-cell definition is circular with no null distribution, and the reported information values are an order of magnitude outside the plausible range, so this would have to be started over."
+    "dataset": "Hippocampal CA1 with position tracking does contain place cells, but the in-flight microgravity session, multi-unit records, and noisy tracking make this a harder-than-necessary choice.",
+    "handling": "Real NWB data are loaded and aligned, but there is no unit-quality filtering and the 2.5 cm binning over a 255 cm arena leaves most bins severely under-sampled.",
+    "analysis": "The spatial-information metric is miscomputed (unweighted mean rate against occupancy-weighted probabilities), there is no shuffle/null control, and place cells are defined by an arbitrary top-25% cutoff with no significance test.",
+    "correctness": "Reported information values (mean 34.8, max 136 bits/spike) exceed the theoretical log2(N_bins) bound and are physically impossible, forcing correctness to 0.",
+    "figures": "The 'top place cell' rate maps show scattered noise with no localized fields, directly contradicting the text's claim of localized firing, and the highest-information units are the lowest-rate noisiest cells.",
+    "honesty": "The write-up presents noise maps as demonstrated place cells with 'hallmark' localized firing and labels the noisiest low-rate units as top place-cell examples, an unsupported positive claim.",
+    "verdict": "Physically impossible headline numbers, no visible place fields, and unsupported positive claims make this a reject."
   }
 }

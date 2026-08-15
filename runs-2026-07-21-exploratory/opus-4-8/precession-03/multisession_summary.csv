@@ -1,0 +1,4 @@
+session,animal,n_place,theta_ratio,frac_neg,n_sig,frac_sig_neg,median_slope,median_rho
+Achilles-10252013,Achilles,63,3.39,0.921,42,0.976,-0.482,-0.217
+Achilles-11012013,Achilles,55,5.46,0.945,42,0.976,-0.598,-0.22
+Cicero-09172014,Cicero,23,3.82,0.783,16,0.875,-0.364,-0.122

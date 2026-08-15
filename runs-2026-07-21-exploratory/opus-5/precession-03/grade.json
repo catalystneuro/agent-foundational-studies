@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "8 sessions, 4 rats (Achilles, Buddy, Cicero, Gatsby); example Achilles-10252013",
+  "headline_stat": {
+    "name": "median precession slope, significant fields (cycles/field)",
+    "value": -0.68,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The absolute phase at field entry is not directly interpretable here. The theta reference channel was chosen automatically as the one with the largest theta-to-background power ratio, which in these probe recordings tends to sit near the hippocampal fissure rather than in the pyramidal layer, and the phase offset between those depths is roughly 180 degrees. Comparing entry phases across sessions would require anatomically registering the reference channel; the slope, which is what precession is about, does not depend on that choice.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzs\u00e1ki dorsal CA1) is the standard dataset for theta phase precession, analysed across all eight sessions.",
+    "handling": "Real data streamed via remfile, with explicit and correct handling of the sampling-period attribute, NaN position gaps, excitatory-unit selection, and a 10 cm/s running threshold.",
+    "analysis": "Kempter et al. circular-linear regression with a 200-permutation phase-shuffle null and single-pass, direction-flip, and phase-occupancy controls is the correct and complete method.",
+    "correctness": "All six headline numbers reproduce exactly from all_fields.csv and are internally consistent with the figures and per-session breakdown.",
+    "figures": "Figures show the effect clearly with labeled axes, units, and sample sizes, and example fields are ranked by correlation strength (\u03c1) rather than raw slope magnitude.",
+    "honesty": "Claims are proportionate to the evidence, controls are described in terms of what they do and do not rule out, and the absolute-phase limitation is stated plainly."
+  }
+}

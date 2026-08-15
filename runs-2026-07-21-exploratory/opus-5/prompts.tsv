@@ -8,3 +8,6 @@ strf	Demonstrate spectrotemporal receptive fields in the auditory system using d
 grid	Demonstrate grid cells in the medial entorhinal cortex using data from the DANDI Archive
 headdirection	Demonstrate head direction cells using data from the DANDI Archive
 ripples	Demonstrate sharp-wave ripples and replay in the hippocampus using data from the DANDI Archive
+replay	Demonstrate hippocampal replay by decoding the spatial trajectory represented during sharp-wave ripple events using data from the DANDI Archive
+ringattractor	Demonstrate that the head-direction system forms a continuous ring attractor whose one-dimensional structure is internally maintained during sleep, using data from the DANDI Archive
+decisionbias	Demonstrate that an upcoming decision bias can be decoded from neural activity before stimulus onset in a perceptual decision task, using data from the DANDI Archive

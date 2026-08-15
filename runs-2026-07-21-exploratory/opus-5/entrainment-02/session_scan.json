@@ -1,0 +1,314 @@
+[
+ {
+  "session": "Peter-MS22-180720-110055-concat",
+  "ngood": 80,
+  "beh": true,
+  "cool": {
+   "Pre-Cooling": 45,
+   "Cooling on": 47,
+   "Cooling off": 14,
+   "Post-Cooling": 35
+  },
+  "dur": 19264,
+  "lfp": [
+   32332680,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   6
+  ]
+ },
+ {
+  "session": "Peter-MS22-180711-112912-concat",
+  "ngood": 68,
+  "beh": true,
+  "cool": {
+   "Pre-Cooling": 39,
+   "Cooling on": 29,
+   "Cooling off": 14,
+   "Post-Cooling": 29
+  },
+  "dur": 14155,
+  "lfp": [
+   18991845,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   6
+  ]
+ },
+ {
+  "session": "Peter-MS22-180629-110319-concat",
+  "ngood": 172,
+  "beh": true,
+  "cool": {
+   "Pre-Cooling": 40,
+   "Cooling on": 50,
+   "Cooling off": 15,
+   "Post-Cooling": 38
+  },
+  "dur": 12122,
+  "lfp": [
+   15187545,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   6
+  ]
+ },
+ {
+  "session": "Peter-MS13-171128-113924-concat",
+  "ngood": 73,
+  "beh": true,
+  "cool": {
+   "Pre-Cooling": 62,
+   "Cooling on": 30,
+   "Cooling off": 17,
+   "Post-Cooling": 50
+  },
+  "dur": 18910,
+  "lfp": [
+   23648220,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   20
+  ]
+ },
+ {
+  "session": "Peter-MS12-170719-095305-concat",
+  "ngood": 48,
+  "beh": true,
+  "cool": {
+   "Pre-Cooling": 35,
+   "Cooling on": 47,
+   "Cooling off": 26,
+   "Post-Cooling": 41
+  },
+  "dur": 22507,
+  "lfp": [
+   34433685,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   19
+  ]
+ },
+ {
+  "session": "Peter-MS12-170723-141121-concat",
+  "ngood": 0,
+  "beh": true,
+  "cool": {
+   "Pre-Cooling": 32,
+   "Cooling on": 42,
+   "Cooling off": 12,
+   "Post-Cooling": 54
+  },
+  "dur": 25600,
+  "lfp": [
+   32010390,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   19
+  ]
+ },
+ {
+  "session": "Peter-MS21-180629-110332-concat",
+  "ngood": 172,
+  "beh": true,
+  "cool": {
+   "Pre-Cooling": 40,
+   "Cooling on": 50,
+   "Cooling off": 20,
+   "Post-Cooling": 59
+  },
+  "dur": 11515,
+  "lfp": [
+   14394330,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   63
+  ]
+ },
+ {
+  "session": "Peter-MS13-171201-130527-concat",
+  "ngood": 67,
+  "beh": true,
+  "cool": {
+   "Pre-Cooling": 44,
+   "Cooling on": 24,
+   "Cooling off": 9,
+   "Post-Cooling": 56
+  },
+  "dur": 21804,
+  "lfp": [
+   27293625,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   20
+  ]
+ },
+ {
+  "session": "Peter-MS22-180628-120341-concat",
+  "ngood": 79,
+  "beh": true,
+  "cool": {
+   "Pre-Cooling": 36,
+   "Cooling on": 59,
+   "Cooling off": 7,
+   "Post-Cooling": 57
+  },
+  "dur": 16313,
+  "lfp": [
+   20416545,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   0
+  ]
+ },
+ {
+  "session": "Peter-MS21-180712-103200-concat",
+  "ngood": 59,
+  "beh": true,
+  "cool": null,
+  "dur": 21943,
+  "lfp": [
+   27707625,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   63
+  ]
+ },
+ {
+  "session": "Peter-MS21-180627-143449-concat",
+  "ngood": 160,
+  "beh": true,
+  "cool": null,
+  "dur": 9368,
+  "lfp": [
+   11872122,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   79
+  ]
+ },
+ {
+  "session": "Peter-MS21-180625-153927-concat",
+  "ngood": 83,
+  "beh": true,
+  "cool": {
+   "Pre-Cooling": 35,
+   "Cooling on": 36,
+   "Cooling off": 14,
+   "Post-Cooling": 43
+  },
+  "dur": 9059,
+  "lfp": [
+   11324070,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   63
+  ]
+ },
+ {
+  "session": "Peter-MS12-170716-172307-concat",
+  "ngood": 36,
+  "beh": true,
+  "cool": {
+   "Pre-Cooling": 41,
+   "Cooling on": 52,
+   "Cooling off": 17,
+   "Post-Cooling": 36
+  },
+  "dur": 19225,
+  "lfp": [
+   24041340,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   19
+  ]
+ },
+ {
+  "session": "Peter-MS21-180628-155921-concat",
+  "ngood": 109,
+  "beh": true,
+  "cool": {
+   "Pre-Cooling": 39,
+   "Cooling on": 29,
+   "Cooling off": 24,
+   "Post-Cooling": 76
+  },
+  "dur": 5471,
+  "lfp": [
+   6839190,
+   128
+  ],
+  "chunks": [
+   81920,
+   64
+  ],
+  "theta_ref": [
+   63
+  ]
+ }
+]

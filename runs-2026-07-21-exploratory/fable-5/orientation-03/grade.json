@@ -1,10 +1,11 @@
 {
   "dandiset": "000021",
-  "subject_session": "6 sessions: sub-699733573/ses-715093703 (example), sub-703279277/ses-719161530, sub-707296975/ses-721123822, sub-716813540/ses-739448407, sub-717038285/ses-732592105, sub-718643564/ses-737581020",
+  "subject_session": "sub-699733573/ses-715093703 (+5 more sessions)",
   "headline_stat": {
-    "name": "fraction of QC-passing visual cortical units orientation-selective (633/1196; 84% of the 758 ANOVA-direction-modulated subset); median ratio-based OSI in VISp = 0.457, median gOSI = 0.240",
-    "value": 0.53,
-    "in_prereg_range": true
+    "name": "median gOSI among responsive units (vs shuffled null)",
+    "value": "0.239 vs 0.066",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
@@ -21,12 +22,11 @@
   "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000021 Allen Visual Coding Neuropixels with drifting and static gratings in VISp plus five higher visual areas is the canonical choice for orientation selectivity, and six sessions with 1196 QC-passing units give ample power.",
-    "handling": "Sessions are streamed over HTTP with remfile rather than downloaded or simulated, units are assigned to areas via the peak channel of the electrode table, quality criteria are explicit (quality=good, SNR>1, ISI violations<0.5, presence ratio>0.9, amplitude cutoff<0.1, rate>0.5 Hz), trials come from the NWB stimulus interval tables with blank sweeps used as baseline, and the drifting/static orientation convention was checked empirically rather than assumed.",
-    "analysis": "Circular vector-strength indices at the correct harmonics, a 500-permutation trial-shuffled null for gOSI, split-half reliability, a cross-stimulus generalization test against a unit-shuffled control, a fourth-harmonic Rayleigh test for the cardinal bias, and a cross-validated Poisson GLM together form an unusually complete control set; the only real gaps are the absence of multiplicity correction across 1196 units at p<0.01 (expected false positives are ~2% of the 633 claimed) and the fact that the gOSI permutation test conditions on already-direction-modulated units, which the write-up itself names.",
-    "correctness": "Every headline number reproduces exactly from the committed CSVs and the stored notebook output, the figures agree with the text (aligned-curve values 1.00/0.17/0.68 match fig06), and the prereg-comparable quantities (0.53 of QC units selective, median OSI 0.457 in V1) fall inside the reference ranges; the 84% figure is above 0.75 only because its denominator is the stricter ANOVA-modulated subset rather than 'visually responsive'.",
-    "figures": "All eight figures are readable with labeled axes, units and sample sizes; fig02's example is the highest-gOSI well-driven V1 unit and is described as such, fig03 deliberately spans the full selectivity range including clearly untuned units, and fig05/fig06/fig08 give the population summary, the observed-versus-null comparison and both validations.",
-    "honesty": "No claim I checked is contradicted or unsupported, the caveats section names concrete limitations specific to this analysis, including the crucial admission that the gOSI permutation test does not by itself separate orientation from direction, which is why the opposite-versus-orthogonal and cross-stimulus tests are reported; unmentioned minor issues (no FDR correction, peak-alignment bias in the aligned population curve) do not affect the conclusion.",
-    "verdict": "This is work I would take and move on from: canonical dataset, correctly streamed real data, correct circular statistics with proper nulls, an independent cross-stimulus validation, figures that show the effect plainly, and numbers that reproduce from the committed artifacts."
+    "dataset": "DANDI:000021 Allen Visual Coding Neuropixels is the canonical dataset for orientation selectivity in mouse visual cortex, with the standard drifting/static grating paradigm.",
+    "handling": "Real data streamed via remfile with explicit multi-criterion QC (quality=good, SNR, ISI violations, presence ratio, amplitude cutoff, firing rate), correct area filtering, pynapple trial-rate counts, and per-unit preferred-TF selection.",
+    "analysis": "Uses proper circular statistics (vector-strength gOSI/gDSI), a 500-shuffle permutation null, split-half reliability, cross-stimulus transfer, a cross-validated cyclic-B-spline Poisson GLM, and a Rayleigh test on the fourth harmonic.",
+    "correctness": "Headline values (median gOSI 0.239 vs null 0.066, aligned-population orthogonal 0.17 / opposite 0.68) reproduce from the committed CSVs and match the figures, and are internally consistent with per-area statistics.",
+    "figures": "Figures show the effect clearly with labeled units and sample sizes; example units span the full selectivity range (gOSI 0.97 down to 0.04) and a negative-control GLM fit is included, so examples are representative not flattering.",
+    "honesty": "Claims are proportionate to strong evidence and the write-up names specific, real limitations (no baseline subtraction, running-speed gain unregressed, what the permutation test does and does not establish)."
   }
 }

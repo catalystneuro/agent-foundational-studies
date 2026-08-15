@@ -1,10 +1,11 @@
 {
   "dandiset": "000021",
-  "subject_session": "8 sessions / 8 mice: 715093703, 719161530, 721123822, 732592105, 742951821, 750332458, 760693773, 762120172 (prototype figures from 715093703)",
+  "subject_session": "8 sessions/8 mice (715093703, 719161530, 721123822, 732592105, 742951821, 750332458, 760693773, 762120172)",
   "headline_stat": {
-    "name": "median classic OSI in VISp (and fraction of visually responsive cortical units significantly orientation tuned = 0.600; VISp 0.647)",
-    "value": 0.667,
-    "in_prereg_range": true
+    "name": "median classic OSI in V1 (cortex vs LGd noise-corrected gOSI 0.221 vs 0.096, p=6e-5)",
+    "value": 0.67,
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
@@ -21,12 +22,11 @@
   "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000021 Allen Visual Coding Neuropixels with the Brain Observatory drifting- and static-grating blocks, eight sessions covering V1, five higher visual areas, LGd and LP, is the canonical choice for this phenomenon.",
-    "handling": "Real NWB files are streamed from S3 with remfile, Allen-recommended quality metrics are applied and stated, per-probe invalid-data epochs are NaN-masked, counting windows are offset for response latency and explicitly truncated to prevent interval merging (with assertions), and blank sweeps provide a matched baseline.",
-    "analysis": "Circular statistics are used throughout (vector-based gOSI, Jammalamadaka circular correlation with a permutation p-value, Rayleigh test on doubled angles), the permutation null re-runs the preferred-temporal-frequency selection so the selection bias is present in the null, and the claim is backed by a noise-floor correction, a cross-validated population tuning curve, a shuffle-controlled decoder and a held-out GLM whose basis is blind to direction; the only gaps are no multiple-comparison correction across units and mild circularity in computing split-half reliability on units selected as significant from the same data.",
-    "correctness": "Median classic OSI in VISp is 0.667 and the fraction of visually responsive cortical units significantly tuned is 0.600 (VISp 0.647), both inside the preregistered ranges, and every README number matches stats_summary.txt, the figure annotations and glm_results.csv.",
-    "figures": "All seven figures are labeled with units and sample sizes, the raw-activity panel serves as an alignment check, the polar gallery shows most-selective, median and LGd units with the spontaneous rate drawn as a reference circle and an explicit caption about how gOSI can be inflated, and the population panels show the effect and its area comparison clearly.",
-    "honesty": "Claims are proportionate and specifically hedged: the LGd comparison is presented as graded rather than all-or-none, the limitations section names sparse LGd sampling, incomplete noise correction and uncontrolled receptive-field position, and the run even discloses that prior interrupted-attempt files sit in the directory and are unused; the only lapse is not repeating in the README that the reliability correlations are computed on the significantly-tuned subset, which the stats file does state.",
-    "verdict": "This is well beyond what a rotation student would produce in a week: correct data handling, appropriate circular statistics with real null distributions, converging descriptive, decoding and model-based measures, and a write-up whose claims match its own output."
+    "dataset": "DANDI:000021 (Allen Visual Coding Neuropixels) is the canonical known-good dataset for orientation selectivity, used in the standard species, regions, and paradigm.",
+    "handling": "Real NWB files streamed from S3, explicit Allen-recommended QC thresholds, per-probe invalid-times exclusion, blank-sweep baseline, and correctly truncated non-overlapping counting windows.",
+    "analysis": "Uses proper circular statistics (doubled-angle vector OSI and Jammalamadaka correlation), a preferred-TF-matched permutation null with noise-floor correction, cross-validated decoding, a periodic-basis Poisson GLM, and multiple orthogonal controls.",
+    "correctness": "Every reported number traces to committed code and stats_summary.txt, the metrics are internally consistent across figures and statistically sound (adequate n, permutation and held-out tests), and none are physically impossible.",
+    "figures": "Figures show the effect clearly with units, sample sizes, and honestly-chosen representative (median) examples, and the artifact-prone high-gOSI cases are explicitly flagged rather than passed off as typical.",
+    "honesty": "Claims are proportionate, the graded cortex-vs-thalamus story is stated with nuance, the gOSI positive bias is called out and controlled, and specific real limitations are named."
   }
 }

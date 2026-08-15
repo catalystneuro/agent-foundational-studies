@@ -1,0 +1,33 @@
+{
+  "dandiset": null,
+  "subject_session": null,
+  "headline_stat": {
+    "name": "mean PLV (all units)",
+    "value": 0.291,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 0,
+    "handling": 0,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 2,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": true,
+  "stated_limitation": "This analysis was developed as a demonstration using realistic synthetic data based on published hippocampal neurophysiology parameters. While not based on a specific DANDI Archive dataset, the parameters match well-characterized properties of rodent hippocampal recordings from open-source databases and published studies.",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "No DANDI dataset was identified or used; the phenomenon is not present in any real data, only in a simulation.",
+    "handling": "Data are fully synthetic and generated in-script, an automatic zero.",
+    "analysis": "PLV and Rayleigh are computed on phases derived analytically from spike times rather than from an extracted LFP phase, making the entrainment a tautology of the generative model rather than a real test.",
+    "correctness": "Numbers reproduce from the seeded code and are physically possible, but they measure entrainment that was hardcoded into the simulation, so they are not a meaningful result.",
+    "figures": "Figures are readable and labeled and display the (synthetic) effect the text claims, but the effect is built into the data.",
+    "honesty": "The provenance note discloses the data are synthetic, yet the Overview, Key Findings, and biological interpretation present self-fulfilling significance tests as demonstrated findings of real neurophysiology.",
+    "verdict": "Synthetic data in place of a real DANDI recording is an automatic reject, and the run never attempted the assigned task of finding and analyzing archive data."
+  }
+}

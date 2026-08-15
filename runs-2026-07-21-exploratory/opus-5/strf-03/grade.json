@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986",
+  "subject_session": "sub-LA11 ses-1 (prototype); all 15 sessions / 5 mice for population",
+  "headline_stat": {
+    "name": "tone-responsive units (circular-shift permutation, p<0.05)",
+    "value": "1072/1564 (69%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 2,
+    "handling": 3,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Two limits of the stimulus are worth stating. It contains only five frequencies one octave apart at a single 60 dB level, so the spectral axis of these STRFs is coarse and nothing can be said about level dependence, bandwidth finer than an octave, or combination sensitivity; a dense dynamic stimulus (a dynamic random chord or natural sounds) would be needed for that. And the tone sequence is periodic, so the reverse-correlation estimate is unbiased only for lags well inside the 0.805 s inter-onset interval.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Correct region and species (mouse auditory cortex) but pure tones at five octave-spaced frequencies are a marginal paradigm for a true spectrotemporal receptive field, yielding only a coarse frequency-time profile.",
+    "handling": "Real data streamed from DANDI via remfile, tone onsets and spike trains correctly aligned as pynapple objects, but all sorted units are used without explicit spike-sorting quality criteria.",
+    "analysis": "Three independent STRF estimators (peri-tone PSTH, closed-form STA, and a regularised Poisson GLM) are cross-validated against pynapple's ETA, with a circular-shift permutation null and a held-out spike-history control.",
+    "correctness": "Every headline number (1072/1564 responsive, 18 ms median latency, 878/194 exc/supp, arousal \u0394=+0.01 Hz p=0.15) reproduces exactly from the committed CSV/npz and rests on large samples and correct tests.",
+    "figures": "Figures show the effect clearly with labeled units and sample sizes, the example unit is chosen by response strength (the effect itself), and population panels confirm the tuning is general rather than cherry-picked.",
+    "honesty": "The write-up explicitly names the pure-tone stimulus limitation, the periodic-stimulus bias in reverse correlation, and reports the arousal split as a genuine null, with claims proportionate to the evidence.",
+    "verdict": "Rigorous, multiply-validated, and unusually honest work whose only real weakness is the fundamental dataset constraint, which the agent openly discloses, so it is accepted."
+  }
+}

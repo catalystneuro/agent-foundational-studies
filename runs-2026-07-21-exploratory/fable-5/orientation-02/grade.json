@@ -1,10 +1,11 @@
 {
   "dandiset": "000021",
-  "subject_session": "six sessions/six mice: sub-699733573_ses-715093703, sub-703279277_ses-719161530, sub-707296975_ses-721123822, sub-716813540_ses-739448407, sub-717038285_ses-732592105, sub-718643564_ses-737581020",
+  "subject_session": "six sessions from six mice (drifting/static gratings, Brain Observatory 1.1); 1501 quality units, LGd n=153 + six VIS areas",
   "headline_stat": {
-    "name": "Fraction of visually responsive VISp units orientation-selective (per-unit shuffle p<0.05 and gOSI>=0.25)",
-    "value": 0.43,
-    "in_prereg_range": true
+    "name": "median global OSI cortex vs LGd",
+    "value": "0.162 vs 0.063 (Mann-Whitney p=4.4e-31)",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
@@ -17,16 +18,16 @@
   "verdict": "accept",
   "fabrication_flag": false,
   "synthetic_data_flag": false,
-  "stated_limitation": "The permutation test detects any reproducible orientation bias, however small, so significance alone is a poor definition of \"orientation selective\": 69% of pooled LGd units clear p < 0.05 despite a median gOSI of 0.063. All headline fractions therefore require both the shuffle test and gOSI >= 0.25. Drift directions are sampled only every 45 deg, so the von Mises concentration parameter is bounded to keep the fitted lobe no narrower than 22.5 deg; fitted widths at that bound should be read as at or below the resolution of the stimulus set. Tuning curves pool over the five temporal frequencies rather than being computed at each unit's preferred frequency, which avoids selecting the condition with the same data used to measure the tuning at the cost of some dilution. Recording structures differ between sessions because probe placement differs, so LGd appears in only two of the six sessions and the thalamic comparison rests on 153 units from two mice rather than six",
+  "stated_limitation": "Recording structures differ between sessions because probe placement differs, so LGd appears in only two of the six sessions and the thalamic comparison rests on 153 units from two mice rather than six; the per-session panel in fig09 shows which structures each session contributes.",
   "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000021 (Allen Visual Coding Neuropixels, Brain Observatory 1.1) with drifting and static gratings, six sessions from six mice, VISp plus five higher areas and simultaneously recorded LGd as a within-session negative control, is exactly what an expert would choose.",
-    "handling": "NWB files were streamed with remfile range reads rather than downloaded, the ragged spike_times index and peak-channel-to-structure mapping are handled correctly, trials come from the stimulus interval tables with blank sweeps used as baseline, and the Allen quality filter (good, amplitude cutoff <0.1, ISI violations <0.5, presence ratio >0.9) is applied and stated.",
-    "analysis": "Doubled-angle vector metrics with a per-unit label-shuffle null, an effect-size threshold on top of significance, axial circular correlation for split-half and cross-stimulus agreement, a leave-one-trial-out population decoder whose error structure is the actual discriminating test, and a cross-validated Poisson GLM contrasting 180deg- and 360deg-periodic bases together go well beyond the standard treatment; the only nits are an approximate p-value formula for the circular correlation and no multiple-comparison correction, neither of which the conclusions depend on.",
-    "correctness": "I recomputed the per-area selective fractions, median gOSI values and LGd comparison from the committed CSV and they match the README exactly, the decoder and GLM numbers match the executed notebook output, and the fraction of responsive VISp units called selective (43%) sits inside the preregistered 0.25-0.75 band; the headline index is global OSI (VISp median 0.178) rather than the classic OSI, which the same table gives as 0.329 and which is inside the 0.25-0.70 band, so the substance is in range even though the quoted gOSI is not directly comparable to that row of the prereg table.",
-    "figures": "All ten figures are labeled with units and sample sizes, the single-unit raster shows two lobes 180deg apart unambiguously, and the population heatmaps, shuffled-null overlays, violin plots and per-session panel carry the representativeness burden that the deliberately best-tuned example units do not; the example units are ranked by gOSI, which is the effect being demonstrated rather than an unrelated criterion, and they are explicitly labeled as the most selective.",
-    "honesty": "The Caveats section names the specific weaknesses of this result (significance alone flags 69% of LGd units, the kappa bound at the stimulus resolution, temporal-frequency pooling dilution, LGd present in only two of six sessions so the thalamic comparison rests on two mice, uneven higher-area sampling so the areal ordering should not be read as a hierarchy), every quantitative claim traces to the committed output, and claims about the best-tuned cells are scoped as such.",
-    "verdict": "This is a complete, correct, well-controlled and honestly reported demonstration with a within-session thalamic control and four independent convergent checks; I would take the result and move on."
+    "dataset": "DANDI:000021 Allen Visual Coding Neuropixels with drifting/static gratings in V1 and higher areas is the canonical dataset for orientation selectivity.",
+    "handling": "Real data streamed via remfile, Allen's recommended quality filters (good units, amplitude_cutoff<0.1, isi_violations<0.5, presence_ratio>0.9) applied with correct region/depth mapping and trial alignment.",
+    "analysis": "Standard axial circular metrics (gOSI, vector-averaged preferred orientation, circular correlation) with a per-unit shuffle null, split-half reliability, cross-stimulus and GLM controls, all correct.",
+    "correctness": "Every reported figure (median gOSI 0.162 vs 0.063, p=4.4e-31, 25-41% cortical vs 5% LGd selective) reproduces exactly from the committed CSV and is internally consistent.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show the two-lobed tuning, split-half heatmap bands, decoder 180deg error structure, and the null overlay; example units are ranked by gOSI, the strength of the effect being demonstrated.",
+    "honesty": "Claims are proportionate to the evidence and the Caveats section names concrete, run-specific limitations (LGd from only two sessions, 45deg sampling resolution, significance vs effect-size distinction, pooling over temporal frequencies).",
+    "verdict": "A comprehensive, reproducible, and honestly caveated demonstration that visual cortex encodes orientation while its thalamic input does not; accept as-is."
   }
 }

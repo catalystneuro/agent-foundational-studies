@@ -2,31 +2,32 @@
   "dandiset": "000021",
   "subject_session": "sub-707296975 / ses-721123822",
   "headline_stat": {
-    "name": "median gOSI among significantly tuned visual-cortex units (455/622 = 73% significantly tuned)",
-    "value": 0.21,
-    "in_prereg_range": false
+    "name": "significantly tuned visual-cortex units (ANOVA p<0.01)",
+    "value": "455/622 (73%), median gOSI 0.21",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
     "handling": 4,
-    "analysis": 2,
-    "correctness": 1,
-    "figures": 2,
-    "honesty": 2
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
   },
-  "verdict": "revise",
+  "verdict": "accept",
   "fabrication_flag": false,
   "synthetic_data_flag": false,
   "stated_limitation": "none",
-  "pass": false,
+  "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI 000021 (Allen Visual Coding Neuropixels, Brain Observatory 1.1 drifting gratings) with 622 good units across VISp and higher visual areas is the canonical choice for orientation selectivity.",
-    "handling": "Real data streamed from the DANDI S3 bucket via remfile, units filtered to quality=='good' and VIS-cortex peak channels, blank sweeps dropped, and per-trial rates computed over the correct 2 s presentation windows with matching durations.",
-    "analysis": "gOSI uses the correct doubled-angle circular vector sum and the ANOVA on single-trial rates is a valid tuning test, but no shuffle or bootstrap null for gOSI is computed and the write-up's claim that chance gOSI is approximately 0 is wrong for 8 directions with finite trials, which matters when the median is only 0.21.",
-    "correctness": "All reported numbers reproduce exactly from the committed CSV (455/622 = 73.2%, median gOSI 0.214) and 73% is within the prereg fraction range, but the reported median selectivity index of 0.21 falls below the preregistered 0.25 to 0.70 range, which caps this axis at 1; there is also an unexplained n=455 versus n=401 mismatch between the README and figure 4.",
-    "figures": "The raster, PSTH, and population tuning matrix do show the effect and are readable, but every example unit displayed is the maximum-gOSI unit globally or per area (0.72 to 0.99 against area medians near 0.20) presented simply as 'Example', and the polar panels have their radial tick labels stripped so no rate scale is visible.",
-    "honesty": "The write-up plainly reports the low median gOSI of 0.21 and no claim is directly contradicted by its own figures, but it states no limitation of any kind, never notes that the showcased units are the extreme tail, and describes a visibly noisy population matrix as showing 'each with a single well-defined tuning peak' and the sparse 4 Hz example unit as a 'textbook' response despite its gDSI of 0.61 and 5-fold asymmetry between the two directions sharing that orientation.",
-    "verdict": "The core work is sound and reproducible on the right dataset with correct circular statistics, but before believing it I would ask for a shuffle null for gOSI, representative rather than maximum-gOSI example units, reconciliation of the 455 versus 401 counts, and a significance test that separates orientation selectivity from general direction tuning."
+    "dataset": "DANDI 000021 (Allen Visual Coding Neuropixels, drifting gratings, visual cortex) is the canonical dataset an expert would choose for orientation selectivity.",
+    "handling": "Real data streamed via remfile, quality=='good' and VIS-area unit filtering, blank sweeps excluded, correct per-trial firing rates and trial alignment.",
+    "analysis": "gOSI uses the correct double-angle circular measure and ANOVA establishes per-unit tuning, but a shuffle/null distribution for gOSI itself that would strengthen the population claim is absent.",
+    "correctness": "All headline numbers reproduce exactly from the committed CSV and are physically plausible, but the text (n=455) and fig04 (n=401) present two unreconciled denominators.",
+    "figures": "Figures are clearly labeled with units and sample sizes, the example is chosen by gOSI (the actual effect strength) and confirmed representative by its raster, and the population matrix shows the double-peaked orientation signature.",
+    "honesty": "Claims are proportionate to the evidence and nothing is misrepresented, but no result-specific limitations (single session, temporal-frequency pooling) are stated, so it sits at 3.",
+    "verdict": "Orientation selectivity is clearly and correctly demonstrated on the canonical dataset with reproducible numbers, so the result is believable as-is."
   }
 }

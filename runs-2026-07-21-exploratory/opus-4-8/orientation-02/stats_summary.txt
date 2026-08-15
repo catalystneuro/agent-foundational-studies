@@ -1,0 +1,53 @@
+sessions: ['715093703', '719161530', '721123822', '732592105', '742951821', '750332458', '760693773', '762120172']
+mice: 8   units passing QC: 2691   visually responsive: 1594
+
+           n  frac_sig_p<0.01  median_gOSI  median_gOSI_noise_corrected  median_OSI_classic  median_gDSI
+area                                                                                                    
+LGd     72.0         0.388889     0.216350                     0.095579            0.441774     0.170626
+LP     155.0         0.529032     0.292090                     0.164159            0.504126     0.122298
+VISal  271.0         0.612546     0.360483                     0.226877            0.596730     0.145306
+VISam  177.0         0.649718     0.390905                     0.254142            0.660377     0.142244
+VISl   190.0         0.526316     0.325039                     0.198597            0.584198     0.129852
+VISp   348.0         0.646552     0.399683                     0.250760            0.667105     0.161537
+VISpm  143.0         0.594406     0.369132                     0.219679            0.627500     0.137200
+VISrl  238.0         0.542017     0.334051                     0.186640            0.577812     0.182689
+
+cortex vs LGd noise-corrected gOSI: medians 0.2207 vs 0.0956, Mann-Whitney U=62982, p=6.12e-05
+cortex fraction significantly tuned: 0.600; LGd: 0.389
+split-half circular r (cortex, tuned) = 0.915, p < 0.0005, n = 820
+drifting vs static circular r (cortex, tuned) = 0.827, p < 0.0005, n = 601
+locomotion: median gOSI 0.495 stationary vs 0.422 running, Wilcoxon p = 1.23e-14; Spearman r = 0.631; median |preferred-orientation shift| = 4.6 deg, n = 804
+
+preferred-orientation Rayleigh test (doubled angles):
+  visual cortex: R = 0.159, p = 8.84e-10, n = 820
+  visual thalamus: R = 0.130, p = 0.157, n = 110
+
+population decoding (4 orientations, chance 0.25):
+                       accuracy  shuffled
+group         n_units                    
+LGd           1        0.340861  0.252033
+              2        0.347386  0.251808
+              4        0.429331  0.253093
+              8        0.608303  0.252600
+              16       0.739977  0.254517
+              32       0.904352  0.251866
+visual cortex 1        0.375002  0.249668
+              2        0.446299  0.249320
+              4        0.568955  0.248758
+              8        0.730371  0.249510
+              16       0.911511  0.248480
+              32       0.981188  0.248698
+
+NeMoS GLM, held-out pseudo-R2 gained by orientation:
+       count    median      mean
+area                            
+LGd       72  0.032555  0.076466
+LP       155  0.048100  0.126135
+VISal    271  0.103567  0.165389
+VISam    177  0.071658  0.144643
+VISl     190  0.088745  0.161998
+VISp     348  0.085371  0.162020
+VISpm    143  0.092897  0.172131
+VISrl    238  0.059343  0.122724
+cortex vs LGd: medians 0.0822 vs 0.0326, Mann-Whitney U=65297, p=2.87e-06
+gOSI vs GLM gain: Spearman r = 0.647, p = 1.05e-189

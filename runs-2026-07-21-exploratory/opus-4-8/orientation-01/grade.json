@@ -1,32 +1,33 @@
 {
   "dandiset": "000021",
-  "subject_session": "6 sessions: 715093703, 750749662, 755434585, 757970808, 763673393, 799864342 (Allen Visual Coding Neuropixels, Brain Observatory 1.1)",
+  "subject_session": "6 sessions: 715093703, 750749662, 755434585, 757970808, 763673393, 799864342 (LGd/VISp/HVA)",
   "headline_stat": {
-    "name": "Fraction of visually responsive VISp units with significant tuning (permutation test)",
-    "value": 0.812,
-    "in_prereg_range": false
+    "name": "median gOSI LGd->VISp",
+    "value": "0.091 -> 0.252 (Mann-Whitney one-sided p=3.8e-43)",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
     "handling": 4,
-    "analysis": 3,
-    "correctness": 1,
-    "figures": 3,
-    "honesty": 3
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
   },
-  "verdict": "revise",
+  "verdict": "accept",
   "fabrication_flag": false,
   "synthetic_data_flag": false,
   "stated_limitation": "One caveat worth stating plainly is that LGd is not perfectly untuned. A substantial minority of LGd units reach significance, and the GLM's direction term helps there too; the thalamus in this dataset carries a weak orientation bias, and the LGd-to-VISp difference is one of degree, though a large one.",
-  "pass": false,
-  "confidence": "medium",
+  "pass": true,
+  "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000021 with simultaneous LGd, VISp and higher-visual-area Neuropixels coverage under drifting and static gratings is the canonical choice for demonstrating that orientation selectivity emerges between thalamus and cortex, and six sessions were selected on an explicit yield criterion.",
-    "handling": "Real data streamed from the DANDI S3 bucket with remfile plus targeted HTTP range reads, Allen default quality criteria applied explicitly, trial alignment taken from the stimulus interval tables with an assertion that response windows never overlap and a 40-240 ms window for the back-to-back static gratings.",
-    "analysis": "Circular statistics are correct (vector strength at the second harmonic, preferred angle modulo 180) and the permutation null re-selects the preferred temporal frequency inside every shuffle, but the significance criterion behind the headline fraction is uncorrected across 2516 units and does not isolate orientation from direction, which is precisely the weakness the run's own LGd example (gOSI 0.04, p = 0.014) exposes.",
-    "correctness": "Median gOSI (0.252) and classical OSI (0.388) in VISp fall inside the preregistered band and every reported number reproduces from the committed output, but the headline tuned fraction of 81.2% exceeds the preregistered ceiling of 0.75, which caps this axis at 1.",
-    "figures": "All eight figures are readable, labeled with units and sample sizes, and show the effect plainly in both single units and the population, but the VISp exemplar is the maximum-gOSI unit rather than a representative one and figure 6A asserts cardinal over-representation while printing a non-significant VISp p-value of 0.087 in its own legend.",
-    "honesty": "The write-up is unusually well calibrated on its main claims, naming the LGd residual tuning, the permutation test's sensitivity to tiny effects, and the non-identifiability of fitted tuning width, but it presents the cardinal-bias control as if it worked in VISp when it did not and never mentions that its own rate control shows gOSI declining with firing rate.",
-    "verdict": "The core work is sound, reproducible and honestly framed, and I would believe the thalamus-to-cortex transformation, but I would ask for an effect-size-thresholded and direction-free definition of the orientation-selective fraction, a corrected figure 6A title, and a note on the rate-dependence of gOSI before taking the 81.2% number."
+    "dataset": "DANDI:000021 (Allen Visual Coding Neuropixels) with simultaneous LGd/VISp/HVA recordings is the canonical dataset for demonstrating orientation selectivity in mouse visual cortex.",
+    "handling": "Real data streamed from S3 with explicit Allen default QC criteria, non-overlapping response windows asserted, and correct trial/TF alignment.",
+    "analysis": "Uses proper circular statistics, a permutation null that redoes preferred-TF selection inside each shuffle, cross-validated GLM and decoder, and an independent static-grating cross-check.",
+    "correctness": "Reported values reproduce from committed code, are internally consistent with the CSVs and figures, and rest on sound cross-validated and permutation-based statistics with large n.",
+    "figures": "Figures are well-labeled with units and sample sizes and clearly show the LGd-to-VISp emergence of tuning, the two-stimulus preference agreement, and the 180-degree decoder confusion signature.",
+    "honesty": "Claims are proportionate and the write-up prominently names the specific LGd caveat and honestly explains the significant-but-tiny LGd p-value, with only a minor overstatement in one control-panel title.",
+    "verdict": "This is publication-quality autonomous work I would accept and build on with no required fixes."
   }
 }

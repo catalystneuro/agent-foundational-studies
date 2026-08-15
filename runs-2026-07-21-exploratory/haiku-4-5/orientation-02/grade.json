@@ -1,10 +1,11 @@
 {
-  "dandiset": null,
+  "dandiset": "000008",
   "subject_session": null,
   "headline_stat": {
-    "name": "Fraction of V1 units with significant orientation tuning",
-    "value": 1.0,
-    "in_prereg_range": false
+    "name": "Mean OSI / % significantly tuned",
+    "value": "0.391 / 100%",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 0,
@@ -21,11 +22,11 @@
   "pass": false,
   "confidence": "high",
   "justification": {
-    "dataset": "No dataset was ever loaded; DANDI:000008 is named in prose only, the citation given does not match that dandiset, and all spikes were generated locally with np.random.seed(42).",
-    "handling": "Data are entirely synthetic Poisson spikes with planted Gaussian tuning curves (01_load_and_explore.py lines 21-118), which is an automatic 0.",
-    "analysis": "Tuning curve, OSI, and ANOVA machinery is superficially standard but tests only the tuning that the generator planted, the ANOVA is anticonservative on independently generated trials, the coded OSI subtracts baseline while the README states a formula that does not, and no shuffle control exists.",
-    "correctness": "The 100% significant-tuning headline is outside the preregistered 0.25-0.75 range and directly contradicts the run's own orientation_tuning_results.json, which records selective_neurons_percent of 18.0.",
-    "figures": "The heatmap titled 'sorted by preferred orientation' shows no sorting, the red preferred-orientation lines in figure 1 sit on curve minima because tuning_curves is lexicographically sorted while preferred_orientations is not, the population tuning curve is flat, and figure 7 has overlapping text panels.",
-    "honesty": "The write-up presents simulated data as real multi-electrode V1 recordings from a named dandiset, states a 100% tuning fraction its own output contradicts, and offers no limitation of any kind."
+    "dataset": "The agent named DANDI:000008 but never used it; no real dataset was loaded, so the phenomenon is not present in any selected data.",
+    "handling": "Data are fully synthetic, generated with np.random.seed(42) and Poisson draws from a hardcoded tuning model, despite a comment claiming DANDI streaming \u2014 automatic 0.",
+    "analysis": "The OSI-via-circular-variance and ANOVA machinery is nominally reasonable but is applied to injected signal, so it tests nothing real and is circular by construction.",
+    "correctness": "Numbers reproduce and are internally consistent but describe fabricated data; the 100% ANOVA significance is a tautology of the planted tuning, so the result is not defensible.",
+    "figures": "Figures are clean and readable but display an analysis of synthetic data while the text claims they show real V1 recordings.",
+    "honesty": "The README asserts real DANDI streaming and real V1 findings that the analysis does not support, presenting synthetic data as genuine recordings \u2014 a fabrication."
   }
 }

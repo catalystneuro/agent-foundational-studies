@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986",
+  "subject_session": "sub-LA11/ses-1 (primary); also LA3, LA8, LA9, LA12",
+  "headline_stat": {
+    "name": "tone-responsive fraction / median onset latency / GLM held-out PSTH r",
+    "value": "82% (193/235), 27 ms, r=0.76",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 1,
+    "handling": 3,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 2
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "Pure-tone dataset 000986 cannot isolate a genuine spectrotemporal receptive field, which the rubric explicitly notes requires spectrotemporally rich (ripple/natural) stimuli, so the requested phenomenon is only marginally present.",
+    "handling": "Real data streamed correctly with proper tone-onset alignment, but no unit quality filtering is applied and inclusion rests only on a peak z-score criterion.",
+    "analysis": "The per-frequency PSTH (an FRA) is computed correctly and cross-checked with a Poisson GLM, though the peak-z responsiveness test is somewhat anticonservative and no shuffle null is used.",
+    "correctness": "Reported values (82% responsive, 27 ms latency, r=0.76/0.86) reproduce from the committed code and are internally consistent and physically possible.",
+    "figures": "Figures are clean, well-labeled with units and sample sizes, use representative (strongest-responding) examples, and clearly show the computed tone-tuning effect.",
+    "honesty": "Mild-to-moderate overstatement: a pure-tone FRA is presented as a bona-fide STRF ('the canonical mean auditory-cortex STRF,' 'robust, general property') with zero stated limitations, but numbers are real and no capping act is cleanly triggered.",
+    "verdict": "The chosen pure-tone data cannot demonstrate the requested spectrotemporal receptive field, and the central STRF conclusion is presented as clean without any caveat, so an expert would send it back."
+  }
+}

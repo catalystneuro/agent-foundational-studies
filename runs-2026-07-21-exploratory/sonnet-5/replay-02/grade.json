@@ -1,0 +1,33 @@
+{
+  "dandiset": "000447",
+  "subject_session": "sub-JDS-NFN-AM2, epoch 1 (W-track)",
+  "headline_stat": {
+    "name": "fraction of decodable SWR events with significant sequential structure (p<0.05 vs 500x time-bin shuffle)",
+    "value": "7/23 (30%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 1,
+    "honesty": 1
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "an unrestricted, whole-recording baseline turned out to be dominated by movement-related broadband artifacts (high ripple-band power samples were *less* likely to be immobile than chance), so gating on immobility first was necessary to get physiologically plausible events",
+  "pass": false,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "DANDI 000447 CA1 W-track (Frank/Jadhav) is the canonical hippocampal replay preparation, an expert-standard choice.",
+    "handling": "Real streamed data with correct unit/LFP/position/epoch alignment, explicit place-cell criteria, and immobility-gated ripple detection backed by an empirical artifact check.",
+    "analysis": "Bayesian decoding with a per-event time-bin shuffle null is a standard, correctly implemented replay analysis, though no formal population test is run and the score/significance decoupling is unaddressed.",
+    "correctness": "The 7/23 (30%) headline reproduces exactly from the committed CSV and is internally consistent and physically possible.",
+    "figures": "Population and place-field figures are strong, but the local/remote example events are selected by distance-from-position rather than replay strength, so the 'remote' figure shows an incoherent score-0.05 posterior, capping this axis.",
+    "honesty": "The population claim is honest and transparent, but the prose presents the visibly diffuse, near-zero-score remote example as a coherent trajectory sweep with no caveat, misrepresenting an unrepresentative exemplar.",
+    "verdict": "The core population-level replay demonstration is sound and reproduces, so the science warrants revision rather than rejection, but the remote-example misrepresentation fails the honesty gate."
+  }
+}

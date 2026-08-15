@@ -1,0 +1,32 @@
+{
+  "dandiset": "000409",
+  "subject_session": "IBL Brain Wide Map; 20 sessions analysed (e.g. bd456d8f-d36e-434a-8051-ff3997253802), 7,631 units, 12,283 biased-block trials",
+  "headline_stat": {
+    "name": "pre-stimulus block decoding AUC (group mean vs pseudo-session null)",
+    "value": "0.554 vs 0.511, p=0.008",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "as a feature set they do decode the block slightly above chance (AUC 0.529), which is close enough to the neural value that movement and arousal cannot be dismissed entirely ... the trial-by-trial fluctuation of the read-out does not predict the animal's choice on low-evidence trials once block identity, previous choice and contrast are in the model (t = -0.21, p = 0.84) ... the correlation across sessions between behavioural bias magnitude and decoding accuracy is not significant (r = 0.10, p = 0.67). So the demonstration is that the upcoming bias is present in pre-stimulus activity above a stringent null, not that this particular linear read-out is what the animal uses.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000409 (IBL Brain Wide Map) with the biased-block task is the canonical dataset for the pre-stimulus decision-bias phenomenon.",
+    "handling": "Real data streamed via remfile with careful choice/side mapping (assertion-checked), block-integrity screening, a movement-free quiescence window, and behavioural covariates extracted as confound controls.",
+    "analysis": "Uses exactly the required autocorrelation-aware machinery: contiguous folds, pseudo-session and circular-shift nulls, a negative control, and movement/arousal and behavioural-history comparisons.",
+    "correctness": "Every headline number (group AUCs, per-session p-values, control values) reproduces from the committed result CSVs and is internally consistent with the figures.",
+    "figures": "Figures are clearly labelled with units and sample sizes, show the effect and the null results, and match the reported statistics.",
+    "honesty": "The write-up is a model of calibration, explicitly reporting the weak effect size and every null result (history beats neural, no trialwise prediction, no brain-behaviour correlation, movement not fully excluded)."
+  }
+}

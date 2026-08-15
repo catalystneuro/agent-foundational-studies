@@ -1,0 +1,242 @@
+[
+ {
+  "path": "sub-Mouse12/sub-Mouse12_ses-Mouse12-120806_behavior+ecephys.nwb",
+  "size": 30600917014,
+  "asset_id": "33f6aa51-f82f-4467-95b0-3f1403668654",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/33f6aa51-f82f-4467-95b0-3f1403668654/download/"
+ },
+ {
+  "path": "sub-Mouse12/sub-Mouse12_ses-Mouse12-120807_behavior+ecephys.nwb",
+  "size": 3606049723,
+  "asset_id": "69655198-97af-4e65-9198-1c94d0830d24",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/69655198-97af-4e65-9198-1c94d0830d24/download/"
+ },
+ {
+  "path": "sub-Mouse12/sub-Mouse12_ses-Mouse12-120808_behavior+ecephys.nwb",
+  "size": 4088457766,
+  "asset_id": "88587645-9aa1-4247-84b2-69bd45a23ce9",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/88587645-9aa1-4247-84b2-69bd45a23ce9/download/"
+ },
+ {
+  "path": "sub-Mouse12/sub-Mouse12_ses-Mouse12-120809_behavior+ecephys.nwb",
+  "size": 37417846397,
+  "asset_id": "c816972c-f501-4726-9333-a42aa2321d90",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/c816972c-f501-4726-9333-a42aa2321d90/download/"
+ },
+ {
+  "path": "sub-Mouse12/sub-Mouse12_ses-Mouse12-120810_behavior+ecephys.nwb",
+  "size": 29992834258,
+  "asset_id": "00bf96d4-2c4d-44e9-93ea-a21e7c6e6959",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/00bf96d4-2c4d-44e9-93ea-a21e7c6e6959/download/"
+ },
+ {
+  "path": "sub-Mouse17/sub-Mouse17_ses-Mouse17-130125_behavior+ecephys.nwb",
+  "size": 2787606103,
+  "asset_id": "e62179fc-cd8d-4901-98aa-ccb35086f9f7",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/e62179fc-cd8d-4901-98aa-ccb35086f9f7/download/"
+ },
+ {
+  "path": "sub-Mouse17/sub-Mouse17_ses-Mouse17-130128_behavior+ecephys.nwb",
+  "size": 2464340826,
+  "asset_id": "4cc64fe0-7b1e-404c-8b86-fb5659292830",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/4cc64fe0-7b1e-404c-8b86-fb5659292830/download/"
+ },
+ {
+  "path": "sub-Mouse17/sub-Mouse17_ses-Mouse17-130129_behavior+ecephys.nwb",
+  "size": 3090717305,
+  "asset_id": "533ebd09-8af4-4238-8c51-8a679c427c96",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/533ebd09-8af4-4238-8c51-8a679c427c96/download/"
+ },
+ {
+  "path": "sub-Mouse17/sub-Mouse17_ses-Mouse17-130130_behavior+ecephys.nwb",
+  "size": 3059947962,
+  "asset_id": "e562f907-b93d-49fa-a1b1-3a3a89645e4f",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/e562f907-b93d-49fa-a1b1-3a3a89645e4f/download/"
+ },
+ {
+  "path": "sub-Mouse17/sub-Mouse17_ses-Mouse17-130131_behavior+ecephys.nwb",
+  "size": 2963782803,
+  "asset_id": "d6b3126c-2c99-45b4-a1e6-8f0e5acda578",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/d6b3126c-2c99-45b4-a1e6-8f0e5acda578/download/"
+ },
+ {
+  "path": "sub-Mouse17/sub-Mouse17_ses-Mouse17-130201_behavior+ecephys.nwb",
+  "size": 2646303928,
+  "asset_id": "7f408e4a-3218-4a17-983b-d7b5cdb9dc82",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/7f408e4a-3218-4a17-983b-d7b5cdb9dc82/download/"
+ },
+ {
+  "path": "sub-Mouse17/sub-Mouse17_ses-Mouse17-130202_behavior+ecephys.nwb",
+  "size": 3092570787,
+  "asset_id": "c86c7e25-fa65-4356-a699-4b1ab8ab0d64",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/c86c7e25-fa65-4356-a699-4b1ab8ab0d64/download/"
+ },
+ {
+  "path": "sub-Mouse17/sub-Mouse17_ses-Mouse17-130203_behavior+ecephys.nwb",
+  "size": 3244362988,
+  "asset_id": "74079bfe-223b-45ea-b71b-40d7b2ff6151",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/74079bfe-223b-45ea-b71b-40d7b2ff6151/download/"
+ },
+ {
+  "path": "sub-Mouse17/sub-Mouse17_ses-Mouse17-130204_behavior+ecephys.nwb",
+  "size": 3757564959,
+  "asset_id": "f92f2709-4469-4c1d-a883-75eb66ee898a",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/f92f2709-4469-4c1d-a883-75eb66ee898a/download/"
+ },
+ {
+  "path": "sub-Mouse20/sub-Mouse20_ses-Mouse20-130514_behavior+ecephys.nwb",
+  "size": 1892072604,
+  "asset_id": "748aa5de-c0de-4aa7-a7ef-2aad2f87a7eb",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/748aa5de-c0de-4aa7-a7ef-2aad2f87a7eb/download/"
+ },
+ {
+  "path": "sub-Mouse20/sub-Mouse20_ses-Mouse20-130515_behavior+ecephys.nwb",
+  "size": 2622899450,
+  "asset_id": "f1a2857b-22b7-4e9e-a6af-211c76081391",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/f1a2857b-22b7-4e9e-a6af-211c76081391/download/"
+ },
+ {
+  "path": "sub-Mouse20/sub-Mouse20_ses-Mouse20-130516_behavior+ecephys.nwb",
+  "size": 2950586288,
+  "asset_id": "714ae657-90a5-44ae-82c5-c1f7e762c2b2",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/714ae657-90a5-44ae-82c5-c1f7e762c2b2/download/"
+ },
+ {
+  "path": "sub-Mouse20/sub-Mouse20_ses-Mouse20-130517_behavior+ecephys.nwb",
+  "size": 3164741260,
+  "asset_id": "d3f6aa86-20fb-4330-97dc-8e4900e16a0e",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/d3f6aa86-20fb-4330-97dc-8e4900e16a0e/download/"
+ },
+ {
+  "path": "sub-Mouse20/sub-Mouse20_ses-Mouse20-130520_behavior+ecephys.nwb",
+  "size": 2387413708,
+  "asset_id": "c0104ace-0807-473a-ad59-a8cc594ac4e9",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/c0104ace-0807-473a-ad59-a8cc594ac4e9/download/"
+ },
+ {
+  "path": "sub-Mouse24/sub-Mouse24_ses-Mouse24-131213_behavior+ecephys.nwb",
+  "size": 1306159378,
+  "asset_id": "ada02790-6eb6-48ee-902d-9ba017303586",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/ada02790-6eb6-48ee-902d-9ba017303586/download/"
+ },
+ {
+  "path": "sub-Mouse24/sub-Mouse24_ses-Mouse24-131216_behavior+ecephys.nwb",
+  "size": 2672811531,
+  "asset_id": "14dafd30-f9fb-4aac-bc8e-e0d46d1b35e6",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/14dafd30-f9fb-4aac-bc8e-e0d46d1b35e6/download/"
+ },
+ {
+  "path": "sub-Mouse24/sub-Mouse24_ses-Mouse24-131217_behavior+ecephys.nwb",
+  "size": 2240254646,
+  "asset_id": "c6cfc0f2-dda6-4136-be2c-be4a4de5a50e",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/c6cfc0f2-dda6-4136-be2c-be4a4de5a50e/download/"
+ },
+ {
+  "path": "sub-Mouse24/sub-Mouse24_ses-Mouse24-131218_behavior+ecephys.nwb",
+  "size": 2545277745,
+  "asset_id": "07ef959c-6778-4401-9434-641b88fc75a2",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/07ef959c-6778-4401-9434-641b88fc75a2/download/"
+ },
+ {
+  "path": "sub-Mouse25/sub-Mouse25_ses-Mouse25-140123_behavior+ecephys.nwb",
+  "size": 2552062673,
+  "asset_id": "bdb30f7d-ba69-4d2e-8504-2efab69cd8d7",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/bdb30f7d-ba69-4d2e-8504-2efab69cd8d7/download/"
+ },
+ {
+  "path": "sub-Mouse25/sub-Mouse25_ses-Mouse25-140124_behavior+ecephys.nwb",
+  "size": 2416268507,
+  "asset_id": "43c07029-2ac8-4900-9e51-8c44c3264080",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/43c07029-2ac8-4900-9e51-8c44c3264080/download/"
+ },
+ {
+  "path": "sub-Mouse25/sub-Mouse25_ses-Mouse25-140128_behavior+ecephys.nwb",
+  "size": 2509921813,
+  "asset_id": "91242a8e-2402-40b3-926b-8d07aa406748",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/91242a8e-2402-40b3-926b-8d07aa406748/download/"
+ },
+ {
+  "path": "sub-Mouse25/sub-Mouse25_ses-Mouse25-140129_behavior+ecephys.nwb",
+  "size": 2614726263,
+  "asset_id": "8750d43b-c61d-461c-a30c-e3f071a835e6",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/8750d43b-c61d-461c-a30c-e3f071a835e6/download/"
+ },
+ {
+  "path": "sub-Mouse25/sub-Mouse25_ses-Mouse25-140130_behavior+ecephys.nwb",
+  "size": 2859018250,
+  "asset_id": "9c49d0c6-6e94-405b-b4e9-cb2ac744a36a",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/9c49d0c6-6e94-405b-b4e9-cb2ac744a36a/download/"
+ },
+ {
+  "path": "sub-Mouse25/sub-Mouse25_ses-Mouse25-140131_behavior+ecephys.nwb",
+  "size": 2256017415,
+  "asset_id": "dba64364-e09b-4ad5-b54c-baaa689e975a",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/dba64364-e09b-4ad5-b54c-baaa689e975a/download/"
+ },
+ {
+  "path": "sub-Mouse25/sub-Mouse25_ses-Mouse25-140203_behavior+ecephys.nwb",
+  "size": 2314960844,
+  "asset_id": "ac07ef7d-3c95-407d-ba01-f872b756b46c",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/ac07ef7d-3c95-407d-ba01-f872b756b46c/download/"
+ },
+ {
+  "path": "sub-Mouse25/sub-Mouse25_ses-Mouse25-140204_behavior+ecephys.nwb",
+  "size": 2859337954,
+  "asset_id": "0889d7ae-7db5-4304-90ca-064cb7671791",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/0889d7ae-7db5-4304-90ca-064cb7671791/download/"
+ },
+ {
+  "path": "sub-Mouse25/sub-Mouse25_ses-Mouse25-140205_behavior+ecephys.nwb",
+  "size": 2054037139,
+  "asset_id": "48dae2dc-35f7-4a9e-bcdb-883a7d5e2d32",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/48dae2dc-35f7-4a9e-bcdb-883a7d5e2d32/download/"
+ },
+ {
+  "path": "sub-Mouse25/sub-Mouse25_ses-Mouse25-140206_behavior+ecephys.nwb",
+  "size": 2293399299,
+  "asset_id": "2a2e6913-5101-438d-bada-9f7dd46d3507",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/2a2e6913-5101-438d-bada-9f7dd46d3507/download/"
+ },
+ {
+  "path": "sub-Mouse28/sub-Mouse28_ses-Mouse28-140310_behavior+ecephys.nwb",
+  "size": 3757771225,
+  "asset_id": "656704ea-a4cd-40f4-8158-a6533ebf2eee",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/656704ea-a4cd-40f4-8158-a6533ebf2eee/download/"
+ },
+ {
+  "path": "sub-Mouse28/sub-Mouse28_ses-Mouse28-140311_behavior+ecephys.nwb",
+  "size": 4660082483,
+  "asset_id": "2c0950ed-43c6-4331-adbd-37a6c764758a",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/2c0950ed-43c6-4331-adbd-37a6c764758a/download/"
+ },
+ {
+  "path": "sub-Mouse28/sub-Mouse28_ses-Mouse28-140312_behavior+ecephys.nwb",
+  "size": 5437681337,
+  "asset_id": "ff614bbb-8194-4372-9c7e-bcc0966bd453",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/ff614bbb-8194-4372-9c7e-bcc0966bd453/download/"
+ },
+ {
+  "path": "sub-Mouse28/sub-Mouse28_ses-Mouse28-140313_behavior+ecephys.nwb",
+  "size": 5027117061,
+  "asset_id": "56d2e2d7-ba41-40a1-b017-b81871f3f0c3",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/56d2e2d7-ba41-40a1-b017-b81871f3f0c3/download/"
+ },
+ {
+  "path": "sub-Mouse28/sub-Mouse28_ses-Mouse28-140317_behavior+ecephys.nwb",
+  "size": 4291157614,
+  "asset_id": "3c4d6960-bdea-41da-a98f-842be83abf41",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/3c4d6960-bdea-41da-a98f-842be83abf41/download/"
+ },
+ {
+  "path": "sub-Mouse28/sub-Mouse28_ses-Mouse28-140318_behavior+ecephys.nwb",
+  "size": 3967964613,
+  "asset_id": "174c0da6-6216-4f12-862b-0a082ce847df",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/174c0da6-6216-4f12-862b-0a082ce847df/download/"
+ },
+ {
+  "path": "sub-Mouse32/sub-Mouse32_ses-Mouse32-140820_behavior+ecephys.nwb",
+  "size": 1265964448,
+  "asset_id": "43be9315-c73f-4e83-adea-20e73ce75466",
+  "s3": "https://api.dandiarchive.org/api/dandisets/000056/versions/draft/assets/43be9315-c73f-4e83-adea-20e73ce75466/download/"
+ }
+]

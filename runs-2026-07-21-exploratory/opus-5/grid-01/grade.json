@@ -1,0 +1,33 @@
+{
+  "dandiset": "000582",
+  "subject_session": "118 sessions, 15 rats (e.g. sub-11265_ses-06020601); all analysed",
+  "headline_stat": {
+    "name": "fraction of MEC units that are grid cells (gridness > pooled-shuffle 95th pct = 0.616)",
+    "value": "193/620 = 31.1%",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The session description text in every NWB file says the rat ran in a 1 x 1 m enclosure, but the tracked extent shows that 22 of the 118 sessions used a much larger, roughly 2 m circular arena. Spacing is therefore reported separately for the two groups... The NWB file does not record which of the two LEDs sits in front of the head, so a preferred head direction may be flipped by 180\u00b0... Finally, the grid-cell criterion is the pooled shuffle threshold used in the original literature; it is a population-level 5% false-positive rate, and 63% of the cells it selects also clear p < 0.01 against their own within-cell shuffle.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000582 (Sargolini MEC) is the canonical grid-cell dataset in the expected species, region, and free-foraging paradigm.",
+    "handling": "Real data streamed via remfile, speed-filtered, occupancy-normalized rate maps with spike positions from pynapple value_from, and explicit spike-count/rate inclusion criteria across all 620 units.",
+    "analysis": "Standard gridness (expanding-annulus min(r60,r120)\u2212max(r30,r90,r150)) on Pearson autocorrelograms with a circular-shift shuffle null, split-half stability, and circular HD statistics with its own shuffle.",
+    "correctness": "Every headline number (193 grid cells, 49.6 cm spacing, 0.70/0.34 stability, 1.07 median gridness, 134 HD-tracked) reproduces from unit_metrics.csv to rounding and is internally consistent.",
+    "figures": "Figures clearly show hexagonal autocorrelograms, a bimodal observed-vs-shuffle distribution, and conjunctive tuning, with units labeled, and example cells honestly presented as 'highest-gridness' rather than as typical.",
+    "honesty": "Claims are proportionate to strong evidence and the write-up names the specific real weaknesses of this result (arena-size mislabeling, the population-level FPR nature of the threshold with a per-cell cross-check, and the HD 180\u00b0 ambiguity).",
+    "verdict": "Sound, thorough, canonical demonstration whose numbers reproduce and whose limitations are disclosed; accept as-is."
+  }
+}

@@ -1,10 +1,11 @@
 {
   "dandiset": "000044",
-  "subject_session": "Achilles / Achilles_10252013 (primary); pipeline also started on Cicero_09012014, Cicero_09172014, Gatsby_08022013, Buddy_06272013 but did not finish",
+  "subject_session": "Achilles / Achilles_10252013 (primary, fully completed); multi-session loop truncated at session 4 of 5, no fig08 or per-session output produced",
   "headline_stat": {
-    "name": "Fraction of CA1 pyramidal cells classified as place cells (either direction, 85/120)",
-    "value": 0.71,
-    "in_prereg_range": true
+    "name": "Either-direction place cells among CA1 pyramidal cells (single session)",
+    "value": "85/120 (71%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
@@ -19,14 +20,14 @@
   "synthetic_data_flag": false,
   "stated_limitation": "Three of the eight sessions used a circular maze. The direction-flip below assumes an open-ended linear track, so the analysis is limited to the five linear-track sessions (Cicero_09172014 used a 2 m track, the rest 1.6 m).",
   "pass": true,
-  "confidence": "high",
+  "confidence": "medium",
   "justification": {
-    "dataset": "DANDI:000044 (Grosmark & Buzsaki CA1 linear-track silicon probe recordings, subject Achilles) is the canonical choice for hippocampal place fields, with 120 putative pyramidal cells and 83 traversals.",
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki dorsal-CA1 silicon-probe linear-track recordings, subject Achilles) is the canonical dataset for hippocampal place fields, with 120 putative pyramidal cells and 83 traversals.",
     "handling": "Real data streamed via LINDI with the mislabelled SpatialSeries rate/period corrected, traversals segmented from the NaN structure with dropout bridging and a 60% coverage criterion, speed thresholding, explicit spike-count and peak-rate inclusion criteria, and a committed linearisation-validation panel.",
-    "analysis": "Skaggs spatial information against a within-running-epoch circular-shift null (with a well-reasoned justification for why a whole-epoch shift would be wrong), odd/even lap stability, direction-separated rate maps, and cross-validated Bayesian decoding with a map-permutation control; only a multiple-comparison correction across the 69 tested units is absent, and it would not change the direction of the result.",
-    "correctness": "56%/50% per direction and 71% either-direction place cells, median SI 0.63 bits/spike, 28 cm fields, and 5.5 cm decoding error versus 50.1 cm control are all inside the preregistered ranges and consistent between the logs, the figure titles and the figures themselves.",
-    "figures": "Figures 1-7 are readable, labelled with units and sample sizes, and the population-map triptych and confusion matrix make the case cleanly, but the Figure 7 posterior panel is obscured by the overplotted true-position trace and a clipped legend, and the referenced Figure 8 does not exist.",
-    "honesty": "Nothing produced is misrepresented and the run's final report honestly states the multi-session loop reached only session 4 of 5, but the committed Summary and Figure 8 caption assert a five-session result that no output supports, and no limitation of the primary result (single session, near-zero attrition at the significance step) is acknowledged.",
-    "verdict": "The core single-session analysis is publication-quality and I would believe it, but I would require the multi-session claims to either be backed by a completed run or removed, plus the missing README and the Figure 7 rendering fix."
+    "analysis": "Skaggs spatial information against a within-running-epoch circular-shift null with a sound justification, odd/even-lap stability, direction-separated maps, and cross-validated Bayesian decoding with a map-permutation control; only a multiple-comparison correction across tested units is absent and would not change the direction of a near-universal effect.",
+    "correctness": "56%/50% per-direction and 71% either-direction place cells, median SI 0.63 bits/spike, 28 cm fields, and 5.5 cm decoding error versus 50.1 cm control all reproduce from the committed logs and are internally consistent with the figure titles and the figures themselves.",
+    "figures": "Figures 1-7 are readable, labelled with units and sample sizes, and the population triptych and decoding panels make the case cleanly, but the write-up's referenced Figure 8 does not exist and the Figure 7 posterior panel is somewhat dark/overplotted.",
+    "honesty": "The single-session phenomenon is honestly and fully supported with no fabricated numbers, but the committed Summary and Figure 8 caption assert a completed five-session replication that no produced output or figure supports and no single-session caveat is given, a mild overstatement of scope that keeps this out of the 3 band.",
+    "verdict": "The core single-session analysis is publication-quality and I would believe it, but I would require the unfinished five-session claims and the missing Figure 8 to be completed or removed and a single-session caveat added before accepting."
   }
 }

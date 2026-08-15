@@ -1,0 +1,92 @@
+[
+ {
+  "path": "sub-LA11/sub-LA11_ses-1_behavior.nwb",
+  "asset_id": "aacd1c8a-73f7-469e-bf08-0afd5c1052f9",
+  "size": 298315184,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/aacd1c8a-73f7-469e-bf08-0afd5c1052f9/download/"
+ },
+ {
+  "path": "sub-LA11/sub-LA11_ses-2_behavior.nwb",
+  "asset_id": "b8d3abca-0e78-4df1-9a51-d122a383be63",
+  "size": 279570888,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/b8d3abca-0e78-4df1-9a51-d122a383be63/download/"
+ },
+ {
+  "path": "sub-LA11/sub-LA11_ses-3_behavior.nwb",
+  "asset_id": "a7c6cce3-442a-4dc4-aa86-300558ae1909",
+  "size": 263786104,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/a7c6cce3-442a-4dc4-aa86-300558ae1909/download/"
+ },
+ {
+  "path": "sub-LA11/sub-LA11_ses-4_behavior.nwb",
+  "asset_id": "36bbc777-6708-45e5-85f2-48f56b84496d",
+  "size": 262314064,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/36bbc777-6708-45e5-85f2-48f56b84496d/download/"
+ },
+ {
+  "path": "sub-LA12/sub-LA12_ses-1_behavior.nwb",
+  "asset_id": "eb82c81a-87a0-40a4-b70e-535ac0909c86",
+  "size": 280872912,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/eb82c81a-87a0-40a4-b70e-535ac0909c86/download/"
+ },
+ {
+  "path": "sub-LA12/sub-LA12_ses-2_behavior.nwb",
+  "asset_id": "d0986739-6cc0-4bc7-9d2f-8363c233ed64",
+  "size": 269673944,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/d0986739-6cc0-4bc7-9d2f-8363c233ed64/download/"
+ },
+ {
+  "path": "sub-LA12/sub-LA12_ses-3_behavior.nwb",
+  "asset_id": "ffb5c0b9-0d5b-418a-ad52-1c786818a7e5",
+  "size": 269573016,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/ffb5c0b9-0d5b-418a-ad52-1c786818a7e5/download/"
+ },
+ {
+  "path": "sub-LA12/sub-LA12_ses-4_behavior.nwb",
+  "asset_id": "b35476db-13dc-4569-a4ed-4e839adde857",
+  "size": 221807224,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/b35476db-13dc-4569-a4ed-4e839adde857/download/"
+ },
+ {
+  "path": "sub-LA3/sub-LA3_ses-3_behavior.nwb",
+  "asset_id": "5e111970-9331-41d0-81b2-829e1c0f8040",
+  "size": 202314336,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/5e111970-9331-41d0-81b2-829e1c0f8040/download/"
+ },
+ {
+  "path": "sub-LA8/sub-LA8_ses-1_behavior.nwb",
+  "asset_id": "60303460-38be-44a0-951e-82c7957d1217",
+  "size": 300008208,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/60303460-38be-44a0-951e-82c7957d1217/download/"
+ },
+ {
+  "path": "sub-LA8/sub-LA8_ses-2_behavior.nwb",
+  "asset_id": "ce06d820-e471-4413-a3a8-9c0b21da8680",
+  "size": 236534416,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/ce06d820-e471-4413-a3a8-9c0b21da8680/download/"
+ },
+ {
+  "path": "sub-LA9/sub-LA9_ses-1_behavior.nwb",
+  "asset_id": "d19d0ca3-7c9a-41fe-bd97-b4ee8899a612",
+  "size": 284231400,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/d19d0ca3-7c9a-41fe-bd97-b4ee8899a612/download/"
+ },
+ {
+  "path": "sub-LA9/sub-LA9_ses-3_behavior.nwb",
+  "asset_id": "3d1c45a5-a26a-4083-ab68-57f3ecca1357",
+  "size": 252480672,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/3d1c45a5-a26a-4083-ab68-57f3ecca1357/download/"
+ },
+ {
+  "path": "sub-LA9/sub-LA9_ses-4_behavior.nwb",
+  "asset_id": "ea13b270-0975-4d88-bdf4-17e71efb009b",
+  "size": 257783384,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/ea13b270-0975-4d88-bdf4-17e71efb009b/download/"
+ },
+ {
+  "path": "sub-LA9/sub-LA9_ses-5_behavior.nwb",
+  "asset_id": "eafb5f48-0ed7-414c-a3cc-3b662a4506a2",
+  "size": 255118952,
+  "s3": "https://api.dandiarchive.org/api/dandisets/000986/versions/0.251031.1939/assets/eafb5f48-0ed7-414c-a3cc-3b662a4506a2/download/"
+ }
+]

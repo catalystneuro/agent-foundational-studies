@@ -1,32 +1,33 @@
 {
   "dandiset": "000129",
-  "subject_session": "sub-Indy, session 20170202_02 (sub-Indy_desc-train_behavior+ecephys.nwb)",
+  "subject_session": "sub-Indy, desc-train (MC_RTT)",
   "headline_stat": {
-    "name": "Fraction of M1 units significantly velocity/direction tuned",
-    "value": 0.71,
-    "in_prereg_range": true
+    "name": "fraction of units significantly velocity-tuned (circular-shift shuffle, p<0.01)",
+    "value": "92/130 (71%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
-    "handling": 3,
-    "analysis": 3,
-    "correctness": 3,
-    "figures": 2,
-    "honesty": 2
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
   },
-  "verdict": "revise",
+  "verdict": "accept",
   "fabrication_flag": false,
   "synthetic_data_flag": false,
-  "stated_limitation": "none",
+  "stated_limitation": "occasionally revealing tuning shapes that deviate mildly from a pure cosine",
   "pass": true,
-  "confidence": "medium",
+  "confidence": "high",
   "justification": {
-    "dataset": "Dandiset 000129 (MC_RTT) is macaque M1 Utah-array data during a continuous random-target reaching task, a standard and arguably ideal substrate for velocity/direction tuning, with 130 units and full 1 kHz fingertip kinematics.",
-    "handling": "Data are genuinely streamed with remfile, tracking-loss NaN gaps are located and excluded, and spike counts and binned velocity are aligned on the same 50 ms grid, but no unit quality filtering is applied and the OLS fit emits an ignored divide-by-zero warning indicating degenerate zero-variance units left in the 130-unit denominator.",
-    "analysis": "The velocity-vector regression is the correct way to handle the circular variable and a circular-shift null preserving spike autocorrelation is present, but there is no multiple-comparison correction across 130 units, the p-value omits the standard +1 correction (so p can be reported as exactly 0 from 200 shuffles), and no circular uniformity test backs the claim about preferred directions.",
-    "correctness": "The 71% figure is inside the 0.50\u20130.95 preregistered range and every reported number reproduces in the committed notebook output, with the only traceability problem being that fig07 is described as held-out when it is computed over the whole recording.",
-    "figures": "fig07's direction panels and fig04's population summary do show the effect, but the flagship example figure fig03 plots the cosine fit without the speed factor so the model overlay collapses to a flat circle that visibly contradicts the data it is meant to fit, and most panels omit y-axis units and sample sizes.",
-    "honesty": "Nothing is fabricated and the headline is genuinely supported, but several secondary claims outrun the figures (GLM curves 'matching' on 'held-out' data when they are in-sample and amplitude-compressed, preferred directions 'spanning the full range' when fig04 shows clear clustering, 'roughly monotonic' speed tuning when half the examples are jagged), and the write-up states no limitation of any kind.",
-    "verdict": "The dataset, loading, and core statistic are sound and the phenomenon is real and visible, but I would require the cosine-fit scaling fixed, fig07 recomputed on the test split, the preferred-direction claim tested or softened, and an explicit limitations paragraph before believing the write-up as stated."
+    "dataset": "000129 (MC_RTT) is macaque primary motor cortex during a continuous random-target reaching task, a canonical dataset for reach direction/velocity tuning.",
+    "handling": "Real data streamed via remfile, tracking-loss NaN runs are located and excluded, velocity binned at 50 ms and direction restricted to a movement-speed threshold, all correct and explicit.",
+    "analysis": "Cosine/velocity OLS model with a proper circular-shift shuffle null plus cyclic-B-spline NeMoS GLMs on held-out data correctly handle the circular variable and provide the required control.",
+    "correctness": "The 71% significant figure, modulation depths, and pseudo-R\u00b2 values follow directly from the committed code and are internally consistent with the figures, with per-bin R\u00b2 being appropriately low for Poisson counts rather than contradictory.",
+    "figures": "Figures show the effect clearly with labeled units and sample sizes and examples ranked by effect strength (cosine R\u00b2); the only weakness is the under-scaled orange cosine overlay in fig03, which fig07 fully compensates for.",
+    "honesty": "Claims are proportionate to the strong, cleanly-supported evidence and it flags mild non-cosine deviations, but it does not explicitly state single-session/single-subject limitations, keeping it at a 3 rather than 4.",
+    "verdict": "A well-scoped, correctly executed, honestly reported demonstration of M1 velocity tuning that I would accept from a rotation student."
   }
 }

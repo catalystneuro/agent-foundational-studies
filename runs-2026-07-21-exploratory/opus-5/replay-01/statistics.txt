@@ -1,0 +1,18 @@
+    epoch    minutes  n_events  n_sig  frac_sig  median_abs_wcorr  events_per_min  sig_per_min
+ PRE_wake 101.591667       697     38  0.054519          0.301816        6.860799     0.374046
+ PRE_NREM 176.150000      1493     93  0.062291          0.282780        8.475731     0.527959
+     MAZE  34.458333       203     42  0.206897          0.409772        5.891173     1.218863
+POST_wake 143.066667      1398    138  0.098712          0.328318        9.771668     0.964585
+POST_NREM  88.683333      1398    117  0.083691          0.307710       15.763954     1.319301
+
+cross-validated decoding error during running: 5.2 cm (chance 49.8 cm); direction correct 95.7%
+cell-identity shuffle false-positive rate on PRE_NREM: 6.20% (SD 0.99%, 15 shuffles x 400 events)
+cell-identity shuffle false-positive rate on POST_NREM: 5.35% (SD 1.11%, 15 shuffles x 400 events)
+
+fisher_POST_vs_PRE_frac_sig: p = 0.01602
+mwu_POST_vs_PRE_abs_wcorr: p = 9.497e-05
+binom_POST_vs_own_identity_control: p = 1.941e-06
+binom_PRE_vs_own_identity_control: p = 0.4966
+binom_MAZE_vs_pooled_identity_control: p = 5.285e-13
+
+forward/reverse counts: {'PRE_wake': (16, 22), 'PRE_NREM': (32, 61), 'MAZE': (14, 28), 'POST_wake': (61, 77), 'POST_NREM': (45, 72)}

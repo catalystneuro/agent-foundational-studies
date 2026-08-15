@@ -1,0 +1,32 @@
+{
+  "dandiset": "000939",
+  "subject_session": "sub-A3707 ses-200317 (walk-through); all 31 sessions for population",
+  "headline_stat": {
+    "name": "median held-out decoding error across sessions",
+    "value": 9.4,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Head direction is measured from head-mounted LEDs, so it is the direction of the headstage, not of the gaze; small tracking errors broaden tuning curves and set a floor on the decoding error.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000939 is the Peyrache-lab mouse postsubiculum HD-cell dataset, the canonical region, species, and open-field paradigm for this phenomenon.",
+    "handling": "Real NWB files streamed via remfile with disk cache, correct epoch/behavioral-series alignment, NaN removal, occupancy normalization, and author labels used only for validation.",
+    "analysis": "Correct circular statistics with a circular-shift null (min-shift exclusion), split-half stability, held-out Bayesian decoding with a time-shuffle control, and a GLM competing direction against spike history.",
+    "correctness": "Every headline number reproduces exactly from the committed CSVs, values are internally consistent with the figures, and statistics rest on 2691 units across 31 sessions with proper held-out evaluation.",
+    "figures": "Seven figures cleanly show the effect with labeled units and sample sizes, and example cells are chosen to represent the effect being demonstrated.",
+    "honesty": "Claims are proportionate, the high 74% figure is explicitly explained, and specific real limitations (LED vs gaze, threshold dependence, uncontrolled angular velocity, opto sessions) are named."
+  }
+}

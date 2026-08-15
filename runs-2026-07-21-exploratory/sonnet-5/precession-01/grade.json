@@ -1,0 +1,33 @@
+{
+  "dandiset": "000059",
+  "subject_session": "sub-MS10/Peter-MS10-170317-153237 (Pre-Cooling, Right trials)",
+  "headline_stat": {
+    "name": "unit 471 circular-linear phase-position correlation (rho, permutation p)",
+    "value": "rho=0.53, p=0.008 (README says 0.010), slope=-221 deg/rad, n=32",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 2
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Three additional candidate place cells show negative precession slopes in the same direction but do not reach significance individually (p = 0.25-0.39), consistent with the limited sampling of a single session (18 laps).",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000059 is a canonical Buzs\u00e1ki-lab dorsal-CA1 maze recording on the known-good list for theta precession, exactly the standard choice.",
+    "handling": "Real data streamed from S3, LFP decimated correctly from a dedicated theta-reference channel, position linearized per lap, and unit/place-cell inclusion criteria are explicit and defensible.",
+    "analysis": "Kempter circular-linear regression with a position-shuffle permutation null is the correct method with the required control and proper circular statistics.",
+    "correctness": "The exemplar numbers reproduce and are internally consistent with the figure, with a minor README-vs-figure p discrepancy (0.010 vs 0.008) and no other traceability problem.",
+    "figures": "Figures show the effect clearly for unit 471 with labeled units and sample sizes, and the exemplar is chosen by correlation strength (the effect itself), not by fitted slope.",
+    "honesty": "The headline (unit 471) is genuine and honestly caveated, but the population sentence overstates consistency by calling three cells 'negative in the same direction' when unit 517 is positive (+42 deg/rad, p=0.583) and quoting a p-range that excludes it, a claim contradicted by its own figure.",
+    "verdict": "The core precession result is sound and well-executed, but the mischaracterized population trend and the p discrepancy need correction before the write-up can be believed as stated."
+  }
+}

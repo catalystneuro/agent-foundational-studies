@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles-10252013, Achilles-11012013, Cicero-09012014, Gatsby-08022013 (4 sessions, 3 rats)",
+  "headline_stat": {
+    "name": "fraction of running units significantly theta-locked (circular-shift null)",
+    "value": "307/377 (81%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Two caveats: the absolute preferred phase depends on where the channel sits relative to the CA1 layers, since theta reverses phase across the pyramidal layer and the fissure, so only within-session phase structure should be compared; and locking is measured here irrespective of position on the track, so it averages over any phase precession within place fields and therefore understates pyramidal-cell locking.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000044 (Grosmark & Buzs\u00e1ki dorsal CA1, freely moving rats on a linear track) is the canonical dataset for hippocampal theta phase entrainment.",
+    "handling": "Real LFP and spikes streamed per-channel from the archive with correct 1250 Hz rate, cell-type/location metadata, explicit run-speed epoching, state restriction to sleep blocks, and a \u2265100-spike inclusion criterion.",
+    "analysis": "Proper circular statistics (MRL, preferred phase) tested against a spike-count- and burst-preserving circular-shift null, with the Rayleigh test explicitly flagged as anti-conservative, Bonferroni correction, spike-count matching, frequency-band specificity, and amplitude split.",
+    "correctness": "All reported numbers (377 units, 307 locked, 265 Bonferroni-Rayleigh, median MRL 0.102 vs 0.173, Mann-Whitney p=2.3e-10, 97% vs 78%) reproduce exactly from the committed CSV and are internally consistent with the figures.",
+    "figures": "Figures are clearly labeled with units and sample sizes; example units show unambiguous locking and the population map visibly demonstrates phase tiling in run/REM versus shared-phase population bursts in non-REM.",
+    "honesty": "The write-up is proportionate, treats non-REM as a partial rather than clean control and explains the confound, flags the Rayleigh test as anti-conservative, and names channel-layer phase-reversal and position-averaging caveats explicitly.",
+    "verdict": "This is publication-adjacent work: canonical dataset, correct controls, fully reproducing numbers, and a candid, well-calibrated write-up that I would accept from a rotation student without hesitation."
+  }
+}

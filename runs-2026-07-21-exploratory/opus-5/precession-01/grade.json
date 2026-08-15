@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles-10252013 (example) + Cicero-09012014, Cicero-09172014, Gatsby-08022013, Buddy-06272013 (5 linear-track sessions, 4 rats)",
+  "headline_stat": {
+    "name": "median circular-linear slope (deg per field traversal); % fields with negative slope",
+    "value": "-225 deg; 85.4%",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Four of the 96 fits ran into the edge of the \u00b11.5 cycle search range; two of those still had a clearly negative correlation and two did not, and they were left in the tallies rather than removed by hand.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki CA1 linear-track) is the canonical dataset for hippocampal theta phase precession, analyzed in the appropriate species, region, and paradigm.",
+    "handling": "Real data streamed via LINDI with explicit, correct handling of the SpatialSeries rate/period quirk, an out-of-order spike, direction-specific fields, and transparent place-cell inclusion criteria.",
+    "analysis": "Uses the Kempter et al. circular-linear regression with a symmetric slope search and a marginal-preserving permutation null, plus sign and Wilcoxon tests, all correct for circular data.",
+    "correctness": "Median slope (-225 deg), median rho (-0.275), %negative (85.4%), and %significant (72.9%) reproduce exactly from the committed CSV; only a secondary 'both sig & negative' figure is off by two fields, immaterial to the conclusion.",
+    "figures": "Figures are labeled with units and sample sizes and show the effect at every level, from single-pass spike-riding to the pooled 24,901-spike descending band against a shuffle null.",
+    "honesty": "The write-up names specific limitations (edge fits retained, absolute phase not comparable across sessions, circular-maze sessions excluded), labels the example pass as 'the clearest' rather than typical, and includes weak fields (rho -0.17) in the gallery."
+  }
+}

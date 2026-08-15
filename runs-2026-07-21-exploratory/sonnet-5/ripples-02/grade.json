@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles_ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "Replay mean|r| POST vs PRE (Mann-Whitney)",
+    "value": "0.375 vs 0.362, p=0.0037; POST vs own shuffle p=0.120",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The effect size is modest and the population-level rank correlation is only slightly above a cell-identity-shuffled null, which is expected: rank-order correlation on raw spike times is a coarser readout of replay content than full Bayesian place-field decoding, and only a minority of SWRs are expected to reflect a clean, complete replay of a single trajectory.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 Grosmark & Buzsaki CA1 (sub-Achilles) is the canonical dataset for sharp-wave ripples and replay, with PRE/POST sleep bracketing track running.",
+    "handling": "Real LFP and spikes streamed via remfile, correct 1250 Hz sampling, proper epoch and Non-REM state restriction, and excitatory-cell filtering, all explicit and defensible.",
+    "analysis": "Standard SWR detection, Skaggs-info directional place fields, and rank-order replay scoring with a cell-identity shuffle null are all appropriate and correctly computed.",
+    "correctness": "Every reported number reproduces exactly from run.log, figures and text are internally consistent, and both the Mann-Whitney and shuffle tests are correctly executed.",
+    "figures": "Figures clearly show ripples, plausible ripple stats, cleanly tiled place fields, honestly overlapping replay distributions, and an example event labeled as high-scoring rather than typical.",
+    "honesty": "The write-up transparently reports the non-significant shuffle control and characterizes the replay effect as modest, though it leans on the n-inflated PRE-vs-POST comparison as the 'significant' headline and softly frames the failed replay control as 'expected.'",
+    "verdict": "Rigorous, honestly reported work whose SWR and place-field results are strong and whose weak replay claim is fairly caveated; accept with revision to sharpen the shuffle-control framing and add a single-session caveat."
+  }
+}

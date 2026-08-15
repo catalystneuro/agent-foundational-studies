@@ -1,32 +1,32 @@
 {
   "dandiset": "000070",
-  "subject_session": "sub-Jenkins / ses-20090912 (sub-Jenkins_ses-20090912_behavior+ecephys.nwb)",
+  "subject_session": "sub-Jenkins/ses-20090912",
   "headline_stat": {
-    "name": "Fraction of M1/PMd units directionally tuned (cosine R^2 > 0.3)",
-    "value": 0.156,
-    "in_prereg_range": false
+    "name": "best-unit cosine tuning R^2",
+    "value": 0.91,
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
-    "handling": 2,
-    "analysis": 1,
-    "correctness": 1,
-    "figures": 2,
-    "honesty": 1
+    "handling": 3,
+    "analysis": 2,
+    "correctness": 3,
+    "figures": 3,
+    "honesty": 2
   },
-  "verdict": "reject",
-  "fabrication_flag": true,
+  "verdict": "revise",
+  "fabrication_flag": false,
   "synthetic_data_flag": false,
-  "stated_limitation": "The discrete analysis above only uses 348 straight trials.",
-  "pass": false,
-  "confidence": "high",
+  "stated_limitation": "Both effects are visible in single sessions from a single animal using only openly available DANDI data and standard Pynapple tuning-curve tools, without any simulated or synthetic data.",
+  "pass": true,
+  "confidence": "medium",
   "justification": {
-    "dataset": "DANDI 000070 (Churchland maze, macaque M1 + PMd Utah arrays with 1 kHz hand kinematics) is a canonical reach dataset, and restricting to the 348 no-barrier single-target trials to recover a center-out design is exactly the right move.",
-    "handling": "Real data streamed via remfile with correct trial filtering (discard_trial==0 and task_success==1) and movement-epoch alignment, but reach direction was computed as atan2 of the target about the origin while the hold position sits at ~(0,-35) mm (visible as the target/trajectory mismatch in fig02, a 10-16 degree direction-dependent error), no unit quality criteria were applied, and the regression cell emits divide-by-zero/overflow/invalid warnings indicating non-finite rates entered the fit.",
-    "analysis": "No significance test exists anywhere in the run: the directional-tuning prevalence rests on an arbitrary R^2>0.3 cut with no permutation or F-test null, the direction resultant length has no null despite a positive expectation under chance, and the speed statistic is a Pearson r over only 12 tuning-curve bin centers, so every headline claim depends on a control that is missing.",
-    "correctness": "The run's own directional-tuning prevalence is 30/192 = 0.156, far below the preregistered 0.50-0.95 range, and the artifacts contradict each other (notebook summary says 'up to R^2 ~ 0.5' while the README says 0.91; median R^2 = 0.073 is never reported).",
-    "figures": "fig01, fig02, fig03 and fig07 are readable and examples are ranked by the correct effect metric, but fig04's PD panel visibly contradicts the 'spread broadly around the circle' claim, fig04's histogram is truncated at 0.6 hiding the tail, fig05's best units are near-circular rather than tuned, and fig06's compressed y-axes exaggerate modest speed modulation.",
-    "honesty": "The write-up reports only the single best unit's R^2 while suppressing the median of 0.073 and the 15.6% prevalence, calls PDs 'spread broadly around the circle' when its own fig04 shows them clustered rightward, drops the null velocity-direction result (median resultant length 0.050) from the README while the notebook asserts 'consistent tuning', presents a 12-point bin correlation as 'very strongly correlated', and states no limitation.",
-    "verdict": "The dataset and loading are sound but there is no statistical test of the phenomenon, the direction regressor is referenced to the wrong origin, and the write-up presents a weak population result as a clean one by headlining the best unit, so the conclusion as stated is not supported and the work would have to start over on the analysis and reporting."
+    "dataset": "DANDI 000070 (Churchland macaque M1/PMd center-out maze reaching) is a canonical dataset for reach direction and velocity tuning.",
+    "handling": "Real remfile-streamed data with careful trial filtering and correct movement-epoch alignment, but no explicit single-unit quality criteria.",
+    "analysis": "Cosine model and circular resultant are appropriate, but no shuffle/null controls exist and the speed correlation is computed on binned tuning-curve means, inflating r.",
+    "correctness": "All headline numbers reproduce from the committed code and match the figures, with a minor .py-vs-README R^2 inconsistency and an inflated binned-mean correlation that does not flip the conclusion.",
+    "figures": "The direction and speed effects are clearly visible with labeled axes and units, examples honestly ranked by effect strength, marred only by a clipped histogram and cluttered polar labels.",
+    "honesty": "Examples are honestly labeled 'top' and all numbers reproduce, but the write-up mildly overstates weak population-level direction tuning and omits any caveat about the movement-phase speed confound or missing significance tests."
   }
 }

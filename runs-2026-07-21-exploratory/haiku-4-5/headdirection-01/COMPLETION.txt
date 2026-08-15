@@ -1,0 +1,36 @@
+AUTONOMOUS ANALYSIS RUN - COMPLETION SUMMARY
+===========================================
+
+Date: Fri Jul 31 16:44:26 EDT 2026
+Task: Demonstrate head direction cells from DANDI Archive data
+Status: ✓ COMPLETE
+
+Deliverables:
+  ✓ head_direction_analysis.py (Jupytext script, 389 lines)
+  ✓ head_direction_analysis.ipynb (Jupyter notebook, 20 KB)
+  ✓ tuning_curves_polar.png (537 KB)
+  ✓ tuning_curves_cartesian.png (157 KB)
+  ✓ population_statistics.png (125 KB)
+  ✓ behavioral_context.png (305 KB)
+  ✓ README.md (comprehensive documentation, 116 lines)
+
+Dataset:
+  Source: DANDI:000003 (Yuta Buzsáki Lab)
+  File: sub-YutaMouse20_ses-YutaMouse20-140327_behavior+ecephys.nwb
+  Data Type: Real extracellular recordings + behavioral tracking
+  Units: 14 neurons
+  Duration: ~4500 seconds
+
+Key Finding:
+  All 14 neurons demonstrate strong head direction selectivity
+  Mean directionality index: 0.759 (strong tuning)
+  Preferred directions uniformly distributed across 360°
+
+Technology Stack:
+  - Pynapple (neurophysiology analysis)
+  - PyNWB + h5py (NWB file I/O)
+  - remfile (remote S3 streaming)
+  - NumPy, SciPy (numerical computing)
+  - Matplotlib (visualization)
+
+All files ready in current directory.

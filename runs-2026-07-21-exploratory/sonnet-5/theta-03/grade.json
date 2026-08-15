@@ -1,31 +1,33 @@
 {
   "dandiset": "000044",
-  "subject_session": "sub-Achilles / ses-Achilles-10252013 (behavior+ecephys.nwb)",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
   "headline_stat": {
-    "name": "Fraction of place fields with significant negative circular-linear phase-position slope",
-    "value": 0.459,
-    "in_prereg_range": true
+    "name": "significant negative vs positive circular-linear precession slopes (of 61 candidate place cells)",
+    "value": "28 negative vs 1 positive",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
-    "handling": 3,
-    "analysis": 3,
-    "correctness": 3,
-    "figures": 3,
-    "honesty": 2
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
   },
-  "verdict": "revise",
+  "verdict": "accept",
   "fabrication_flag": false,
   "synthetic_data_flag": false,
-  "stated_limitation": "none",
+  "stated_limitation": "confirming phase precession as a population-level phenomenon in this session.",
   "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000044 Grosmark & Buzsaki CA1 linear-track session with simultaneous 1250 Hz LFP, 120 excitatory units, and linearized position is the canonical choice for theta entrainment and precession.",
-    "handling": "Real remfile-streamed data with correct epoch restriction, direction-split traversals, and a well-verified fix to the position sampling-rate metadata bug, but the 'place cell' set is defined only by mean_rate > 0.2 Hz with no spatial-selectivity threshold applied.",
-    "analysis": "Circular statistics are used correctly throughout (Kempter circular-linear regression, circular-linear rho, Rayleigh with higher-order correction) and the required permutation null is present, but the test is two-sided on |rho| so anticorrelated fits pass as significant, and no multiple-comparison correction is applied across 61 and 89 tests.",
-    "correctness": "28/61 = 46% significant negative slopes and 71% theta entrainment both fall inside the preregistered ranges and every README number reproduces exactly from the notebook output, with the denominator '89 place cells' being ambiguous since those cells were never thresholded for spatial selectivity.",
-    "figures": "All six figures are readable with labeled units and sample sizes, examples are ranked by circular-linear rho rather than slope, and the population slope histogram makes the case; two of four example scatters are visibly weak and unit 50's fitted line has a wrap-discontinuity artifact.",
-    "honesty": "Numbers are faithfully reported and nothing is fabricated, but the write-up states no limitation whatsoever, silently counts three negative-rho cells among the 28 'significant negative slope' precessing cells, and the final result claims the 89 cells were 'identified by spatial information' when the code selected them by firing rate alone."
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki CA1, Achilles linear-track session) is the canonical dataset for hippocampal theta phase precession.",
+    "handling": "Real data streamed via remfile, restricted to MazeEpoch, excitatory units filtered, direction-split traversals, and the position sampling-rate metadata bug was caught and verified against epoch duration.",
+    "analysis": "Correct circular statistics throughout: Rayleigh test for entrainment and Kempter circular-linear regression for precession with a valid permutation null that accounts for the slope-grid maximization.",
+    "correctness": "Headline numbers (63/89 entrained; 28 negative vs 1 positive precession slopes) are internally consistent between README and figures, statistically sound, and physically possible.",
+    "figures": "Figures clearly show the effect with labeled units and sample sizes, and precession examples are ranked by correlation strength (the correct criterion), though the fig3 tuning-curve example panel includes some edge-peaking cells.",
+    "honesty": "Claims are proportionate to the evidence with nothing misrepresented, but limitations are noted only implicitly ('in this session') rather than discussed explicitly, placing a genuinely clean result at 3.",
+    "verdict": "Textbook-correct autonomous demonstration of both theta entrainment and phase precession with clean, well-controlled results; accept."
   }
 }

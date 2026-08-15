@@ -1,0 +1,33 @@
+{
+  "dandiset": "001419",
+  "subject_session": "8 sessions/8 mice (sub-AK190207A/C, AK190208, AK190502A/B, AK190506, AK210825B, HK190525); primary sub-HK190525_ses-tones1",
+  "headline_stat": {
+    "name": "fraction of units with significant frequency tuning",
+    "value": "30/266 (11.3%), binomial p=3.3e-5",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 2,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 3,
+    "honesty": 2
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "A pure-tone A1 dataset is per the rubric not sufficient for true STRFs (which need spectrotemporally rich stimuli), so the spectrotemporal phenomenon cannot be cleanly isolated, though the spectral/frequency-tuning dimension is genuinely present and the agent used the best available auditory dataset.",
+    "handling": "Real streamed data from 8 sessions, explicit 'good'-quality unit filtering, correct LED-off control-trial exclusion, and correct trial alignment confirmed by stimulus-locked bursts in the raster.",
+    "analysis": "Kruskal-Wallis per-unit tuning plus a population binomial-vs-chance test is valid and appropriately handles multiple comparisons, though ~9 trials/frequency leaves the per-unit tests underpowered (only 11% tuned in A1).",
+    "correctness": "Reported values (11.3%, p=3.3e-5, median 40 ms) reproduce from the committed code, are internally consistent with the figures, and are physically possible.",
+    "figures": "Figures are well-labeled with units and sample sizes and the population-average panel clearly shows the BF-aligned excitatory center, but the example STRF panels are noisier than the 'sharp/confined-to-a-narrow-band' text implies.",
+    "honesty": "The population finding is real and supported, but the write-up describes visibly noisy example units as 'clean, sharply tuned, confined to a narrow band,' states no limitations about the marginal per-unit significance or the pure-tone-vs-true-STRF substitution \u2014 mild overstatement, not fabrication.",
+    "verdict": "Core population analysis is sound and reproducible, but I would require toning down the overstated example descriptions, adding limitations, and acknowledging that pure tones do not yield a true STRF before accepting."
+  }
+}

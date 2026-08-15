@@ -1,0 +1,33 @@
+{
+  "dandiset": "000056",
+  "subject_session": "sub-Mouse20 / ses-Mouse20-130514",
+  "headline_stat": {
+    "name": "median absolute circular decoding error",
+    "value": "33.3 deg",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "which excludes high-firing-rate units that reach nominal significance from sample size alone despite negligible directional modulation",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Dandiset 000056 (Peyrache lab, ADn/postsubiculum) is the canonical head-direction dataset, an expert-standard choice.",
+    "handling": "Real streaming via remfile, valid-tracking mask (96.5% valid), longest continuous awake bout selected, LED-derived HD reconstruction all correct.",
+    "analysis": "Circular tuning curves with proper MVL statistic, per-unit circular-shift shuffle null, plus held-out Bayesian decoding as cross-validation is the right method done correctly.",
+    "correctness": "Every reported number (MVLs, p-values, 33.3 deg decoding error, 4 HD cells) reproduces exactly from the committed code and is internally consistent with the figures.",
+    "figures": "Polar curves, MVL bar chart, raster, and decoding are all labeled with units and sample sizes and clearly show the effect, with the classified cells honestly the strongest by MVL.",
+    "honesty": "Claims are proportionate and nothing is misrepresented, but there is no explicit statement of single-session/single-animal limitations and unit 5 is called 'sharp, unimodal' when it is the weakest and noisiest of the four.",
+    "verdict": "A methodologically sound, reproducible demonstration of head-direction tuning with cross-validated decoding that I would accept from a rotation student."
+  }
+}

@@ -1,0 +1,19 @@
+session: Achilles-10252013
+ripples: 14625 (0.61 Hz non-REM, 0.001 Hz REM)
+ripple duration 42 ms, frequency 162 Hz
+place cells: 106 of 120 pyramidal
+decoder median error 4.7 cm (chance 46.8 cm)
+PRE: 62/1023 significant replay (6.1%)
+POST: 147/971 significant replay (15.1%)
+cell-ID shuffle: 8.8% (n=400)  <- empirical null, above nominal 5%
+Fisher POST vs PRE: OR=2.77 p=2.66e-11
+Fisher POST vs cell-ID shuffle: OR=1.86 p=0.00155
+replay speed 283 cm/s vs running 42 cm/s
+EV=0.088 REV=0.001 (5565 pairs)
+
+4 sessions, POST vs PRE:
+  Achilles-10252013  147/971 POST vs 61/1023 PRE  OR=2.81 p=1.43e-11
+  Gatsby-08022013    35/419 POST vs 55/701 PRE  OR=1.07 p=0.82
+  Cicero-09172014    45/465 POST vs 29/474 PRE  OR=1.64 p=0.0521
+  Buddy-06272013     20/313 POST vs 24/482 PRE  OR=1.30 p=0.429
+CMH OR=1.88 p=1.71e-09; homogeneity p=0.0023 (effect is NOT homogeneous)

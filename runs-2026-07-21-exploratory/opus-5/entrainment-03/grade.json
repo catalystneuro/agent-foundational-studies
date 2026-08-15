@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles-10252013 (single-session detail) + 5 sessions pooled (Achilles x2, Cicero, Gatsby, Buddy)",
+  "headline_stat": {
+    "name": "% CA1 units significantly theta phase-locked during running (Rayleigh, FDR q<0.05)",
+    "value": "87% (372/430)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "One caveat is worth stating because it cuts against a naive reading of the result. Bandpass filtering followed by a Hilbert transform assigns a phase to any signal, including one with no oscillation in the band, so a high MRL is not by itself evidence of a rhythm. In this data the median MRL during non-REM sleep is statistically indistinguishable from running (Wilcoxon signed-rank p = 0.42) even though the non-REM LFP has no theta peak in its power spectrum. ... The entrainment claim above rests on that control together with the precession result, not on the MRL alone.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzs\u00e1ki CA1) is the canonical dataset for theta phase entrainment, place cells, and precession.",
+    "handling": "Real data streamed via remfile with correct unit/LFP/epoch/state loading, \u00b5V conversion, a 100-spike inclusion floor, and per-interval filtering to avoid smearing phase across running gaps.",
+    "analysis": "Proper circular statistics (MRL, count-unbiased PPC, Rayleigh with FDR), a spike-jitter null, an STA-rhythmicity state control that distinguishes true rhythm from Hilbert artifact, and a Kempter circular-linear precession test with permutation p-values.",
+    "correctness": "Every headline number (372/430=86.5%, 374 beat jitter, 82-98% per session, MRL 0.20 vs 0.12, 96% vs 84%, 13/24 precessing with 12 negative) reproduces from the committed CSVs and is internally consistent.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show representative (not cherry-picked) example cells, and include an honest control panel demonstrating MRL alone fails to separate states while STA rhythmicity succeeds.",
+    "honesty": "The write-up explicitly warns against a naive MRL reading, reports the non-REM control that contradicts it (p=0.42), and grounds the entrainment claim on the rhythmicity control plus precession rather than overselling.",
+    "verdict": "This is publication-adjacent rotation-quality work with reproducible numbers, correct circular statistics, appropriate controls, and unusually calibrated honesty; accept."
+  }
+}

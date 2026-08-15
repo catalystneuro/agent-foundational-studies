@@ -1,0 +1,9 @@
+session,subject,maze,track_m,n_units,n_pyr,n_pc,frac_pc,n_trav,run_s,dirs
+Achilles_10252013,Achilles,1.6mLinearMaze,1.6,137,120,87,0.725,88,199.141706492,"right,left"
+Achilles_11012013,Achilles,CircularMaze,2.9,104,92,80,0.8695652173913043,188,448.614534205,"right,left"
+Buddy_06272013,Buddy,1.6mLinearMaze,1.6,68,38,18,0.47368421052631576,59,131.890338905,"right,left"
+Cicero_09012014,Cicero,1.6mLinearMaze,1.6,73,44,28,0.6363636363636364,103,307.583115051,"right,left"
+Cicero_09102014,Cicero,CircularMaze,2.86,105,64,52,0.8125,109,292.836853687,left
+Cicero_09172014,Cicero,2mLinearMaze,2.0,72,50,28,0.56,77,202.162464335,"right,left"
+Gatsby_08022013,Gatsby,1.6mLinearMaze,1.6,80,49,34,0.6938775510204082,96,248.037975122,"right,left"
+Gatsby_08282013,Gatsby,CircularMaze,2.86,51,35,32,0.9142857142857143,149,404.709197595,left

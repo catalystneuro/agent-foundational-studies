@@ -1,0 +1,32 @@
+{
+  "dandiset": "000128",
+  "subject_session": "Jenkins MC_Maze full (2009-09-25), plus 000138/000139/000140/000129/000127 as cross-session/control",
+  "headline_stat": {
+    "name": "held-out single-trial velocity decoding R^2 (vx, vy)",
+    "value": "0.62 / 0.52",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The smallest maze session (100 trials) has a flat, double-peaked lag curve whose per-fold optimal lead spans the entire range tested, so its nominally negative lead should not be read as a real difference. And a control that was not anticipated: split-half estimates of a unit's movement-epoch preferred direction agree almost perfectly (R = 0.96, 98% within 45deg), yet the delay-period preferred direction of the same unit is essentially unrelated to its movement preferred direction (R = 0.13, 31% within 45deg).",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "MC_Maze (000128), macaque motor cortex delayed center-out and maze reaching, is the canonical dataset for reach direction and velocity tuning, with five additional sessions across two areas as controls.",
+    "handling": "Real data streamed via remfile with correct per-file unit conversions, gap-safe pynapple time support, explicit min-rate quality filtering, and defensible movement/planning epoch definitions.",
+    "analysis": "Cosine tuning with a permutation null, circular statistics (resultant length, Rayleigh, circular s.d. bootstrap), a symmetric-kernel lag sweep, time-block cross-validation to avoid autocorrelation leakage, nested NeMoS Poisson GLMs, and a cross-area sign-reversal test are all appropriate and correctly controlled.",
+    "correctness": "Every headline number (130/150 tuned, R=0.161, decoding R^2 0.624/0.517, 123/150 speed improvement, 0.942 condition-averaged) reproduces verbatim from the committed log and is internally consistent with the figures.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show the effect plainly, and use example units spanning a representative R^2 range rather than only the strongest cases.",
+    "honesty": "Claims are proportionate, the modest single-unit R^2 is reported plainly as 'modest,' and the write-up volunteers specific caveats about the underpowered small session and the planning/movement PD dissociation."
+  }
+}

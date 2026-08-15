@@ -1,32 +1,32 @@
 {
   "dandiset": "000044",
-  "subject_session": "Achilles_10252013 (prototype) plus Buddy_06272013, Cicero_09012014, Cicero_09172014, Gatsby_08022013; 4 rats, 5 linear-track sessions",
+  "subject_session": "Achilles_10252013 (prototype) + Buddy_06272013, Cicero_09012014, Cicero_09172014, Gatsby_08022013",
   "headline_stat": {
-    "name": "Fraction of CA1 pyramidal cells qualifying as place cells in at least one direction",
-    "value": 0.781,
-    "in_prereg_range": false
+    "name": "place cells / pyramidal cells (pooled, 5 linear-track sessions)",
+    "value": "211/270 (78%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
     "handling": 4,
     "analysis": 4,
-    "correctness": 1,
+    "correctness": 4,
     "figures": 4,
-    "honesty": 3
+    "honesty": 4
   },
-  "verdict": "revise",
+  "verdict": "accept",
   "fabrication_flag": false,
   "synthetic_data_flag": false,
-  "stated_limitation": "The other three used a closed circular maze, where a lap wraps around and the two-direction traversal logic used throughout does not apply; they were excluded on maze geometry before any spiking data were examined. ... Two data-quality caveats are worth restating. The `SpatialSeries.rate` field in this dandiset holds the sampling period rather than the frequency, and one unit in each of three sessions contains two concatenated spike trains. Both are handled explicitly above; neither is detectable without checking, and either would corrupt the analysis silently.",
-  "pass": false,
+  "stated_limitation": "The other three used a closed circular maze, where a lap wraps around and the two-direction traversal logic used throughout does not apply; they were excluded on maze geometry before any spiking data were examined.",
+  "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000044 (Grosmark & Buzsaki hc-11) dorsal CA1 linear-track recordings are the canonical choice for place cells, and the three circular-maze sessions were excluded on geometry before any spiking data were examined.",
-    "handling": "Data were streamed from S3 with remfile/h5py, the corrupted NWB time base was rebuilt and asserted against the MazeEpoch duration, units with backwards-jumping spike times were detected on the raw ragged array and dropped, and pyramidal selection used the cell_type label plus explicit rate bounds and a 5 cm/s speed mask.",
-    "analysis": "Occupancy-normalised rate maps with a per-unit circular-shift null that preserves spike-train temporal structure, split-half reliability, cross-validated Bayesian decoding against a rolled-tuning-curve null, and an independent held-out Poisson GLM together exceed what the claim requires, though the per-unit shuffle p is uncorrected across ~540 tests and omits the conventional +1.",
-    "correctness": "Every reported number reproduces exactly from the committed CSVs and the field properties (32 cm width, 6.0 Hz peak, 0.61 bits/spike) are textbook, but the headline 78% spatially selective exceeds the preregistered 0.30-0.75 ceiling, which caps this axis at 1; the exceedance is marginal and arises from the either-direction denominator, since the per-direction rate of 329/540 = 0.61 is in range.",
-    "figures": "Nine figures show the phenomenon unambiguously with units, sample sizes, per-unit nulls, population summaries and a cross-session panel, and example cells were selected among qualifying place cells spanning the track rather than by maximum effect; the only defect is an overprinted colorbar label in fig04 and one broad example (unit 202).",
-    "honesty": "Nothing is misrepresented and all quantitative claims trace to the committed output, but the write-up does not flag that a 78% yield is high relative to typical reports or that it depends on the either-direction criterion, and it describes an r = 0.26 GLM/Skaggs correlation as the two measures agreeing.",
-    "verdict": "The core work is sound, reproducible and better controlled than most published single-session analyses; I would ask for the per-direction fraction, a multiple-comparison correction, and a sentence reconciling the yield with the literature before taking the 78% figure at face value."
+    "dataset": "DANDI:000044 dorsal CA1 on a linear track is the canonical dataset, species, region, and paradigm for hippocampal place cells.",
+    "handling": "Real data streamed from S3, timebase rebuilt to fix a period-vs-frequency NWB defect and checked against MazeEpoch, corrupt concatenated units detected on raw arrays and dropped, and unit selection is explicit and defensible.",
+    "analysis": "Occupancy-normalised Skaggs information with a bursting-preserving circular-shift null, split-half reliability, cross-validated Bayesian decoding with a rolled-tuning-curve control, and a cross-validated Poisson GLM all correctly applied.",
+    "correctness": "Every headline number (211/270, 329 fields, 0.61 bits/spike, 32 cm, 6.0 Hz, 5.8\u201314.1 cm decoding, GLM 67/71 and 64/71) reproduces exactly from the committed CSVs and is internally consistent and physically plausible.",
+    "figures": "Figures show the effect clearly with units, sample sizes, a clean population diagonal, and example cells spanning a representative range of information values rather than only extremes.",
+    "honesty": "Claims are proportionate to reproduced evidence, decoding was explicitly done without place-cell selection to avoid circularity, the GLM is stated to be on one prototype session, and real scope exclusions and data defects are named without overstatement."
   }
 }

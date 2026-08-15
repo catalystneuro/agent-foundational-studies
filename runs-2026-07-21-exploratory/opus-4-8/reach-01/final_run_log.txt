@@ -1,0 +1,365 @@
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:126: UserWarning: Elements should not be passed as <class 'numpy.ndarray'>. Default time units is seconds when creating the Ts object.
+  spikes_all = nap.TsGroup({i: np.asarray(s) for i, s in enumerate(units_df["spike_times"])})
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: divide by zero encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: overflow encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: invalid value encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: divide by zero encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: overflow encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: invalid value encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: divide by zero encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: overflow encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: invalid value encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: divide by zero encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: overflow encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: invalid value encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: divide by zero encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: overflow encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: invalid value encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+Data from monkey Jenkins performing center-out delayed reaching task. This file contains trials from the full session on 2009-09-25 that can be used for training models for the Neural Latents Benchmark.
+subject: Jenkins Macaca mulatta
+behaviour streams: ['cursor_pos', 'eye_pos', 'hand_pos', 'hand_vel']
+units: 182  trials: 2295
+Time (s)           vx         vy
+----------  ---------  ---------
+0.0         -2.62457   29.9771
+0.001       -2.70732   30.5777
+0.002       -2.87273   31.7442
+0.003       -3.01966   32.8479
+0.004       -3.0594    33.8952
+0.005       -3.10738   34.8881
+0.006       -3.09914   35.8304
+...
+6952.294     1.51062   -2.05489
+6952.295     1.23084   -1.44321
+6952.296     0.905895  -0.883716
+6952.297     0.598148  -0.420075
+6952.298     0.218816   0.012961
+6952.299    -0.21294    0.39358
+6952.3      -0.42782    0.566803
+dtype: float32, shape: (6809920, 2)
+session duration: 6952 s, NaNs in kinematics: 0
+              count        mean        std  ...         50%         75%         max
+reach_angle  2295.0    0.016490   1.825860  ...   -0.099458    1.514226    3.141048
+reach_dist   2295.0  128.383316  20.668147  ...  134.536361  143.987523  163.423529
+dir_bin      2295.0    3.510675   2.270263  ...    3.000000    5.000000    7.000000
+
+[3 rows x 8 columns]
+straight / curved trials: {False: 1506, True: 789}
+occupied direction bins: [np.int64(0), np.int64(1), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7)]
+kept 115 of 182 units above 1.0 Hz
+baseline       tuned (p<0.01):   4/115   median R2=0.001   median depth=0.15 Hz
+preparatory    tuned (p<0.01):  95/115   median R2=0.012   median depth=0.59 Hz
+perimovement   tuned (p<0.01): 107/115   median R2=0.044   median depth=1.36 Hz
+late_movement  tuned (p<0.01): 108/115   median R2=0.053   median depth=1.19 Hz
+straight  only: tuned  99/115  median R2=0.095  median depth=1.92 Hz
+curved    only: tuned 103/115  median R2=0.052  median depth=1.49 Hz
+example units: [120, 26, 72] PDs: [-170.  -16. -108.]
+binned matrix: (340687, 115)  moving bins (>100 mm/s): 42548
+lag sweep:   0%|          | 0/46 [00:00<?, ?it/s]/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: divide by zero encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: overflow encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/reach-01/reach_direction_and_velocity_tuning.py:296: RuntimeWarning: invalid value encountered in matmul
+  ss_res = ((rates - X @ beta) ** 2).sum(0)
+lag sweep:   2%|▏         | 1/46 [00:00<00:28,  1.56it/s]lag sweep:   4%|▍         | 2/46 [00:01<00:23,  1.85it/s]lag sweep:   7%|▋         | 3/46 [00:01<00:22,  1.95it/s]lag sweep:   9%|▊         | 4/46 [00:01<00:17,  2.39it/s]lag sweep:  11%|█         | 5/46 [00:02<00:15,  2.66it/s]lag sweep:  13%|█▎        | 6/46 [00:02<00:14,  2.83it/s]lag sweep:  15%|█▌        | 7/46 [00:02<00:13,  2.94it/s]lag sweep:  17%|█▋        | 8/46 [00:03<00:12,  2.98it/s]lag sweep:  20%|█▉        | 9/46 [00:03<00:12,  3.02it/s]lag sweep:  22%|██▏       | 10/46 [00:03<00:10,  3.43it/s]lag sweep:  24%|██▍       | 11/46 [00:03<00:09,  3.86it/s]lag sweep:  26%|██▌       | 12/46 [00:03<00:07,  4.29it/s]lag sweep:  28%|██▊       | 13/46 [00:04<00:08,  4.09it/s]lag sweep:  30%|███       | 14/46 [00:04<00:07,  4.07it/s]lag sweep:  33%|███▎      | 15/46 [00:04<00:07,  3.89it/s]lag sweep:  35%|███▍      | 16/46 [00:05<00:07,  3.86it/s]lag sweep:  37%|███▋      | 17/46 [00:05<00:08,  3.61it/s]lag sweep:  39%|███▉      | 18/46 [00:05<00:07,  3.72it/s]lag sweep:  41%|████▏     | 19/46 [00:05<00:07,  3.70it/s]lag sweep:  43%|████▎     | 20/46 [00:06<00:07,  3.71it/s]lag sweep:  46%|████▌     | 21/46 [00:06<00:06,  3.74it/s]lag sweep:  48%|████▊     | 22/46 [00:06<00:06,  3.74it/s]lag sweep:  50%|█████     | 23/46 [00:06<00:06,  3.72it/s]lag sweep:  52%|█████▏    | 24/46 [00:07<00:05,  3.68it/s]lag sweep:  54%|█████▍    | 25/46 [00:07<00:05,  3.69it/s]lag sweep:  57%|█████▋    | 26/46 [00:07<00:05,  3.58it/s]lag sweep:  59%|█████▊    | 27/46 [00:08<00:05,  3.43it/s]lag sweep:  61%|██████    | 28/46 [00:08<00:05,  3.32it/s]lag sweep:  63%|██████▎   | 29/46 [00:08<00:05,  3.32it/s]lag sweep:  65%|██████▌   | 30/46 [00:09<00:04,  3.25it/s]lag sweep:  67%|██████▋   | 31/46 [00:09<00:05,  2.98it/s]lag sweep:  70%|██████▉   | 32/46 [00:10<00:05,  2.46it/s]lag sweep:  72%|███████▏  | 33/46 [00:10<00:05,  2.46it/s]lag sweep:  74%|███████▍  | 34/46 [00:10<00:04,  2.72it/s]lag sweep:  76%|███████▌  | 35/46 [00:11<00:03,  2.94it/s]lag sweep:  78%|███████▊  | 36/46 [00:11<00:03,  3.10it/s]lag sweep:  80%|████████  | 37/46 [00:11<00:02,  3.41it/s]lag sweep:  83%|████████▎ | 38/46 [00:11<00:02,  3.72it/s]lag sweep:  85%|████████▍ | 39/46 [00:11<00:01,  3.92it/s]lag sweep:  87%|████████▋ | 40/46 [00:12<00:01,  3.84it/s]lag sweep:  89%|████████▉ | 41/46 [00:12<00:01,  3.93it/s]lag sweep:  91%|█████████▏| 42/46 [00:12<00:00,  4.08it/s]lag sweep:  93%|█████████▎| 43/46 [00:12<00:00,  4.24it/s]lag sweep:  96%|█████████▌| 44/46 [00:13<00:00,  4.26it/s]lag sweep:  98%|█████████▊| 45/46 [00:13<00:00,  4.26it/s]lag sweep: 100%|██████████| 46/46 [00:13<00:00,  4.24it/s]lag sweep: 100%|██████████| 46/46 [00:13<00:00,  3.38it/s]
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:203: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights.T + intercept  # ndarray, likely C-contiguous
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: divide by zero encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: overflow encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/linear_model/_linear_loss.py:336: RuntimeWarning: invalid value encountered in matmul
+  grad[:, :n_features] = grad_pointwise.T @ X + l2_reg_strength * weights
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+population-median tuning peaks at a neural lead of 100 ms
+per-unit optimal lead (well-modulated half): median 100 ms, IQR [-100.  240.]
+velocity-direction tuning at 100 ms lead: 111/115 units p<0.01, median depth 1.40 Hz
+population mean rate in the PD: 4.0 Hz at rest -> 8.5 Hz at the fastest speed bin
+baseline   7-way direction decoding accuracy 0.220 (chance 0.143)
+delay      7-way direction decoding accuracy 0.591 (chance 0.143)
+movement   7-way direction decoding accuracy 0.812 (chance 0.143)
+CV folds:   0%|          | 0/5 [00:00<?, ?it/s]/Users/bdichter/miniconda3/lib/python3.12/site-packages/nemos/glm/glm.py:728: RuntimeWarning: The fit did not converge. Consider the following:
+1) Enable float64 with ``jax.config.update('jax_enable_x64', True)`` 
+2) Increase the max number of iterations or increase tolerance (if reasonable). These parameters can be specified by providing a ``solver_kwargs`` dictionary. For the available options see the ``self.solver.__init__`` docstrings.
+  warnings.warn(
+CV folds:  20%|██        | 1/5 [00:23<01:33, 23.31s/it]CV folds:  40%|████      | 2/5 [00:46<01:08, 22.97s/it]CV folds:  60%|██████    | 3/5 [01:10<00:46, 23.45s/it]CV folds:  80%|████████  | 4/5 [01:35<00:24, 24.07s/it]CV folds: 100%|██████████| 5/5 [01:57<00:00, 23.41s/it]                                                       speed only               n_features=  5  median held-out deviance explained = 0.0031
+CV folds:   0%|          | 0/5 [00:00<?, ?it/s]CV folds:  20%|██        | 1/5 [00:14<00:56, 14.18s/it]CV folds:  40%|████      | 2/5 [00:28<00:43, 14.34s/it]CV folds:  60%|██████    | 3/5 [00:43<00:28, 14.48s/it]CV folds:  80%|████████  | 4/5 [00:58<00:14, 14.91s/it]CV folds: 100%|██████████| 5/5 [01:13<00:00, 14.93s/it]                                                       direction only           n_features=  8  median held-out deviance explained = 0.0128
+CV folds:   0%|          | 0/5 [00:00<?, ?it/s]CV folds:  20%|██        | 1/5 [00:24<01:38, 24.58s/it]CV folds:  40%|████      | 2/5 [00:44<01:04, 21.60s/it]CV folds:  60%|██████    | 3/5 [01:00<00:38, 19.22s/it]CV folds:  80%|████████  | 4/5 [01:16<00:17, 17.77s/it]CV folds: 100%|██████████| 5/5 [01:32<00:00, 17.25s/it]                                                       direction x speed        n_features= 40  median held-out deviance explained = 0.0237
+CV folds:   0%|          | 0/5 [00:00<?, ?it/s]/Users/bdichter/miniconda3/lib/python3.12/multiprocessing/resource_tracker.py:255: UserWarning: resource_tracker: There appear to be 2 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

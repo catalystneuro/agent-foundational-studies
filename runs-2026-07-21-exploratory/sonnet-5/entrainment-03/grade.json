@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Gatsby, ses-Gatsby_08022013",
+  "headline_stat": {
+    "name": "Fraction significantly theta phase-locked (Rayleigh p<0.001): excitatory / inhibitory",
+    "value": "44.6% (29/65) / 100% (14/14)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000044 (Grosmark & Buzsaki CA1) is the canonical known-good dataset for hippocampal theta entrainment, with silicon-probe LFP and sorted units during linear-track running.",
+    "handling": "Real data streamed from S3 via remfile, correct epoch/unit alignment, cell-type metadata applied, and tracker dropouts handled carefully by computing speed per contiguous tracked bout so gaps cannot be misread as running.",
+    "analysis": "Rayleigh test with MRL is the correct circular statistic, and it is corroborated by two phase-free signatures (spike-triggered average and autocorrelogram) plus an amplitude-vs-speed sanity check.",
+    "correctness": "Every headline number (44.6%/100% significant, mean MRL 0.240/0.224, Pearson r=0.109) reproduces exactly from the committed script output and is internally consistent with the figures.",
+    "figures": "Figures are clearly labeled with units and sample sizes, and the example units are honestly chosen, including a genuinely non-entrained pyramidal cell (MRL=0.04, uniform histogram) as a negative control.",
+    "honesty": "Claims are proportionate and no result is misrepresented, but the write-up states no explicit limitation (single session, single channel), placing a genuinely clean strong result at level 3 rather than 4.",
+    "verdict": "Thorough, reproducible, and honest CA1 theta-entrainment analysis with independent cross-checks; I would accept this from a rotation student."
+  }
+}

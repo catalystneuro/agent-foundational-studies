@@ -1,10 +1,11 @@
 {
   "dandiset": "000128",
-  "subject_session": "sub-Jenkins, ses-full (2009-09-25), sub-Jenkins_ses-full_desc-train_behavior+ecephys.nwb",
+  "subject_session": "sub-Jenkins, ses-full (MC_Maze, 2009-09-25)",
   "headline_stat": {
-    "name": "Fraction of M1/PMd units significantly directionally tuned",
-    "value": 0.85,
-    "in_prereg_range": true
+    "name": "population-vector reach-direction decoding median |error|",
+    "value": "23.6 deg (79% within 45 deg)",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
@@ -17,15 +18,15 @@
   "verdict": "accept",
   "fabrication_flag": false,
   "synthetic_data_flag": false,
-  "stated_limitation": "the decoders are compressed in magnitude: the ridge decoder recovers the direction of the hand velocity well but systematically underestimates its size, particularly for the fastest movements. Motor cortical activity in this task also reflects preparation, posture, muscle activity and target position, and none of the analyses here separate those from velocity. The best velocity model explains about 0.11 bits per spike, which is a reminder that instantaneous hand velocity is one component of the signal rather than the whole of it.",
+  "stated_limitation": "A nonparametric field over the 2D velocity plane is the best instantaneous model, so some structure remains that the parametric gain model does not capture.",
   "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000128 MC_Maze (Jenkins, 182 M1/PMd units, 2295 delayed reaches with simultaneous 1 kHz hand kinematics) is the canonical choice for reach direction and velocity tuning, and the agent correctly noted that the barrier trials spread actual movement direction evenly around the circle.",
-    "handling": "Real data streamed via remfile with a disk cache, units and mm/mm-s conversions checked against the NWB conversion factor, kinematics decimated to 100 Hz with justification, and the trial window shifted by the empirically estimated 100 ms neural lead; the GLM stage applies an explicit >200-spike inclusion criterion, and this NLB packaging carries no per-unit quality metrics to filter on.",
-    "analysis": "Cosine fits on single trials with a 500-fold trial-shuffle permutation null, circular statistics throughout (Rayleigh test, circular PD differences), cross-validated nested Poisson GLMs on contiguous time blocks, and a cross-validated population vector; the per-unit permutation tests are uncorrected for 182 comparisons, but at alpha 0.01 that predicts ~2 false positives against 154 observed, so it cannot drive the claim.",
-    "correctness": "The 85% tuned fraction is inside the 0.50-0.95 preregistered range and reproduces from the committed arrays, and every quantitative claim in the summary traces to the notebook's printed output, with the single blemish that the README's '79% of trials within 45 degrees' reads 78% in fig09 (the saved array gives 78.56%).",
-    "figures": "All nine figures have labeled axes with units and sample sizes, examples are ranked by cosine fit quality or modulation depth (the effect being demonstrated) and are labeled as best-fit rather than typical, and every single-unit panel is backed by a population summary; fig06 in particular shows the speed-as-gain effect unmistakably.",
-    "honesty": "The write-up reports both the flattering and unflattering R\u00b2 for the cosine fit, explicitly declines to claim verified uniformity of preferred directions because the Rayleigh test is insensitive to multimodality, foregrounds a negative result and diagnoses it as a link-function artifact, and names decoder magnitude compression and unmodeled confounds as limitations."
+    "dataset": "DANDI 000128 MC_Maze (Jenkins, M1/PMd delayed reaching) is the canonical dataset for reach direction and velocity tuning.",
+    "handling": "Real NWB file streamed via remfile with disk cache, kinematics correctly cached and decimated, neural lead estimated by a lag scan and applied consistently, alignment and units correct.",
+    "analysis": "Cosine tuning with a permutation test, circular PD estimates cross-checked two ways, cross-validated leave-one-out population vector, and a nested Poisson GLM ladder with a proper constant-rate null are all standard and correctly done.",
+    "correctness": "Decoding and GLM headline numbers reproduce exactly from the committed npz/logs, are internally consistent with the figures, and rest on adequate samples and correct tests.",
+    "figures": "Figures show the effects clearly with labeled axes, units, and trial counts; the best-fit gallery is honestly labeled and accompanied by full population distributions and an exemplar unit.",
+    "honesty": "Claims are proportionate, and the write-up explicitly flags a misleading negative result and admits the 2D field beats the parametric gain model, acknowledging residual structure and the single session."
   }
 }

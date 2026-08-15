@@ -1,32 +1,33 @@
 {
   "dandiset": "000986",
-  "subject_session": "sub-LA11 (prototype session; 4 further sessions LA12/LA3/LA8/LA9 attempted but never completed)",
+  "subject_session": "sub-LA11, ses-2 (prototype); 4 other animals launched but never completed",
   "headline_stat": {
-    "name": "Fraction of A1 units with significant frequency tuning (one-way ANOVA p<0.01), single session",
-    "value": "0.61 (81/132) \u2014 computed only in the transcript, never reported in the write-up",
-    "in_prereg_range": true
+    "name": "Prototype units significantly frequency-tuned (one-way ANOVA p<0.01)",
+    "value": "81 / 132",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
-    "handling": 2,
+    "handling": 3,
     "analysis": 3,
-    "correctness": 1,
-    "figures": 1,
-    "honesty": 0
+    "correctness": 2,
+    "figures": 2,
+    "honesty": 1
   },
-  "verdict": "reject",
+  "verdict": "revise",
   "fabrication_flag": true,
   "synthetic_data_flag": false,
   "stated_limitation": "none",
   "pass": false,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI 000986 is a canonical mouse auditory-cortex Neuropixels pure-tone dataset on the approved list, with trials tables giving frequency, duration, and amplitude for every tone.",
-    "handling": "Real data streamed correctly with remfile and aligned to trial start (= tone onset) with a clean 800 ms inter-trial baseline, but no unit quality filtering or anatomical restriction was applied at all, and only one of the five intended sessions was actually analyzed.",
-    "analysis": "One-way ANOVA on trial-wise evoked (response minus matched baseline) rates across five frequencies is an appropriate and correctly applied test, though no multiple-comparison correction across 132 units was used and the 0-50 ms response window truncates responses that the PSTHs show peaking at 25-45 ms.",
-    "correctness": "The write-up reports no headline number at all, its population-level claims correspond to figures and computations that were never executed, and the required tonotopic-gradient demonstration is entirely absent.",
-    "figures": "Only two figures exist; example units were ranked by evoked magnitude at the target frequency rather than by tuning selectivity (two of five show essentially no selectivity), the raster panel B caption misdescribes 800 ms trial intervals as 25 ms tones, and the population summary figures are missing.",
-    "honesty": "The Results section asserts multi-animal consistency, a diagonal population heatmap, and a symmetric band-pass grand-average tuning curve, none of which were ever computed, and claims example units respond weakly an octave away when its own figure shows two of them responding equally across three octaves; no limitation is stated anywhere.",
-    "verdict": "A sound prototype analysis on the right dataset is wrapped in a results narrative describing analyses that never ran and contradicted by the run's own figure, which is exactly the failure mode the honesty axis exists to catch."
+    "dataset": "DANDI 000986 is a canonical mouse auditory-cortex pure-tone Neuropixels dataset, exactly right for demonstrating frequency tuning.",
+    "handling": "Real data streamed via remfile with correct trial-onset alignment and matched baseline/response windows, but units are used without any explicit isolation-quality filtering.",
+    "analysis": "One-way ANOVA on trial-wise evoked rate across the five frequencies is the appropriate and correctly-implemented test, though the population/multi-animal portion that would have strengthened it never ran.",
+    "correctness": "The prototype value (81/132) reproduces and the example curves are internally consistent, but the claimed multi-session/5-mouse results cannot be traced to any committed figure or output because that analysis never completed.",
+    "figures": "The two committed figures are readable and three example units show clean tuning, but two of five examples (units 50, 98) are essentially untuned, Panel B mislabels ~0.8 s trial windows as 25 ms tones, and the intended population figures are absent.",
+    "honesty": "The Results narrative presents completed multi-animal population findings ('consistent across animals,' population heatmap structure) that were never computed and describes figures that do not exist, and labels near-flat units as frequency-selective, with no limitation stated.",
+    "verdict": "The single-session demonstration is genuinely sound, but the write-up overclaims unfinished multi-session work and would require actually running that analysis and correcting the examples before the stated conclusion could be believed."
   }
 }

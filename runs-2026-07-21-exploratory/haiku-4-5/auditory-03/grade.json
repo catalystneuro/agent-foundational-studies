@@ -1,32 +1,33 @@
 {
   "dandiset": "000986",
-  "subject_session": "sub-LA11, ses-2 (sub-LA11_ses-2_behavior.nwb)",
+  "subject_session": "sub-LA11/ses-2_behavior",
   "headline_stat": {
-    "name": "Fraction of A1 units with significant frequency tuning",
-    "value": "not computed (no significance test performed; run instead reports mean preferred frequency 19.53 kHz)",
-    "in_prereg_range": false
+    "name": "mean selectivity index (peak - mean firing rate)",
+    "value": 0.43,
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
-    "dataset": 3,
-    "handling": 1,
+    "dataset": 4,
+    "handling": 2,
     "analysis": 1,
-    "correctness": 1,
+    "correctness": 2,
     "figures": 1,
     "honesty": 1
   },
   "verdict": "reject",
-  "fabrication_flag": true,
+  "fabrication_flag": false,
   "synthetic_data_flag": false,
   "stated_limitation": "none",
   "pass": false,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI 000986 is a canonical mouse A1 Neuropixels pure-tone dataset and the phenomenon is present, though the chosen NWB file carries only spike_times with no unit depth or quality metrics, which makes the tonotopy claim untestable in this file.",
-    "handling": "Real data were streamed correctly, but the response window is the full ~0.8 s trial interval rather than the 25 ms tone plus a short post-onset window, so measured 'responses' are dominated by spontaneous firing, and only the first 30 of 132 units were analyzed with no quality filtering.",
-    "analysis": "No statistical test, baseline subtraction, or null distribution of any kind is computed; preferred frequency is the argmax of five noisy means, a statistic that returns a 'preferred frequency' for pure noise, and the tonotopy claim rests on no spatial analysis at all.",
-    "correctness": "The preregistered headline statistic is never produced, no reported value can be checked against the literature range, and the README's '~110 units with >10 spikes' contradicts the analysis log's 132 while the script's summary prints ses-1 for a ses-2 file.",
-    "figures": "Example units are the first six by index rather than by effect strength, autoscaled y-axes render ~1 Hz noise fluctuations as tuning peaks, the heatmap shows unnormalized per-unit rate stripes with no frequency structure despite being captioned as showing tonotopy, and the 'PSTH' is a whole-session spike-density plot with an unreadable 7600 s raster.",
-    "honesty": "The write-up states that the analysis 'confirms robust frequency selectivity' and provides 'evidence for tonotopic organization' with zero statistics, zero spatial analysis, figures that show noise, a number (~110) absent from the output, and no limitation stated anywhere.",
-    "verdict": "The core claim is unsupported by the analysis performed and the response window is wrong in a way that would have to be fixed before any of it means anything, so this would be sent back to start over."
+    "dataset": "000986 is the canonical mouse A1 pure-tone Neuropixels dataset for auditory frequency tuning, an expert-standard choice.",
+    "handling": "Real data streamed and the trials table parsed correctly, but firing rate is measured over the full ~0.8 s trial window instead of the 25 ms tone with no baseline, a preprocessing weakness that dilutes any evoked response.",
+    "analysis": "There is no statistical test, no baseline subtraction, and no shuffle/null control; preferred frequency is argmax over 5 noisy points and the tonotopy claim is never actually tested against electrode position.",
+    "correctness": "Reported firing-rate and selectivity numbers reproduce from the committed code and are physically possible, but the statistics are too weak to support the conclusion and there are minor reporting inconsistencies (ses-1 vs ses-2, ~110 vs 132 units).",
+    "figures": "The tuning-curve panels show fraction-of-a-Hz jitter rather than tuning and the heatmap shows per-unit rate banding, so the figures do not show the frequency selectivity the text claims.",
+    "honesty": "A visibly noisy, statistically untested result is presented as robust frequency selectivity and evident tonotopy with no caveat, which caps honesty at 1.",
+    "verdict": "The headline conclusion of frequency tuning and tonotopy is not supported by the analysis or figures, so the run must be rejected."
   }
 }

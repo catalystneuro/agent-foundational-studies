@@ -1,32 +1,33 @@
 {
   "dandiset": "000044",
-  "subject_session": "sub-Buddy / ses-Buddy-06272013",
+  "subject_session": "sub-Buddy/sub-Buddy_ses-Buddy-06272013",
   "headline_stat": {
-    "name": "Fraction of CA1 excitatory units classified as place cells",
-    "value": 0.9,
-    "in_prereg_range": false
+    "name": "fraction of excitatory CA1 units classified as place cells (shuffle p<0.05)",
+    "value": "38/42 (90%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
-    "handling": 3,
-    "analysis": 3,
-    "correctness": 1,
-    "figures": 3,
-    "honesty": 2
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
   },
-  "verdict": "revise",
+  "verdict": "accept",
   "fabrication_flag": false,
   "synthetic_data_flag": false,
   "stated_limitation": "none",
-  "pass": false,
+  "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000044 dorsal CA1 silicon-probe recordings on a 1.6 m linear track is the canonical choice for demonstrating place cells, and the selected session yields 68 units with 48 labeled excitatory.",
-    "handling": "Real data streamed from S3 with correct epoch restriction and an impressive, independently verified fix to an inverted sampling-rate attribute, but the analysis uses raw x rather than the file's available linearized position series and never separates the two running directions.",
-    "analysis": "Skaggs spatial information with a 200-iteration circular-shift null is the standard approach and the required control is present, but direction-splitting, a peak-rate or field-coherence criterion, and any multiple-comparison correction across 42 cells are all absent.",
-    "correctness": "The reported 90% place-cell fraction falls above the preregistered 0.30\u20130.75 range, which caps this axis at 1, even though every reported number traces cleanly to the committed notebook output and the median 0.91 bits/spike is in range.",
-    "figures": "The effect is clearly visible in the tuning curves, spikes-on-path panels, population sequence, and null comparison with labeled units and stated sample sizes, but unit 62 is visibly multi-peaked and two of the 2D maps are dominated by single hot pixels that weaken the panel's stated purpose.",
-    "honesty": "Nothing is fabricated and the examples are honestly ranked by spatial information, but a permissive single-criterion result yielding an unusually high 90% is presented as clean with zero stated limitations and the phrase \"the standard criterion,\" which is mild overstatement.",
-    "verdict": "The core pipeline is sound and worth keeping, but I would require a directional split, a field/peak-rate criterion, and a recomputed fraction with stated caveats before believing the headline number."
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki dorsal CA1, 1.6 m linear track) is the canonical place-cell dataset, an expert's obvious choice.",
+    "handling": "Real NWB streamed from S3 with a documented, duration-verified fix for the inverted SpatialSeries rate attribute, plus defensible excitatory/\u226550-spike/speed>5cm-s selection.",
+    "analysis": "Skaggs spatial information with a proper 200-iteration circular time-shift null is the standard, correct method, though linear-track directions were pooled rather than split.",
+    "correctness": "Reported numbers reproduce from the committed code and are internally consistent across README, figure titles, and the bar plot; p=0.005 is the correct floor for 200 shuffles.",
+    "figures": "Figures clearly show single place fields, a track-tiling population sequence, and observed-vs-null separation, with labeled axes, units, and genuinely representative top examples.",
+    "honesty": "Nothing is misrepresented and examples are real top cells, but the write-up states no result-specific limitation (single session, high 90% fraction, direction pooling), capping a clean result at 3.",
+    "verdict": "A correct, well-documented, reproducible demonstration of the canonical phenomenon that a rotation student could hand in with only minor requested additions."
   }
 }

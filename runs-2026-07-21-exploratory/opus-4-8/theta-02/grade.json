@@ -1,10 +1,11 @@
 {
   "dandiset": "000044",
-  "subject_session": "Achilles_10252013 (primary) plus Cicero_09012014, Cicero_09172014, Gatsby_08022013, Buddy_06272013; 3 ring-track sessions excluded",
+  "subject_session": "Achilles_10252013 (prototyping) + 5 linear-track sessions (Achilles/Cicero x2/Gatsby/Buddy)",
   "headline_stat": {
-    "name": "fraction of place fields with significant negative phase-position slope; median slope",
-    "value": "0.51 (114/223); -177 deg = -3.09 rad per field",
-    "in_prereg_range": true
+    "name": "median precession slope across 5 sessions (223 fields)",
+    "value": "-177 deg/field (83% negative slopes)",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
@@ -21,12 +22,11 @@
   "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000044 (hc-11, Grosmark & Buzsaki) dorsal CA1 linear-track recordings are the canonical dataset for theta entrainment and phase precession, and the agent used five sessions across four rats.",
-    "handling": "Data were streamed with LINDI, units filtered by the file's excitatory/inhibitory label plus explicit spike-count, peak-rate and spatial-information criteria, and three real NWB conversion pitfalls (rate-as-period, a mostly-NaN stored linearized series, gap-bridging derivatives) were identified, worked around, and cross-validated at r = 0.99999.",
-    "analysis": "Circular statistics are used correctly throughout (Rayleigh test, Kempter circular-linear regression with a within-field phase permutation null), and the leftward-run coordinate reversal that many analyses get wrong was caught and fixed, though the permutation control was only run in one of the five sessions and no multiple-comparison correction is applied.",
-    "correctness": "Every headline number reproduces exactly from the committed pickle and all three headline statistics fall inside the preregistered ranges, with no internal contradictions between text, figures and code.",
-    "figures": "The precession band is unmistakable in the single-field examples, the pooled density maps and the across-session panel, axes carry units, sample sizes are given, and examples are ranked by circular-linear correlation rather than slope; only cosmetic faults remain (a 1.6 m title over a 1.9 m axis, an unexplained reference cosine).",
-    "honesty": "Claims are proportionate to what the figures show, the excluded ring-track sessions are named and justified with a dedicated figure, and the pooled-lap field definition is flagged as a specific limitation with its expected direction of bias.",
-    "verdict": "This is a careful, reproducible, well-documented demonstration of both phenomena on the canonical dataset that I would take and move on from."
+    "dataset": "DANDI:000044 (hc-11) dorsal CA1 on a linear track is the canonical dataset for theta entrainment and phase precession.",
+    "handling": "Real data streamed via LINDI with careful, documented handling of NWB quirks (sampling-period-as-rate, NaN-heavy linearized series, gap-bridging velocity), explicit running-speed and direction splitting, and correct exclusion of the three ring-track sessions.",
+    "analysis": "Standard and correct methods: Kempter circular-linear regression with a within-field phase-permutation null, Rayleigh test for locking, Skaggs spatial-information filtering.",
+    "correctness": "Reported numbers reproduce from the committed code and are internally consistent across single-session (63/96, median -202) and pooled (114/223, median -177) figures, with sound statistics and controls.",
+    "figures": "Figures clearly show place-field tiling, bimodal phase locking, single-field precession bands, and a shuffle-separated population, with units, sample sizes, and examples chosen by correlation strength.",
+    "honesty": "Claims are proportionate to strong evidence, the shuffle control is honestly interpreted, and specific limitations (pooled-lap jitter as a lower bound, ring-track exclusion) are stated plainly."
   }
 }

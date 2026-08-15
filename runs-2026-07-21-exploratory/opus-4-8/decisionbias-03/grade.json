@@ -1,0 +1,32 @@
+{
+  "dandiset": "000409",
+  "subject_session": "6 sessions: NYU-11 (6713a4a7), NYU-30 (77e6dc6a), NYU-37 (21d21fc3), NYU-46 (d32876dd), NYU-40 (8ca740c5), NYU-39 (91a3353a)",
+  "headline_stat": {
+    "name": "pre-stimulus block-prior decoding AUC (mean of 6 sessions)",
+    "value": 0.79,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 2,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Decoding is within-session (units are not shared across sessions); reported AUCs are the mean of 5-fold cross-validated out-of-sample predictions. The block prior is a slowly varying trial variable, so cross-validation uses shuffled (non-temporal) folds; the shuffle null (which preserves the same fold structure) confirms the effect is not an artifact of class imbalance or fold construction. Units were filtered to >= 1 Hz mean rate; no brain-region selection was applied.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000409 IBL biasedChoiceWorld is the canonical dataset for imposed decision bias, with block priors and a movement-free quiescence window that make the question directly answerable.",
+    "handling": "Real data streamed from S3, units filtered by firing rate, trials cleaned to decided trials with valid onset and correctly aligned to gabor stimulus onset.",
+    "analysis": "Logistic decoder with shuffle null is reasonable, but randomly shuffled CV folds and a global label-shuffle null fail to control temporal autocorrelation/slow-drift leakage for the block-contiguous prior, and the appropriate blocked/held-out control is absent.",
+    "correctness": "All reported AUCs and behavioral fractions reproduce exactly from the committed CSV and are internally consistent with the figures, though the headline block AUC is likely inflated by uncontrolled slow drift.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show all six sessions including the non-significant one, and make the pre-stimulus effect and its behavioral link visible.",
+    "honesty": "Claims are measured and the weak session is disclosed, but the obvious drift/autocorrelation caveat specific to block decoding goes unmentioned while the shuffle null is framed as ruling out artifacts."
+  }
+}

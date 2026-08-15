@@ -1,0 +1,32 @@
+{
+  "dandiset": "000939",
+  "subject_session": "sub-A3701/sub-A3701_ses-191119",
+  "headline_stat": {
+    "name": "median mean-resultant-length R (HD cells) / decoding median abs error",
+    "value": "R=0.74 (HD) vs 0.13 (non-HD); decode 11 deg, circ r=0.91",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Dandiset 000939 (mouse postsubiculum, Peyrache/Ajabi lab) is a canonical, expert-standard choice for head direction cells.",
+    "handling": "Real ~30 GB NWB streamed by byte-range with remfile, 100 Hz HD angle wrapped in Tsd with NaN samples dropped, correct epoch/spike alignment and explicit author HD labels.",
+    "analysis": "Standard and correct: mean-resultant-vector circular statistics, cross-arena coherent-rotation analysis, and held-out Bayesian decoding, all appropriate for circular data.",
+    "correctness": "Reported numbers (R=0.74 vs 0.13, 37 deg coherent rotation R=0.96, corr 0.23->0.94, decode 11 deg / r=0.91) trace to the committed code, are internally consistent, and match the figures.",
+    "figures": "Figures are clearly labeled with units and sample sizes and show the effect unambiguously; example units are ranked by tuning strength R, which is the effect being demonstrated.",
+    "honesty": "Claims are proportionate to visibly strong, clean evidence and nothing is contradicted by the figures, but no explicit limitations are stated (single session, reliance on author labels, ring-attractor framing), a minor fault on a clean result."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dandiset": "000409",
+  "subject_session": "sub-CSH-ZAD-024 / ses-8207abc6-6b23-4762-92b4-82e05bed5143 (+22 other IBL sessions)",
+  "headline_stat": {
+    "name": "pre-stimulus population block-prior decoding AUC (per session)",
+    "value": "~0.60-0.75, p=0.005 in strong sessions; drops toward chance after full history+drift residualization",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 0,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "IBL Brain Wide Map (000409) with block structure is the canonical dataset and paradigm for decoding a decision bias from pre-stimulus activity, and 23 QC-screened sessions were used.",
+    "handling": "Data are streamed from S3 with remfile, units pass explicit IBL QC and firing-rate thresholds, the choice convention is verified against rewarded high-contrast trials, and epochs sit inside the enforced pre-stimulus quiescence window.",
+    "analysis": "The design is gold-standard: pseudo-session nulls matching the IBL generative process, contiguous folds and train-only PCA/z-scoring to block drift leakage, layered nuisance residualization, and cross-decoding from block to upcoming choice on 0%-contrast trials.",
+    "correctness": "The 23-session results table reproduces from the committed pipeline, is internally consistent and physically possible, but no result was ever synthesized or interpreted, and the striking drop to chance under full residualization is left unaddressed.",
+    "figures": "No figures were produced at all; 03_figures.py was written but never executed, so a reader cannot see the phenomenon.",
+    "honesty": "No scientific claim is stated in the write-up so nothing is misrepresented, and the agent's final message honestly reports the run as incomplete, but there is no discussion of the result's limitations because there is no stated result.",
+    "verdict": "The core data handling and decoding pipeline are sound and ran to completion, so this warrants accept-with-revision (generate the figures and write up the interpretation, especially the residualization confound) rather than a restart."
+  }
+}

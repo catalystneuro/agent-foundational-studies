@@ -1,0 +1,868 @@
+{
+  "neurons": {
+    "neuron_0": {
+      "firing_rates": [
+        7.1,
+        16.800000000000004,
+        33.7,
+        44.8,
+        39.3,
+        19.2,
+        9.2,
+        6.0
+      ],
+      "preferred_orientation": 67.5,
+      "orientation_selectivity_index": 0.3810927774615418,
+      "max_response": 44.8,
+      "baseline_rate": 6.0,
+      "modulation_depth": 0.7637795125240253
+    },
+    "neuron_1": {
+      "firing_rates": [
+        8.9,
+        18.1,
+        40.5,
+        44.7,
+        35.2,
+        17.5,
+        7.3,
+        5.1
+      ],
+      "preferred_orientation": 67.5,
+      "orientation_selectivity_index": 0.40031920722979875,
+      "max_response": 44.7,
+      "baseline_rate": 5.1,
+      "modulation_depth": 0.7951807069240822
+    },
+    "neuron_2": {
+      "firing_rates": [
+        32.0,
+        45.00000000000001,
+        42.6,
+        22.6,
+        11.6,
+        6.0,
+        6.3,
+        14.2
+      ],
+      "preferred_orientation": 22.5,
+      "orientation_selectivity_index": 0.3840086068081917,
+      "max_response": 45.00000000000001,
+      "baseline_rate": 6.0,
+      "modulation_depth": 0.7647058673587086
+    },
+    "neuron_3": {
+      "firing_rates": [
+        35.1,
+        16.900000000000006,
+        8.0,
+        6.3,
+        6.1,
+        15.6,
+        30.4,
+        42.8
+      ],
+      "preferred_orientation": 157.5,
+      "orientation_selectivity_index": 0.3497396742750597,
+      "max_response": 42.8,
+      "baseline_rate": 6.1,
+      "modulation_depth": 0.7505112320958848
+    },
+    "neuron_4": {
+      "firing_rates": [
+        28.7,
+        43.900000000000006,
+        38.0,
+        23.8,
+        10.0,
+        6.2,
+        7.7,
+        11.2
+      ],
+      "preferred_orientation": 22.5,
+      "orientation_selectivity_index": 0.37214734339418776,
+      "max_response": 43.900000000000006,
+      "baseline_rate": 6.2,
+      "modulation_depth": 0.7524949949601797
+    },
+    "neuron_5": {
+      "firing_rates": [
+        42.0,
+        25.200000000000003,
+        10.6,
+        5.8,
+        7.4,
+        12.9,
+        27.7,
+        42.8
+      ],
+      "preferred_orientation": 157.5,
+      "orientation_selectivity_index": 0.39386283907093333,
+      "max_response": 42.8,
+      "baseline_rate": 5.8,
+      "modulation_depth": 0.7613168567630277
+    },
+    "neuron_6": {
+      "firing_rates": [
+        5.6,
+        7.3000000000000025,
+        13.2,
+        28.7,
+        40.5,
+        43.5,
+        23.3,
+        9.9
+      ],
+      "preferred_orientation": 112.5,
+      "orientation_selectivity_index": 0.39373503440897395,
+      "max_response": 43.5,
+      "baseline_rate": 5.6,
+      "modulation_depth": 0.7718940779654974
+    },
+    "neuron_7": {
+      "firing_rates": [
+        47.60000000000001,
+        36.800000000000004,
+        19.0,
+        8.4,
+        4.1,
+        7.3,
+        17.4,
+        39.6
+      ],
+      "preferred_orientation": 0.0,
+      "orientation_selectivity_index": 0.4136886180409929,
+      "max_response": 47.60000000000001,
+      "baseline_rate": 4.1,
+      "modulation_depth": 0.8413926336287691
+    },
+    "neuron_8": {
+      "firing_rates": [
+        29.6,
+        42.20000000000001,
+        40.5,
+        28.3,
+        11.4,
+        5.1,
+        6.8,
+        12.0
+      ],
+      "preferred_orientation": 22.5,
+      "orientation_selectivity_index": 0.4176710187629247,
+      "max_response": 42.20000000000001,
+      "baseline_rate": 5.1,
+      "modulation_depth": 0.7843551631214554
+    },
+    "neuron_9": {
+      "firing_rates": [
+        6.6,
+        11.500000000000004,
+        25.0,
+        39.9,
+        44.5,
+        27.0,
+        12.7,
+        6.3
+      ],
+      "preferred_orientation": 90.0,
+      "orientation_selectivity_index": 0.3758413779829983,
+      "max_response": 44.5,
+      "baseline_rate": 6.3,
+      "modulation_depth": 0.7519684891344787
+    },
+    "neuron_10": {
+      "firing_rates": [
+        31.8,
+        14.700000000000003,
+        5.7,
+        6.0,
+        9.3,
+        22.2,
+        41.0,
+        44.3
+      ],
+      "preferred_orientation": 157.5,
+      "orientation_selectivity_index": 0.37494362494167155,
+      "max_response": 44.3,
+      "baseline_rate": 5.7,
+      "modulation_depth": 0.7719999845600002
+    },
+    "neuron_11": {
+      "firing_rates": [
+        6.9,
+        6.400000000000003,
+        11.5,
+        27.6,
+        44.7,
+        42.0,
+        22.8,
+        10.3
+      ],
+      "preferred_orientation": 90.0,
+      "orientation_selectivity_index": 0.34697590266535994,
+      "max_response": 44.7,
+      "baseline_rate": 6.400000000000003,
+      "modulation_depth": 0.7495107485418638
+    },
+    "neuron_12": {
+      "firing_rates": [
+        12.400000000000002,
+        6.5,
+        6.5,
+        11.5,
+        24.0,
+        38.1,
+        44.7,
+        29.0
+      ],
+      "preferred_orientation": 135.0,
+      "orientation_selectivity_index": 0.36998843289765326,
+      "max_response": 44.7,
+      "baseline_rate": 6.5,
+      "modulation_depth": 0.7460937354278567
+    },
+    "neuron_13": {
+      "firing_rates": [
+        38.6,
+        39.400000000000006,
+        27.5,
+        13.1,
+        5.4,
+        5.6,
+        11.6,
+        26.5
+      ],
+      "preferred_orientation": 22.5,
+      "orientation_selectivity_index": 0.41239649024954605,
+      "max_response": 39.400000000000006,
+      "baseline_rate": 5.4,
+      "modulation_depth": 0.7589285544882021
+    },
+    "neuron_14": {
+      "firing_rates": [
+        25.500000000000004,
+        11.000000000000004,
+        4.8,
+        5.9,
+        12.1,
+        27.6,
+        43.3,
+        41.9
+      ],
+      "preferred_orientation": 135.0,
+      "orientation_selectivity_index": 0.3986177554757191,
+      "max_response": 43.3,
+      "baseline_rate": 4.8,
+      "modulation_depth": 0.8004157837751398
+    },
+    "neuron_15": {
+      "firing_rates": [
+        19.1,
+        35.400000000000006,
+        47.5,
+        34.5,
+        18.3,
+        6.4,
+        4.5,
+        9.4
+      ],
+      "preferred_orientation": 45.0,
+      "orientation_selectivity_index": 0.41529599828401487,
+      "max_response": 47.5,
+      "baseline_rate": 4.5,
+      "modulation_depth": 0.8269230610207104
+    },
+    "neuron_16": {
+      "firing_rates": [
+        36.6,
+        19.500000000000004,
+        7.8,
+        5.4,
+        7.3,
+        17.7,
+        30.4,
+        46.7
+      ],
+      "preferred_orientation": 157.5,
+      "orientation_selectivity_index": 0.3894512985964824,
+      "max_response": 46.7,
+      "baseline_rate": 5.4,
+      "modulation_depth": 0.7927063187580362
+    },
+    "neuron_17": {
+      "firing_rates": [
+        11.500000000000002,
+        5.700000000000001,
+        5.8,
+        14.9,
+        28.5,
+        42.0,
+        39.5,
+        20.5
+      ],
+      "preferred_orientation": 112.5,
+      "orientation_selectivity_index": 0.3955959331000737,
+      "max_response": 42.0,
+      "baseline_rate": 5.700000000000001,
+      "modulation_depth": 0.7610062733541662
+    },
+    "neuron_18": {
+      "firing_rates": [
+        35.0,
+        19.700000000000006,
+        7.4,
+        5.9,
+        6.5,
+        16.5,
+        37.1,
+        45.2
+      ],
+      "preferred_orientation": 157.5,
+      "orientation_selectivity_index": 0.36171315342227495,
+      "max_response": 45.2,
+      "baseline_rate": 5.9,
+      "modulation_depth": 0.7690802197831661
+    },
+    "neuron_19": {
+      "firing_rates": [
+        11.0,
+        6.300000000000002,
+        5.7,
+        12.7,
+        31.7,
+        41.7,
+        40.8,
+        25.4
+      ],
+      "preferred_orientation": 112.5,
+      "orientation_selectivity_index": 0.39648549771648833,
+      "max_response": 41.7,
+      "baseline_rate": 5.7,
+      "modulation_depth": 0.759493654863003
+    },
+    "neuron_20": {
+      "firing_rates": [
+        25.300000000000004,
+        10.1,
+        6.3,
+        4.4,
+        13.7,
+        32.2,
+        41.7,
+        40.8
+      ],
+      "preferred_orientation": 135.0,
+      "orientation_selectivity_index": 0.4273005699617064,
+      "max_response": 41.7,
+      "baseline_rate": 4.4,
+      "modulation_depth": 0.8091106115160389
+    },
+    "neuron_21": {
+      "firing_rates": [
+        25.200000000000003,
+        45.400000000000006,
+        44.6,
+        28.7,
+        13.6,
+        6.5,
+        6.5,
+        11.4
+      ],
+      "preferred_orientation": 22.5,
+      "orientation_selectivity_index": 0.366067858966426,
+      "max_response": 45.400000000000006,
+      "baseline_rate": 6.5,
+      "modulation_depth": 0.7495182899900138
+    },
+    "neuron_22": {
+      "firing_rates": [
+        12.7,
+        5.600000000000001,
+        7.8,
+        12.9,
+        25.3,
+        40.2,
+        40.6,
+        26.7
+      ],
+      "preferred_orientation": 135.0,
+      "orientation_selectivity_index": 0.43012960016123625,
+      "max_response": 40.6,
+      "baseline_rate": 5.600000000000001,
+      "modulation_depth": 0.7575757411780143
+    },
+    "neuron_23": {
+      "firing_rates": [
+        50.60000000000001,
+        32.50000000000001,
+        15.9,
+        7.4,
+        6.8,
+        9.6,
+        21.6,
+        39.2
+      ],
+      "preferred_orientation": 0.0,
+      "orientation_selectivity_index": 0.35490595790691437,
+      "max_response": 50.60000000000001,
+      "baseline_rate": 6.8,
+      "modulation_depth": 0.7630661887967565
+    },
+    "neuron_24": {
+      "firing_rates": [
+        44.2,
+        33.7,
+        16.6,
+        8.6,
+        6.3,
+        8.2,
+        19.2,
+        35.1
+      ],
+      "preferred_orientation": 0.0,
+      "orientation_selectivity_index": 0.38483331315853375,
+      "max_response": 44.2,
+      "baseline_rate": 6.3,
+      "modulation_depth": 0.7504950346436629
+    },
+    "neuron_25": {
+      "firing_rates": [
+        19.300000000000004,
+        37.30000000000001,
+        42.0,
+        30.4,
+        20.2,
+        6.4,
+        5.2,
+        8.1
+      ],
+      "preferred_orientation": 45.0,
+      "orientation_selectivity_index": 0.41399668471504336,
+      "max_response": 42.0,
+      "baseline_rate": 5.2,
+      "modulation_depth": 0.7796610004309109
+    },
+    "neuron_26": {
+      "firing_rates": [
+        6.300000000000001,
+        5.4,
+        9.9,
+        20.9,
+        39.8,
+        45.9,
+        34.4,
+        15.6
+      ],
+      "preferred_orientation": 112.5,
+      "orientation_selectivity_index": 0.3900556302800523,
+      "max_response": 45.9,
+      "baseline_rate": 5.4,
+      "modulation_depth": 0.7894736688211761
+    },
+    "neuron_27": {
+      "firing_rates": [
+        36.9,
+        42.60000000000001,
+        32.9,
+        15.5,
+        7.1,
+        6.2,
+        8.7,
+        19.8
+      ],
+      "preferred_orientation": 22.5,
+      "orientation_selectivity_index": 0.3751895164258542,
+      "max_response": 42.60000000000001,
+      "baseline_rate": 6.2,
+      "modulation_depth": 0.745901624059393
+    },
+    "neuron_28": {
+      "firing_rates": [
+        6.8,
+        5.300000000000001,
+        9.1,
+        21.1,
+        41.3,
+        44.8,
+        31.6,
+        15.1
+      ],
+      "preferred_orientation": 112.5,
+      "orientation_selectivity_index": 0.38877895354748004,
+      "max_response": 44.8,
+      "baseline_rate": 5.300000000000001,
+      "modulation_depth": 0.7884231379556261
+    },
+    "neuron_29": {
+      "firing_rates": [
+        38.4,
+        18.500000000000007,
+        7.5,
+        6.4,
+        6.9,
+        17.3,
+        31.7,
+        47.1
+      ],
+      "preferred_orientation": 157.5,
+      "orientation_selectivity_index": 0.34471338821094266,
+      "max_response": 47.1,
+      "baseline_rate": 6.4,
+      "modulation_depth": 0.7607476493318197
+    },
+    "neuron_30": {
+      "firing_rates": [
+        15.2,
+        7.900000000000003,
+        7.0,
+        9.0,
+        21.1,
+        41.2,
+        45.5,
+        30.3
+      ],
+      "preferred_orientation": 135.0,
+      "orientation_selectivity_index": 0.352818373760575,
+      "max_response": 45.5,
+      "baseline_rate": 7.0,
+      "modulation_depth": 0.7333333193650796
+    },
+    "neuron_31": {
+      "firing_rates": [
+        8.7,
+        5.900000000000001,
+        6.6,
+        15.6,
+        32.8,
+        43.2,
+        39.2,
+        24.7
+      ],
+      "preferred_orientation": 112.5,
+      "orientation_selectivity_index": 0.39108681964792036,
+      "max_response": 43.2,
+      "baseline_rate": 5.900000000000001,
+      "modulation_depth": 0.7596741189475741
+    },
+    "neuron_32": {
+      "firing_rates": [
+        26.4,
+        41.90000000000001,
+        40.1,
+        24.6,
+        9.3,
+        5.6,
+        7.1,
+        15.6
+      ],
+      "preferred_orientation": 22.5,
+      "orientation_selectivity_index": 0.40756850682786616,
+      "max_response": 41.90000000000001,
+      "baseline_rate": 5.6,
+      "modulation_depth": 0.7642105102271473
+    },
+    "neuron_33": {
+      "firing_rates": [
+        7.4,
+        5.200000000000001,
+        9.9,
+        21.6,
+        40.5,
+        47.7,
+        27.9,
+        16.4
+      ],
+      "preferred_orientation": 112.5,
+      "orientation_selectivity_index": 0.4057771335773963,
+      "max_response": 47.7,
+      "baseline_rate": 5.200000000000001,
+      "modulation_depth": 0.8034026313156402
+    },
+    "neuron_34": {
+      "firing_rates": [
+        5.200000000000001,
+        7.4,
+        18.3,
+        36.3,
+        47.7,
+        39.1,
+        19.8,
+        6.7
+      ],
+      "preferred_orientation": 90.0,
+      "orientation_selectivity_index": 0.38158729909440725,
+      "max_response": 47.7,
+      "baseline_rate": 5.200000000000001,
+      "modulation_depth": 0.8034026313156402
+    },
+    "neuron_35": {
+      "firing_rates": [
+        10.500000000000002,
+        23.700000000000006,
+        41.0,
+        44.4,
+        27.9,
+        12.8,
+        5.0,
+        6.4
+      ],
+      "preferred_orientation": 67.5,
+      "orientation_selectivity_index": 0.3964623419978476,
+      "max_response": 44.4,
+      "baseline_rate": 5.0,
+      "modulation_depth": 0.7975708340572706
+    },
+    "neuron_36": {
+      "firing_rates": [
+        9.6,
+        17.1,
+        34.8,
+        42.8,
+        34.0,
+        16.4,
+        7.4,
+        4.3
+      ],
+      "preferred_orientation": 67.5,
+      "orientation_selectivity_index": 0.43044630489157143,
+      "max_response": 42.8,
+      "baseline_rate": 4.3,
+      "modulation_depth": 0.8174097490995809
+    },
+    "neuron_37": {
+      "firing_rates": [
+        22.400000000000002,
+        36.2,
+        45.6,
+        29.0,
+        15.0,
+        6.0,
+        6.5,
+        9.4
+      ],
+      "preferred_orientation": 45.0,
+      "orientation_selectivity_index": 0.37926279054397616,
+      "max_response": 45.6,
+      "baseline_rate": 6.0,
+      "modulation_depth": 0.7674418455922123
+    },
+    "neuron_38": {
+      "firing_rates": [
+        32.6,
+        14.300000000000002,
+        6.0,
+        6.1,
+        8.6,
+        24.1,
+        37.2,
+        47.4
+      ],
+      "preferred_orientation": 157.5,
+      "orientation_selectivity_index": 0.36320481185372044,
+      "max_response": 47.4,
+      "baseline_rate": 6.0,
+      "modulation_depth": 0.7752808843580359
+    },
+    "neuron_39": {
+      "firing_rates": [
+        13.7,
+        30.900000000000006,
+        40.2,
+        39.2,
+        24.6,
+        11.2,
+        5.4,
+        6.6
+      ],
+      "preferred_orientation": 45.0,
+      "orientation_selectivity_index": 0.42051586252007933,
+      "max_response": 40.2,
+      "baseline_rate": 5.4,
+      "modulation_depth": 0.7631578780009238
+    },
+    "neuron_40": {
+      "firing_rates": [
+        28.9,
+        15.400000000000002,
+        8.1,
+        5.2,
+        10.1,
+        20.0,
+        39.7,
+        45.3
+      ],
+      "preferred_orientation": 157.5,
+      "orientation_selectivity_index": 0.41297812931647326,
+      "max_response": 45.3,
+      "baseline_rate": 5.2,
+      "modulation_depth": 0.7940593902166456
+    },
+    "neuron_41": {
+      "firing_rates": [
+        34.4,
+        43.60000000000001,
+        33.9,
+        18.3,
+        8.6,
+        5.4,
+        7.7,
+        19.7
+      ],
+      "preferred_orientation": 22.5,
+      "orientation_selectivity_index": 0.41606015725736656,
+      "max_response": 43.60000000000001,
+      "baseline_rate": 5.4,
+      "modulation_depth": 0.7795918208246568
+    },
+    "neuron_42": {
+      "firing_rates": [
+        18.0,
+        7.700000000000001,
+        4.2,
+        5.7,
+        16.4,
+        36.2,
+        43.4,
+        37.3
+      ],
+      "preferred_orientation": 135.0,
+      "orientation_selectivity_index": 0.39552789994958903,
+      "max_response": 43.4,
+      "baseline_rate": 4.2,
+      "modulation_depth": 0.8235293944636681
+    },
+    "neuron_43": {
+      "firing_rates": [
+        28.8,
+        39.2,
+        42.1,
+        24.9,
+        11.8,
+        7.0,
+        6.5,
+        12.9
+      ],
+      "preferred_orientation": 45.0,
+      "orientation_selectivity_index": 0.3909944072015137,
+      "max_response": 42.1,
+      "baseline_rate": 6.5,
+      "modulation_depth": 0.7325102729936158
+    },
+    "neuron_44": {
+      "firing_rates": [
+        21.0,
+        40.000000000000014,
+        42.2,
+        30.8,
+        14.1,
+        6.3,
+        6.7,
+        9.8
+      ],
+      "preferred_orientation": 45.0,
+      "orientation_selectivity_index": 0.3704603402236315,
+      "max_response": 42.2,
+      "baseline_rate": 6.3,
+      "modulation_depth": 0.7402061703050276
+    },
+    "neuron_45": {
+      "firing_rates": [
+        11.900000000000002,
+        5.4,
+        6.3,
+        12.7,
+        25.0,
+        37.8,
+        41.0,
+        24.4
+      ],
+      "preferred_orientation": 135.0,
+      "orientation_selectivity_index": 0.4106837566382845,
+      "max_response": 41.0,
+      "baseline_rate": 5.4,
+      "modulation_depth": 0.7672413627749707
+    },
+    "neuron_46": {
+      "firing_rates": [
+        39.300000000000004,
+        39.400000000000006,
+        32.2,
+        13.7,
+        8.3,
+        7.2,
+        10.8,
+        24.5
+      ],
+      "preferred_orientation": 22.5,
+      "orientation_selectivity_index": 0.3934553339838409,
+      "max_response": 39.400000000000006,
+      "baseline_rate": 7.2,
+      "modulation_depth": 0.6909871096354697
+    },
+    "neuron_47": {
+      "firing_rates": [
+        34.3,
+        44.60000000000001,
+        39.8,
+        18.9,
+        9.6,
+        4.1,
+        6.0,
+        16.5
+      ],
+      "preferred_orientation": 22.5,
+      "orientation_selectivity_index": 0.41602077591664954,
+      "max_response": 44.60000000000001,
+      "baseline_rate": 4.1,
+      "modulation_depth": 0.8316221595149454
+    },
+    "neuron_48": {
+      "firing_rates": [
+        15.3,
+        7.4,
+        5.6,
+        11.5,
+        26.3,
+        43.4,
+        40.6,
+        26.5
+      ],
+      "preferred_orientation": 112.5,
+      "orientation_selectivity_index": 0.4262684450431239,
+      "max_response": 43.4,
+      "baseline_rate": 5.6,
+      "modulation_depth": 0.7714285556851315
+    },
+    "neuron_49": {
+      "firing_rates": [
+        15.7,
+        32.2,
+        44.5,
+        37.7,
+        20.7,
+        9.1,
+        6.2,
+        7.5
+      ],
+      "preferred_orientation": 45.0,
+      "orientation_selectivity_index": 0.3818820100685342,
+      "max_response": 44.5,
+      "baseline_rate": 6.2,
+      "modulation_depth": 0.7554240482164881
+    }
+  },
+  "population_stats": {
+    "total_neurons": 50,
+    "neurons_with_tuning": 50,
+    "mean_preferred_orientation": 83.7,
+    "mean_osi": 0.3912520711686689,
+    "median_osi": 0.39227107681588064,
+    "std_osi": 0.02256546394219314,
+    "selective_neurons_count": 9,
+    "selective_neurons_percent": 18.0,
+    "neurons_with_significant_tuning": 50,
+    "mean_max_response": 44.042,
+    "mean_baseline_rate": 5.642,
+    "mean_modulation_depth": 0.7727843100536278
+  }
+}

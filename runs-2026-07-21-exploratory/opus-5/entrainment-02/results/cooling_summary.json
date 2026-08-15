@@ -1,0 +1,13 @@
+{
+ "n_units":380.0,
+ "freq_normal":8.1168831169,
+ "freq_cooled":7.4404761905,
+ "freq_delta":-0.6550653146,
+ "env_ratio":0.8170703149,
+ "mrl_normal_matched":0.0819550124,
+ "mrl_cooled_matched":0.117402256,
+ "frac_above_unity":0.7236842105,
+ "wilcoxon_p":8.643126892e-24,
+ "median_abs_phase_shift_deg":21.9357258546,
+ "rate_ratio":0.9045538247
+}

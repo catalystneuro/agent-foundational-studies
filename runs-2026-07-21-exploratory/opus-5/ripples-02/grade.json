@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles/ses-Achilles-10252013 (primary; 5 linear-track sessions total)",
+  "headline_stat": {
+    "name": "POST-sleep significant replay fraction (primary session)",
+    "value": "13.7% vs 7.1% PRE, OR 2.08, Fisher p=2.8e-15",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "A caveat worth stating plainly: pre-task sleep events also pass the sequence test slightly above the nominal 5% rate. That is consistent with the \"preplay\" literature, but it is equally consistent with the shuffles being slightly liberal, so the defensible claim is the paired comparison rather than the absolute pre-task rate.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzs\u00e1ki hc-11 CA1) is the canonical dataset for sharp-wave ripples and replay, exactly what an expert would choose.",
+    "handling": "Real data streamed via remfile with per-channel chunking, automatic ripple-channel selection, immobility-referenced z-scoring, and a linearization calibrated against the shipped series (r>0.9999) with explicit place-cell criteria.",
+    "analysis": "Bayesian replay decoding with two required null distributions (column-cycle and field-identity shuffles, both p<0.05), weighted position-time correlation, decoder cross-validation, and a template-free explained-variance cross-check \u2014 complete and correct.",
+    "correctness": "Every reported number (10,109 ripples, 51 ms, 164 Hz, 13.7%/7.1%, OR 2.08, EV 6.0% vs 0.8%, pooled 10.2% vs 6.1%) matches the committed CSVs exactly and is internally consistent with the figures.",
+    "figures": "Figures are labeled with units and sample sizes, show the sharp wave/ripple/MUA signature, clean decoded trajectories, decoder validation, and per-session summaries; examples are representative, not flattering.",
+    "honesty": "Claims are precisely calibrated: it flags the preplay above-chance rate, the sign-test p-floor, the shuffle-liberality alternative, and names Cicero_09172014 as the weak session where the reverse control is nominally larger."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles / Achilles_10252013",
+  "headline_stat": {
+    "name": "fraction significantly theta-locked (pyr / interneuron); mean MRL pyr vs interneuron",
+    "value": "57% / 100%; 0.12 vs 0.24",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000044 (Grosmark & Buzsaki CA1, Achilles) is the canonical dataset for hippocampal theta entrainment, exactly what an expert would choose.",
+    "handling": "Real data streamed via remfile, LFP/units/position correctly aligned to MazeEpoch, running epochs and MIN_SPIKES filtering explicit and defensible, and the position sampling-rate-vs-interval quirk was handled correctly.",
+    "analysis": "Rayleigh circular test with MRL is the standard method, correctly implemented, and is independently corroborated by two phase-free checks (STA and autocorrelogram) plus a speed-theta amplitude control.",
+    "correctness": "Reported values (57%/100% significant, MRL 0.12 vs 0.24, r=0.31, n=9966) reproduce from the code, match the figures, and are internally consistent.",
+    "figures": "Figures clearly show the phenomenon with labeled axes, units, and sample sizes, and example units are chosen by entrainment strength (the effect itself) with an honest non-entrained comparator.",
+    "honesty": "Claims are proportionate to the strong, clean evidence and nothing is misrepresented, but the write-up states no specific limitation (single session, Rayleigh anticonservativeness with bursty spikes), holding it at 3 rather than 4.",
+    "verdict": "A thorough, correct, well-presented demonstration of theta phase entrainment that a rotation student's result could be accepted from as-is."
+  }
+}

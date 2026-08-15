@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Buddy_ses-Buddy-06272013",
+  "headline_stat": {
+    "name": "POST significant-replay fraction (vs PRE)",
+    "value": "15.4% (8/52) vs 9.3% (19/204)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 2,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 1
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The dataset's own LinearizedTimeSeries is valid for only ~7% of samples, but the raw x-coordinate of the tracked position correlates with it at r > 0.9999 and is valid for 97% of samples",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000044 (Grosmark & Buzsaki CA1) with a PRE/MAZE/POST linear-track session is the canonical hippocampal-replay dataset.",
+    "handling": "Real streaming from DANDI S3 with correct epochs, states, unit/cell-type filtering, and careful contiguous-bout splitting to avoid a real position artifact.",
+    "analysis": "Bayesian decoding with a correct within-event column-cycle shuffle is sound, but the headline PRE-vs-POST comparison has no between-group test and the ~9% PRE rate hints the null may be anticonservative.",
+    "correctness": "Reported fractions and scores reproduce exactly from the committed CSVs and are internally consistent and physically valid.",
+    "figures": "Place-field map, textbook SWR trace, sequential decoded-trajectory examples, and a labeled summary all clearly show the phenomenon with units and sample sizes.",
+    "honesty": "The write-up calls a non-significant difference (Fisher p=0.21) 'significantly more often' and 'the classic signature of hippocampal replay' with no between-group test and no limitations section, an unsupported quantitative claim that caps this axis at 1.",
+    "verdict": "The pipeline and above-chance POST replay are genuinely solid, but the central experience-dependence claim is overstated and untested, so it needs a proportion test and reframing before being believed."
+  }
+}

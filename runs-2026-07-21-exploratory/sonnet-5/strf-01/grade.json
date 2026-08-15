@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986",
+  "subject_session": "sub-LA11/sub-LA11_ses-1",
+  "headline_stat": {
+    "name": "tone-responsive units (peak |z|>3 within 150 ms)",
+    "value": "18/235 (~8%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 2,
+    "handling": 3,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Because the tone frequency on each trial is drawn independently of the ongoing neural activity, the tone-pip sequence acts as a valid stimulus for reverse correlation, even though it samples only 5 discrete frequencies rather than a continuous spectrogram.",
+  "pass": true,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "The phenomenon is only marginally demonstrable: a pure-tone dataset with 5 discrete frequencies cannot yield a true spectrotemporal receptive field (no spectral richness or temporal overlap), so what is recovered is frequency tuning with latency, a degraded proxy.",
+    "handling": "Real NWB data streamed via remfile, trials/units/frequencies and spontaneous baseline extracted correctly with careful zero-std handling, though no explicit unit quality filtering is applied.",
+    "analysis": "Reverse-correlation tone-triggered averaging plus an independent Poisson-GLM cross-check is appropriate and correctly executed, but no shuffle/permutation null is provided for the responsiveness screen despite the max-over-75-bins multiple-comparison inflation.",
+    "correctness": "Reported counts, best frequencies, and latencies are internally consistent with the figures and reproduce from the committed code, with only the uncontrolled threshold count as a minor statistical soft spot.",
+    "figures": "Figures are clear and well-labeled, example units are ranked by response strength (the effect being demonstrated, not an unrelated criterion), and the GLM-vs-reverse-correlation comparison is legible.",
+    "honesty": "The write-up repeatedly and prominently flags the discrete-5-frequency limitation of the stimulus and that STRFs are normally estimated with continuous stimuli, though it does not mention single-session scope or the missing responsiveness null and mildly spins the substitution positively.",
+    "verdict": "Core work is sound, honest, and well-presented, but the dataset cannot demonstrate a genuine STRF, so I would ask for a richer-stimulus dataset or an explicit reframing as frequency tuning plus a null control before accepting."
+  }
+}

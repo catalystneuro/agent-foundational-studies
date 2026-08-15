@@ -1,0 +1,8 @@
+sessions: 8
+VISp   n= 556 tuned= 64.2% median gOSI=0.218 median DSI=0.146 median gOSI(static)=0.157
+VISl   n= 326 tuned= 54.6% median gOSI=0.187 median DSI=0.133 median gOSI(static)=0.150
+VISrl  n= 451 tuned= 47.7% median gOSI=0.148 median DSI=0.143 median gOSI(static)=0.103
+VISam  n= 310 tuned= 55.2% median gOSI=0.163 median DSI=0.136 median gOSI(static)=0.119
+VISpm  n= 272 tuned= 54.4% median gOSI=0.207 median DSI=0.141 median gOSI(static)=0.143
+LGd    n= 214 tuned= 46.3% median gOSI=0.113 median DSI=0.103 median gOSI(static)=0.072
+VISp vs LGd gOSI Mann-Whitney U=79536 p=4.191e-13

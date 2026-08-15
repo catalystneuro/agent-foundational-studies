@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986",
+  "subject_session": "000986 sub-LA11 ses-1 (+ all 15 sessions, 5 mice); 001262 255 gerbil auditory-nerve fibres",
+  "headline_stat": {
+    "name": "cortical units tone-responsive (|z|>=4 vs circular-shift null)",
+    "value": "1207/1419 (85%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 2,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Dandiset 000986 samples only five frequencies, one octave apart, at a single sound level, so cortical spectral tuning cannot be resolved more finely than an octave and no level dependence can be measured. Dandiset 001262 gives five repeats per frequency, so single-fibre maps are noisy and were smoothed for display; each fibre also covers only its own 1-2 octave neighbourhood. Pupil diameter covaries with locomotion in these recordings, so the arousal result is an association with state rather than an isolated effect of arousal.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Both datasets are pure-tone, which the rubric flags as insufficient for a true spectrotemporal receptive field, so the phenomenon is only present in the degenerate frequency-response-area form, though the agent picked the best available auditory-tuning data and was explicit about it.",
+    "handling": "Real NWB files streamed from S3 via remfile/Pynapple with correct trial alignment, careful onset-bin indexing, explicit rate filtering, and proper parsing of the nerve-fibre tag structure and published metadata.",
+    "analysis": "Reverse-correlation STA correctly reduced to a frequency-conditioned PSTH for sparse tones, tested against a rate-preserving circular-shift null, cross-checked with a NeMoS Poisson GLM scored on held-out data against a nested spike-history-only model, plus a BF-recovery validation on the nerve.",
+    "correctness": "Every headline number reproduces exactly from the committed caches, is internally consistent with the figures, physically possible, and rests on adequate sample sizes and appropriate tests.",
+    "figures": "Figures show the effect clearly with labeled units, sample sizes, significance outlines, and population summaries; example units are chosen by the strength of the demonstrated effect (max |z|, and \u0394R\u00b2 for the GLM).",
+    "honesty": "Claims are proportionate to the evidence, the nerve-vs-cortex comparison is explicitly framed as qualitative, and a substantive caveats section names octave-only sampling, single level, noisy fibre maps, and the pupil-locomotion confound.",
+    "verdict": "Reproducible, rigorous, and honest work that a reviewer would accept, with the only reservation being that pure-tone data cannot demonstrate a rich-stimulus STRF, a limitation the write-up states plainly."
+  }
+}

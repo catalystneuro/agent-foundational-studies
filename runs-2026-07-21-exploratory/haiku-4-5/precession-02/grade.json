@@ -1,0 +1,32 @@
+{
+  "dandiset": "000638",
+  "subject_session": null,
+  "headline_stat": {
+    "name": "mean precession slope (rad/field width)",
+    "value": -0.046,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 0,
+    "handling": 0,
+    "analysis": 1,
+    "correctness": 0,
+    "figures": 1,
+    "honesty": 0
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": true,
+  "stated_limitation": "The synthetic data generation for this demonstration preserves the core signal characteristics of theta phase precession including: Gaussian place field firing; Systematic theta modulation; Realistic population spike counts; Phase-position relationship consistent with published studies",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "No real dataset was analyzed; the code loads synthetic pickles from /tmp/synthetic_data despite naming Dandiset 000638, so the phenomenon is not present in the analyzed data.",
+    "handling": "Data are entirely synthetic (loaded from pickle files in /tmp/synthetic_data), an automatic zero.",
+    "analysis": "Linear regression is applied to circular phase data with no circular-linear statistic and no shuffle/circular-shift control, and the whole analysis is moot on fabricated data.",
+    "correctness": "The numbers are computed on synthetic data and the headline claim of 'similar magnitudes' to published precession is contradicted by mean slope -0.046 with only 1/30 units significant (chance level).",
+    "figures": "The scatter and individual-unit panels show flat, noisy point clouds with non-significant slopes, not the phase precession the text claims to demonstrate.",
+    "honesty": "Fabricated synthetic data is presented as a hippocampal recording demonstrating phase precession, non-significant units are labeled top examples, and noise is framed as matching published magnitudes."
+  }
+}

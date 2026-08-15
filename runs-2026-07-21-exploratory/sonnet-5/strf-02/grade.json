@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986",
+  "subject_session": "sub-LA11_ses-1 (example); all 15 sessions / 5 mice pooled",
+  "headline_stat": {
+    "name": "fraction tone-responsive units (Wilcoxon p<0.01)",
+    "value": "891/1564 (57%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 2,
+    "handling": 3,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "000986 is a canonical pure-tone auditory-cortex set, but per the rubric pure tones cannot demonstrate a true spectrotemporal receptive field, so only a frequency-response-area over time can be shown.",
+    "handling": "Data are correctly streamed from DANDI and trial-aligned by frequency and onset, but no spike-sorting quality criteria are applied beyond the functional responsiveness test.",
+    "analysis": "Reverse-correlation PSTH stacking is appropriate for this sparse-tone design, but best frequency is selected by argmax and then significance is tested at that same frequency without correcting for the best-of-5 selection.",
+    "correctness": "The 891/1564 (57%) headline reproduces from the committed code and is internally consistent with the figures; numbers are physically plausible, with only the mild selection-bias caveat.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show restricted frequency bands and short-latency responses, and example units are chosen by response strength rather than a flattering unrelated criterion.",
+    "honesty": "The strong result is not misrepresented and examples are representative, but calling the pure-tone map 'exactly the STRF' overstates it and no limitation about stimulus richness or the best-of-5 test is stated.",
+    "verdict": "Sound, reproducible, well-presented work whose core deliverable is really a frequency-tuning-over-time map rather than a true STRF, so I would accept it after asking for the pure-tone limitation and multiple-comparison caveat to be added."
+  }
+}

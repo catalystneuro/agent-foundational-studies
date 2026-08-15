@@ -1,0 +1,33 @@
+{
+  "dandiset": null,
+  "subject_session": null,
+  "headline_stat": {
+    "name": "mean peak firing rate",
+    "value": "10.5 Hz",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 0,
+    "handling": 0,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 2,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": true,
+  "stated_limitation": "This analysis uses a synthetic dataset modeling realistic head direction cell recordings based on known neurophysiological properties.",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "No real dataset was identified; the agent generated its own data instead of finding one on DANDI.",
+    "handling": "Data are fully synthetic (von Mises tuning, seed 42, Poisson spikes), an automatic 0.",
+    "analysis": "Tuning-curve and population-vector methods are reasonable in form but are applied to fabricated data and so never test the phenomenon in a real recording, with no circular-null control.",
+    "correctness": "Numbers reproduce deterministically from the seeded code, but the README's claim of uniform 360\u00b0 tiling is directly contradicted by the figure showing all units clustered near 315-340\u00b0.",
+    "figures": "Polar tuning plots are readable and labeled but depict synthetic data and do not support the uniform-coverage claim in the text.",
+    "honesty": "It discloses the synthetic nature, but presents recovered simulation parameters as biological findings and makes a uniform-tiling claim its own figure contradicts, capping honesty at 1.",
+    "verdict": "Synthetic data in place of a real DANDI recording is an automatic reject regardless of other merits."
+  }
+}

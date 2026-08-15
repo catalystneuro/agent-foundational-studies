@@ -1,14 +1,15 @@
 {
   "dandiset": "000986",
-  "subject_session": "all 15 sessions, 5 mice (sub-LA3, LA8, LA9, LA11, LA12); example figures from sub-LA11_ses-1",
+  "subject_session": "all 15 sessions, 5 mice (LA3/LA8/LA9/LA11/LA12); GLM/example figs use sub-LA11_ses-1",
   "headline_stat": {
-    "name": "Fraction of auditory cortex units with significant frequency tuning (one-way ANOVA across 5 tones, p<0.01)",
-    "value": 0.79,
-    "in_prereg_range": true
+    "name": "fraction frequency-tuned (ANOVA p<0.01)",
+    "value": "79% (1239/1564 units)",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
-    "handling": 3,
+    "handling": 4,
     "analysis": 4,
     "correctness": 4,
     "figures": 4,
@@ -21,12 +22,11 @@
   "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000986 is a canonical choice for this phenomenon (mouse auditory cortex Neuropixels, ~7,400 pure tones per session), all 15 sessions and 5 mice were used, and a plausible alternative (001419) was explicitly tested and rejected with a documented negative control.",
-    "handling": "Data are streamed from S3 with remfile, trials are sorted by onset and the response window is taken from the measured population latency rather than assumed, but no unit inclusion or quality criterion is stated anywhere in the write-up (the 000986 units table in fact carries only id and spike_times, so none was possible, and that constraint goes unmentioned in the README).",
-    "analysis": "One-way ANOVA on per-trial baseline-subtracted rates is appropriate for the five-level design, and the two claims most vulnerable to circularity (best frequency, tuning strength) are validated on held-out trials by split-half BF agreement and by a cross-validated Poisson naive-Bayes decoder, with a nested-model NeMoS GLM comparison as an independent encoding-side check.",
-    "correctness": "The 79% tuned fraction is within the preregistered 0.40 to 0.90 range and every reported quantity (4.6 Hz median depth, 86% split-half BF agreement, 81% decoding with 60 to 93% session range, 774 units with measurable bandwidth at 1.1 octaves median, 75% of GLM units improving) reproduces exactly from the committed .npz files.",
-    "figures": "Figures are well labeled with units and sample sizes and pair example units with full population summaries, the BF-aligned mean curve, per-session tuned fractions against the alpha line, a held-out confusion matrix, and a negative-control panel for the rejected dataset; the three example units are the top-SNR unimodal cells, which is flattering but is ranked by the strength of the effect itself.",
-    "honesty": "The write-up names the specific limitations of this result (octave tone spacing leaving bandwidth unresolved for most units, single sound level, small absolute GLM pseudo-R2 so the nested comparison carries the conclusion), documents the dataset it rejected and why, and the notebook states plainly that the units table has no probe geometry so the tonotopic map cannot be shown, with the session-to-session BF variability offered only as an indirect signature.",
-    "verdict": "This is thorough, internally consistent, cross-validated work with an explicit negative control and proportionate claims; the only fixes I would ask for are a stated unit-inclusion rationale in the README and carrying the no-probe-geometry caveat from the notebook into the README's tonotopy sentence."
+    "dataset": "000986 is a known-good, standard choice for auditory frequency tuning: mouse auditory cortex Neuropixels during passive pure-tone presentation.",
+    "handling": "Real data streamed from DANDI S3 via remfile, trial-aligned with matched reordering of onsets/freq, response window taken from the measured population latency, all 15 sessions across 5 mice.",
+    "analysis": "Per-unit ANOVA and Wilcoxon tests, split-half cross-validated BF (avoiding selection bias), cross-validated Poisson naive-Bayes decoding, and a NeMoS GLM with interleaved-block CV comparing frequency-specific vs frequency-blind models.",
+    "correctness": "Every reported quantity reproduces exactly from the committed npz files and figures, and the numbers are internally consistent and statistically sound.",
+    "figures": "Figures are clearly labeled with units and sample sizes, example units are genuinely representative strong tuners, and cross-validated versions are shown throughout.",
+    "honesty": "Claims are proportionate; the write-up names the octave-spacing and single-level limitations, notes the GLM pseudo-R2 is small either way, explains why split-half CV is needed, and documents a rejected dataset with a negative control."
   }
 }

@@ -1,16 +1,17 @@
 {
   "dandiset": "000044",
-  "subject_session": "all 8 sessions (Achilles_10252013 prototype; Achilles, Cicero, Gatsby, Buddy)",
+  "subject_session": "sub-Achilles ses-10252013 (prototype); all 8 sessions pooled",
   "headline_stat": {
-    "name": "fraction of excitatory CA1 units spatially selective (>=1 running condition)",
-    "value": 0.67,
-    "in_prereg_range": true
+    "name": "place cells (>=1 direction, p<0.01 vs circular-shift null)",
+    "value": "374/562 (67%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
     "handling": 4,
     "analysis": 4,
-    "correctness": 3,
+    "correctness": 4,
     "figures": 4,
     "honesty": 4
   },
@@ -21,11 +22,11 @@
   "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000044 (Grosmark & Buzsaki dorsal CA1, linear and circular tracks) is the canonical choice for place fields, and the run used all eight sessions across four rats rather than one.",
-    "handling": "Data are streamed from the archive with LINDI, the mislabelled SpatialSeries rate field is diagnosed and the reconstructed time base is asserted to fall inside MazeEpoch, running epochs are speed-thresholded and direction-split with circular unwrapping on the loop tracks, and unit inclusion (excitatory label, >=50 spikes, >=1 Hz peak) is explicit.",
-    "analysis": "Skaggs spatial information against a per-unit circular-shift null on a running-only compressed time axis is the standard test, the custom fast rate-map implementation was independently validated against nap.compute_tuning_curves, and odd/even lap stability plus cross-validated Bayesian decoding with a cell-identity shuffle are genuine additional controls (no multiple-comparison correction across units, but at alpha=0.01 this cannot account for 374/562).",
-    "correctness": "All reported values reproduce the notebook output exactly and sit inside the preregistered ranges (67% selective, 0.70 bits/spike, 0.28 m fields), but the headline 67% is the union across running directions while the per-condition mean is 51% +/- 20% SD, and the README does not label that denominator.",
-    "figures": "Figures are publication-grade with units, sample sizes and per-session breakdowns; the population maps show a cross-validated diagonal on held-out laps and the decoding panel shows the posterior tracking the animal lap by lap.",
-    "honesty": "Claims match the analysis output line for line, the write-up flags three concrete methodological traps it hit and names specific scientific caveats (spike-sorting provenance, threshold dependence, non-uniform occupancy at reward sites) rather than generic ones."
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki CA1 linear/circular track) is the canonical place-cell dataset, exactly what an expert would choose.",
+    "handling": "Real data streamed via LINDI, the mislabeled rate/period field is caught and the reconstructed time base is asserted against MazeEpoch, with explicit excitatory-cell and spike-count/peak-rate criteria.",
+    "analysis": "Skaggs spatial information tested against a per-unit circular-shift null, plus odd/even lap stability, cross-validated population ordering, direction selectivity, and cross-validated Bayesian decoding with a cell-identity chance control, all correct.",
+    "correctness": "Every reported number (SI 0.70, width 0.28 m, peak 6.4 Hz, r=0.29, 374/562, stability 0.91, decode error ~5 cm, R^2 0.95/0.87) reproduces from the committed npz/figures, is internally consistent, and is physically possible.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show diagonal population tiling that holds on held-out laps, clean decoding, and representative example cells chosen by SI and stability across track segments.",
+    "honesty": "Claims are proportionate to the evidence, methodological subtleties are flagged, and a specific caveats paragraph names the spike-sorting/label assumptions, threshold sensitivity, and non-uniform occupancy."
   }
 }

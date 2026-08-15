@@ -1,0 +1,33 @@
+{
+  "dandiset": "000056",
+  "subject_session": "Mouse28-140312 (plus Mouse12-120807, Mouse25-140130, Mouse28-140313); 4 sessions, 3 mice",
+  "headline_stat": {
+    "name": "cosine fit R^2 of pairwise HD-cell correlation vs delta preferred direction, non-REM (Mouse28-140312)",
+    "value": 0.41,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The units table in this NWB conversion carries only spike times, with no anatomical label, so anterior thalamic and post-subicular cells are pooled and the analysis cannot separate them. Isomap hollowness is a summary statistic rather than a topological proof; persistent homology would be the stronger version of the same claim. Sleep states are taken from the archived scoring rather than re-derived from the LFP. The non-HD control ensemble is drawn from the same recordings and firing-rate range but is not matched cell by cell.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000056 (Peyrache anterior thalamus/postsubiculum) is the canonical head-direction ring-attractor dataset, exactly what an expert would choose.",
+    "handling": "Real data streamed via remfile, HD recovered from the two LEDs, states from archived scoring, and HD cells selected by an explicit and defensible combination of firing-rate range, MVL threshold, circular-shift null, and split-half stability.",
+    "analysis": "Circular statistics are used throughout with the correct null distributions (independent per-neuron circular shifts) plus a non-HD control ensemble, spanning correlation structure, Isomap ring geometry, cross-validated held-out prediction, and split-ensemble coherence.",
+    "correctness": "Every headline value reproduces exactly from the committed session_summary.csv, the numbers are internally consistent across figures and text, physically possible, and rest on nulls plus replication across four sessions.",
+    "figures": "Figures show the ring, its preservation in sleep, and its internal (behaviour-independent) drift with labeled units, sample sizes, and controls; the only flaw is a cosmetic title overlap on the fig01 sleep rasters.",
+    "honesty": "Claims are proportionate to the evidence, the weaker non-REM result is reported at face value, and a specific caveats section names the pooled anatomy, non-topological hollowness metric, archived state scoring, and unmatched control ensemble.",
+    "verdict": "The core work is sound, comprehensive, and honestly reported, well beyond what a rotation student would produce in a week."
+  }
+}

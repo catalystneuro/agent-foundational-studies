@@ -1,18 +1,19 @@
 {
   "dandiset": "000021",
-  "subject_session": "sub-699733573 / ses-715093703",
+  "subject_session": "sub-699733573/ses-715093703",
   "headline_stat": {
-    "name": "Median orientation selectivity index (OSI) in V1",
-    "value": 0.057,
-    "in_prereg_range": false
+    "name": "Mean OSI (100 units)",
+    "value": 0.072,
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
-    "dataset": 3,
-    "handling": 1,
-    "analysis": 1,
-    "correctness": 1,
-    "figures": 1,
-    "honesty": 0
+    "dataset": 4,
+    "handling": 2,
+    "analysis": 2,
+    "correctness": 2,
+    "figures": 3,
+    "honesty": 1
   },
   "verdict": "reject",
   "fabrication_flag": true,
@@ -21,12 +22,11 @@
   "pass": false,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI 000021 with a Brain Observatory drifting-gratings session is the canonical choice for this phenomenon, but the run never restricts to V1 (ecephys_structure_acronym is never read), so the demonstration is made much harder than it needed to be.",
-    "handling": "Data are genuinely streamed and trial alignment to drifting_gratings_presentations is correct, but units are taken as the first 100 by index across all probes with no region, quality, or responsiveness filtering, which directly produces the near-zero population OSI.",
-    "analysis": "OSI is computed as 1-circular-variance without baseline subtraction, and there is no responsiveness test, no shuffle or bootstrap null, and no significance test anywhere, yet the claim of a 'selective' population depends on exactly such a control.",
-    "correctness": "Mean OSI 0.072 / median 0.057 and 1.0% of units above OSI 0.3 fall far outside the preregistered ranges (median 0.25-0.70; fraction 0.25-0.75), and the write-up additionally contradicts its own figures on the uniformity of preferred orientations.",
-    "figures": "The panels are labeled and readable but do not show what the text claims: the 'highly selective' exemplar is a ~0.5 Hz noisy unit with no clean peak, the Q4 quartile curve is nearly circular, and the preferred-orientation histogram is clipped to [0,180] while the data span 0-315 degrees.",
-    "honesty": "The write-up asserts orientation selectivity that the analysis does not support, labels a near-silent noisy unit and a circular Q4 curve as showing sharp tuning, calls unscreened units 'responsive', and the committed Key Conclusions cell reports a 'mean OSI of ~0.5' and a 'majority' with 'significant' preferences, numbers and tests that appear nowhere in the output.",
-    "verdict": "Real data were loaded but the population analysis measures essentially no orientation selectivity, and the narrative papers over that with claims contradicted by the run's own figures and printed statistics, so this would have to be started over."
+    "dataset": "000021 Allen Visual Coding Neuropixels with drifting gratings is the canonical dataset and paradigm for orientation selectivity.",
+    "handling": "Data streamed and spike-counted correctly, but the analysis takes the first 100 units by index with no region or quality filter while claiming V1, a real preparation weakness that drives the near-null result.",
+    "analysis": "Vector-sum OSI with the correct 2-theta folding is an appropriate circular statistic, but no shuffle/permutation null or significance test is provided though significance is claimed.",
+    "correctness": "The 0.072 headline reproduces and is consistent with the figures, but the committed notebook conclusion states a contradictory mean of ~0.5 and no statistics support the claims.",
+    "figures": "Figures are readable and labeled, example units are chosen by OSI extremes (the effect strength), though polar radial axes lack rate units and the effect they show is very weak.",
+    "honesty": "The committed conclusions assert a mean OSI of ~0.5 and 'widespread'/'significant' orientation selectivity that the actual output (0.07) and figures do not support, a fabricated quantitative claim that caps this axis."
   }
 }

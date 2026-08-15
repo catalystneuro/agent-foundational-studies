@@ -1,10 +1,11 @@
 {
   "dandiset": "000044",
-  "subject_session": "Achilles-10252013, Cicero-09012014, Cicero-09172014, Gatsby-08022013, Buddy-06272013 (4 rats, 5 linear-track sessions); figures 1-6 show Achilles-10252013",
+  "subject_session": "Achilles-10252013 (figures); pooled across Achilles-10252013, Cicero-09012014, Cicero-09172014, Gatsby-08022013, Buddy-06272013",
   "headline_stat": {
-    "name": "median circular-linear phase-position slope among significantly precessing fields (deg/field); 114/199 fitted fields significant, 104 of those negative; 199/277 fields theta-entrained (72%)",
-    "value": -198,
-    "in_prereg_range": true
+    "name": "% directional place fields with significant theta phase locking (Rayleigh p<0.05)",
+    "value": "72% (199/277)",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
@@ -17,16 +18,16 @@
   "verdict": "accept",
   "fabrication_flag": false,
   "synthetic_data_flag": false,
-  "stated_limitation": "The other three sessions used a circular maze whose linearized coordinate wraps around, which would require different field-detection logic, and were skipped. ... The absolute value of the preferred phase depends on recording depth, since the theta wave reverses across the CA1 layers, and one session (`Buddy-06272013`) indeed sits about 150 deg away from the other four; it is the clustering within a session, not the numerical value across sessions, that is the result.",
+  "stated_limitation": "The absolute value of the preferred phase depends on recording depth, since the theta wave reverses across the CA1 layers, and one session (`Buddy-06272013`) indeed sits about 150 deg away from the other four; it is the clustering within a session, not the numerical value across sessions, that is the result.",
   "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000044 (Grosmark & Buzs\u00e1ki dorsal CA1, hc-11) on the linear track is the canonical dataset for theta entrainment and precession, and the agent used five linear-track sessions from four rats rather than one.",
-    "handling": "Real data streamed over LINDI with correct per-channel LFP reads, a documented fix for the SpatialSeries storing period in the `rate` field, excitatory-only unit selection, a 5 cm/s speed threshold, direction-separated laps, and explicit peak-rate/spatial-information/field-contiguity criteria.",
-    "analysis": "Kempter et al. (2012) circular-linear regression with a 1000-shuffle permutation null, Rayleigh tests against a spike-jitter control, circular statistics throughout, and an explicit threshold-independence check (82% of all 199 fitted fields negative, Wilcoxon p = 9e-15); no multiple-comparison correction on per-field tests is the only gap, and the headline claim does not rest on it.",
-    "correctness": "Every reported number reproduces exactly from the committed `all_sessions_fields.csv` (199/277 = 71.8% entrained, 114/199 = 57.3% precessing, 104/114 = 91.2% negative, median slope -198 deg/field = -3.46 rad, median rho -0.32), and all fall inside the preregistered ranges.",
-    "figures": "Figures are labeled with units and sample sizes, the trough-triggered average validates the phase convention, single-field examples are ranked by circular-linear correlation (the effect strength, not fitted slope), and the pooled phase-position density plus the -223 deg population phase advance show the effect plainly; the only nit is that figures 3-6 are one session while the README quotes pooled numbers without saying so.",
-    "honesty": "Claims track the evidence, the excluded circular-maze sessions and the depth-dependent phase outlier session are named explicitly, and the threshold-independence check is volunteered; the one unmentioned caveat is that Buddy-06272013's own within-session phase clustering is not significant (R = 0.23, p = 0.23) even though the text asserts within-session clustering is the result.",
-    "verdict": "Multi-session, correctly controlled, fully reproducible from the committed artifacts, with both phenomena visible in the figures; I would take this result and move on."
+    "dataset": "DANDI:000044 (Grosmark & Buzs\u00e1ki dorsal CA1 linear-track) is the canonical known-good dataset for theta entrainment and precession, and the agent used five appropriate linear-track sessions.",
+    "handling": "Real data is streamed via LINDI with correct sampling-rate reconstruction, excitatory-only cell filtering, speed thresholding, directional field detection, and proper LFP conversion.",
+    "analysis": "Rayleigh test with a spike-jitter control and Kempter circular-linear regression with a 1000-shuffle permutation null are the standard, correct methods with the required nulls present.",
+    "correctness": "Every headline number reproduces from the committed CSV and is internally consistent, with only a trivial off-by-one in fitted/significant precession counts.",
+    "figures": "Figures clearly show phase locking, place-field tiling, and diagonal precession bands, are labeled with units and sample sizes, and choose examples by correlation/locking strength rather than slope.",
+    "honesty": "Claims are proportionate to the evidence, the 57% precession fraction and depth-dependent phase offset are acknowledged, and specific real limitations are stated plainly.",
+    "verdict": "The work is sound, reproducible, and honestly reported end to end; I would accept it as is."
   }
 }

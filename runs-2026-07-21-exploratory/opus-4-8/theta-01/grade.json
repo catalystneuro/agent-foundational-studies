@@ -1,10 +1,11 @@
 {
   "dandiset": "000044",
-  "subject_session": "Achilles-10252013, Cicero-09012014, Gatsby-08022013, Buddy-06272013 (4 linear-track sessions, 358 units)",
+  "subject_session": "Achilles-10252013, Cicero-09012014, Gatsby-08022013, Buddy-06272013 (4 linear-track sessions)",
   "headline_stat": {
-    "name": "fraction of place cells with significant negative phase-position slope (62/98)",
-    "value": 0.63,
-    "in_prereg_range": true
+    "name": "fraction of CA1 place cells with significant theta phase precession (shuffle p<0.05)",
+    "value": "65/98 (66%), median signed slope -206 deg/field",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
@@ -21,12 +22,12 @@
   "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000044 (Grosmark & Buzsaki hc-11) dorsal CA1 on a 1.6 m linear track is the canonical dataset for theta entrainment and precession, and the agent used four sessions with a stated, correct reason for excluding the two circular-maze assets.",
-    "handling": "Real data streamed via LINDI with no downloads; the agent caught and documented a genuine NWB conversion quirk (SpatialSeries `rate` field holding the sampling period) and verified it against MazeEpoch duration, derived run epochs from the non-NaN linearized blocks with a near-monotonicity requirement, and applied explicit place-cell inclusion criteria (excitatory label, SI >= 0.5 b/spk, peak >= 1 Hz in bins with >= 0.5 s occupancy, >= 50 in-field spikes, mean rate < 8 Hz).",
-    "analysis": "Circular statistics are used correctly throughout (Rayleigh test, Kempter 2012 circular-linear regression, circular means), the required permutation null is present and demonstrably functioning, fields are computed per running direction and positions oriented along travel, and an LFP-independent autocorrelogram check plus a within-traversal control back up the main claim; no multiple-comparison correction is applied across 98 cells, which the 200-shuffle p-floor of 0.005 would in any case not permit.",
-    "correctness": "Every headline number (81% pyramidal entrained, 66% precessing with 62/65 negative, median -206 deg/field, median |rho| 0.34) reproduces exactly from the committed CSV and the executed notebook output, and all fall inside the preregistered ranges.",
-    "figures": "Figures are clean, labeled with units and sample sizes, show raw-data verification as well as population summaries, and the precession examples are ranked by |rho| (the strength of the effect being demonstrated) rather than by slope; the only blemish is that the two directional population maps in fig 2 are both labeled n=56 from the same place-cell set.",
-    "honesty": "Nothing is misrepresented and no claim is contradicted by the figures (the 3 positive-slope cells are disclosed), but there is no limitations section and two statements outrun their evidence: 'the effect is visible pass by pass' rests on a single best-case cell in one session, and the intrinsic-versus-LFP frequency offset is called 'precisely the dual-oscillator signature' without any statistical test of the difference.",
-    "verdict": "This is careful, reproducible, well-controlled work on the canonical dataset whose numbers all check out; I would take the result and move on, while asking for the pass-by-pass claim to be extended beyond one cell."
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki hc-11), dorsal CA1 silicon-probe recordings on a linear track, the canonical dataset for theta entrainment and precession.",
+    "handling": "Real files streamed via LINDI with correct epoch/run detection, explicit handling of two NWB conversion quirks (period-stored-as-rate, NaN-gated linearization), and defensible unit/occupancy/rate quality filters.",
+    "analysis": "Rayleigh test for phase locking, Kempter circular-linear regression with a 200-permutation phase-shuffle null, plus an LFP-independent autocorrelogram-rhythmicity confirmation and dual-oscillator frequency check; circular statistics used correctly throughout.",
+    "correctness": "Every headline number (81%/n=155, 97%/n=67, MRL 0.145/0.223, 65/98 significant, 62 negative, -206 deg median, per-session 64-69%) reproduces exactly from the committed CSV and is internally consistent and physically possible.",
+    "figures": "Figures show the effect unambiguously with labeled units and sample sizes, and example cells are chosen by correlation strength (|rho|) rather than fitted slope.",
+    "honesty": "Claims are proportionate to a genuinely clean, strong result with no disqualifying acts, but the write-up names no specific limitation of this result beyond noting the excluded circular-maze sessions.",
+    "verdict": "A sophisticated, fully reproducible, correctly controlled demonstration of both theta entrainment and phase precession that I would accept as-is."
   }
 }

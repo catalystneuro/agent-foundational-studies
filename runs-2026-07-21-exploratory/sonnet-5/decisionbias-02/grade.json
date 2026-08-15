@@ -1,0 +1,32 @@
+{
+  "dandiset": "000149",
+  "subject_session": "4 sessions: sub-92130c1b/ses-c7bd79c9, sub-70bf8cbd/ses-4ecb5d24, sub-9bebfe0b/ses-4b7fbad4, sub-c6e8125f/ses-aad23144",
+  "headline_stat": {
+    "name": "pre-stimulus block-prior decode accuracy (0.2 vs 0.8) vs shuffle null",
+    "value": "0.604/0.632/0.621/0.701 across sessions, p=0.005 each",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 2,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 2
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Decoding of the animal's actual upcoming choice from the same pre-stimulus window on zero-contrast trials (Figure 4), where no stimulus information exists to drive the choice, is weaker and noisier (fewer trials per session) but trends in the same direction",
+  "pass": true,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "Dandiset 000149 (IBL Neuropixels biased-blocks task) is the canonical dataset and paradigm for experimentally manipulated decision bias, and behavior confirms the bias is present.",
+    "handling": "Real data streamed via LINDI, good-unit filtering (label==1) is explicit, spike indexing and pynapple ordering are handled carefully with asserts, and quiescence-violation trials are dropped to enforce a movement-free window.",
+    "analysis": "Cross-validated logistic decoding with a 200-fold shuffle null is correctly implemented, but the required control for temporal drift (block identity is contiguous, so a trial-wise shuffle null is anticonservative; a pseudosession/block-shift null is the standard) is absent and the causal claim depends on it.",
+    "correctness": "Reported accuracies reproduce from the committed code, are internally consistent across figures 3 and 5, and rest on adequate sample sizes, with the only shortfall being the missing drift control.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show the block effect against its null, and honestly display the non-significant choice-decoding arm without cherry-picked example units.",
+    "honesty": "The choice-decoding arm is reported honestly as weak/non-significant, but the block-decoding result is presented as 'demonstrating' pre-stimulus bias-state representation without acknowledging the obvious slow-drift confound that the shuffle null does not rule out, a mild overstatement."
+  }
+}

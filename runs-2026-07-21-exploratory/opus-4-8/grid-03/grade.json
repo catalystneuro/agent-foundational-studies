@@ -1,0 +1,32 @@
+{
+  "dandiset": "000582",
+  "subject_session": "6 sessions across subjects 10073/10697/10704/10884; example sub-10704 ses-20060402",
+  "headline_stat": {
+    "name": "grid-cell fraction (gridness >= shuffle 95th pct 0.44)",
+    "value": "8/31 (26%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000582 (Sargolini/Moser dorsocaudal MEC open-field) is the canonical grid-cell dataset, exactly appropriate.",
+    "handling": "Real data streamed from S3, position NaN-dropped and speed-filtered correctly, but inclusion is only a >=100-spike floor with no unit-quality or histology/region filtering.",
+    "analysis": "Standard rate map, Pearson spatial autocorrelogram, and rotational gridness score with a proper circular spike-time shuffle null and 95th-percentile threshold.",
+    "correctness": "Headline values (8/31, threshold 0.44, gridness up to 1.22) reproduce in the transcript and are internally consistent across README and all figures with sound shuffle statistics.",
+    "figures": "Figures are clear and labeled with units and sample sizes; the textbook example and top-8 gallery (sorted by gridness, the effect itself) let a reader see the hexagonal signature directly.",
+    "honesty": "Claims are proportionate and nothing is misrepresented, but the write-up names no specific limitation (single sessions per animal, small unit count, near-threshold cells), so it sits at generic rather than fully calibrated."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles-10252013 (plus Gatsby-08022013, Cicero-09172014, Buddy-06272013)",
+  "headline_stat": {
+    "name": "POST vs PRE significant-replay fraction (Fisher OR)",
+    "value": "15.1% vs 6.1%, OR=2.77, p=2.7e-11",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The cell-identity shuffle, which permutes which cell owns which place field and is the strongest available control, comes out at about 9% rather than the nominal 5%. The per-event test is therefore liberal ... the replay result is carried by one session. Tested individually, Achilles is significant (odds ratio 2.8, p = 1e-11), Cicero is marginal (1.6, p = 0.05), and Gatsby (1.07) and Buddy (1.3) are not.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 CA1 linear-track recordings are the canonical dataset for sharp-wave ripples and replay, in the right species, region, and paradigm.",
+    "handling": "Real data streamed via remfile, correct epoch/state parsing, excitatory-unit and place-cell filtering, gap-filled speed exclusion, and defensible ripple-channel selection.",
+    "analysis": "Standard threshold ripple detection with six independent validation checks, Bayesian decoding with both circular-shift and time-permutation nulls, an empirical cell-ID shuffle, decoding-free EV/REV, and cross-session CMH with a homogeneity test.",
+    "correctness": "Headline numbers reproduce from the committed CSVs and are physically possible, but the Achilles cell-ID shuffle is reported as 8.8% in fig07/results_summary versus 6.25% in the committed multi-session CSV and fig08, a disclosed stochastic-variance inconsistency.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show visible sharp waves, place-field tiling, and genuine posterior sweeps, and plot the empirical null alongside nominal alpha.",
+    "honesty": "The write-up is exceptionally calibrated: it explicitly downgrades the replay claim to a liberal per-event test, names the single-session carry, reports the homogeneity rejection, and quotes the shuffle standard error rather than overstating.",
+    "verdict": "The core ripple physiology is airtight and the replay analysis is rigorous and honestly bounded, so I would accept this and move on."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "sessions":84,
+  "rats":15,
+  "units":430,
+  "gridness_threshold":0.658,
+  "hd_threshold":0.203,
+  "grid_cells":121,
+  "grid_pct":28.1,
+  "spacing_median":55.1,
+  "spacing_iqr":[
+    43.3,
+    72.2
+  ],
+  "stability_grid":0.73,
+  "stability_nongrid":0.42,
+  "grid_pct_by_layer":{
+    "MEC LII":31.1,
+    "MEC LIII":35.1,
+    "MEC LV":17.0,
+    "MEC LVI":23.6
+  },
+  "hd_pct_by_layer":{
+    "MEC LII":5.9,
+    "MEC LIII":63.3,
+    "MEC LV":87.8,
+    "MEC LVI":73.8
+  },
+  "conjunctive_by_layer":{
+    "MEC LII":0,
+    "MEC LIII":38,
+    "MEC LV":7,
+    "MEC LVI":3
+  }
+}

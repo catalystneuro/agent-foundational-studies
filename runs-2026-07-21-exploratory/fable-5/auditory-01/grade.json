@@ -1,32 +1,33 @@
 {
   "dandiset": "000986",
-  "subject_session": "5 mice (LA3, LA8, LA9, LA11, LA12), all 15 sessions; prototype/GLM session sub-LA11 ses-1",
+  "subject_session": "pooled 15 sessions / 5 mice (prototype + GLM: sub-LA11 ses-1)",
   "headline_stat": {
-    "name": "Fraction of auditory cortex units with significant frequency tuning",
-    "value": 0.742,
-    "in_prereg_range": true
+    "name": "split-half best-frequency agreement (tuned units)",
+    "value": "87% vs 20% chance",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
-    "dataset": 3,
+    "dataset": 4,
     "handling": 3,
-    "analysis": 3,
+    "analysis": 4,
     "correctness": 3,
-    "figures": 3,
+    "figures": 4,
     "honesty": 4
   },
-  "verdict": "revise",
+  "verdict": "accept",
   "fabrication_flag": false,
   "synthetic_data_flag": false,
   "stated_limitation": "The main limitation is the stimulus set. Five frequencies spaced one octave apart at a single 60 dB level are enough to establish frequency selectivity and to locate a best frequency to within an octave, but not to resolve tuning bandwidth or the level dependence of a full frequency-response area. The archived files also do not carry electrode depth or channel position for the sorted units, so the tonotopic gradient along the probe cannot be reconstructed from them.",
   "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "Dandiset 000986 (mouse auditory cortex Neuropixels, passive octave-spaced pure tones) is on the canonical list and yields 1,564 units across 5 mice, but the archived units table carries only spike_times, so the prereg's second auditory headline (tonotopic gradient along the probe) is unaddressable in this choice.",
-    "handling": "Real data streamed with remfile from the DANDI S3 bucket, trials aligned to stim onsets from the NWB trials table with exact pynapple interval counting and sensible -100-0 ms baseline / 5-55 ms evoked windows, but no unit inclusion criteria at all are applied or discussed (no quality metrics exist in these files, which the write-up does not say).",
-    "analysis": "Wilcoxon signed-rank for responsiveness and Kruskal-Wallis across frequencies are appropriate non-parametric choices, and the odd/even split-half best-frequency control is exactly the right guard against peak-selection bias, but no multiple-comparison correction is applied across 1,564 units and the best-vs-worst population PSTH panel uses frequencies selected on the same data.",
-    "correctness": "Every reported number reproduces exactly from the committed .npz outputs and 74.2% tuned sits mid-range, with two minor blemishes: the per-frequency BF counts silently switch denominator to 1,081 (responsive AND tuned) from the stated 1,160, and the 206/235 encoding figure comes from a superseded configuration of the committed script.",
-    "figures": "Figures 1-5 show the effect clearly with labeled units and stated sample sizes, but the fig03 example units were picked as the largest modulation depth per best frequency rather than as representative cells, and fig06 has an overlapping colorbar label plus a top-left panel showing the model failing to track the transient.",
-    "honesty": "The write-up names concrete, verifiable limitations (stimulus set, tonotopy impossible in these files, which I confirmed, the figure/code mismatch, the unexecuted notebook), quotes correct chance levels, and every quantitative claim checks out against the emitted output, with only second-order caveats left unstated.",
-    "verdict": "The core descriptive result is sound, controlled, and honestly reported; I would ask only that 04_glm_decoding.py be re-run so the GLM figure and its quoted numbers match the committed code before believing the model-based section."
+    "dataset": "000986 is the canonical known-good mouse auditory-cortex pure-tone dataset for frequency tuning.",
+    "handling": "Data streamed correctly with exact interval counting and gap exclusion, but no explicit unit quality filtering is applied beyond statistical response classification.",
+    "analysis": "Appropriate nonparametric tests plus a split-half best-frequency control that directly addresses selection bias, and held-out GLM encoding/decoding.",
+    "correctness": "All headline counts and statistics reproduce from the committed CSV/logs/figures, with only a minor denominator ambiguity between the 1160 tuned and 1081 responsive-and-tuned units.",
+    "figures": "Figures 1-5 show the effect clearly with units, sample sizes, and category-chosen representative examples; only the disclosed fig06 is stale.",
+    "honesty": "Claims are proportionate and the write-up names specific limitations, candidly flagging the fig06 configuration mismatch, the unexecuted notebook, and the stimulus-set constraints.",
+    "verdict": "The phenomenon is demonstrated overwhelmingly and honestly, well above rotation-student quality, so I would take the descriptive result and move on."
   }
 }

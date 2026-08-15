@@ -1,16 +1,17 @@
 {
   "dandiset": "000044",
-  "subject_session": "sub-Achilles/ses-Achilles-10252013 (primary), plus Achilles-11012013, Cicero-09102014, Gatsby-08022013",
+  "subject_session": "Achilles/10252013 (primary), plus Achilles/11012013, Cicero/09102014, Gatsby/08022013",
   "headline_stat": {
-    "name": "Fraction of place fields with significant negative phase-position slope",
-    "value": 0.75,
-    "in_prereg_range": true
+    "name": "% of place fields with significant negative phase-position slope (median advance 247 deg)",
+    "value": "75% of 155 fields",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
     "dataset": 4,
     "handling": 4,
     "analysis": 4,
-    "correctness": 3,
+    "correctness": 4,
     "figures": 4,
     "honesty": 4
   },
@@ -21,11 +22,12 @@
   "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000044 (Grosmark & Buzsaki hc-11) is the canonical dorsal-CA1 linear-track dataset for theta phase precession, and the run replicated across four sessions from three rats rather than resting on one.",
-    "handling": "Real data streamed from S3 with remfile, with an explicit assertion that the position timing quirk (the rate attribute is actually a sampling period) reproduces the maze epoch duration, per-session track geometry, speed thresholding, cell-type filtering, direction-split rate maps, and split-half stability as an inclusion criterion.",
-    "analysis": "Kempter circular-linear regression with a within-field phase shuffle null, Rayleigh tests for entrainment, and an independent lap-held-out Poisson GLM comparison; circular statistics are used correctly throughout and the shuffle distribution in fig06d directly bounds the false-positive concern about the fitted-slope asymptotic p-value.",
-    "correctness": "All headline values fall inside the preregistered ranges and reproduce exactly from the committed CSV, but the README rounds median rho to -0.27 where the run printed -0.26 and states the 62-75% entrainment fraction without disclosing that its denominator is pyramidal cells with at least 50 running spikes (61/90, not 61/120).",
-    "figures": "Nine figures with labelled axes, units, and sample sizes; examples are ranked by circular-linear correlation (the effect itself) with each panel's rho printed so the selection is transparent, and every claim in the text is visible in a figure including the shuffle overlay and the single-pass panel.",
-    "honesty": "The Caveats section names the phase-convention limitation, the exclusion criteria and the 155-of-257 field subset, and the one-directional circular-track sessions, and the run additionally volunteers a GLM formulation that failed and a track-range bug it had to fix; no claim exceeds what the figures and CSVs show."
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki dorsal CA1, hc-11) is the canonical dataset for hippocampal theta precession, run on a linear/circular track paradigm exactly as expected.",
+    "handling": "Real data streamed channel-by-channel from S3, with correct epoch/lap extraction, explicit place-cell inclusion criteria, and careful handling of a documented file quirk (rate attribute is actually the sampling period).",
+    "analysis": "Circular-linear regression (Kempter 2012), Rayleigh test, within-field phase shuffle null, and a lap-cross-validated NeMoS Poisson GLM together form a rigorous and correctly-implemented test suite.",
+    "correctness": "Headline numbers reproduce from the committed CSVs and are internally consistent across README, CSVs, and every figure, with sound statistics and large sample sizes.",
+    "figures": "Figures are clearly labeled with units and sample sizes, example cells are selected by correlation strength (the effect itself) and genuinely show precession, and population panels honestly display the full distribution.",
+    "honesty": "Claims are proportionate to the evidence, examples are labeled as examples rather than typical, and the caveats section names specific, real limitations of this result.",
+    "verdict": "A comprehensive, correct, honest, and fully reproducible demonstration of both theta entrainment and phase precession, replicated across four sessions and independently confirmed by a GLM."
   }
 }

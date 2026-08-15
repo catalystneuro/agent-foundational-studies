@@ -1,32 +1,33 @@
 {
   "dandiset": "000129",
-  "subject_session": "sub-Indy, session 20170202_02 (sub-Indy_desc-train_behavior+ecephys.nwb), 649 s, 130 M1 units, 545 reaches",
+  "subject_session": "sub-Indy / sub-Indy_desc-train_behavior+ecephys.nwb (MC_RTT)",
   "headline_stat": {
-    "name": "Fraction of M1 units directionally tuned (cosine-fit R^2 > 0.3)",
-    "value": 0.64,
-    "in_prereg_range": true
+    "name": "fraction of units with cosine-fit direction R\u00b2>0.3",
+    "value": "83/130 (64%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
   },
   "axes": {
-    "dataset": 3,
+    "dataset": 4,
     "handling": 3,
-    "analysis": 2,
-    "correctness": 4,
-    "figures": 3,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 4,
     "honesty": 3
   },
   "verdict": "revise",
   "fabrication_flag": false,
   "synthetic_data_flag": false,
-  "stated_limitation": "Preferred directions were not uniformly distributed across the population but clustered into a few preferred sectors (visible in the rose histogram and the blocky, rather than perfectly diagonal, structure of the sorted tuning-curve heatmap).",
+  "stated_limitation": "none",
   "pass": true,
   "confidence": "high",
   "justification": {
-    "dataset": "Dandiset 000129 (MC_RTT) is real macaque M1 with 1 kHz hand kinematics and is a legitimate sibling of the listed NLB reach dandisets, but the self-paced random-target paradigm with no discrete instructed directions or delay period is a defensible rather than conventional choice for demonstrating directional tuning.",
-    "handling": "Data are correctly streamed from S3 with remfile, NaNs dropped, velocity derived and smoothed with a stated rationale, movement epochs speed-thresholded, and per-reach windows correctly truncated at the next target onset, but no unit quality or firing-rate criterion is applied to any of the 130 units.",
-    "analysis": "The cosine fit and circular preferred-direction handling (including the proper angular difference via np.angle(exp(i*delta))) are standard and correct and the two-method PD comparison is a genuine control, but there is no shuffle null validating the R^2>0.3 cutoff that the tuning fraction rests on, and the speed Spearman is computed over 20 bin-averaged points rather than samples, which inflates rho.",
-    "correctness": "The 64% headline sits inside the preregistered 0.50-0.95 range and every reported quantity, including the 18 deg cross-method offset and the ~2.5x raster modulation, reproduces exactly from the committed notebook output and matches the figures.",
-    "figures": "The effect is clearly visible across polar tuning curves, the sorted heatmap's diagonal band, the cross-method scatter, and the peri-reach PSTHs, with sample sizes in titles; cosmetic faults are missing radial tick labels in fig3, unlabeled speed units in fig5, and independent y-scales across fig8's quadrant panels that visually understate the claimed 2.5x difference.",
-    "honesty": "Nothing is misrepresented and no claim is contradicted by the figures, the example units are explicitly labeled as the top 6 by R^2 rather than as typical, and the write-up volunteers two non-textbook features (the 14 negatively speed-tuned units and the clustered rather than uniform preferred directions), but it states no limitation about the single session, the unvalidated R^2 threshold, or the unfiltered units, and the 76% speed-tuning figure is presented more cleanly than the binned correlation supports.",
-    "verdict": "The core direction-tuning result is sound, in range, fully traceable, and independently cross-validated, so I would accept it after a permutation null for the tuning fraction, a unit quality filter, and sample-level rather than bin-level speed statistics."
+    "dataset": "Dandiset 000129 (Sabes-lab macaque M1 self-paced reaching) is a canonical dataset for reach direction and velocity tuning, exactly appropriate for the phenomenon.",
+    "handling": "Real data streamed via remfile with correct kinematic derivation, velocity smoothing, and movement-epoch thresholding, but all 130 units are used with no quality/inclusion filtering.",
+    "analysis": "Cosine fits with atan2 preferred directions and Spearman speed correlations are appropriate and the two independent methods agree (median 18\u00b0), but no shuffle/circular null is provided to establish the tuned-fraction thresholds.",
+    "correctness": "Reported numbers reproduce from the committed summary code and match the figures (R\u00b2=0.91 for unit 301, ~2.5x raster modulation, 18\u00b0 cross-method offset), though computing R\u00b2 and Spearman \u03c1 on binned tuning-curve means inflates the reported fractions.",
+    "figures": "Figures are clear, labeled, give sample sizes, and select example units by effect strength (highest R\u00b2 / |\u03c1|), which is the correct criterion; the effect is directly visible in the direction-quadrant PSTHs.",
+    "honesty": "Claims are proportionate to a genuinely strong, internally validated result and nothing is contradicted by the figures, but the write-up omits explicit caveats (single subject/session, binning inflation), keeping it at 3 rather than 4.",
+    "verdict": "Core work is sound and the phenomenon is convincingly demonstrated; a reviewer would ask for a shuffle null and trial-level statistics plus a single-subject caveat before fully trusting the reported tuned-fraction numbers."
   }
 }

@@ -1,32 +1,33 @@
 {
   "dandiset": "000003",
-  "subject_session": "sub-YutaMouse41 / ses-YutaMouse41-150829",
+  "subject_session": "sub-YutaMouse41, session 150829",
   "headline_stat": {
-    "name": "Fraction of units classified as place cells",
-    "value": 0.087,
-    "in_prereg_range": false
+    "name": "spatial information range (bits/spike)",
+    "value": "-5.5 to 1.32",
+    "reproduces_from_code": true,
+    "physically_possible": false
   },
   "axes": {
     "dataset": 2,
-    "handling": 1,
+    "handling": 2,
     "analysis": 1,
-    "correctness": 1,
-    "figures": 1,
+    "correctness": 0,
+    "figures": 2,
     "honesty": 1
   },
   "verdict": "reject",
-  "fabrication_flag": true,
+  "fabrication_flag": false,
   "synthetic_data_flag": false,
   "stated_limitation": "The low proportion of identified place cells reflects the conservative thresholds used and the fact that granule cells (targeted in this dataset) are generally less selective than CA1 pyramidal neurons.",
   "pass": false,
   "confidence": "high",
   "justification": {
-    "dataset": "DANDI:000003 is a real hippocampal dataset with position tracking in which place cells exist, but the granule/mossy-cell emphasis, a session with only 23 sorted units, and no region or cell-type selection make the demonstration harder than it needed to be.",
-    "handling": "Data were genuinely streamed from S3 and spikes were matched to position samples, but the rate maps pool the entire 4.7-hour recording with no restriction to maze epochs (the file's own `states` IntervalSet was printed and then ignored), no speed filter, and no unit quality or cell-type criteria, an epoching choice that does not match the task structure and plausibly drives the result.",
-    "analysis": "The spatial-information implementation is wrong (unweighted mean rate, log of a smoothed nan-filled map) and produces mathematically impossible negative SI down to -5.54, 'sparsity' is redefined as the fraction of bins above 1 Hz rather than the standard measure, and there is no shuffle or circular-shift null distribution, which the place-cell claim requires.",
-    "correctness": "The 8.7% place-cell fraction falls far below the preregistered 0.30-0.75 range, which caps this axis at 1, and the SI distribution is internally impossible even though every reported number does trace back to the committed code's stdout.",
-    "figures": "The statistics panel is readable, but the central `place_fields.png` shows two diffuse, patchy ~2 Hz maps with no localized field, so it does not show what the text claims it shows; axes are labeled only 'X' and 'Y' with no units.",
-    "honesty": "The write-up presents two visibly non-selective units as showing 'clear spatial selectivity with localized firing fields' and 'single, localized place fields with clear boundaries,' and reinterprets an obviously broken statistic (negative bits/spike) as a meaningful biological finding, while explaining the anomalously low yield away as conservative thresholds rather than acknowledging the metric or epoching problem.",
-    "verdict": "The core statistic is miscomputed, the epoching does not match the task, no null distribution was run, the headline fraction is well outside the plausible range, and the conclusion asserted is contradicted by the run's own figures, so this would have to be started over."
+    "dataset": "A Buzsaki-lab hippocampal dataset that does contain place cells, but the granule-cell emphasis, 23 units, and tiny covered arena make the demonstration harder than it needed to be.",
+    "handling": "Real data is streamed and spikes are correctly aligned to position, but there is no unit quality filtering and the occupancy mask is very lenient, yielding sparse noisy maps.",
+    "analysis": "The Skaggs spatial-information formula is miscomputed (unweighted mean instead of occupancy-weighted mean), sparsity is nonstandard, and there is no shuffle/null control behind the threshold-based place-cell calls.",
+    "correctness": "The buggy normalization produces negative spatial information (to -5.5 bits/spike), which is physically impossible and is presented as a finding, capping this axis at 0.",
+    "figures": "The statistics panels are readable but the place-field maps are noisy, low-rate (~2 Hz) blobs over a tiny region that do not show the clear localized fields the text claims.",
+    "honesty": "It presents a demonstrably broken SI statistic (negative values) as a real finding and describes noisy weak maps as clear place fields, both disqualifying acts.",
+    "verdict": "A physically impossible headline statistic presented as a finding, a broken analysis, and overstated figures make this a start-over."
   }
 }

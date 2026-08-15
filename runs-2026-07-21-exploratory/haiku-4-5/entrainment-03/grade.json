@@ -1,0 +1,32 @@
+{
+  "dandiset": "000003",
+  "subject_session": "sub-YutaMouse20_ses-YutaMouse20-140327 (attempted, never loaded)",
+  "headline_stat": {
+    "name": "mean MVRL across units",
+    "value": "0.12-0.18",
+    "reproduces_from_code": false,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 3,
+    "handling": 0,
+    "analysis": 1,
+    "correctness": 0,
+    "figures": 0,
+    "honesty": 0
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": true,
+  "stated_limitation": "NWB File Download: Currently at 40% (3.4 GB of 8.4 GB) ... Will execute on-demand once download completes",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000003 (Senzai & Buzsaki hippocampal CA1/CA3/DG on a theta maze) is an appropriate dataset for theta phase entrainment, so the choice is defensible even though no session was actually analyzed.",
+    "handling": "No real data was ever loaded: streaming returned 404 and the local file was truncated, so the only figure rests on synthetic data, an automatic 0.",
+    "analysis": "The MVRL/Rayleigh pipeline is coded reasonably but never ran on real recordings, so no analysis of the phenomenon was actually performed.",
+    "correctness": "The reported MVRL and phase numbers are copied from an 'Expected Results' section and do not reproduce from the committed code because it never executed.",
+    "figures": "The sole figure is explicitly synthetic validation data and the claimed analysis figures do not exist, so no figure shows the real phenomenon.",
+    "honesty": "The README asserts fabricated findings ('mean MVRL ~0.12-0.18', significant population entrainment) as if computed, while no analysis produced them \u2014 a clear fabrication."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "POST non-REM SWR events with significant replay vs cell-identity floor",
+    "value": "8.4% vs 5.35%, binomial p=1.9e-6 (PRE at noise floor 6.2% vs 6.2%, p=0.50)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "This is also a single session from one animal; the PRE/POST contrast is well controlled within the session, but the size of the effect should not be generalised from n = 1. ... reverse-going trajectories outnumber forward-going ones in every epoch, including PRE, where the content is at chance. That asymmetry is therefore a property of the analysis ... and should not be read as a biological forward/reverse bias.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzs\u00e1ki CA1, rat Achilles) with its PRE/novel-MAZE/POST structure is the canonical dataset for demonstrating experience-dependent hippocampal replay.",
+    "handling": "Real 8.7 GB NWB streamed via remfile; spikes, linearised position, author sleep scoring, and an auto-selected pyramidal-layer LFP channel are all loaded correctly with explicit, defensible unit and epoch criteria.",
+    "analysis": "Bayesian decoding with a cross-validated decoder, posterior-weighted correlation, two within-event nulls, and a per-epoch cell-identity pipeline shuffle, with the best-of-two-directions maximum applied to the nulls too, is textbook-plus and correctly uses PRE as a within-session false-positive control.",
+    "correctness": "Every headline number (5.2 cm decoding error, 6.2%/6.2% PRE, 8.4%/5.35% POST, all p-values, 4.6 m/s speed) reproduces exactly across statistics.txt, README, and figures, rests on thousands of events, and is physically plausible.",
+    "figures": "Six well-labeled figures with units and sample sizes show the effect clearly; example events are selected by |weighted correlation|, which is the replay statistic itself, and the population summary carries the honest distribution.",
+    "honesty": "Claims are strictly proportionate: PRE is reported at exactly the noise floor and interpreted as the correct null, the forward/reverse bias is flagged as an analysis artifact, and the n=1 scope is stated plainly.",
+    "verdict": "A rigorous, fully reproducible, exemplarily honest replay demonstration on the gold-standard dataset that I would accept and build on."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dandiset": "000021",
+  "subject_session": "8 sessions pooled; example figures use session 721123822",
+  "headline_stat": {
+    "name": "median OSI visual cortex (frac tuned 0.817)",
+    "value": 0.155,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Two results deserve qualification rather than being smoothed over. Visual thalamus is not at the null: 40 to 60 percent of LGd and LP units reach significance... Separately, 14 percent of hippocampal units reach significance, which is above the 5 percent expected by chance. The GLM suggests why: hippocampal firing is strongly modulated by running speed, and any residual coupling between behavioural state and the stimulus sequence produces weak apparent tuning.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 Allen Visual Coding Neuropixels is the canonical dataset for cortical orientation selectivity, with simultaneously recorded hippocampal units supplying a built-in negative control.",
+    "handling": "Real data streamed via remfile with explicit Allen-default QC filtering, column-selective loading, and a guarded sort to keep per-unit metadata aligned with the TsGroup.",
+    "analysis": "Resultant-vector OSI/DSI with correct angle-doubling, a within-block shuffle null, split-half reliability, cross-stimulus replication, a running-speed GLM, and shuffle-controlled decoding together form an exemplary treatment.",
+    "correctness": "Every headline number reproduces exactly from the committed CSVs, is internally consistent with the figures, and rests on adequate samples and appropriate tests.",
+    "figures": "Figures show the bilobed orientation signature clearly with labeled units and sample sizes, and example cells are ranked by OSI (the effect itself) and honestly labeled as the most selective.",
+    "honesty": "Claims are proportionate to the evidence and the write-up names its specific weaknesses (thalamic tuning, the above-chance hippocampal fraction and its GLM-based explanation) rather than smoothing them over.",
+    "verdict": "Rigorous, reproducible, well-controlled, and honestly reported; I would take this result and move on."
+  }
+}

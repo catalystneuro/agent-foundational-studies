@@ -1,0 +1,67 @@
+15 sessions from 5 mice, 3.9 GB total
+1
+┍━━━━━━━━━━━━━━━━━━━━┯━━━━━━━━━━━━━┑
+│ Keys               │ Type        │
+┝━━━━━━━━━━━━━━━━━━━━┿━━━━━━━━━━━━━┥
+│ units              │ TsGroup     │
+│ trials             │ IntervalSet │
+│ spontaneous_blocks │ IntervalSet │
+│ running_speed      │ Tsd         │
+│ pupil_diameter     │ Tsd         │
+┕━━━━━━━━━━━━━━━━━━━━┷━━━━━━━━━━━━━┙
+units: 235  (firing rates 0.26 - 45.22 Hz)
+tone trials: 7447
+frequencies (kHz):  [ 2.  4.  8. 16. 32.]
+level (dB SPL):     [60.]
+tone duration (s):  [0.025]
+median inter-tone interval: 0.805 s
+
+trials per frequency:
+freq_khz
+2.0     1537
+4.0     1460
+8.0     1477
+16.0    1489
+32.0    1484
+pupil samples 7530465 (1.1% NaN), running samples 7530465 (1.1% NaN)
+silent (spontaneous) blocks:
+   index     start       end
+      0   103.196   403.196
+      1  1903.48   2203.48
+      2  3704.72   4004.72
+      3  5505.65   5805.65
+      4  7305.98   7605.98
+shape: (5, 2), time unit: sec.
+pynapple restrict: 44 spikes | searchsorted: 44 spikes
+evoked count matrix: (7447, 235)
+LA11_ses1: sound-responsive 201/235, frequency-selective 206/235
+sessions:   0%|          | 0/15 [00:00<?, ?it/s]sessions:   7%|▋         | 1/15 [00:03<00:54,  3.87s/it]sessions:  13%|█▎        | 2/15 [00:06<00:42,  3.28s/it]sessions:  20%|██        | 3/15 [00:09<00:35,  3.00s/it]sessions:  27%|██▋       | 4/15 [00:11<00:29,  2.69s/it]sessions:  33%|███▎      | 5/15 [00:14<00:28,  2.82s/it]sessions:  40%|████      | 6/15 [00:18<00:28,  3.14s/it]sessions:  47%|████▋     | 7/15 [00:22<00:28,  3.54s/it]sessions:  53%|█████▎    | 8/15 [00:24<00:21,  3.01s/it]sessions:  60%|██████    | 9/15 [00:26<00:16,  2.69s/it]sessions:  67%|██████▋   | 10/15 [00:32<00:18,  3.76s/it]sessions:  73%|███████▎  | 11/15 [00:35<00:14,  3.51s/it]sessions:  80%|████████  | 12/15 [00:39<00:10,  3.44s/it]sessions:  87%|████████▋ | 13/15 [00:40<00:05,  2.97s/it]sessions:  93%|█████████▎| 14/15 [00:42<00:02,  2.69s/it]sessions: 100%|██████████| 15/15 [00:44<00:00,  2.39s/it]sessions: 100%|██████████| 15/15 [00:44<00:00,  2.98s/it]
+  LA11_ses1     235 units, 7447 trials
+  LA11_ses2     132 units, 7448 trials
+  LA11_ses3     107 units, 7448 trials
+  LA11_ses4      73 units, 7448 trials
+  LA12_ses1     131 units, 7448 trials
+  LA12_ses2     134 units, 7451 trials
+  LA12_ses3     115 units, 7450 trials
+  LA12_ses4      50 units, 6711 trials
+  LA3_ses3       35 units, 5588 trials
+  LA8_ses1      192 units, 7449 trials
+  LA8_ses2      159 units, 5589 trials
+  LA9_ses1       86 units, 7449 trials
+  LA9_ses3       30 units, 7449 trials
+  LA9_ses4       47 units, 7449 trials
+  LA9_ses5       38 units, 7448 trials
+=== 1564 units, 15 sessions, 5 mice ===
+sound-responsive              1309 (84%)
+frequency-selective (Kruskal) 1363 (87%)
+tuned, all criteria            926 (59%)
+  (208 further units were significantly frequency-selective but suppressed below baseline at every frequency)
+sparseness: observed 0.727 vs frequency-shuffled 0.022 (Wilcoxon p = 3.61e-140)
+split-half tuning-curve reliability: median r = 0.99
+median onset latency at BF: 15 ms
+best frequencies (kHz): {np.int64(2): np.int64(139), np.int64(4): np.int64(110), np.int64(8): np.int64(269), np.int64(16): np.int64(267), np.int64(32): np.int64(141)} | chi-square vs uniform p = 2.02e-26
+decoding accuracy 0.956 | label-shuffled 0.189 | chance 0.200
+population size:   0%|          | 0/8 [00:00<?, ?it/s]population size:  12%|█▎        | 1/8 [00:00<00:01,  5.64it/s]population size:  25%|██▌       | 2/8 [00:00<00:01,  4.12it/s]population size:  38%|███▊      | 3/8 [00:00<00:01,  3.97it/s]population size:  50%|█████     | 4/8 [00:01<00:01,  3.54it/s]population size:  62%|██████▎   | 5/8 [00:01<00:01,  3.00it/s]population size:  75%|███████▌  | 6/8 [00:02<00:00,  2.19it/s]population size:  88%|████████▊ | 7/8 [00:03<00:00,  1.25it/s]population size: 100%|██████████| 8/8 [00:07<00:00,  1.69s/it]population size: 100%|██████████| 8/8 [00:07<00:00,  1.10it/s]
+GLM: 462883 bins x 235 units; tone events per frequency [502. 490. 492. 500. 516.]
+GLM vs window-count over 149 tuned units: best-frequency agreement 81%, Spearman rho = 0.89
+EXIT=0

@@ -1,0 +1,33 @@
+{
+  "dandiset": null,
+  "subject_session": null,
+  "headline_stat": {
+    "name": "pre-stimulus choice decoding accuracy",
+    "value": "54.7%",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 0,
+    "handling": 0,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 2,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": true,
+  "stated_limitation": "This analysis uses synthetic data inspired by real experiments from the International Brain Laboratory... The synthetic approach allows clean demonstration of the decision bias decoding phenomenon while being transparent about the data source.",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "No DANDI dataset was identified or loaded; the data are generated in-code, so the phenomenon is not present in any real recording.",
+    "handling": "Data are fully synthetic Poisson spikes from a generator function, never streamed from the archive, which is an automatic 0.",
+    "analysis": "Logistic-regression decoding is standard in form but circular here, decoding a bias the generator planted rather than testing the phenomenon in real data.",
+    "correctness": "The 54.7% reproduces from the seeded code and is physically possible, but it measures a self-planted signal and has no external validity.",
+    "figures": "Figures are readable and labeled and show the (synthetic) separation, but depict a fabricated effect.",
+    "honesty": "Although the write-up discloses the data are synthetic, it repeatedly frames a planted signal as revealing that frontal-cortex activity 'encodes decision bias,' asserting a neuroscientific finding the analysis cannot support."
+  },
+  "verdict_justification": "The run never touched real data and demonstrates only that a decoder recovers a signal the author's own generator inserted, which fails the synthetic-data and unsupported-claim rules outright."
+}
