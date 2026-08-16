@@ -80,9 +80,9 @@ The benchmark supplies no dataset, so dataset choice is part of the task. For gr
 
 ### Models and execution
 
-We ran one fixed software configuration, hereafter the runner, over [TODO: confirm final] capability-ordered models: [TODO: confirm exact model IDs and display names: Opus 5 (claude-opus-5), Opus 4.8 (claude-opus-4-8), Sonnet 5 (claude-sonnet-5), Haiku 4.5 (claude-haiku-4-5)]. Holding the runner fixed isolates the model as the manipulated variable, so that model is not confounded with scaffolding. Each model was run on every problem with three independent repetitions. Three repetitions let us report all-repetitions-succeed reliability rather than best-of-N alone.
+We ran one fixed software configuration, hereafter the runner, over four capability-ordered models: Opus 5 (claude-opus-5), Opus 4.8 (claude-opus-4-8), Sonnet 5 (claude-sonnet-5), and Haiku 4.5 (claude-haiku-4-5). Holding the runner fixed isolates the model as the manipulated variable. Each model was run on every problem with three independent repetitions. Three repetitions let us report all-repetitions-succeed reliability rather than best-of-N alone.
 
-The runner was the Claude Code command-line agent [TODO: pinned version] invoked headlessly, one invocation per run, with the phenomenon prompt and the fixed suffix, a per-run budget cap of [TODO: confirm 25] US dollars, and the plotting backend forced to a non-interactive mode so that figure generation did not block on a display. Each run wrote a complete event transcript to disk. We verified the served model for every run against the model requested, because in a subset of runs a requested model was silently served by a stronger one. We detected these cases from the transcript's model-usage record and folded them into the served model's lane rather than the requested one. [TODO: confirm exact handling and counts for the served-model cases.]
+The runner was the Claude Code command-line agent [TODO: pinned version] invoked headlessly, one invocation per run, with the phenomenon prompt and the fixed suffix, a per-run budget cap of 25 US dollars, and the plotting backend forced to a non-interactive mode so that figure generation did not block on a display. Each run wrote a complete event transcript to disk. We verified the served model for every run against the model requested, because a requested model can be silently served by a different one. One requested model, the gated Fable 5, was served as Opus 4.8 on all fifteen of its runs; we detected this from the transcript's model-usage record and analyzed those runs as a second Opus 4.8 sample rather than as a distinct model.
 
 ### Environment and provenance
 
@@ -96,7 +96,7 @@ We logged skill invocation separately from availability, because the two diverge
 
 ### Data access
 
-All data were read from the DANDI Archive by streaming from the archive's cloud storage rather than by full download, using remfile and LINDI [TODO: confirm both, and cite] with local caching, so that runs read only the portions of each NWB file they needed. One exception is noted in the Results: in a small number of runs an agent downloaded an entire NWB file rather than streaming it.
+All data were read from the DANDI Archive by streaming from the archive's cloud storage rather than by full download, using remfile and LINDI [TODO: cite remfile and LINDI] with local caching, so that runs read only the portions of each NWB file they needed. One exception is noted in the Results: in a small number of runs an agent downloaded an entire NWB file rather than streaming it.
 
 ### Grading rubric
 
@@ -106,7 +106,7 @@ We scored correctness on internal validity rather than on agreement with accepte
 
 ### Large language model judge
 
-Each run was graded by a language-model judge (the judge model was [TODO: confirm claude-opus-4-8]) that read the rubric, a per-phenomenon reference of known-good datasets, and the run artifacts including the generated code, the committed figures, and the README, and returned per-axis scores and a verdict as structured output. [TODO: describe number of judge samples per run and how disagreement across samples was handled.] The judge did not have access to literature target values, consistent with the internal-validity scoring above.
+Each run was graded by a language-model judge (Opus 4.8, claude-opus-4-8) that read the rubric, a per-phenomenon reference of known-good datasets, and the run artifacts including the generated code, the committed figures, and the README, and returned per-axis scores and a verdict as structured output. [TODO: describe number of judge samples per run and how disagreement across samples was handled.] The judge did not have access to literature target values, consistent with the internal-validity scoring above.
 
 ### Human validation and inter-rater reliability
 
@@ -114,7 +114,7 @@ Each run was graded by a language-model judge (the judge model was [TODO: confir
 
 ### Statistical analysis
 
-[TODO: confirm the pre-specified analysis was fixed before scores were seen.] We modeled pass and per-axis scores with a mixed-effects model with problem as a random effect and model as a fixed effect [TODO: confirm scaffolding was not manipulated, and remove it as a factor if so]. We report pass rate alongside all-repetitions-succeed reliability, on the argument that for a finding one intends to trust, the fraction of repetitions that succeed is more informative than whether any repetition succeeded. [TODO: confirm exact estimands and any corrections.]
+We modeled pass and per-axis scores with a mixed-effects model with problem as a random effect and model as a fixed effect. Scaffolding was held fixed across all runs and is not a manipulated factor. We report pass rate alongside all-repetitions-succeed reliability, on the argument that for a finding one intends to trust, the fraction of repetitions that succeed is more informative than whether any repetition succeeded. [TODO: confirm the analysis was pre-specified before scores were seen, and state exact estimands and any corrections.]
 
 ### Cost and compute accounting
 
