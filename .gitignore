@@ -58,3 +58,15 @@ __pycache__/
 venv/
 # Raw NWB data files fetched/downloaded during runs: re-obtainable from DANDI by accession.
 *.nwb
+
+# API keys / secrets — the repo is public, these must never be committed.
+.env
+.env.*
+*.key
+.openrouter_key
+.secrets
+runs-2026-07-21-exploratory/.keys
+
+# Operational noise: proxy/nohup stdout and rotated logs.
+*.nohup
+*.log.*

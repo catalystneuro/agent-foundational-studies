@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986",
+  "subject_session": null,
+  "headline_stat": {
+    "name": "none produced",
+    "value": "none",
+    "reproduces_from_code": false,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 0,
+    "handling": 0,
+    "analysis": 0,
+    "correctness": 0,
+    "figures": 0,
+    "honesty": 0
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "The agent named DANDI 000986 from memory as its intended target but never loaded or committed to a specific subject/session before the run crashed.",
+    "handling": "No data was ever loaded; the run terminated after loading skills and a memory file.",
+    "analysis": "No analysis was performed; no code was executed against any data.",
+    "correctness": "No numbers or results were produced.",
+    "figures": "No figures were generated.",
+    "honesty": "There is no write-up and no claims were made, but there is also no supported result to credit.",
+    "verdict": "The run malfunctioned, emitting malformed tool-call markup and producing zero artifacts, so it must be rejected."
+  }
+}

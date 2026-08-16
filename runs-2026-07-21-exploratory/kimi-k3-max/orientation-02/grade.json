@@ -1,0 +1,32 @@
+{
+  "dandiset": "000021",
+  "subject_session": "sub-699733573_ses-715093703",
+  "headline_stat": {
+    "name": "fraction orientation-selective VISp units",
+    "value": "45% (61/135)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "CA1 serves as a negative control. ... only 4.5% in hippocampal CA1 (17/376) \u2014 statistically indistinguishable from the 5% false-positive rate of the permutation test, which validates the procedure. ... a modest, non-significant excess at 90\u00b0 (11/14/24/12 units at 0/45/90/135\u00b0, chi\u00b2 p \u2248 0.07)",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000021 (Allen Visual Coding Neuropixels, drifting gratings) is the canonical dataset for orientation selectivity, with all relevant visual areas plus a hippocampal control present.",
+    "handling": "Real data streamed via remfile, good units filtered, structures assigned by peak channel, invalid_times excluded, blank sweeps used for spontaneous baseline, spike counts via searchsorted on correct trial windows.",
+    "analysis": "gOSI as the 2\u03b8 resultant vector with blank subtraction, a proper 1000-shuffle permutation null, and CA1 as a negative control are exactly the right circular-statistics methods.",
+    "correctness": "Reported fractions (VISp 61/135, CA1 17/376, LGd 51/173) reproduce exactly from the committed CSV, are internally consistent, and the CA1 control matching the 5% chance rate confirms statistical soundness.",
+    "figures": "Rasters, tuning curves, population panels, heatmap, and permutation nulls are all clearly labeled with units and sample sizes, and example units are honestly chosen across the full selectivity range.",
+    "honesty": "Claims are proportionate to the evidence, the borderline 90\u00b0 excess is explicitly flagged as non-significant, the control's meaning is stated, and single-session scope is disclosed with nothing overstated."
+  }
+}

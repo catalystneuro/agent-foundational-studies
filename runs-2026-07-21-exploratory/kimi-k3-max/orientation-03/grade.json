@@ -1,0 +1,33 @@
+{
+  "dandiset": "000021",
+  "subject_session": "ses-715093703, ses-719161530, ses-721123822",
+  "headline_stat": {
+    "name": "fraction orientation-selective (p<0.01)",
+    "value": "622/1389 = 45%",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 Allen Visual Coding Neuropixels with drifting gratings is the canonical dataset, species, region, and paradigm for orientation selectivity.",
+    "handling": "Real data streamed via LINDI with explicit good-quality and visual-area unit selection and invalid_times sweep exclusion, all correct and justified.",
+    "analysis": "gOSI/gDSI vector sums are the correct circular statistics for angular tuning, and the permutation null correctly recomputes the full statistic including preferred-TF selection.",
+    "correctness": "Every headline number (1389 units, 622 significant, 45%, median gOSI 0.20/0.30, per-area 38-48%) reproduces exactly from the committed results and is internally consistent with the figures.",
+    "figures": "Figures are clearly labeled with units and sample sizes, examples are honestly described as most-selective, and the heatmap shows the expected two 180-degree-apart tuning bands.",
+    "honesty": "Claims are proportionate to the evidence and nothing is misrepresented, but the write-up states no specific limitations of the result, holding it at 3 rather than 4.",
+    "verdict": "A canonical dataset, correct circular analysis with a proper permutation control, fully reproducing numbers, and clean figures make this an accept."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles ses-Achilles-10252013 (behavior+ecephys)",
+  "headline_stat": {
+    "name": "fraction significantly theta-locked (Rayleigh p<0.01)",
+    "value": "104/137 (76%); exc median MRL 0.109, inh 0.259, control 0.019",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Since the layer of the reference channel is unknown, absolute phase values are convention-dependent; the robust results are the prevalence, strength, and cell-type specificity of the entrainment.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000044 Achilles CA1 tetrode/LFP linear-maze session is the canonical dataset for hippocampal theta entrainment.",
+    "handling": "Real data streamed via remfile, running bouts restricted, \u226550-spike inclusion applied, and a genuine timestamp-quirk in the position series is correctly diagnosed and reconstructed.",
+    "analysis": "Proper circular statistics (MRL, Rayleigh test, preferred phase) with a random-time control that preserves spike count and the marginal phase distribution.",
+    "correctness": "Every headline number (104/137, 88/120, 16/17, median MRLs 0.109/0.259, control 0.019, MW p=5.7e-5) reproduces exactly from the committed CSV and code.",
+    "figures": "Figures are labeled with units and sample sizes and clearly show the effect; example units are ranked by MRL, which is the effect strength itself, so selection is legitimate.",
+    "honesty": "Claims are proportionate to the evidence and the write-up explicitly names the single-reference-channel and unknown-layer caveats, distinguishing robust from convention-dependent findings."
+  }
+}

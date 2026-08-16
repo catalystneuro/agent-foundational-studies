@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986",
+  "subject_session": "15 sessions from 5 mice (LA3, LA8, LA9, LA11, LA12); example sub-LA11_ses-1",
+  "headline_stat": {
+    "name": "fraction of units significantly frequency-tuned (KW p<0.01, rate>=0.5Hz)",
+    "value": 0.853,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000986 mouse auditory cortex pure-tone Neuropixels is the canonical dataset for frequency tuning, an expert choice.",
+    "handling": "Data correctly streamed and trial-aligned with a sound windowed-count scheme, but unit inclusion is only a 0.5 Hz rate floor with no spike-sorting quality criteria.",
+    "analysis": "Kruskal-Wallis across frequencies plus a Poisson GLM complement is appropriate and correct, though the ~7400-trial test is heavily overpowered and no effect-size or shuffle control tempers the tuned-fraction claim.",
+    "correctness": "Reported values (frac 0.853, bf_counts summing to 1221, median selectivity 0.41, 96% within-octave) reproduce internally, are consistent with the figures, and are physically possible.",
+    "figures": "Figures are clearly labeled with units and sample sizes and show the effect convincingly, with example curves honestly chosen by significance rather than for flattering shape.",
+    "honesty": "Claims are proportionate and examples are labeled honestly, but the write-up states no limitation, notably that the huge trial count inflates the significant-tuned fraction, so it sits at a clean-result 3 rather than 4.",
+    "verdict": "Core work is sound, the phenomenon is clearly demonstrated, and both hard-rule axes clear the bar, so this is acceptable rotation-student work."
+  }
+}

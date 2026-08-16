@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "excitatory place-cell fraction",
+    "value": "86/120 (72%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "median pseudo-R2 0.086, typical for single-bin spike prediction",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000044 Achilles CA1 linear-track session is the canonical place-cell dataset, exactly what an expert would choose.",
+    "handling": "Real remfile-streamed NWB with explicit cell-type filtering, run-bout extraction, speed thresholding, and correct occupancy normalization.",
+    "analysis": "Skaggs spatial information with a 500-shuffle circular time-shift null, per-direction rate maps, and a nemos Poisson GLM cross-check are all appropriate and correctly executed.",
+    "correctness": "Every headline number (86/120, median SI 0.53 vs 0.01, dir corr 0.22, GLM corr 0.99, pseudo-R2 0.086) reproduces exactly from the committed cache and is internally consistent.",
+    "figures": "Overview, six representative example cells, diagonal population tiling, and stats panels are all clearly labeled with units and sample sizes and show the phenomenon plainly.",
+    "honesty": "Claims are proportionate and nothing is misrepresented (inhibitory units correctly flagged as low-SI), but there is no explicit limitations section and only a light caveat, keeping a genuinely clean result at 3."
+  }
+}

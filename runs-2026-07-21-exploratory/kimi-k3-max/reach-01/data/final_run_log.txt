@@ -1,0 +1,46 @@
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/scipy/_lib/_util.py:1280: RuntimeWarning: divide by zero encountered in vecdot
+  return np.vecdot(x1, x2, axis=axis)
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/scipy/_lib/_util.py:1280: RuntimeWarning: overflow encountered in vecdot
+  return np.vecdot(x1, x2, axis=axis)
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/scipy/_lib/_util.py:1280: RuntimeWarning: invalid value encountered in vecdot
+  return np.vecdot(x1, x2, axis=axis)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/kimi-k3-max/reach-01/reach_tuning_analysis.py:513: RuntimeWarning: invalid value encountered in divide
+  R_vel = np.abs(z)/np.nansum(vt[occ_v], axis=0)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/kimi-k3-max/reach-01/reach_tuning_analysis.py:533: RuntimeWarning: Mean of empty slice
+  norm = np.nanmean(np.concatenate([rate_toward, rate_away], axis=0), axis=0, keepdims=True)
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/nemos/glm/glm.py:728: RuntimeWarning: The fit did not converge. Consider the following:
+1) Enable float64 with ``jax.config.update('jax_enable_x64', True)`` 
+2) Increase the max number of iterations or increase tolerance (if reasonable). These parameters can be specified by providing a ``solver_kwargs`` dictionary. For the available options see the ``self.solver.__init__`` docstrings.
+  warnings.warn(
+full
+┍━━━━━━━━━━━━┯━━━━━━━━━━━━━┑
+│ Keys       │ Type        │
+┝━━━━━━━━━━━━┿━━━━━━━━━━━━━┥
+│ units      │ TsGroup     │
+│ trials     │ IntervalSet │
+│ hand_vel   │ TsdFrame    │
+│ hand_pos   │ TsdFrame    │
+│ eye_pos    │ TsdFrame    │
+│ cursor_pos │ TsdFrame    │
+┕━━━━━━━━━━━━┷━━━━━━━━━━━━━┙
+2295 trials; RT median 325 ms; delay median 665 ms
+182 units: 86 M1, 96 PMd
+behavior: 6809920 samples at ~1000 Hz, session 1.93 h, peak speed 102 cm/s
+direction-tuned during movement (ANOVA p<0.01): 174/182
+direction-tuned during delay:                   129/182
+  M1: move 80/86, delay 54/86
+  PMd: move 94/96, delay 75/96
+135127 bins, 3609987 spikes placed, mean rate 2.94 sp/s
+speed slope toward PD vs away (sig units): Wilcoxon p = 4.89e-06
+rate-speed coupling: median peak lag 100 ms (n=125 coupled units; + = neural leads)
+PD from target direction vs early-reach velocity: n=151, median |dPD|=35°
+valid bins for GLM: 100702/135127
+fold 0 done
+fold 1 done
+fold 2 done
+fold 3 done
+fold 4 done
+velocity beats speed-only (all bins): 69/182
+velocity beats speed-only (movement bins): 85/182 (84/174 among direction-tuned)
+velocity+speed beats velocity (all bins): 180/182
+done. figures in figures/, summary in data/results_summary.pkl

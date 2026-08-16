@@ -1,0 +1,32 @@
+{
+  "dandiset": "000056",
+  "subject_session": "Mouse32-140820 (deep dive) + 4 more mice for replication",
+  "headline_stat": {
+    "name": "HD cells / units in main session",
+    "value": "21/42; decoding median error 10.9\u00b0",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Because the NWB file carries no epoch annotations, the open-field foraging epoch is identified automatically: long periods where the smoothed head speed exceeds 3 px/s and the trajectory spans the full arena (this rejects movement inside the small rest box).",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000056 (Peyrache ADn/PoSub) is the canonical head-direction dataset in the correct species, region, and open-field paradigm.",
+    "handling": "Real streamed data with correct LED-based HD reconstruction and invalid-sample handling, but unit inclusion is only 'has spikes' with no quality filter and epoch detection is reinvented rather than using dataset state annotations.",
+    "analysis": "MVL tuning with a proper circular time-shift shuffle null, circularly-correct split-half stability, and cross-validated Bayesian decoding against a chance baseline is exactly the right, complete method.",
+    "correctness": "Reported values reproduce from the print statements, are internally consistent with all figures, and rest on adequate samples and sound controls.",
+    "figures": "Effect is unmistakable (fig2 spike overlay, fig3 unimodal polar curves, fig6 tightly-peaked decoding error); axes labeled with units and sample sizes, examples ranked by tuning strength itself.",
+    "honesty": "Claims are proportionate to the strong, clean evidence and nothing is misrepresented, but the write-up names no specific limitations of this particular result, holding it at 3."
+  }
+}

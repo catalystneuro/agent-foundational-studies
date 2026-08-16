@@ -14,6 +14,26 @@ case "$d" in
   sonnet-5)  m=claude-sonnet-5 ;;
   haiku-4-5) m=claude-haiku-4-5 ;;
   opus-5)    m=claude-opus-5 ;;
+  deepseek-v4-flash)
+    # Non-Anthropic lane: drive Claude Code through the local proxy, which points at
+    # OpenRouter's Anthropic endpoint and pins the DeepInfra provider (fp8). The proxy
+    # must already be running (start_deepseek_proxy.sh).
+    export ANTHROPIC_BASE_URL="http://127.0.0.1:${DS_PROXY_PORT:-8788}"
+    export ANTHROPIC_AUTH_TOKEN="proxy"
+    export ANTHROPIC_API_KEY=""
+    m="deepseek/deepseek-v4-flash-0731"
+    # Claude Code cannot price this unrecognized model, so its --max-budget-usd figure is
+    # imputed at a wrong (Anthropic-scale) rate and binds far too early. Real DeepSeek spend
+    # is ~$1-2/run on OpenRouter regardless. Raise the imputed cap so it does not cut runs off.
+    budget=500 ;;
+  kimi-k3-max)
+    # Kimi K3 at max reasoning, via a second proxy instance (port 8789) that pins a bf16/fp8
+    # quantization floor and injects reasoning_effort=high (the top valid tier).
+    export ANTHROPIC_BASE_URL="http://127.0.0.1:${KIMI_PROXY_PORT:-8789}"
+    export ANTHROPIC_AUTH_TOKEN="proxy"
+    export ANTHROPIC_API_KEY=""
+    m="moonshotai/kimi-k3"
+    budget=500 ;;
   *) echo "[err ] unknown model dir $d" >&2; exit 2 ;;
 esac
 
@@ -36,7 +56,7 @@ echo "[run ] $d/$topic-$rep $(date -Iseconds)" >> parallel.log
     --dangerously-skip-permissions \
     --append-system-prompt "$(cat ../SYSTEM_ADDENDUM.md)" \
     --output-format stream-json --verbose \
-    --max-budget-usd 25 \
+    --max-budget-usd "${budget:-25}" \
     > transcript.jsonl 2> stderr.log )
 
 if complete "$t"; then

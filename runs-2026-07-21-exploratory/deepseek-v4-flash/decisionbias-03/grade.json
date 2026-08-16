@@ -1,0 +1,33 @@
+{
+  "dandiset": "000017",
+  "subject_session": "none \u2014 39-session manifest fetched, no session analyzed",
+  "headline_stat": {
+    "name": "none",
+    "value": "none",
+    "reproduces_from_code": false,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 2,
+    "handling": 1,
+    "analysis": 0,
+    "correctness": 0,
+    "figures": 0,
+    "honesty": 2
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Identified DANDI 000017 (Steinmetz 2019), a mouse decision task, but this is the unbiased 2AFC contrast task and the agent itself found no biased-block structure, making it a marginal fit for the decision-bias phenomenon.",
+    "handling": "Only a metadata-inspection script using correct remfile streaming was written; no trial alignment, epoching, or unit preparation for any actual analysis was performed.",
+    "analysis": "No analysis of decision bias was performed at all; the run stopped after listing session schemas.",
+    "correctness": "No numbers were produced, so there is nothing that reproduces or is internally consistent.",
+    "figures": "No figures were generated.",
+    "honesty": "No write-up and no claims were made, so nothing is misrepresented, but there is also no calibrated result to assess.",
+    "verdict": "The run is incomplete with no result, figures, or write-up, and would be sent back to start over."
+  }
+}

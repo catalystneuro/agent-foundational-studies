@@ -1,0 +1,27 @@
+====================================================================================================
+f791a116-1e6c-4d6a-a9eb-fe3644737be2 sub-c6e8125f
+unit columns: ['amp_max', 'amp_median', 'amp_min', 'amp_std_dB', 'amps.npy', 'brainLocationAcronyms_ccf_2017.npy', 'brainLocationIds_ccf_2017.npy', 'cluster_id', 'contamination', 'contamination_alt', 'depths.npy', 'drift', 'electrodes', 'electrodes_index', 'firing_rate', 'id', 'ks2_label', 'label', 'missed_spikes_est', 'mlapdv.npy', 'noise_cutoff', 'peakToTrough.npy', 'presence_ratio', 'presence_ratio_std', 'slidingRP_viol', 'spike_count', 'spike_times', 'spike_times_index', 'waveform_mean', 'waveformsChannels.npy']
+n units: 388
+  VISa5        73
+  PO           69
+  LP           51
+  CA1          50
+  VISa4        25
+  DG-po        24
+  DG-sg        24
+  VISa6a       24
+  VISa2/3      20
+  DG-mo        9
+  VISa6b       8
+  VPLpc        5
+  VPM          2
+  ml           2
+  TH           1
+  alv          1
+total spikes: 5025800 spike time range: nan nan
+acquisition datasets:
+Traceback (most recent call last):
+  File "/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/deepseek-v4-flash/entrainment-03/scan_regions.py", line 47, in <module>
+    print("LFP dataset:", k, "shape", dset.shape, dset.dtype)
+                                      ^^^^^^^^^^
+AttributeError: 'LindiH5pyGroup' object has no attribute 'shape'

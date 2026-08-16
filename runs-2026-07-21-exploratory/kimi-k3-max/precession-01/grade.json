@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "fraction of place cells with negative (precessing) circular-linear slope",
+    "value": "72/87 (binomial p=4.3e-10); 67/87 significant; median slope -1.10 cyc/m",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000044 Achilles CA1 linear-track session is the canonical dataset for theta phase precession in place cells.",
+    "handling": "Real streamed NWB data with correct maze-epoch alignment, excitatory-unit and peak-rate filtering, speed/direction splitting, and phase-invariant LFP conversion.",
+    "analysis": "Kempter circular-linear regression with a shuffle null that correctly maximizes over the same slope grid, plus a binomial population test and circular statistics throughout.",
+    "correctness": "Every headline number (67/87 significant, 72/87 negative, p=4.3e-10, median -1.10 cyc/m, R 0.325 vs 0.236) reproduces exactly from the committed results file and is internally consistent.",
+    "figures": "Place-field tiling, theta extraction, and the pooled descending wedge clearly show the phenomenon with labeled units and sample sizes; two example panels have near-flat slopes but are honestly labeled and ranked by the correct R criterion.",
+    "honesty": "Claims are proportionate and all numbers are supported and reproduce, with examples honestly labeled and single-pass noise shown, but no specific limitation (single session, shallow-slope cases) is named."
+  }
+}

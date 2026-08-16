@@ -1,0 +1,32 @@
+{
+  "dandiset": "000128",
+  "subject_session": "sub-Jenkins, ses-full (desc-train, behavior+ecephys)",
+  "headline_stat": {
+    "name": "units significantly direction-tuned during movement (ANOVA p<0.01)",
+    "value": "174/182",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "DANDI:000128 contains this single session for subject Jenkins (plus a spikes-only test split without behavior), so cross-session replication is not possible within the dandiset; population statistics across the 182 simultaneously recorded units provide the robustness here.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "MC_Maze (000128) M1/PMd delayed reaching in macaque Jenkins is the canonical dataset for reach direction/velocity tuning and appears on the known-good list.",
+    "handling": "Real data streamed via remfile, trials aligned to move onset, epochs and 50 ms binning correct, and the mm-vs-meter unit discrepancy in the NWB attributes is caught and corrected.",
+    "analysis": "Georgopoulos ANOVA/circular-PD/cosine fit, direction-conditioned speed tuning, lag cross-correlation, and a blocked-CV Poisson GLM with proper nested model comparisons are all appropriate and use circular statistics where required.",
+    "correctness": "Every headline number reproduces exactly from the committed final_run_log.txt, values are internally consistent with the figures and physically possible, with only a minor unflagged GLM non-convergence warning that does not change CV-stable conclusions.",
+    "figures": "Six clear figures with units, sample sizes, and effect visible (toward/away speed separation, cosine tuning, PD stability), with example units selected by effect strength rather than an unrelated criterion.",
+    "honesty": "Claims are proportionate, the modest median encoding r=0.36 is reported rather than the flattering example, and a specific real limitation (single session) is stated, though the near-flat toward-PD speed curve is described as an increase and GLM non-convergence goes unmentioned."
+  }
+}

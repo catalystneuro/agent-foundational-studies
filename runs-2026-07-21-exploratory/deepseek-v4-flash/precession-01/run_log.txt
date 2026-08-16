@@ -1,0 +1,26 @@
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynapple/io/interface_nwb.py:133: UserWarning: Some starts and ends are equal. Removing 1 microsecond!
+  data = nap.IntervalSet(df)
+Streaming NWB from S3 blob ...
+NWB loaded
+total units: 137
+excitatory: 120, inhibitory: 17
+n position samples: 80762 | dt median: 0.02560 s
+linearized range: 0.00 - 1.60 m | valid fraction: 0.128
+MazeEpoch: 18079.5 - 20147.0 s
+LFP dataset: (43576379, 128)
+theta/delta ratio per channel (top 5):
+  ch 117: 4.30
+  ch 50: 4.05
+  ch 63: 3.99
+  ch 116: 3.93
+  ch 105: 3.80
+selected theta channel: 117
+theta samples: 2584374 | range (uV): -3237.4 .. 4758.8
+run bouts: 86 | +dir: 44 | -dir: 42
+total run time: 245.2 s (11.9% of maze epoch)
+median bout duration: 2.36 s | median speed: 0.68 m/s
+Traceback (most recent call last):
+  File "/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/deepseek-v4-flash/precession-01/precession_analysis.py", line 265, in <module>
+    ax.plot(b["t"], b["v"], lw=1.0, color=c)
+                    ~^^^^^
+KeyError: 'v'

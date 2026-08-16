@@ -1,0 +1,32 @@
+{
+  "dandiset": "000986",
+  "subject_session": "5 mice (LA3, LA8, LA9, LA11, LA12), all 15 sessions; prototype sub-LA3_ses-3",
+  "headline_stat": {
+    "name": "% units significantly frequency tuned (Kruskal-Wallis p<0.01)",
+    "value": "77% (1100/1426)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000986 is the canonical Jaramillo pure-tone Neuropixels auditory-cortex dataset, an ideal choice for frequency tuning.",
+    "handling": "Real data streamed via remfile+h5py+pynapple, spikes correctly aligned to tone onsets with explicit >=0.5 Hz rate filtering and sensible response/baseline windows.",
+    "analysis": "Kruskal-Wallis across the five frequencies is an appropriate non-parametric tuning test (frequency is ordinal, not circular), complemented by a smooth Poisson GLM that confirms the PSTH estimates.",
+    "correctness": "Every headline number (1426 units, 1100 tuned/77%, 562 at 8-16 kHz, latency median 11 ms IQR 3-18, 87% width<=1 octave, 128 suppressed) reproduces exactly from all_units.csv and is internally consistent with the figures.",
+    "figures": "PSTHs, GLM fits, the tonotopic heatmap diagonal, and population panels all clearly show the effect with labeled axes, units, and sample sizes.",
+    "honesty": "Claims are proportionate to a genuinely clean, reproducible result and nothing is misrepresented, but the write-up states no specific limitation (single passive dataset, no multiple-comparison correction), keeping it at 3."
+  }
+}

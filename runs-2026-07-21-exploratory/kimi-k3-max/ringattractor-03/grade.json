@@ -1,0 +1,33 @@
+{
+  "dandiset": "000056",
+  "subject_session": "Mouse28-140310 (prototype) + 4 others (Mouse17-130128, Mouse20-130514, Mouse24-131213, Mouse25-140123)",
+  "headline_stat": {
+    "name": "wake-REM correlation-of-correlations (prototype)",
+    "value": 0.926,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000056 (Peyrache ADn) is the canonical head-direction ring-attractor dataset, exactly appropriate for the phenomenon.",
+    "handling": "Real NWB files streamed via remfile, HD computed from dual LEDs with -1 sentinels masked, states and wake-restricted unit selection all handled correctly.",
+    "analysis": "MVL with an occupancy-matched resampling null, Bayesian decoding, circular angular-speed with a time-bin-shuffle control, and label-permutation corr-of-corr nulls are all correct circular methods.",
+    "correctness": "Every headline number reproduces from run.log, but the README states the HD-cell yield inconsistently as both 52/147 and 53/147 (code sums to 53/148), a minor benign inconsistency.",
+    "figures": "Figures show all HD cells (not flattering subsets), clear wake tracking, preserved correlation matrices, and a full five-session replication panel; only a cosmetic colorbar-label overlap in fig5.",
+    "honesty": "Claims are proportionate and the weakest session (NREM r=0.47, p=0.045) is reported in the range rather than hidden, but there is no explicit limitations section for an otherwise clean result.",
+    "verdict": "A correct, thorough, reproducible five-session replication of the head-direction ring attractor that I would accept and move on from."
+  }
+}

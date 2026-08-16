@@ -1,0 +1,32 @@
+{
+  "dandiset": "000582",
+  "subject_session": "117 sessions across 15 rats (e.g. sub-11265/ses-16030604 for demo figures); 615 units",
+  "headline_stat": {
+    "name": "significant grid cells (shuffle p<0.05); median grid score",
+    "value": "189 of 615 units; median gs 0.93 (max 1.44)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "the NWB position metadata says \"meters\" but the values are centimeters (the 1.5 m box spans +/-75); the analysis treats them as cm.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000582 (Sargolini/Moser MEC) is the canonical grid-cell dataset, exactly what an expert would choose.",
+    "handling": "Real data streamed via remfile, running-epoch and speed filtering, correct cm handling, 200-spike minimum, and layer/tetrode annotations all applied explicitly.",
+    "analysis": "Standard opexebo grid-score + spatial-autocorrelation pipeline with a proper circular time-shift shuffle null, but the 226 candidate p-values carry no multiple-comparisons correction (harmless here given the massive separation, so not decisive).",
+    "correctness": "Every headline number (189 significant, median gs 0.93/max 1.44, spacing 58 cm IQR 47-70, layer fractions 41/44/17/21%) reproduces exactly from grid_scores.csv and is internally consistent and physically plausible.",
+    "figures": "Autocorrelations show unambiguous hexagonal structure, axes are labeled with units, sample sizes are given, and examples are ranked by grid score (the effect measure itself), not an unrelated criterion.",
+    "honesty": "Claims are proportionate and figures support them; examples are genuinely the strongest grid cells, and one real data caveat (cm vs meters) is stated, but the write-up presents a genuinely clean result without naming the missing multiple-comparisons caveat, keeping it at 3."
+  }
+}

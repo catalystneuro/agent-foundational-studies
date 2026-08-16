@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "POST-sleep significant replay fraction (vs PRE at chance)",
+    "value": "9.5% (README) / 9.2% committed",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000044 Achilles CA1 linear-track session is the canonical Buzs\u00e1ki dataset for place cells, sharp-wave ripples, and replay.",
+    "handling": "Real 8.7 GB NWB streamed via remfile, correct LFP uV conversion, Non-REM state masking, run-bout linearization, and explicit excitatory/place-cell filtering.",
+    "analysis": "Standard pipeline: Skaggs SI circular-shift shuffle for place cells, Bayesian ripple decoding, weighted time-position correlation with a 500x cell-ID shuffle null, and binomial/Fisher/Mann-Whitney PRE-vs-POST tests.",
+    "correctness": "Numbers reproduce to within a single event, but the README headline (36/9.5%, binom 2.2e-04, 28 forward) does not exactly match the committed replay.npz (35/9.2%, 4.5e-04, 27 forward).",
+    "figures": "Figures are clearly labeled with units and sample sizes and show the effect plainly: diagonal place-field template, sharp-wave-ripple triggered average, and clean posterior trajectory sweeps.",
+    "honesty": "Claims are proportionate, the modest 9.5% individually-significant fraction and forward/reverse split are reported honestly with PRE pinned at chance, but no specific limitations (single session) are named."
+  }
+}

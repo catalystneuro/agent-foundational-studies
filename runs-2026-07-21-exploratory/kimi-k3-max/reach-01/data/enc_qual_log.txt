@@ -1,0 +1,12 @@
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/nemos/glm/glm.py:728: RuntimeWarning: The fit did not converge. Consider the following:
+1) Enable float64 with ``jax.config.update('jax_enable_x64', True)`` 
+2) Increase the max number of iterations or increase tolerance (if reasonable). These parameters can be specified by providing a ``solver_kwargs`` dictionary. For the available options see the ``self.solver.__init__`` docstrings.
+  warnings.warn(
+fold 0 done
+fold 1 done
+fold 2 done
+fold 3 done
+fold 4 done
+median encoding r (movement bins): 0.364
+median encoding r (all bins): 0.302
+saved glm_stats.pkl with encoding quality

@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "place cells (excitatory units passing shuffle test)",
+    "value": "83/120 (69%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000044 Achilles CA1 linear-track session is the canonical place-cell dataset, correct species, region, and paradigm.",
+    "handling": "Real data streamed via remfile, restricted to MazeEpoch with a >5 cm/s run mask, explicit cell-type and spike-count filtering, and correct spike-to-position alignment.",
+    "analysis": "Skaggs spatial information with a proper 200-iteration circular time-shift null, per-unit 95th-percentile significance, direction-split maps, and a Poisson B-spline GLM cross-check.",
+    "correctness": "All headline numbers (83/120, median SI 0.936 vs 0.012, median direction r=0.27) reproduce from the committed output, are internally consistent across figures, and are physically possible.",
+    "figures": "Figures clearly show the effect with labeled units and sample sizes, and example cells are chosen to tile the track by spatial-information strength rather than a flattering criterion.",
+    "honesty": "Claims are proportionate to a genuinely clean, strong result with nothing misrepresented, but the write-up states no specific limitation (single session, edge-of-track fields), capping it at 3.",
+    "verdict": "A correct, well-controlled, and cleanly presented demonstration of hippocampal place cells that I would accept as-is."
+  }
+}

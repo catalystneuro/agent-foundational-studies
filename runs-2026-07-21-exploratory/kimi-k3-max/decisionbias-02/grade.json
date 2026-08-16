@@ -1,0 +1,33 @@
+{
+  "dandiset": "000149",
+  "subject_session": "All four sessions: assets 31f22c47, 81169999, e7fa5ae0, f791a116 (591/794/303/388 good units)",
+  "headline_stat": {
+    "name": "pre-stimulus choice balanced accuracy per session (vs 0.50 null); Stouffer combined p",
+    "value": "0.52/0.60/0.53/0.59; p=1.1e-08",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Trial counts are smaller (~60-120 per session), so power is limited, but the pattern should mirror the all-trials result.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000149 (IBL ephys with 0.8/0.5/0.2 block priors) is the canonical dataset for block-driven decision bias, exactly the right choice.",
+    "handling": "Real data streamed via LINDI and cached, good-unit filtering applied, and the block-shifted psychometric curves independently confirm correct choice/contrast coding and alignment.",
+    "analysis": "Appropriate logistic-regression decoding with proper permutation and stratified within-block/previous-choice nulls, time-course, and single-unit ROC; only the per-region analysis lacks multiple-comparison correction.",
+    "correctness": "Reported per-session accuracies reproduce from committed benchmark_results.npy, are internally consistent with the figures, and rest on fixed-seed deterministic permutation statistics.",
+    "figures": "All figures are labeled with units, sample sizes, and null distributions, and example units are selected by AUC (the single-unit effect strength) rather than a spurious criterion.",
+    "honesty": "The write-up is carefully calibrated: it reports one session as non-significant, only the best session at 0% contrast, separates a block-level bias state from trial-resolution information present in only two sessions, and flags the within-block null as conservative.",
+    "verdict": "Thorough, appropriately controlled, and honestly caveated work that an expert would accept and build on."
+  }
+}

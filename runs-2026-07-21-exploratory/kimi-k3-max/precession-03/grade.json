@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "sig. negative phase-position cell-directions",
+    "value": "80 of 120 (median signed r = -0.32)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Dandiset 000044 Achilles CA1 tetrode recordings on a 1.6 m linear track is the canonical dataset for hippocampal theta phase precession.",
+    "handling": "Real data streamed via remfile, correct maze epoch, excitatory-cell filtering, direction-specific run-bout detection, and a theta LFP channel with a verified 9.2 Hz peak are all handled correctly.",
+    "analysis": "Uses the Kempter circular-linear correlation with a phase-permutation null, direction-oriented field-progress coordinate, grid-search regression for sign/slope, an SI time-shift shuffle for place-cell selection, and a per-traversal control ruling out pooling artifacts.",
+    "correctness": "Every headline number (120 cell-directions, 80 neg / 5 pos, median r -0.32, median slope -0.52, 2075 traversals, 81% negative) reproduces exactly from precession_results.json and is internally consistent with the figures.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show the diagonal precession band in pooled and single-cell views, and example cells are ranked by correlation strength (the effect itself), not by slope.",
+    "honesty": "The write-up is proportionate and reports both directions of the effect including the 5 positive cases, but it states no explicit limitations (single session, theta-channel choice), which caps it at 3 for a genuinely clean result.",
+    "verdict": "A rigorous, reproducible, honest demonstration of phase precession that any PI would accept and move on from."
+  }
+}

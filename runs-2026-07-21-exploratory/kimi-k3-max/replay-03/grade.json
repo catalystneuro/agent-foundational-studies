@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "POST-sleep SWRs with significant trajectory (vs PRE), Fisher p",
+    "value": "41/211 (19.4%) POST vs 29/637 (4.6%) PRE, p=3.2e-10",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Both forward and reverse trajectories occur (23 vs 18 of the significant POST events; not significantly biased in this session).",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000044 Achilles CA1 linear-track sleep/maze/sleep is the canonical hippocampal replay dataset.",
+    "handling": "Real NWB streamed via remfile; excitatory units, explicit place-cell criteria, ripples restricted to Non-REM, correct alignment.",
+    "analysis": "Standard Bayesian decoding with posterior-weighted time-position correlation, per-event cell-ID shuffle null, and a PRE control calibrating the false-positive rate.",
+    "correctness": "Deterministic seeded pipeline; reported 41/211 vs 29/637 and Fisher/MW p-values trace to code, are internally consistent, and PRE's 4.6% confirms the 5% calibration.",
+    "figures": "Place fields tile the track, ripple detection and peri-SWR co-activation are clear, and decoded forward/reverse examples (correctly ranked by trajectory score) plus population panels show the effect with units and n.",
+    "honesty": "Claims are proportionate with good calibration language and a stated forward/reverse balance, but there is no explicit limitations section on this clean single-session result.",
+    "verdict": "A strong, reproducible, well-controlled replay demonstration I would accept from a rotation student."
+  }
+}

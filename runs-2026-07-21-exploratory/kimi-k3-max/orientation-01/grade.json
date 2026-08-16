@@ -1,0 +1,32 @@
+{
+  "dandiset": "000021",
+  "subject_session": "sessions 715093703, 719161530, 721123822 (pooled, 1389 units)",
+  "headline_stat": {
+    "name": "fraction orientation-selective (permutation p<0.01)",
+    "value": "65% (904/1389)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Allen Visual Coding Neuropixels (000021) with drifting/static gratings in VISp and higher visual areas is the canonical dataset for orientation selectivity.",
+    "handling": "Real data streamed via LINDI across three sessions with explicit good-quality unit filtering and structure mapping through the electrodes table, and correct per-sweep rate computation.",
+    "analysis": "Vector-based gOSI/gDSI are the correct circular statistics, backed by a proper direction-label shuffle permutation null and an independent static-grating replication.",
+    "correctness": "Every headline number reproduces exactly from the committed metrics CSV, is internally consistent with the figures, and rests on adequate sample sizes and permutation-based significance.",
+    "figures": "Figures clearly show the effect with labeled axes, units, and sample sizes, and example units span the full selectivity range including honestly-shown flat units.",
+    "honesty": "Claims are proportionate to a genuinely clean, well-supported result and nothing is misrepresented, but the write-up names no specific limitations (single stimulus paradigm, passive viewing, three sessions)."
+  }
+}
