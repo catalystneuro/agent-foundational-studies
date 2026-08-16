@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986",
+  "subject_session": "sub-LA3_ses-3 (prototype) + all 15 sessions (5 mice); population pooled",
+  "headline_stat": {
+    "name": "% units significantly frequency-tuned (ANOVA p<0.01)",
+    "value": "85.6% (1339/1564)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "By construction the value at 0 octaves is 1.0 for every unit (that is where its own maximum is), so the curve's peak is not itself informative; what demonstrates genuine band-pass frequency tuning is the systematic, roughly symmetric fall-off in response at +/-1 and +/-2 octaves from BF.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000986 is the canonical pure-tone auditory-cortex Neuropixels dataset, exactly right for frequency tuning.",
+    "handling": "Real data streamed and correctly aligned with sensible evoked/baseline windows, but no spike-sorting quality criteria are applied to unit selection.",
+    "analysis": "One-way ANOVA across the five frequency groups is appropriate and correct, though no multiple-comparison correction across units is discussed (the effect is far above chance so the conclusion holds).",
+    "correctness": "Numbers reproduce deterministically and are internally consistent (85.6% of 1564 = 1339 tuned units matches fig5B; the 82% in fig5A is the distinct mean-of-session-fractions).",
+    "figures": "Figures show the effect clearly with labeled axes, units, and sample sizes; examples are selected by significance and the population BF-aligned curve is honestly annotated.",
+    "honesty": "Nothing is misrepresented and the fig5C construction caveat is sophisticated, but the write-up names no result-specific limitations (unit quality, passive single-amplitude paradigm) on an otherwise clean result.",
+    "verdict": "Canonical dataset, correct pipeline, reproducible and internally consistent numbers, clear figures, and no overstatement: an accept with minor optional revisions."
+  }
+}

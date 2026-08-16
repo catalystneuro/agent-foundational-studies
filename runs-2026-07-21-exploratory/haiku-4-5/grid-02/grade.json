@@ -1,0 +1,33 @@
+{
+  "dandiset": "000582",
+  "subject_session": "sub-11084 / ses-28020501",
+  "headline_stat": {
+    "name": "spatial information (bits/spike, max unit)",
+    "value": 2.28,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 2,
+    "analysis": 1,
+    "correctness": 2,
+    "figures": 1,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": false,
+  "stated_limitation": "A complete grid cell analysis would involve: (1) quantifying grid periodicity via spectral analysis, (2) measuring grid spacing and orientation, (3) correlating these properties across simultaneously recorded populations, and (4) examining how grid properties change across behavioral states or during learning.",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000582 (Sargolini MEC) is the canonical grid-cell dataset in the correct species, region, and open-field paradigm.",
+    "handling": "Real data is loaded and interpolated correctly, but occupancy is speed-filtered while spike counts are not, and no unit-quality criteria are applied.",
+    "analysis": "The defining grid-cell analysis is absent: no gridness/6-fold-symmetry quantification is computed from the autocorrelograms, and spatial information alone does not test for grid periodicity.",
+    "correctness": "The reported spatial-information values reproduce from the code and are physically plausible, but the 3-point r=0.92 correlation is meaningless and no grid metric anchors the headline claim.",
+    "figures": "The autocorrelograms show only a central peak with no hexagonal ring, directly contradicting the panel title 'Grid cells show 6-fold symmetry,' so the figures do not show the claimed phenomenon.",
+    "honesty": "The write-up states the autocorrelogram 'reveals the hexagonal periodic structure characteristic of true grid cells,' a positive finding the figures do not support at all, which caps this axis.",
+    "verdict": "Grid periodicity is claimed but neither quantified nor visible in the figures, so the central conclusion is unsupported and the run must be rejected."
+  }
+}

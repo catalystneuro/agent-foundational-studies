@@ -1,0 +1,32 @@
+{
+  "dandiset": "000021",
+  "subject_session": "sub-699733573/ses-715093703",
+  "headline_stat": {
+    "name": "Mean OSI (100 units)",
+    "value": 0.072,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 2,
+    "analysis": 2,
+    "correctness": 2,
+    "figures": 3,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The relatively low mean OSI likely reflects inclusion of both orientation-selective and -nonselective neurons in the recorded population",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000021 Allen Visual Coding Neuropixels with drifting gratings is the canonical dataset and paradigm for orientation selectivity.",
+    "handling": "Data streamed and spike-counted correctly, but the analysis takes the first 100 units by index with no region or quality filter while claiming V1, a real preparation weakness that drives the near-null result.",
+    "analysis": "Vector-sum OSI with the correct 2-theta folding is an appropriate circular statistic, but no shuffle/permutation null or significance test is provided though significance is claimed.",
+    "correctness": "The 0.072 headline reproduces and is consistent with the figures, but the committed notebook conclusion states a contradictory mean of ~0.5 and no statistics support the claims.",
+    "figures": "Figures are readable and labeled, example units are chosen by OSI extremes (the effect strength), though polar radial axes lack rate units and the effect they show is very weak.",
+    "honesty": "The committed conclusions assert a mean OSI of ~0.5 and 'widespread'/'significant' orientation selectivity that the actual output (0.07) and figures do not support, a fabricated quantitative claim that caps this axis."
+  }
+}

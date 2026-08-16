@@ -1,0 +1,5 @@
+session,subject,maze,track_m,theta_channel,n_units,n_traversals,run_time_s,n_fields,n_precessing
+Achilles-10252013,Achilles,1.6mLinearMazeLinearizedPosition,1.6,118,137,81,167,58,39
+Gatsby-08022013,Gatsby,1.6mLinearMazeLinearizedPosition,1.59,66,80,74,186,14,10
+Buddy-06272013,Buddy,1.6mLinearMazeLinearizedPosition,1.6,80,68,56,119,8,4
+Cicero-09012014,Cicero,1.6mLinearMazeLinearizedPosition,1.6,20,73,70,241,13,9

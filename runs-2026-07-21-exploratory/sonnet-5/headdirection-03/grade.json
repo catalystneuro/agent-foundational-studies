@@ -1,0 +1,33 @@
+{
+  "dandiset": "000056",
+  "subject_session": "sub-Mouse24 / ses-Mouse24-131213",
+  "headline_stat": {
+    "name": "median absolute circular decoding error",
+    "value": 48,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 3,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Using only this small ensemble, Bayesian population decoding (`pynapple.decode_bayes`) reconstructed the animal's held-out heading with a median absolute circular error of about 48 degrees, versus the roughly 90 degrees expected by chance",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000056 is the canonical Peyrache ADn/PoS head-direction dataset in freely foraging mice, exactly the standard choice for this phenomenon.",
+    "handling": "Data streamed from S3 with remfile, head direction correctly computed as the LED-to-LED vector angle, untracked (-1,-1) frames dropped, and analysis restricted to the longest awake foraging epoch.",
+    "analysis": "Circular statistics (Rayleigh vector), split-half reliability, and held-out Bayesian decoding are all appropriate and correct, but no shuffle/Rayleigh-significance null is provided for the tuning claim, relying instead on hard thresholds.",
+    "correctness": "The median 48 deg vs 90 deg chance reproduces from the code and matches the figure and is internally consistent, though the decoding ensemble is only 3 cells and no confidence interval is reported.",
+    "figures": "The polar tuning grid, criterion scatter, and decoding panels clearly show the effect with the HD cells highlighted, but the polar radial axes lack firing-rate units (cosmetic).",
+    "honesty": "Claims are proportionate to the clean, strong result and it flags the small ensemble, though there is no dedicated limitations discussion of the low HD-cell yield or single session.",
+    "verdict": "A clean, reproducible demonstration of head-direction cells with correct methods and honest reporting that a rotation student could hand in with only minor additions requested."
+  }
+}

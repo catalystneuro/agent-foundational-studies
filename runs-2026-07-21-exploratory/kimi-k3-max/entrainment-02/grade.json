@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "population mean resultant length R",
+    "value": 0.143,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "One caveat: the NWB electrodes table does not annotate which LFP channel sits in the pyramidal layer, so absolute phase values are relative to the data-driven reference channel and the phase convention above; only differences between units are layer-independent.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Dandiset 000044 Achilles linear-maze CA1 is the canonical dataset for hippocampal theta entrainment.",
+    "handling": "Real NWB streamed via remfile, LFP read by channel slice, run bouts derived from speed, and units filtered to >=100 run-bout spikes with cell-type metadata, all correct.",
+    "analysis": "Mean resultant length, preferred phase, Rayleigh test, and a spike-preserving circular-shift null are the right circular-statistics toolkit and are applied correctly.",
+    "correctness": "Every reported number (median R, significant counts, pop mean R vs null) reproduces exactly from the committed CSV and is internally consistent with the figures.",
+    "figures": "Figures show the effect clearly with labeled axes, units, and sample sizes, and example units are selected by R rather than a flattering criterion.",
+    "honesty": "Claims are proportionate to a genuinely strong result and the write-up names a specific, real limitation about layer-relative absolute phase."
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 490273,
+  "duration_api_ms": 374408,
+  "num_turns": 40,
+  "result": "Done. Demonstrated orientation selectivity using **DANDI:000021** (Allen Institute Visual Coding Neuropixels), session `sub-707296975/ses-721123822`, streamed via `remfile` with disk caching.\n\n**Pipeline** (`orientation_selectivity.py`, also as `.ipynb`): for each of 197 quality V1+HVA units, I computed firing rate during each 2-s drifting-grating presentation with `pynapple.TsGroup.count(ep=…)`, built per-unit tuning curves over the 8 directions, and quantified selectivity with the standard circular-statistics OSI/DSI on raw rates plus a one-way ANOVA across orientations.\n\n**Key result:** 82 of 197 visual-cortex units (41.6%) are significantly orientation-tuned (ANOVA p<0.01, OSI>0.2). The most selective V1 unit (id 950908404, OSI=0.77, DSI=0.07) shows ~20 Hz sustained responses at preferred (225°) and collinear-opposite (45°) directions but near-zero evoked response at the orthogonal direction — a textbook orientation-tuned, non-direction-selective V1 cell. OSI exceeds DSI population-wide (consistent with the literature), and preferred directions tile the full 360°.\n\n**Outputs** in the working directory: `orientation_selectivity.py`, `orientation_selectivity.ipynb`, `README.md`, `unit_summary.csv`, and `fig01`–`fig05` PNGs (raster, polar tuning examples, best-unit PSTH, population summary, tuning heatmap).",
+  "stop_reason": "end_turn",
+  "session_id": "ff30c55d-5288-435d-843b-a9a35cae67cd",
+  "total_cost_usd": 2.43461775,
+  "usage": {
+    "input_tokens": 98,
+    "cache_creation_input_tokens": 96777,
+    "cache_read_input_tokens": 2311171,
+    "output_tokens": 26922,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 96777,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 553,
+        "cache_read_input_tokens": 89046,
+        "cache_creation_input_tokens": 500,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 500
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 556,
+      "outputTokens": 16,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.000636,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-opus-4-7": {
+      "inputTokens": 98,
+      "outputTokens": 26922,
+      "cacheReadInputTokens": 2311171,
+      "cacheCreationInputTokens": 96777,
+      "webSearchRequests": 0,
+      "costUSD": 2.43398175,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "2fa5b728-80ca-40da-b533-cdf1efb5bb68"
+}

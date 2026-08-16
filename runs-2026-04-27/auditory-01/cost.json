@@ -1,0 +1,69 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 892044,
+  "duration_api_ms": 290244,
+  "num_turns": 33,
+  "result": "Done. Auditory frequency tuning analysis is complete using DANDI:000986 (mouse auditory cortex Neuropixels + 5-frequency pure-tone passive listening, McCormick lab).\n\n**Key result:** 119/235 single units in one session were significantly frequency-modulated (one-way ANOVA p<0.01), with best frequencies spanning 2–32 kHz (peaking at 8 kHz). The BF-aligned mean tuning curve shows the canonical V-shape: response drops to ~50% of BF within one octave on either side.\n\n**Deliverables in `auditory-01/`:**\n- `auditory_frequency_tuning.py` — end-to-end jupytext analysis script\n- `auditory_frequency_tuning.ipynb` — Jupyter notebook version\n- `fig01`–`fig06` (PNG) — raster, population PSTH by frequency, example tuning curves, summary plots, tonotopic heatmap, BF-aligned mean tuning\n- `tuning_summary.csv` — per-unit baseline, ANOVA p, BF, FSI, per-frequency rates\n- `README.md` — dataset, pipeline, key findings",
+  "stop_reason": "end_turn",
+  "session_id": "64c25b0e-f2a1-4f29-acbc-55eb37ecd53a",
+  "total_cost_usd": 2.18271125,
+  "usage": {
+    "input_tokens": 86,
+    "cache_creation_input_tokens": 129237,
+    "cache_read_input_tokens": 1887138,
+    "output_tokens": 17153,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 129237,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 395,
+        "cache_read_input_tokens": 91614,
+        "cache_creation_input_tokens": 480,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 480
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 746,
+      "outputTokens": 282,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.002156,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-opus-4-7": {
+      "inputTokens": 86,
+      "outputTokens": 17153,
+      "cacheReadInputTokens": 1887138,
+      "cacheCreationInputTokens": 129237,
+      "webSearchRequests": 0,
+      "costUSD": 2.18055525,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "73b19cd1-a256-4320-ba41-9c3a588fd18a"
+}

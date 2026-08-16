@@ -1,0 +1,33 @@
+{
+  "dandiset": "000039",
+  "subject_session": "10 sessions pooled; prototype sub-673647168/ses-698273664",
+  "headline_stat": {
+    "name": "fraction significantly direction-tuned (Kruskal-Wallis p<0.05)",
+    "value": "58%",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 3,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "genuine (if imperfect, given the small sample of neurons per session) tiling of direction space by the population, with any systematic asymmetry likely reflecting sampling of nearby, functionally similar neurons within a session",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Allen drifting-grating calcium imaging of mouse V1 is a standard, fully appropriate preparation for orientation/direction selectivity.",
+    "handling": "Data are correctly streamed and aligned and results come out clean, but ROIs are used without any quality/responsiveness filtering and the epoch-as-frame-index interpretation is asserted rather than justified.",
+    "analysis": "Vector OSI/DSI with doubled angles plus a Kruskal-Wallis tuning test are appropriate, but a shuffle/bootstrap null for OSI and multiple-comparison correction are absent though not strictly required given 58% >> chance.",
+    "correctness": "Reported counts reproduce and are internally consistent (66 significant + 48 not = 114), with the only soft spot being OSI values inflated by near-zero baselines in a few cells, which does not flip the population conclusion.",
+    "figures": "The effect is visible and axes are labeled, but the first example cell is noisy and marginal (p=0.028, tiny dF/F) and the polar panels are somewhat hard to read.",
+    "honesty": "Claims are proportionate to and supported by the figures with nothing misrepresented, but the write-up lacks an explicit limitations section beyond a single in-code caveat, which keeps it at proportionate-but-generic rather than fully calibrated.",
+    "verdict": "The core work is sound and believable but I would ask for ROI quality filtering, multiple-comparison correction, and an OSI null before fully accepting it."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dandiset": "000021",
+  "subject_session": "6 sessions: 715093703, 750749662, 755434585, 757970808, 763673393, 799864342 (LGd/VISp/HVA)",
+  "headline_stat": {
+    "name": "median gOSI LGd->VISp",
+    "value": "0.091 -> 0.252 (Mann-Whitney one-sided p=3.8e-43)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "One caveat worth stating plainly is that LGd is not perfectly untuned. A substantial minority of LGd units reach significance, and the GLM's direction term helps there too; the thalamus in this dataset carries a weak orientation bias, and the LGd-to-VISp difference is one of degree, though a large one.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 (Allen Visual Coding Neuropixels) with simultaneous LGd/VISp/HVA recordings is the canonical dataset for demonstrating orientation selectivity in mouse visual cortex.",
+    "handling": "Real data streamed from S3 with explicit Allen default QC criteria, non-overlapping response windows asserted, and correct trial/TF alignment.",
+    "analysis": "Uses proper circular statistics, a permutation null that redoes preferred-TF selection inside each shuffle, cross-validated GLM and decoder, and an independent static-grating cross-check.",
+    "correctness": "Reported values reproduce from committed code, are internally consistent with the CSVs and figures, and rest on sound cross-validated and permutation-based statistics with large n.",
+    "figures": "Figures are well-labeled with units and sample sizes and clearly show the LGd-to-VISp emergence of tuning, the two-stimulus preference agreement, and the 180-degree decoder confusion signature.",
+    "honesty": "Claims are proportionate and the write-up prominently names the specific LGd caveat and honestly explains the significant-but-tiny LGd p-value, with only a minor overstatement in one control-panel title.",
+    "verdict": "This is publication-quality autonomous work I would accept and build on with no required fixes."
+  }
+}

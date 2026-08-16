@@ -1,0 +1,33 @@
+{
+  "dandiset": "000128",
+  "subject_session": "sub-Jenkins, ses-full (MC_Maze train, behavior+ecephys)",
+  "headline_stat": {
+    "name": "direction-tuned units (permutation p<0.01)",
+    "value": "170/182 (94%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000128 MC_Maze (Jenkins, M1/PMd center-out reaching) is the canonical known-good dataset for reach direction and velocity tuning.",
+    "handling": "Real NWB streamed via remfile, trials/units/1kHz kinematics aligned correctly, reach direction computed thoughtfully from movement onset to peak speed on curated sorted units.",
+    "analysis": "Standard and correct: cosine fit with 1000-shuffle permutation null, two-fold cross-validated population-vector decoding, lagged velocity regression, Fisher-Lee circular correlation, and train/test Poisson GLMs.",
+    "correctness": "All reported values (170/182, 27.9deg error, 40.7% sector accuracy, +75ms lag, circular r=0.61, GLM 0.008->0.015) reproduce from the committed run log, are internally consistent, and rest on adequate sample sizes.",
+    "figures": "Figures are well-labeled with units and sample sizes, clearly show cosine tuning, decoding along the diagonal, lead-time lag, PD agreement, and GLM improvement, with example units honestly labeled as best-tuned.",
+    "honesty": "Claims are proportionate and low absolute R2 values are reported plainly, but the write-up gives no dedicated limitations section (single session, modest velocity/GLM R2), a minor fault on an otherwise clean result.",
+    "verdict": "A comprehensive, reproducible, correctly-controlled demonstration that I would accept from a rotation student and build on."
+  }
+}

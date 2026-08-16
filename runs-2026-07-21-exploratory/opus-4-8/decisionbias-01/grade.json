@@ -1,0 +1,32 @@
+{
+  "dandiset": "000409",
+  "subject_session": "5 sessions: sub-CSH-ZAD-001/011/019/022/025 (example ses-3e7ae7c0-fe8b-487c-9354-036236fa1010)",
+  "headline_stat": {
+    "name": "pre-stimulus block-decoding AUC vs drift-aware circular-shift null",
+    "value": "AUC 0.73-0.83, null ~0.74, across-session paired one-sided p=0.062; choice p=0.028",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "with the caveat that quantifying it honestly requires controlling for slow drift, which accounts for a large share of raw pre-stimulus decoding.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "The IBL Brain Wide Map (DANDI 000409) with its block-prior structure is the canonical dataset for a decision-bias phenomenon, and five sessions with well-populated good-unit counts were used.",
+    "handling": "Real data was streamed via remfile, good units filtered by kilosort2_label, and the pre-stimulus window is strictly [-0.4,0)s; the wheel-choice mapping is uncertain but is empirically validated by the correct monotonic psychometric curve in fig1.",
+    "analysis": "Cross-validated logistic-regression decoding with a drift-aware circular-shift null that preserves block autocorrelation is exactly the right control for the slow-drift confound that plagues block decoding.",
+    "correctness": "Every headline number reproduces exactly from the cached results, values are internally consistent and physically possible, and the small-n population statistics are reported honestly as a trend.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show the effect and its controls, and the across-session panels honestly mark only the one significant session with an asterisk.",
+    "honesty": "The write-up is calibrated to a fault: it foregrounds the drift confound, states the null is itself ~0.74, reports the block effect as only a positive trend (p~0.06) rather than clean significance, and names the specific limitation verbatim."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "dandiset": "000021",
+  "subject_session": "8 sessions, prototype 715093703 (Allen Visual Coding Neuropixels)",
+  "headline_stat": {
+    "name": "V1 median noise-corrected gOSI (n=288)",
+    "value": 0.219,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Firing rates were averaged over the whole presentation, so the analysis measures mean rate and ignores the F1 component that distinguishes simple from complex cells. Running speed and pupil size modulate gain throughout the mouse visual system; because stimulus conditions are randomly interleaved this adds variance rather than apparent orientation tuning, but it was not regressed out. Area assignments come from the Allen CCF registration stored in the NWB electrode table and are taken at face value, so units near a boundary may be mislabelled.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 (Allen Visual Coding Neuropixels), drifting and static gratings in VISp and higher visual areas, is the canonical dataset for orientation selectivity.",
+    "handling": "Real data streamed from S3 with explicit Allen QC cutoffs, a responsiveness filter, and careful unit-to-area alignment guarded by assertions and a pynapple cross-check.",
+    "analysis": "Circular-variance gOSI/gDSI with a 500-shuffle null, split-half reliability, an independent static-grating test, and a cross-validated Poisson GLM comparison with a shuffled-label false-positive control.",
+    "correctness": "Every headline number (V1 gOSI 0.219, null 0.038, 94% significant, split-half 2.9\u00b0, cross-stim 11.4\u00b0, GLM 97% vs 11% shuffled, V1-vs-LGd MWU ~1e-30) reproduces exactly from the committed CSV and is internally consistent.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show textbook bimodal tuning, and honestly present example units as the '12 most orientation-selective' rather than typical alongside full population distributions.",
+    "honesty": "Claims are proportionate, direction selectivity is reported as weak, LGd tuning is nuanced rather than overstated, and an explicit Caveats section names the specific limitations of the result."
+  }
+}

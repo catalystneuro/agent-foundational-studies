@@ -1,0 +1,33 @@
+{
+  "dandiset": "000021",
+  "subject_session": "sub-707296975 / ses-721123822",
+  "headline_stat": {
+    "name": "significantly tuned visual-cortex units (ANOVA p<0.01)",
+    "value": "455/622 (73%), median gOSI 0.21",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000021 (Allen Visual Coding Neuropixels, drifting gratings, visual cortex) is the canonical dataset an expert would choose for orientation selectivity.",
+    "handling": "Real data streamed via remfile, quality=='good' and VIS-area unit filtering, blank sweeps excluded, correct per-trial firing rates and trial alignment.",
+    "analysis": "gOSI uses the correct double-angle circular measure and ANOVA establishes per-unit tuning, but a shuffle/null distribution for gOSI itself that would strengthen the population claim is absent.",
+    "correctness": "All headline numbers reproduce exactly from the committed CSV and are physically plausible, but the text (n=455) and fig04 (n=401) present two unreconciled denominators.",
+    "figures": "Figures are clearly labeled with units and sample sizes, the example is chosen by gOSI (the actual effect strength) and confirmed representative by its raster, and the population matrix shows the double-peaked orientation signature.",
+    "honesty": "Claims are proportionate to the evidence and nothing is misrepresented, but no result-specific limitations (single session, temporal-frequency pooling) are stated, so it sits at 3.",
+    "verdict": "Orientation selectivity is clearly and correctly demonstrated on the canonical dataset with reproducible numbers, so the result is believable as-is."
+  }
+}

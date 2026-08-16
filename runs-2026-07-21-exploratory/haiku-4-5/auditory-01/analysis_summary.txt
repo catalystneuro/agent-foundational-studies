@@ -1,0 +1,48 @@
+AUDITORY FREQUENCY TUNING ANALYSIS - COMPLETED
+================================================
+
+Dataset Source: DANDI Archive dandiset 000986
+Publication: Papadopoulos et al. (2025) in Neuron
+Data: Mouse primary auditory cortex (A1) recordings using Neuropixels probes
+
+Session analyzed: LA11, Session 2
+- 132 single units recorded
+- 7,448 stimulus trials
+- 5 frequency levels: 2, 4, 8, 16, 32 kHz
+
+KEY FINDINGS:
+- 77% of units responsive to auditory stimuli (mean firing > 1 Hz)
+- Preferred frequencies distributed across population with skew toward lower frequencies
+- 37.6% of units prefer 2 kHz, 25.7% prefer 8 kHz
+- Moderate frequency selectivity (Q10 ~0.49 on average)
+- Population tuning curve peaks at 8 kHz with broad tuning across frequency range
+
+OUTPUTS GENERATED:
+1. analyze_frequency_tuning.py (16K)
+   - Jupytext-formatted Python script with markdown cells
+   - Reproducible end-to-end analysis pipeline
+   - Streaming data access from DANDI via remfile
+
+2. analyze_frequency_tuning.ipynb (22K)
+   - Jupyter notebook version (18 cells: 10 markdown, 8 code)
+   - Ready for interactive exploration
+
+3. frequency_tuning_properties.png (201K)
+   - Distribution of preferred frequencies
+   - Response magnitude vs preferred frequency
+   - Tuning breadth (Q10) vs preferred frequency
+   - Population frequency tuning curve with error bands
+   - Heatmap of top 20 responsive units
+
+4. individual_tuning_curves.png (263K)
+   - 4x4 grid of representative unit tuning curves
+   - Shows diversity of tuning shapes and preferred frequencies
+   - Clear visualization of individual unit frequency selectivity
+
+5. README.md (4.2K)
+   - Complete documentation of dataset, methods, and findings
+   - Citation information for original data
+   - Instructions for reproduction
+
+All analysis code is fully reproducible and uses only open-source, standard
+neurophysiology Python packages (pynapple, pynwb, remfile, matplotlib, scipy).

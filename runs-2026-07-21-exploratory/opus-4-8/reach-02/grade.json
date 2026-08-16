@@ -1,0 +1,33 @@
+{
+  "dandiset": "000128",
+  "subject_session": "sub-Jenkins, ses-full (desc-train), sub-Jenkins_ses-full_desc-train_behavior+ecephys.nwb",
+  "headline_stat": {
+    "name": "Population-vector reach-direction decoding, median absolute error",
+    "value": "17 degrees (chance 90)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "One caveat about the file: the units table maps every unit onto electrode rows 0 through 95, all of which carry the label PMd, even though the electrode table describes 96 M1 and 96 PMd contacts. That mapping cannot be used to separate the two areas, so all units are treated together as motor cortex.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "MC_Maze (000128, monkey Jenkins) is the canonical primate reach dataset with the standard species, motor-cortical region, and delayed-reach paradigm.",
+    "handling": "Real data streamed via remfile with correct mm->cm unit conversion, obs-interval time support, trial alignment, and explicit handling of inter-trial gaps in the lag and decoding pipelines.",
+    "analysis": "Circular-aware cosine fitting with a shuffle permutation null, Rayleigh and Jammalamadaka circular correlation, cross-validated nested Poisson GLM, and a split-half control that removes the double-dipping concern in the speed-by-direction split.",
+    "correctness": "All headline values reproduce from the committed code, are internally consistent with the figures, physically possible, and rest on cross-validated and permutation-based statistics over 182 units and 2295 trials.",
+    "figures": "Every figure shows the effect clearly with labeled axes, units, and sample sizes; example units are chosen by effect strength and any selection criterion is disclosed.",
+    "honesty": "Claims are proportionate to the evidence, specific limitations are named, the double-dipping risk is explicitly controlled for, and null results (uniform PDs, uncorrelated delay/movement PD) are reported plainly.",
+    "verdict": "A thorough, correctly analyzed, and candidly written result on the right dataset that I would take and move on from."
+  }
+}

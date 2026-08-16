@@ -1,0 +1,20 @@
+[skip] placefields-01 already has a completed transcript
+[skip] placefields-02 already has a completed transcript
+[skip] placefields-03 already has a completed transcript
+[skip] orientation-01 already has a completed transcript
+[skip] orientation-02 already has a completed transcript
+[skip] orientation-03 already has a completed transcript
+[skip] auditory-01 already has a completed transcript
+[skip] auditory-02 already has a completed transcript
+[skip] auditory-03 already has a completed transcript
+[skip] reach-01 already has a completed transcript
+[skip] reach-02 already has a completed transcript
+[skip] reach-03 already has a completed transcript
+[run ] theta-01 starting at 2026-07-21T14:18:56-04:00
+[done] theta-01 status=incomplete rc=0 wall=1913s cost=NA
+[run ] theta-02 starting at 2026-07-21T14:50:49-04:00
+[done] theta-02 status=ok rc=0 wall=1303s cost=3.6942286
+[run ] theta-03 starting at 2026-07-21T15:12:32-04:00
+[done] theta-03 status=ok rc=0 wall=1242s cost=3.2000436000000008
+
+All requested runs done. Log: /Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/sonnet-5/run_log.tsv

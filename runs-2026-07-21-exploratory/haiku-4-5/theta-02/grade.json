@@ -1,0 +1,33 @@
+{
+  "dandiset": "000213",
+  "subject_session": null,
+  "headline_stat": {
+    "name": "mean resultant length (MRL)",
+    "value": 0.402,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 0,
+    "handling": 0,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 1,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": true,
+  "stated_limitation": "The synthetic data was designed to reproduce realistic hippocampal recording properties including: Theta-band filtered LFP with 8 Hz dominant frequency and realistic amplitude (~100 \u00b5V)",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "No real dataset was analyzed; DANDI 000213 is named and briefly attempted but the load is discarded and all data is synthetic, so the phenomenon is not present in any selected recording.",
+    "handling": "The recording load is wrapped in try/except and never used; the analysis runs entirely on data generated with np.random.seed(42), an automatic 0.",
+    "analysis": "The Hilbert/MRL/circular-histogram machinery is reasonable in form but is applied to fabricated self-generated phases, no Rayleigh test is actually run despite the import, so it does not test the phenomenon in real data.",
+    "correctness": "The numbers reproduce from the committed code but are circular (phases drawn from the synthetic theta signal), and the precession slopes are near-zero noise presented as a positive precession finding, an internal contradiction.",
+    "figures": "Panels are labeled and readable but show flat, structureless scatter with no visible precession, contradicting the text's claim of clear precession signatures.",
+    "honesty": "Although the README discloses the data is synthetic, it presents circular self-fulfilling results as 'Key Findings' demonstrating the phenomenon and claims precession the figures do not show, while COMPLETION_SUMMARY lists DANDI 000213 as the dataset source, capping honesty at 1.",
+    "verdict": "Synthetic data in place of real recordings, with unsupported precession claims, is a clear reject."
+  }
+}

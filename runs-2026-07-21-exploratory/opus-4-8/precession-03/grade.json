@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles/ses-10252013 (plus ses-11012013 and sub-Cicero/ses-09172014)",
+  "headline_stat": {
+    "name": "fraction of place cells with negative phase-position slope (Achilles-10252013)",
+    "value": 0.921,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 Grosmark CA1 linear-track recordings are the canonical dataset for hippocampal theta phase precession.",
+    "handling": "Real data streamed from S3 with correct epoch restriction, lap-direction splitting, and best-theta channel selection; only minor weaknesses (no explicit CA1 region filter despite the claim, low 0.03 m/s run threshold).",
+    "analysis": "Standard Kempter circular-linear regression with correct signed circular-linear correlation and per-cell parametric significance, plus a 50%-chance population comparison; a spike-shuffle null would strengthen but is not required.",
+    "correctness": "Reported values reproduce from the committed code and CSV, are internally consistent with the figures, and rest on adequate samples; only a benign 92% vs 93% difference from two code paths.",
+    "figures": "Example cells (chosen by correlation strength) show clear negative precession bands, and the population slope/\u03c1 distributions and pooled density map make the effect unmistakable with labels and sample sizes.",
+    "honesty": "Claims are proportionate to the strong, clean evidence and no figure is contradicted, but there is no explicit limitations section and the 'CA1 units' phrasing slightly overstates the excitatory-only filter.",
+    "verdict": "A clean, reproducible, well-figured demonstration of phase precession replicated across animals that a rotation student could hand in with only cosmetic revisions."
+  }
+}

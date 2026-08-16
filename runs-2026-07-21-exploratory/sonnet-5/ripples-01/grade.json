@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "8 sessions (Achilles, Buddy, Cicero, Gatsby); e.g. Achilles-10252013",
+  "headline_stat": {
+    "name": "fraction of POST-sleep ripples with significant rank-order replay (per session)",
+    "value": "0.049-0.112 (POST mean ~0.074, PRE mean ~0.064)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 3,
+    "honesty": 2
+  },
+  "verdict": "The run found the right dataset and built a sound, reproducible pipeline that clearly demonstrates ripples, but it was truncated before any write-up, the replay half of the task comes back at chance and is undemonstrated, so the deliverable is incomplete and its conclusion unsupported.",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "000044 (Grosmark & Buzs\u00e1ki CA1) is the canonical dataset for both ripples and replay, an expert-standard choice.",
+    "handling": "Real data streamed via LINDI with correct epoch extraction, ripple-power channel selection, and linearized-position place fields on excitatory units, though quality filtering is light and an unsorted-timestamps warning is left uninvestigated.",
+    "analysis": "Ripple detection and rank-order replay testing with a proper per-event shuffle null are appropriate, but the first-spike rank method is underpowered and no population-level significance test against chance is done.",
+    "correctness": "Reported per-session fractions reproduce from the committed code, are internally consistent, and are physically possible, though the run never computed a final pooled statistic.",
+    "figures": "The example ripple and place-field figures clearly show ripples and a clean spatial template with labeled units, but there is no figure for the replay result and the plots are scratch/validation rather than a finalized suite.",
+    "honesty": "No write-up exists, so nothing is overstated or fabricated, but there is also no stated result, calibration, or limitation to assess."
+  }
+}

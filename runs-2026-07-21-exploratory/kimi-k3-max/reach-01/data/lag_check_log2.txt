@@ -1,0 +1,9 @@
+valid bins: 70867/135127
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/nemos/glm/glm.py:728: RuntimeWarning: The fit did not converge. Consider the following:
+1) Enable float64 with ``jax.config.update('jax_enable_x64', True)`` 
+2) Increase the max number of iterations or increase tolerance (if reasonable). These parameters can be specified by providing a ``solver_kwargs`` dictionary. For the available options see the ``self.solver.__init__`` docstrings.
+  warnings.warn(
+fit done
+peak at window edge: 95/182 (91/174 tuned)
+peak lag percentiles (tuned): [-600. -600. -150.  200.  350.]
+saved figures/fig08_lag_window_check.png

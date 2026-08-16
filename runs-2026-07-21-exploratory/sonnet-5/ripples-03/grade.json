@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Buddy / ses-Buddy-06272013",
+  "headline_stat": {
+    "name": "population-level replay permutation p (rank-order correlation)",
+    "value": 0.92,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 3,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Sequential replay within individual ripple events, tested with a rank-order correlation and a rigorous per-event and population-level shuffle control, did not reach significance in this single 40-minute session with ~34 place cells. This is an honest negative result at the single-event level: published significant single-event replay detection typically uses substantially larger simultaneously-recorded ensembles (in the hundreds of cells) and/or pools across many more ripples/sessions than are available here.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000044 (Grosmark & Buzsaki dorsal CA1, PRE/MAZE/POST) is the canonical dataset for sharp-wave ripples and replay.",
+    "handling": "Data streamed from S3 with correct int16-to-volts conversion, NREM/state filtering, excitatory-unit selection, and a well-justified re-linearization validated against the sparse official one.",
+    "analysis": "Standard ripple detection, place fields, Bayesian decoding, and a shuffle-controlled rank-order replay test with both per-event and population nulls, complemented by EV/REV reactivation with its accepted reverse control.",
+    "correctness": "Every reported number (488 ripples, 34 place cells, 3.2% significant, global p=0.92, EV=0.029 vs REV=0.001) is internally consistent, reproduces from the committed code, and is physically possible.",
+    "figures": "Ripple, place-field, significance, and reactivation panels are clear and labeled, but fig3 selects the four highest-|wcorr| events as illustrative examples against a null result, which is flattering though disclosed.",
+    "honesty": "The write-up reports the negative single-event replay result plainly, explains the underpowering, hedges the weak reactivation as merely directional, and names specific limitations.",
+    "verdict": "Robust ripple detection, an honestly reported null replay result, and a cautiously stated reactivation effect make this work I would accept from a rotation student."
+  }
+}

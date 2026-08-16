@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Buddy, 2013-06-27",
+  "headline_stat": {
+    "name": "place cells identified (SI>0.5 bits/spike)",
+    "value": "4 of 68 (5.9%)",
+    "reproduces_from_code": true,
+    "physically_possible": false
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 1,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 2,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDISET 000044 (Grosmark & Buzsaki CA1, Buddy 2013-06-27) is a canonical place-cell dataset with a linear-maze paradigm, an expert-standard choice.",
+    "handling": "Real data was streamed correctly, but the position time base is broken: a reconstructed 0.03 Hz rate and a 3.55-million-second (41-day) session duration corrupt occupancy and the firing-rate/SI normalization.",
+    "analysis": "Spatial information is a reasonable metric, but it is computed on a corrupted time base, SI is silently clamped to zero, and no shuffle or null distribution is used to establish that any cell exceeds chance.",
+    "correctness": "The place-cell count reproduces from code, but the supporting quantities are physically impossible (a 41-day session, ~290,000 s occupancy in a single 1 cm bin), which caps this axis.",
+    "figures": "Axes are labeled and readable, but figure 1 displays impossible occupancy values and figure 3's four 'place cells' all peak at the same low-occupancy location, so the figures do not convincingly show genuine place fields.",
+    "honesty": "The write-up states no limitations, presents an impossible occupancy map as 'typical behavior,' and describes clustered artifactual fields as 'clear localization,' presenting a broken result as clean.",
+    "verdict": "The core time-base error makes the reported quantities physically impossible and the place fields artifactual, and the write-up presents this as a clean finding, so the run must be rejected."
+  }
+}

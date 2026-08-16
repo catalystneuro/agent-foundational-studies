@@ -1,0 +1,32 @@
+{
+  "dandiset": "000021",
+  "subject_session": "sub-699733573/ses-715093703 (+5 more sessions)",
+  "headline_stat": {
+    "name": "median gOSI among responsive units (vs shuffled null)",
+    "value": "0.239 vs 0.066",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Firing rates are computed over the whole presentation without baseline subtraction, so units with a purely transient onset response are under-weighted. Running speed modulates visual cortical gain in mice and is not regressed out; because running bouts are not locked to grating direction this adds trial to trial variance rather than creating apparent orientation tuning, but it does depress the measured selectivity of some units. The permutation test on gOSI establishes that a unit's response depends on the stimulus, not specifically that orientation rather than direction is the relevant variable, which is why the opposite-versus-orthogonal comparison and the drifting-versus-static cross-check are reported alongside it.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 Allen Visual Coding Neuropixels is the canonical dataset for orientation selectivity in mouse visual cortex, with the standard drifting/static grating paradigm.",
+    "handling": "Real data streamed via remfile with explicit multi-criterion QC (quality=good, SNR, ISI violations, presence ratio, amplitude cutoff, firing rate), correct area filtering, pynapple trial-rate counts, and per-unit preferred-TF selection.",
+    "analysis": "Uses proper circular statistics (vector-strength gOSI/gDSI), a 500-shuffle permutation null, split-half reliability, cross-stimulus transfer, a cross-validated cyclic-B-spline Poisson GLM, and a Rayleigh test on the fourth harmonic.",
+    "correctness": "Headline values (median gOSI 0.239 vs null 0.066, aligned-population orthogonal 0.17 / opposite 0.68) reproduce from the committed CSVs and match the figures, and are internally consistent with per-area statistics.",
+    "figures": "Figures show the effect clearly with labeled units and sample sizes; example units span the full selectivity range (gOSI 0.97 down to 0.04) and a negative-control GLM fit is included, so examples are representative not flattering.",
+    "honesty": "Claims are proportionate to strong evidence and the write-up names specific, real limitations (no baseline subtraction, running-speed gain unregressed, what the permutation test does and does not establish)."
+  }
+}

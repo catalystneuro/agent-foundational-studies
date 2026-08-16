@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles_10252013 (main); Achilles_11012013, Cicero_09102014, Gatsby_08282013 as intended replications",
+  "headline_stat": {
+    "name": "POST significant-replay fraction vs calibrated control (main session)",
+    "value": "8.2% vs 4.9%, binomial p=1.7e-8",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Replay is a minority of events, which is expected: short bursts with few active cells carry too little information to score, and the detection rate rises steeply with the number of participating cells",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 Grosmark & Buzs\u00e1ki dorsal-CA1 recordings are the canonical dataset for hippocampal replay and place-cell sequences.",
+    "handling": "Real NWB files streamed with remfile, excitatory units, NREM-restricted ripple detection, and lap/epoch alignment are all correct and explicitly justified.",
+    "analysis": "Standard Bayesian decoding scored by weighted correlation against two shuffle nulls plus a template-permutation calibration control that lands at the nominal 5%, which is a rigorous and appropriate design.",
+    "correctness": "Main-session numbers reproduce from the committed pipeline and are consistent with the figures, with only a minor README-vs-figure discrepancy (5.4 vs 5.6 cm) and pooled cross-session statistics left as unfilled placeholders.",
+    "figures": "Figures are readable with units and sample sizes, decoding validation is convincing, and the example events are ranked by the effect strength (|weighted correlation|) itself rather than an unrelated criterion.",
+    "honesty": "The headline single-session result is proportionate, calibrated against an empirical control, and caveated as a minority effect, but the write-up overstates completeness by describing a four-session pooled replication whose figure/CSV are absent and whose stats paragraph still contains literal template placeholders."
+  }
+}

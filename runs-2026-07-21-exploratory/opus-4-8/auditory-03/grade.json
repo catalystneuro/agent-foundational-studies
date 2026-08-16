@@ -1,0 +1,32 @@
+{
+  "dandiset": "000986",
+  "subject_session": "all 15 sessions, 5 mice (LA3/LA8/LA9/LA11/LA12); GLM/example figs use sub-LA11_ses-1",
+  "headline_stat": {
+    "name": "fraction frequency-tuned (ANOVA p<0.01)",
+    "value": "79% (1239/1564 units)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Two limitations follow from the stimulus set. The five tones are spaced a full octave apart, so tuning bandwidth is barely resolved: a half-width could be measured for only 774 of the 1,564 units, with a median of 1.1 octaves, and for the rest the curve had not fallen to half its peak by the neighbouring tone. All tones were played at a single level (60 dB SPL), so this is one slice through the frequency response area rather than the area itself, and level-dependent effects cannot be seen.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000986 is a known-good, standard choice for auditory frequency tuning: mouse auditory cortex Neuropixels during passive pure-tone presentation.",
+    "handling": "Real data streamed from DANDI S3 via remfile, trial-aligned with matched reordering of onsets/freq, response window taken from the measured population latency, all 15 sessions across 5 mice.",
+    "analysis": "Per-unit ANOVA and Wilcoxon tests, split-half cross-validated BF (avoiding selection bias), cross-validated Poisson naive-Bayes decoding, and a NeMoS GLM with interleaved-block CV comparing frequency-specific vs frequency-blind models.",
+    "correctness": "Every reported quantity reproduces exactly from the committed npz files and figures, and the numbers are internally consistent and statistically sound.",
+    "figures": "Figures are clearly labeled with units and sample sizes, example units are genuinely representative strong tuners, and cross-validated versions are shown throughout.",
+    "honesty": "Claims are proportionate; the write-up names the octave-spacing and single-level limitations, notes the GLM pseudo-R2 is small either way, explains why split-half CV is needed, and documents a rejected dataset with a negative control."
+  }
+}

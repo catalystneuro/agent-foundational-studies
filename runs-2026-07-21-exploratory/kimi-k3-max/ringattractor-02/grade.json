@@ -1,0 +1,32 @@
+{
+  "dandiset": "000056",
+  "subject_session": "Mouse17/20/24/25/28 (5 sessions, one per mouse); decoding on Mouse28-140310",
+  "headline_stat": {
+    "name": "pooled wake-sleep correlation-of-correlations (REM/NREM)",
+    "value": "r=0.92 / 0.90 over 313 pairs",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Because wake is fragmented into short epochs with nearly constant HD, a circular time-shift shuffle is not a valid null here; we instead redraw each unit's spike count of angles uniformly from the valid wake HD samples (random-time null)",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000056 (Peyrache ADn/PoSub) is the canonical head-direction dataset with scored sleep states, ideal for demonstrating ring-attractor maintenance.",
+    "handling": "Real data streamed via remfile with disk cache, LED sentinels masked, spike times sorted, Awake/REM/Non-REM epochs split from the states table, and HD-cell inclusion criteria explicit.",
+    "analysis": "Correct circular statistics (MVL with a random-time resampling null), a label-permutation null for structure preservation, a time-bin-shuffle decode control, and a cross-check against pynapple's Bayesian decoder.",
+    "correctness": "Reported values (r=0.92/0.90, per-session 0.88/0.78, 15 deg wake error, drift speeds) are internally consistent with the figures, physically possible, and traceable to the committed code that ran to exit 0.",
+    "figures": "All ten figures are labeled with units, show the effect clearly (bump-tracking raster, circulant correlation matrices, ring profile, sleep decode heatmaps), and use all HD cells rather than cherry-picked examples.",
+    "honesty": "Claims are proportionate and no result is overstated, but there is no dedicated limitations section naming this result's specific caveats (single decode session, threshold choice), so it sits at 3 rather than 4."
+  }
+}

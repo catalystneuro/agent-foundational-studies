@@ -1,0 +1,32 @@
+{
+  "dandiset": "000056",
+  "subject_session": "Mouse12-120807 (committed results); Mouse28-140313 named as example but no example pkl/figures produced",
+  "headline_stat": {
+    "name": "REM internal-ring alignment R vs wake PDs (committed session, shuffle 0.29)",
+    "value": 0.75,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 4,
+    "correctness": 2,
+    "figures": 0,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The units table in these NWB files carries no anatomical label, so the HD cells analysed here are pooled across anterodorsal thalamus and post-subiculum rather than separated by region. The ring structure reported is that of the combined population.",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000056 (Peyrache ADn/PoS) is the canonical head-direction dataset and the exact substrate for the ring-attractor-during-sleep result, an ideal choice.",
+    "handling": "Data are really streamed from DANDI S3 via remfile with correct epoch/state handling and explicit shuffle-null HD-cell selection, though head direction is reconstructed from LEDs and the LED front/back resolution is only partially verifiable.",
+    "analysis": "The methodological battery is expert-level: circular statistics, unsupervised manifold ring coordinate, and split-half/cell-identity permutation nulls, all appropriate for testing a continuous ring attractor.",
+    "correctness": "Committed values reproduce and are physically possible, but the write-up's 'all four predictions hold in every session' is internally contradicted by the one committed session, where SWS split-half (0.29) falls below its shuffle null (0.35).",
+    "figures": "No figures exist on disk and the notebook contains no embedded outputs or images, so a reader cannot see the phenomenon at all.",
+    "honesty": "The conclusion asserts a positive result across 'eight sessions from six mice' with 'all four predictions hold in every session,' but only one session is committed and its non-REM split-half fails, a quantitative claim unsupported by the committed output."
+  }
+}

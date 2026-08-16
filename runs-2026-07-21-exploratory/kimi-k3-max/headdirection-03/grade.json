@@ -1,0 +1,32 @@
+{
+  "dandiset": "000056",
+  "subject_session": "Mouse17-130128 (prototype) + 9 sessions across 5 mice (Mouse17/20/24/25/28)",
+  "headline_stat": {
+    "name": "wake-sleep correlation-of-correlations (pooled)",
+    "value": "r_REM=0.91, r_NREM=0.92",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "significant for both sleep states in seven of them (permutation p < 0.05; the two exceptions were the sessions with the fewest HD cells)",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000056 (Peyrache ADn/PoS) is the canonical head-direction dataset in the exact species, regions, and paradigm expected.",
+    "handling": "Real NWB files streamed via remfile, HD recovered from dual LEDs with -1 sentinel exclusion, rate and spike-count filters explicit and correct alignment; only minor wart is linear interpolation of a circular variable.",
+    "analysis": "Circular statistics (MVL) with an occupancy-preserving null, effect-size floor, and the paper's correlation-of-correlations with a cell-label permutation null are all present and correct.",
+    "correctness": "Every headline number reproduces from the committed code and CSV, is internally consistent with the figures, and rests on sound statistics with adequate samples.",
+    "figures": "Figures are clearly labeled with units and sample sizes and show the effect plainly; example tuning curves are ranked by MVL, the actual effect-strength criterion.",
+    "honesty": "Claims are proportionate: the write-up explicitly reports the two non-significant sessions and ties them to the fewest HD cells, and reports the mild non-uniformity honestly rather than overstating."
+  }
+}

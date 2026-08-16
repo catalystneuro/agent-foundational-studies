@@ -1,0 +1,16 @@
+path,subject,n_units,n_responsive,n_tuned
+sub-LA11/sub-LA11_ses-1_behavior.nwb,LA11,235,218,170
+sub-LA11/sub-LA11_ses-2_behavior.nwb,LA11,132,130,86
+sub-LA11/sub-LA11_ses-3_behavior.nwb,LA11,107,100,78
+sub-LA11/sub-LA11_ses-4_behavior.nwb,LA11,73,65,49
+sub-LA12/sub-LA12_ses-1_behavior.nwb,LA12,131,127,112
+sub-LA12/sub-LA12_ses-2_behavior.nwb,LA12,134,127,128
+sub-LA12/sub-LA12_ses-3_behavior.nwb,LA12,115,107,90
+sub-LA12/sub-LA12_ses-4_behavior.nwb,LA12,50,46,32
+sub-LA3/sub-LA3_ses-3_behavior.nwb,LA3,35,35,16
+sub-LA8/sub-LA8_ses-1_behavior.nwb,LA8,192,185,150
+sub-LA8/sub-LA8_ses-2_behavior.nwb,LA8,159,150,115
+sub-LA9/sub-LA9_ses-1_behavior.nwb,LA9,86,81,61
+sub-LA9/sub-LA9_ses-3_behavior.nwb,LA9,30,30,20
+sub-LA9/sub-LA9_ses-4_behavior.nwb,LA9,47,46,30
+sub-LA9/sub-LA9_ses-5_behavior.nwb,LA9,38,37,23

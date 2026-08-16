@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles/ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "fraction of place cells with significant negative precession slope",
+    "value": "54/65 (83%), median -0.66 cyc/field",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Dandiset 000044 (Grosmark & Buzsaki CA1, sub-Achilles) is the canonical dataset for hippocampal theta phase precession.",
+    "handling": "Real data streamed via remfile; NaN gaps in the linearized channel were correctly diagnosed and position rebuilt from raw 2D tracking with direction-split running epochs and excitatory-only unit selection.",
+    "analysis": "Circular-linear regression with a position-shuffled null distribution is the standard, correct method with the required control for circular data.",
+    "correctness": "The 54/65 (83%) significant-negative count and median -0.66 cyc/field reproduce from the committed code and are internally consistent with fig07.",
+    "figures": "Effect is clearly visible, examples are selected by fit strength (smallest p / highest R), and panels carry units and sample sizes.",
+    "honesty": "Claims are proportionate with no overstatement or cherry-picking, but the write-up states no explicit limitation, capping a genuinely clean result at 3."
+  }
+}

@@ -1,0 +1,8 @@
+units analysed: 2859 (8 sessions, 8 mice)
+visual cortex: 1777 units, 910 responsive, 671 orientation-selective (37.8%)
+thalamus:      570 units, 186 responsive, 67 orientation-selective (11.8%)
+CA1 control:   370 units, 25 responsive, 5 orientation-selective (1.4%)
+median gOSI (responsive): cortex 0.224, thalamus 0.080, CA1 0.060
+cortex > thalamus gOSI, Mann-Whitney U p = 1.78e-40
+cortex selective units: split-half |d pref ori| median 4.7 deg (chance 45)
+cortex selective units: drifting vs static |d pref ori| median 9.7 deg

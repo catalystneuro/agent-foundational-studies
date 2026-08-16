@@ -1,0 +1,32 @@
+{
+  "dandiset": "000128",
+  "subject_session": "sub-Jenkins, ses-full_desc-train (2009-09-25)",
+  "headline_stat": {
+    "name": "directionally tuned units (permutation p<0.01)",
+    "value": "154/182 (85%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The analysis covers a single session from a single animal, so the population-level numbers describe this recording rather than the species. The M1 versus PMd labels rest on reconstructing the unit-to-electrode mapping by hand... The ridge penalty for the velocity decoder is picked from a four-point grid by the same held-out folds that the reported R\u00b2 = 0.53 comes from, so that figure carries a little selection optimism... The GLM design matrices are standardised using the mean and standard deviation of the whole session rather than of each training fold, which leaks feature scaling (not the spike counts) across the split. The Georgopoulos population vector is computed with preferred directions fitted on the same trials it is then evaluated on, so its 15\u00b0 median error is an in-sample number.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000128 MC_Maze, monkey Jenkins M1/PMd during maze reaching, is a canonical dataset for reach direction and velocity tuning.",
+    "handling": "Real data streamed via remfile, kinematics unit-converted, trials aligned to movement onset within observed intervals, explicit inclusion criteria, and an honestly documented M1/PMd electrode-mapping reconstruction.",
+    "analysis": "Cosine tuning with a 1000-fold permutation null, circular statistics used consistently, speed-tercile split, lagged continuous velocity regression, contiguous-block cross-validated Poisson GLMs, and a ridge decoder plus population-vector comparison.",
+    "correctness": "Every headline value reproduces exactly from the committed logs and is internally consistent with the figures, with only a trivial 150-vs-153 slip in one notebook sentence that does not affect any conclusion.",
+    "figures": "Figures make the direction and velocity effects immediately visible with labeled units, arrows, sample sizes, and example units chosen by the relevant effect strength rather than by fitted slope.",
+    "honesty": "Claims are proportionate to the evidence, the linear-velocity GLM's failure is reported rather than hidden, and the caveats section names the specific weaknesses of this exact result."
+  }
+}

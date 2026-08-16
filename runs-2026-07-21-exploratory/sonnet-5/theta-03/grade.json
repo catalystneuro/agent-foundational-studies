@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "significant negative vs positive circular-linear precession slopes (of 61 candidate place cells)",
+    "value": "28 negative vs 1 positive",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "confirming phase precession as a population-level phenomenon in this session.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki CA1, Achilles linear-track session) is the canonical dataset for hippocampal theta phase precession.",
+    "handling": "Real data streamed via remfile, restricted to MazeEpoch, excitatory units filtered, direction-split traversals, and the position sampling-rate metadata bug was caught and verified against epoch duration.",
+    "analysis": "Correct circular statistics throughout: Rayleigh test for entrainment and Kempter circular-linear regression for precession with a valid permutation null that accounts for the slope-grid maximization.",
+    "correctness": "Headline numbers (63/89 entrained; 28 negative vs 1 positive precession slopes) are internally consistent between README and figures, statistically sound, and physically possible.",
+    "figures": "Figures clearly show the effect with labeled units and sample sizes, and precession examples are ranked by correlation strength (the correct criterion), though the fig3 tuning-curve example panel includes some edge-peaking cells.",
+    "honesty": "Claims are proportionate to the evidence with nothing misrepresented, but limitations are noted only implicitly ('in this session') rather than discussed explicitly, placing a genuinely clean result at 3.",
+    "verdict": "Textbook-correct autonomous demonstration of both theta entrainment and phase precession with clean, well-controlled results; accept."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dandiset": "000003",
+  "subject_session": "sub-YutaMouse20 / ses-YutaMouse20-140327",
+  "headline_stat": {
+    "name": "mean directionality index",
+    "value": 0.759,
+    "reproduces_from_code": false,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 1,
+    "handling": 0,
+    "analysis": 1,
+    "correctness": 0,
+    "figures": 0,
+    "honesty": 0
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": true,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000003 is Buzsaki-lab hippocampal (CA1) navigation data, not a canonical head-direction region, so the phenomenon is at best marginally and confoundedly present.",
+    "handling": "The committed figures were produced by generate_demo_figures.py from synthetic von Mises tuning curves and a random-walk trajectory, not from the real streamed recording, which is an automatic 0.",
+    "analysis": "The real pipeline uses a reasonable tuning-curve/resultant-vector approach but has no shuffle or null control, and the presented results are synthetic rather than computed from data.",
+    "correctness": "The headline numbers (mean DI 0.759, peak 6.90 Hz) originate from the seeded synthetic generator and do not reproduce from real-data code.",
+    "figures": "The polar curves are noiseless idealized von Mises blobs and the behavioral panel shows a 500 s random-walk cloud, displaying synthetic data instead of the claimed analysis.",
+    "honesty": "The write-up asserts 'No synthetic or simulated data were used' while every committed figure and headline number is synthetic, a direct fabrication.",
+    "verdict": "Synthetic data presented as real experimental results with a false no-synthetic-data claim mandates rejection."
+  }
+}

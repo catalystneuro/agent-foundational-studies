@@ -1,0 +1,33 @@
+{
+  "dandiset": "001754",
+  "subject_session": "sub-Rat1 / ses-19980425T124500 (Rat 1, Flight Day 9), baseline epoch",
+  "headline_stat": {
+    "name": "significant place cells (p<0.05, shuffle)",
+    "value": "2 of 36 (README) vs 3 of 36 (committed fig07)",
+    "reproduces_from_code": false,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 2,
+    "handling": 3,
+    "analysis": 2,
+    "correctness": 2,
+    "figures": 2,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": false,
+  "stated_limitation": "This session has a modest number of well-isolated units and only ~34 minutes of continuous open-field locomotion, so statistical power is limited",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "CA1 tetrode data is the right region, but a microgravity spaceflight recording with patchy tracking is a hard, non-standard substrate where clean CA1 place-cell datasets (000044 etc.) exist and the effect is only marginally present.",
+    "handling": "Real data streamed via remfile with thoughtful, well-justified position cleaning (dropout code removal, zero-order-hold collapse) and speed thresholding, though no unit-isolation quality filtering.",
+    "analysis": "Skaggs information with a per-unit circular-shift null is the right method, but the population claim depends on distinguishing from chance and there is no multiple-comparison correction or binomial test on the significant count.",
+    "correctness": "Numbers roughly reproduce in spirit but the README (2 significant, unit 10 p=0.008) contradicts the committed figure (3 significant, unit 10 p=0.014), an unseeded internal inconsistency.",
+    "figures": "Figures are readable and labeled, but the shuffle histogram shows observed and null nearly overlapping, and the chosen 'significant' examples are diffuse non-place-cells or occupancy artifacts, so they do not make the case.",
+    "honesty": "A chance-level result is presented as 'consistent with genuine hippocampal place cells,' with unit 10's occupancy-artifact corner called a 'textbook place field' and diffuse units labeled significant \u2014 multiple disqualifying acts cap this at 1.",
+    "verdict": "The headline conclusion is a chance-level finding dressed up as a positive demonstration with unrepresentative examples, so a rotation student would be asked to start over."
+  }
+}

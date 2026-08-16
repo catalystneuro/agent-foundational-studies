@@ -1,0 +1,32 @@
+{
+  "dandiset": "000582",
+  "subject_session": "sub-11265_ses-16030604 (example); all 118 sessions, 15 rats (population)",
+  "headline_stat": {
+    "name": "significant grid cells (p<0.05)",
+    "value": "197/617 (32%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000582 (Sargolini MEC) is the canonical grid-cell dataset with layer-annotated tetrode units and 2D tracking, emphasizing superficial layers.",
+    "handling": "Real data streamed via remfile, the meters-vs-centimeters metadata error is correctly caught and corrected, NaN tracking frames dropped, and a 200-spike inclusion criterion applied.",
+    "analysis": "Standard opexebo rate-map/autocorrelogram/grid-score pipeline with the required circular time-shift shuffle null distribution, correctly implemented.",
+    "correctness": "All headline numbers (620/617/197 units, per-layer prevalence, 58 cm median spacing IQR 46-71) reproduce exactly from the committed pkl and are physically plausible and internally consistent.",
+    "figures": "Figures show clear hexagonal firing lattices in spikes, rate maps, and autocorrelograms across six rats, with labeled axes, units, sample sizes, and a clean shuffle-null separation.",
+    "honesty": "Nothing is overstated and example units are honestly labeled as best/top for a demonstration, but no specific limitation of the result is named, capping this at 3 for a clean result."
+  }
+}

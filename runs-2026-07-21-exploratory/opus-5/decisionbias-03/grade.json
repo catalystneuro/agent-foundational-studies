@@ -1,0 +1,33 @@
+{
+  "dandiset": "000409",
+  "subject_session": "13 sessions/13 mice (e.g. CSH-ZAD-019, eid 5adab0b7-dfd0-467d-b09d-43cb7ca5d59c); pooled analysis",
+  "headline_stat": {
+    "name": "mean pre-stimulus block-prior balanced accuracy vs pseudo-session null",
+    "value": "0.632 vs 0.496 (pooled p=0.002)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Recomputed separately within each block type it fell to 0.512 and was no longer significant (p = 0.45), so most of that accuracy is the block signal rather than trial-by-trial choice prediction.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "The IBL Brain Wide Map (000409) with its hidden biased-block structure is the canonical dataset for prestimulus decision-bias/prior decoding in mouse.",
+    "handling": "Real data streamed via remfile, units filtered by IBL quality score, firing rate and 0.9 presence ratio, trials with wheel movement in the window excluded, and the choice convention verified at 97.8% correct on easy trials.",
+    "analysis": "Block-held-out CV, pseudo-session nulls matched to the label's block autocorrelation, trial-axis drift high-pass, LOSO hyperparameters, plus history-decoder and history-matched controls and a Wald test make this a rigorous and correct treatment.",
+    "correctness": "Reported values are internally consistent across summary.json, the per-session CSV, the README and every figure, rest on adequate samples and appropriate nulls, and are physically plausible.",
+    "figures": "Figures show the effect clearly with axis units, sample sizes and honest examples, including panels that display where the effect vanishes rather than only where it holds.",
+    "honesty": "The write-up is precisely calibrated, naming the within-block choice collapse, the 2/13 significance for choice, the non-redundancy-but-weaker-than-history result, and labeling the region panel as coverage not a controlled comparison.",
+    "verdict": "This is publication-track work I would accept as-is from a rotation student and move on."
+  }
+}

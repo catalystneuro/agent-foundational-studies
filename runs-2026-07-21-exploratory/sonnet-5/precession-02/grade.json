@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Buddy, Gatsby, Cicero, Achilles (one session each, MAZE epoch)",
+  "headline_stat": {
+    "name": "median circular-linear correlation |rho| across 135 place fields",
+    "value": 0.31,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Analysis used one representative session per rat, streamed directly from the DANDI S3 bucket with `remfile` (only the MAZE-epoch slice of one LFP channel, the spike tables, and the position tables were fetched, not the full 5-9 GB files).",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki dorsal CA1, rats on a linear track) is the canonical dataset for theta phase precession.",
+    "handling": "Real data streamed in slices, MAZE epoch isolated, excitatory units and minimum-spike filters applied, and an undocumented position-rate/period quirk was detected and corrected with a validating lap figure.",
+    "analysis": "Standard Kempter circular-linear regression plus circular-linear correlation with a required position-label permutation null, all appropriate circular statistics done correctly.",
+    "correctness": "Values are internally consistent and reproduce from the figures, but the significant-field count differs between README (92/135) and Figure 3 (93), a minor off-by-one inconsistency.",
+    "figures": "Figures clearly show the effect with labeled axes, units, sample sizes, and example units selected by correlation strength (the effect being demonstrated), not by fitted slope.",
+    "honesty": "Claims are proportionate and calibrated (reports 76% negative-slope, 68% significant rather than overclaiming), with nothing misrepresented, but no specific limitations of this result are named."
+  }
+}

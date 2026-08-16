@@ -1,0 +1,49 @@
+{
+  "n_sessions": 8,
+  "n_units": 4230,
+  "n_visual_cortex": 1794,
+  "frac_tuned_visual_cortex": 0.8166109253065775,
+  "frac_tuned_control": 0.14102564102564102,
+  "median_osi_visual": 0.1548199475385437,
+  "median_osi_null_visual": 0.03595812652638951,
+  "median_osi_control": 0.025727688811891844,
+  "mannwhitney_p": 4.3271982454857323e-265,
+  "n_both_stimuli": 1308,
+  "median_delta_pref_ori": 11.921520827228566,
+  "median_delta_pref_ori_shuffled": 44.12053422760214,
+  "frac_delta_under_30deg": 0.7805810397553516,
+  "frac_cardinal_preference": 0.5392491467576792,
+  "frac_cardinal_chance": 0.5,
+  "frac_cardinal_binomial_p": 0.0014423853608991693,
+  "cardinal_bias_cos4": 0.06332924521277734,
+  "decoding_n_units": 40,
+  "decoding_orientation": {
+    "CA1": 0.3303711484593837,
+    "LP": 0.6302310924369747,
+    "VISal": 0.9414583333333333,
+    "VISam": 0.9461524609843938,
+    "VISl": 0.9927083333333333,
+    "VISp": 0.9220490696278512,
+    "VISrl": 0.9145667016806722
+  },
+  "decoding_orientation_shuffled": {
+    "CA1": 0.25187295751633987,
+    "LP": 0.25648196778711485,
+    "VISal": 0.2509722222222222,
+    "VISam": 0.24741096438575427,
+    "VISl": 0.25687499999999996,
+    "VISp": 0.2532740596238495,
+    "VISrl": 0.25536852240896357
+  },
+  "glm_frac_positive_dir_given_speed": {
+    "VISp": 0.8821052631578947,
+    "VISl": 0.9206349206349206,
+    "VISrl": 0.8615384615384616,
+    "VISal": 0.8454810495626822,
+    "VISpm": 0.8373983739837398,
+    "VISam": 0.8507462686567164,
+    "CA1": 0.21686746987951808,
+    "CA3": 0.07692307692307693,
+    "DG": 0.09045226130653267
+  }
+}

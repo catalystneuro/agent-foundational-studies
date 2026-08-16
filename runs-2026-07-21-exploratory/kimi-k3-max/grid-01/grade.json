@@ -1,0 +1,32 @@
+{
+  "dandiset": "000582",
+  "subject_session": "sub-11265_ses-16030604 (example); all 118 sessions / 620 units for population",
+  "headline_stat": {
+    "name": "significant grid cells (p<0.05 vs circular-shift shuffle)",
+    "value": "189/616 (31%), median grid score 0.93",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000582 (Sargolini MEC) is the canonical grid-cell dataset, in the correct species, region, and open-field foraging paradigm.",
+    "handling": "Real NWB files streamed via remfile, cm/meters label issue handled explicitly, speed filtering and >=200-spike inclusion applied and justified, spike-position interpolation correct.",
+    "analysis": "Standard Moser-lab occupancy-normalized rate maps, autocorrelogram gridness score via opexebo, and a proper circular time-shift shuffle null per candidate cell.",
+    "correctness": "Every headline number (616 valid, 189 significant, median gs 0.93/max 1.44, spacing 60 cm, layer fractions) reproduces exactly from the committed cached results and is internally consistent with the figures.",
+    "figures": "Effect is clearly visible, autocorrelograms show textbook hexagonal symmetry, panels carry sample sizes and units, and the example session honestly displays non-grid cells alongside grid cells.",
+    "honesty": "Claims are proportionate and fully supported with no misrepresentation, but the write-up states no specific limitations (single-session dependence, no multiple-comparison correction), so it sits at the clean-result-without-caveats level rather than 4."
+  }
+}

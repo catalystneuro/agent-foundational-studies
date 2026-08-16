@@ -1,0 +1,21 @@
+{
+ "sessions":118.0,
+ "rats":15.0,
+ "units_total":620.0,
+ "units_analysed":620.0,
+ "gridness_threshold":0.616,
+ "grid_cells":193.0,
+ "pct_grid":31.1,
+ "sessions_with_grid_cells":85.0,
+ "median_spacing_1m_box":49.6,
+ "median_gridness_grid":1.07,
+ "median_stability_grid":0.7,
+ "median_stability_nongrid":0.34,
+ "within_session_dtheta":4.2,
+ "random_pair_dtheta":15.0,
+ "depth_spacing_r_1m_box":0.26,
+ "halfsplit_gridness_r":0.43,
+ "mvl_threshold":0.195,
+ "units_with_hd":453.0,
+ "conjunctive_cells":69.0
+}

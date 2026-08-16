@@ -1,0 +1,33 @@
+{
+  "dandiset": "000056",
+  "subject_session": "Mouse28-140313 (main) + 5 others: Mouse28-140312/140317, Mouse25-140130, Mouse24-131216, Mouse17-130204",
+  "headline_stat": {
+    "name": "wake vs sleep pairwise-correlation-structure match (r)",
+    "value": "0.91-0.98 across 6 sessions",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The two sessions with only seven head-direction cells (Mouse24-131216 and Mouse17-130204) undersample the circle, and the measures that need full coverage (absolute decoding, ring geometry, internal tuning shape) are correspondingly weaker there. The correlation-structure result, which does not require full coverage, is at its strongest in exactly those sessions.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000056 (Peyrache anterior thalamus/post-subiculum HD recordings) is the canonical dataset for the head-direction ring attractor.",
+    "handling": "Real data streamed via LINDI with local cache; HD reconstructed correctly from the two LEDs (not stored in file), scored sleep states used, and explicit, defensible HD-cell inclusion criteria with careful edge-case handling.",
+    "analysis": "Convergent, correct methods (offset-binned pairwise correlations, Isomap manifold, split-half internal tuning, Bayesian decoding, cross-correlograms) with circular statistics and cell-shuffle/time-shift/identity-permuted null controls throughout.",
+    "correctness": "README medians, CSV per-session values, and figure annotations all trace to the committed code and are mutually consistent, resting on 6 sessions with proper controls.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show the effect directly (correlation band, ring embedding vs shuffled blob, internal tuning peaks, timescale compression), and include controls alongside.",
+    "honesty": "Claims are proportionate to the evidence, non-REM is reported as weaker where it is, and specific limitations (undersampled sessions, excluded down states, rigid map rotation) are named explicitly.",
+    "verdict": "Publication-quality autonomous work that demonstrates the ring attractor and its persistence into sleep with reproducible, internally consistent numbers and honest caveats."
+  }
+}

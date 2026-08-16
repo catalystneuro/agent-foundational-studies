@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Buddy / ses-Buddy-06272013 (behavior+ecephys)",
+  "headline_stat": {
+    "name": "CA1 units significantly theta phase-locked (Rayleigh p<0.05, running)",
+    "value": "61/65 (94%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000044 dorsal CA1 (Grosmark & Buzs\u00e1ki) is a canonical, expert-standard choice for theta phase entrainment.",
+    "handling": "Real data streamed via remfile with correct CA1-unit selection and spike-phase interpolation, but the speed computation classifies ~98% of the maze session as running, so the movement filter is essentially inert.",
+    "analysis": "Bandpass-Hilbert phase with MRL and a correctly implemented Rayleigh test is the right method, but no shuffle/circular-shift control is included and the Rayleigh test is anticonservative on autocorrelated within-cycle spikes.",
+    "correctness": "Reported counts, MRLs, phases, and spike totals reproduce exactly from the committed CSV and are internally consistent with all figures; MRLs are valid effect sizes that make the conclusion robust independent of the marginal p-values.",
+    "figures": "Figures clearly show the effect with labeled units and sample sizes, example units ranked by MRL (the effect metric), and a convincing pooled phase histogram and population summary.",
+    "honesty": "Claims are proportionate to a genuinely strong result with nothing misrepresented, but no specific limitation (single session, single-channel reference, anticonservative test, low-n MRL inflation) is named."
+  }
+}

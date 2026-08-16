@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles / Achilles_10252013",
+  "headline_stat": {
+    "name": "pooled circular-linear precession slope",
+    "value": "-0.56 cyc/field, rho=0.14, p=0.0005",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 3,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "individual place cells showed variable and often statistically weak single-cell relationships (a known feature of real data with limited per-cell sampling \u2014 tens to a few hundred field-crossing spikes over 20-40 laps)",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Canonical Grosmark & Buzsaki CA1 linear-track dataset, correct subject/session for theta entrainment and precession.",
+    "handling": "Real streamed NWB data with correct epoch restriction, explicit unit selection, and careful handling of SWR contamination and an NWB rate-attribute quirk.",
+    "analysis": "Correct circular statistics with a permutation control, but the pooled precession test ignores cell identity (pseudoreplication) that a per-cell shuffle would have addressed.",
+    "correctness": "Reported values reproduce and are internally consistent, though the pooled p-value is anticonservative while the negative slope direction remains robust.",
+    "figures": "Entrainment and population precession effects are visible and labeled with units, n, and stats; the pooled scatter is noisy but the negative trend is real.",
+    "honesty": "No fabrication and single-cell weakness plus single-session limits are stated plainly, but 'clear, highly significant' overstates a weak rho=0.14 and the pseudoreplication caveat is omitted.",
+    "verdict": "Sound, honest core work with a real but fixable statistical weakness in the pooled test \u2014 accept with revision."
+  }
+}

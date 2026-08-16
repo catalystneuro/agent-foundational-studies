@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles ses-10252013 (prototype); all 8 sessions pooled",
+  "headline_stat": {
+    "name": "place cells (>=1 direction, p<0.01 vs circular-shift null)",
+    "value": "374/562 (67%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Caveats: units come from the published spike sorting and the `excitatory` label is taken at face value; place-cell counts depend on the inclusion thresholds for peak rate, spike count and alpha, though the qualitative picture is not sensitive to them; and the reward sites at the ends of the straight tracks mean that occupancy and field density are not uniform along the track.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki CA1 linear/circular track) is the canonical place-cell dataset, exactly what an expert would choose.",
+    "handling": "Real data streamed via LINDI, the mislabeled rate/period field is caught and the reconstructed time base is asserted against MazeEpoch, with explicit excitatory-cell and spike-count/peak-rate criteria.",
+    "analysis": "Skaggs spatial information tested against a per-unit circular-shift null, plus odd/even lap stability, cross-validated population ordering, direction selectivity, and cross-validated Bayesian decoding with a cell-identity chance control, all correct.",
+    "correctness": "Every reported number (SI 0.70, width 0.28 m, peak 6.4 Hz, r=0.29, 374/562, stability 0.91, decode error ~5 cm, R^2 0.95/0.87) reproduces from the committed npz/figures, is internally consistent, and is physically possible.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show diagonal population tiling that holds on held-out laps, clean decoding, and representative example cells chosen by SI and stability across track segments.",
+    "honesty": "Claims are proportionate to the evidence, methodological subtleties are flagged, and a specific caveats paragraph names the spike-sorting/label assumptions, threshold sensitivity, and non-uniform occupancy."
+  }
+}

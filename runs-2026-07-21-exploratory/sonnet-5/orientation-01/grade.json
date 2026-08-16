@@ -1,0 +1,32 @@
+{
+  "dandiset": "000021",
+  "subject_session": "sub-699733573/ses-715093703",
+  "headline_stat": {
+    "name": "fraction of good VISp units with significant direction tuning (ANOVA p<0.01)",
+    "value": "29/114 (25%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "ranking by gOSI alone would be dominated by near-silent units, whose tuning curves are estimated from a handful of spikes and can show spuriously large (but non-significant) gOSI values",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 Allen Visual Coding Neuropixels VISp drifting-gratings is the canonical, expert-standard choice for orientation selectivity.",
+    "handling": "Real NWB streamed via remfile, units correctly mapped to VISp by peak_channel_id and filtered to good quality with explicit per-trial epoch counting.",
+    "analysis": "gOSI uses the doubled-angle circular vector correctly and per-unit ANOVA supplies a valid null, with only minor gaps (collapsed temporal frequencies, no multiple-comparison correction) that do not change the result.",
+    "correctness": "Headline numbers reproduce from the committed code and are internally consistent with the population figure (29 significant + 85 not = 114) and physically plausible.",
+    "figures": "Figures show the effect clearly with labeled axes, sample sizes, and representative examples; only a cosmetic polar-tick overlap detracts.",
+    "honesty": "Claims match the figures and the modest 25% fraction is reported honestly with careful example selection, but no result-specific limitations section is provided."
+  }
+}

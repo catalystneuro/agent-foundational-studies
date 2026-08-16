@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles_10252013 (prototype) + Buddy_06272013, Cicero_09012014, Cicero_09172014, Gatsby_08022013",
+  "headline_stat": {
+    "name": "place cells / pyramidal cells (pooled, 5 linear-track sessions)",
+    "value": "211/270 (78%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The other three used a closed circular maze, where a lap wraps around and the two-direction traversal logic used throughout does not apply; they were excluded on maze geometry before any spiking data were examined.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 dorsal CA1 on a linear track is the canonical dataset, species, region, and paradigm for hippocampal place cells.",
+    "handling": "Real data streamed from S3, timebase rebuilt to fix a period-vs-frequency NWB defect and checked against MazeEpoch, corrupt concatenated units detected on raw arrays and dropped, and unit selection is explicit and defensible.",
+    "analysis": "Occupancy-normalised Skaggs information with a bursting-preserving circular-shift null, split-half reliability, cross-validated Bayesian decoding with a rolled-tuning-curve control, and a cross-validated Poisson GLM all correctly applied.",
+    "correctness": "Every headline number (211/270, 329 fields, 0.61 bits/spike, 32 cm, 6.0 Hz, 5.8\u201314.1 cm decoding, GLM 67/71 and 64/71) reproduces exactly from the committed CSVs and is internally consistent and physically plausible.",
+    "figures": "Figures show the effect clearly with units, sample sizes, a clean population diagonal, and example cells spanning a representative range of information values rather than only extremes.",
+    "honesty": "Claims are proportionate to reproduced evidence, decoding was explicitly done without place-cell selection to avoid circularity, the GLM is stated to be on one prototype session, and real scope exclusions and data defects are named without overstatement."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dandiset": "000021",
+  "subject_session": "six sessions from six mice (drifting/static gratings, Brain Observatory 1.1); 1501 quality units, LGd n=153 + six VIS areas",
+  "headline_stat": {
+    "name": "median global OSI cortex vs LGd",
+    "value": "0.162 vs 0.063 (Mann-Whitney p=4.4e-31)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Recording structures differ between sessions because probe placement differs, so LGd appears in only two of the six sessions and the thalamic comparison rests on 153 units from two mice rather than six; the per-session panel in fig09 shows which structures each session contributes.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 Allen Visual Coding Neuropixels with drifting/static gratings in V1 and higher areas is the canonical dataset for orientation selectivity.",
+    "handling": "Real data streamed via remfile, Allen's recommended quality filters (good units, amplitude_cutoff<0.1, isi_violations<0.5, presence_ratio>0.9) applied with correct region/depth mapping and trial alignment.",
+    "analysis": "Standard axial circular metrics (gOSI, vector-averaged preferred orientation, circular correlation) with a per-unit shuffle null, split-half reliability, cross-stimulus and GLM controls, all correct.",
+    "correctness": "Every reported figure (median gOSI 0.162 vs 0.063, p=4.4e-31, 25-41% cortical vs 5% LGd selective) reproduces exactly from the committed CSV and is internally consistent.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show the two-lobed tuning, split-half heatmap bands, decoder 180deg error structure, and the null overlay; example units are ranked by gOSI, the strength of the effect being demonstrated.",
+    "honesty": "Claims are proportionate to the evidence and the Caveats section names concrete, run-specific limitations (LGd from only two sessions, 45deg sampling resolution, significance vs effect-size distinction, pooling over temporal frequencies).",
+    "verdict": "A comprehensive, reproducible, and honestly caveated demonstration that visual cortex encodes orientation while its thalamic input does not; accept as-is."
+  }
+}

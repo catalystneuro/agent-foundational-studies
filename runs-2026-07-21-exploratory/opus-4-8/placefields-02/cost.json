@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 2023843,
+  "duration_api_ms": 1604984,
+  "ttft_ms": 1948,
+  "ttft_stream_ms": 1477,
+  "time_to_request_ms": 57,
+  "num_turns": 113,
+  "result": "Done. Everything was produced by the executed notebook.\n\n## What I did\n\n**Dataset.** [DANDI:000044](https://dandiarchive.org/dandiset/000044) (Grosmark & Buzsáki 2016, the `hc-11` recordings): bilateral silicon-probe recordings from dorsal CA1 of four Long-Evans rats, each session a PRE sleep epoch, a novel MAZE running epoch, and a POST sleep epoch. I used the five linear-track sessions (four on a 1.6 m track, one on 2 m) and excluded the three circular-platform sessions so a single linear coordinate means the same thing everywhere. Files are 5 to 9 GB each and were streamed through LINDI with a local chunk cache; nothing was downloaded in full.\n\n**Analysis.** Running periods (speed above 5 cm/s, position tracked) split by travel direction; occupancy-normalized rate maps in 2 cm bins via `nap.compute_tuning_curves`; Skaggs spatial information tested against a 500-shuffle circular-shift null; cross-validated Bayesian decoding with `nap.decode_bayes` (odd traversals train, even traversals decode, and vice versa).\n\n**Result.** 248 of 302 active CA1 pyramidal cells (82%) had a reliable place field in at least one direction. Median field width at half maximum was 24 cm, median spatial information 0.65 bits/spike. Fields were strongly direction selective (median |DI| 0.38): sorting the population by rightward peak gives a clean diagonal for rightward runs and an unstructured map for leftward runs over the same cells. The decoder recovered position on held-out traversals to a median error of 10 cm against a 47 cm chance level, with error falling monotonically as cells were added.\n\n## Two things worth flagging about the source files\n\nThe position `TimeSeries` store the sampling *period* (0.0256 s) in the `rate` field, not the rate, so the timebase has to be rebuilt as `starting_time + arange(n) * rate`. The pipeline asserts that `n_samples * rate` matches the MAZE epoch duration. Separately, the linearized coordinate is NaN whenever the animal is off the track proper, so only 13 to 32% of MAZE samples carry a usable position. I tried extending the linearization by fitting the affine map from the raw x coordinate and applying it to all on-track samples, but the extra samples fall almost entirely in the stationary reward zones and are removed by the speed filter anyway, so I dropped that and used the authors' curation directly.\n\n## Files\n\n- `place_cells_dandi000044.py` — jupytext notebook, runs end to end\n- `place_cells_dandi000044.ipynb` — executed, 15 code cells, no errors, 7 inline figures\n- `place_cells_lib.py` — loading, rate maps, statistics, shuffling helpers\n- `figures/fig01` through `fig07` — session overview, behaviour and LFP with theta, example place cells, population tiling, statistics, decoding, cross-session summary\n- `README.md`, `session_summary.csv`, `results_summary.json`\n\nThe notebook imports `place_cells_lib.py`, so the two need to sit together. A cold run takes about 13 minutes; with a warm LINDI cache it is under 4.",
+  "stop_reason": "end_turn",
+  "session_id": "a436cb65-7963-42a6-b141-5e899a8be52f",
+  "total_cost_usd": 12.132411499999993,
+  "usage": {
+    "input_tokens": 204,
+    "cache_creation_input_tokens": 225830,
+    "cache_read_input_tokens": 15343557,
+    "output_tokens": 88019,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 225830,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1107,
+        "cache_read_input_tokens": 240043,
+        "cache_creation_input_tokens": 846,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 846
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 733,
+      "outputTokens": 21,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.000838,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-opus-4-8": {
+      "inputTokens": 204,
+      "outputTokens": 88019,
+      "cacheReadInputTokens": 15343557,
+      "cacheCreationInputTokens": 225830,
+      "webSearchRequests": 0,
+      "costUSD": 12.131573499999993,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "620cca3e-768e-43e2-b036-6d6d88da6113"
+}

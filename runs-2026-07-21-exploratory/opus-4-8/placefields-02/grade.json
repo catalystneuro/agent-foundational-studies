@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles/ses-Achilles-10252013 (prototype) + 4 more linear sessions (Buddy, Cicero x2, Gatsby)",
+  "headline_stat": {
+    "name": "fraction of active pyramidal cells with a reliable place field (pooled, 5 sessions)",
+    "value": 0.821,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The linearized position is also left as NaN whenever the animal is off the track proper, in the reward areas past either end, so roughly 13 to 32% of MAZE samples carry a usable position depending on the session.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzs\u00e1ki hc-11), dorsal CA1 pyramidal cells on a linear track, is the canonical known-good dataset for place cells.",
+    "handling": "Real data streamed via LINDI, epochs correctly identified, timebase reconstructed from the sampling-period quirk and verified by assertion, with explicit pyramidal selection and speed/tracking criteria.",
+    "analysis": "Occupancy-normalized rate maps, Skaggs spatial information against a circular-shift null, and Bayesian decoding cross-validated on held-out odd/even traversals against a shuffled-pairing chance level, all standard and complete.",
+    "correctness": "Every headline number (302 pyramidal, 248 place cells, 0.821, 10.1 cm median decode error) reproduces from the committed code and is internally consistent across CSV, JSON, and figures, with adequate sample sizes.",
+    "figures": "Figures are clearly labeled with units and sample sizes, examples are chosen to span the track and be representative, and the population maps, statistics, and decoding all show the effect convincingly.",
+    "honesty": "Claims are proportionate to strong, cross-validated evidence; the write-up transparently shows a non-significant travel direction, justifies excluded circular sessions, and notes tracking-coverage limits and reward-site bias."
+  }
+}

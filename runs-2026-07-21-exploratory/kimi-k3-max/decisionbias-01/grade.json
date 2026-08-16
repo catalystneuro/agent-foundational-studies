@@ -1,0 +1,32 @@
+{
+  "dandiset": "000149",
+  "subject_session": "sub-92130c1b, sub-70bf8cbd, sub-9bebfe0b, sub-c6e8125f (4 IBL Neuropixels sessions, one per subject)",
+  "headline_stat": {
+    "name": "0%-contrast pre-stimulus choice decoding, Fisher combined p across sessions",
+    "value": 0.01,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "On 0%-contrast trials, where choice cannot be stimulus-driven, the upcoming choice is decodable at the group level (accuracies 0.510-0.636; Fisher combined p = 0.010; individually significant in 2/4 sessions).",
+  "pass": true,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "IBL 000149 with block priors and 0%-contrast trials is the canonical dataset for isolating pre-stimulus decision bias, an expert-standard choice.",
+    "handling": "Real streamed data with explicit KS2-good and firing-rate unit filters, correct trial alignment to a movement-free pre-stimulus window, and a choice-sign convention confirmed by the psychometric curves.",
+    "analysis": "Shrinkage-LDA with balanced accuracy, permutation nulls, and a strong previous-choice control are all appropriate, but the block-prior decode uses a label-shuffle null that ignores block temporal autocorrelation, a would-strengthen control that is absent.",
+    "correctness": "All headline accuracies and Fisher-combined p-values reproduce exactly from the committed CSVs, are internally consistent with the figures, and rest on sound permutation statistics with physically plausible values.",
+    "figures": "Every panel is labeled with units and shows the effect, with honest significance stars matching the CSVs and raster examples selected by the effect being demonstrated (auROC), not an unrelated criterion.",
+    "honesty": "Claims are proportionate and the weak 0%-contrast result is explicitly hedged as 2/4-session and group-level, but there is no dedicated limitations discussion of the n=4-subject scope or the block-null caveat, leaving obvious caveats unstated."
+  }
+}

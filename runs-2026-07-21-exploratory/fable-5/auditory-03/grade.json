@@ -1,0 +1,32 @@
+{
+  "dandiset": "000986",
+  "subject_session": "sub-LA11 ses1 (single-session detail); population pooled over 15 sessions / 5 mice (LA11, LA12, LA3, LA8, LA9)",
+  "headline_stat": {
+    "name": "single-trial frequency decoding accuracy (235 units)",
+    "value": "0.956 (chance 0.20, label-shuffled 0.19)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "An important limitation is that the stimulus set is coarse: five octave-spaced frequencies at a single sound level. \"Best frequency\" here therefore means the best of five options rather than a characteristic frequency estimated from a fine frequency-by-level grid, and tuning bandwidth and threshold cannot be quantified. The dandiset also provides no channel or depth annotation for the sorted units, so tonotopic organisation along the probe could not be tested.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000986 is the canonical pure-tone A1 Neuropixels dataset for auditory frequency tuning, in the right species, region, and paradigm.",
+    "handling": "Real data streamed via remfile, correct trial alignment and evoked/baseline windows, exact searchsorted spike counts validated against pynapple restrict, analyzing all sorted units with statistical inclusion criteria applied explicitly.",
+    "analysis": "Appropriate and complete: FDR-corrected Wilcoxon and Kruskal-Wallis, a trial-label shuffle null for sparseness, split-half reliability, cross-validated multinomial decoding with a shuffle control, and an independent NeMoS GLM cross-check.",
+    "correctness": "Every reported value reproduces exactly from the committed log, the numbers are mutually consistent, and the statistics are well powered and sound.",
+    "figures": "Figures are clean, unit- and sample-size-labeled, and make the tuning, population structure, decoding, and GLM agreement immediately visible.",
+    "honesty": "Claims are proportionate to strong evidence, example units are labeled honestly as the most selective per best frequency, and specific limitations of the coarse stimulus set and missing depth annotation are stated plainly."
+  }
+}

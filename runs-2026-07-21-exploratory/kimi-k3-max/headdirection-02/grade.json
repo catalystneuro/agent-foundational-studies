@@ -1,0 +1,32 @@
+{
+  "dandiset": "000056",
+  "subject_session": "Mouse17-130128 (prototype) + Mouse20-130514, Mouse24-131213, Mouse25-140123, Mouse28-140310",
+  "headline_stat": {
+    "name": "wake-sleep HD-cell pairwise correlation preservation (REM), pooled 313 pairs",
+    "value": 0.92,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "their preferred directions tile the circle without significant clustering (resultant R = 0.21, uniformity p = 0.09)",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000056 (Peyrache ADn/postsubiculum) is a canonical head-direction dataset in the expected species, region, and paradigm.",
+    "handling": "Real data streamed via remfile, HD reconstructed from LED difference vector with sentinel masking, state epochs and units correctly loaded with defensive sorting.",
+    "analysis": "Circular statistics used throughout, occupancy-matched random-time null with justified rationale, effect-size floor, GLM encoding, Bayesian decoding, and permutation-tested correlation preservation all correct.",
+    "correctness": "Every headline number (53/159 cells, MVL 0.57, R 0.21, 313 pairs, r 0.92/0.90) reproduces exactly from the committed cache and is internally consistent and physically possible.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show all HD cells rather than flattering examples, and the phenomenon is unmistakably visible in tuning curves, raster, and correlation matrices.",
+    "honesty": "Claims are proportionate and several borderline cases are surfaced inline (non-significant clustering p=0.09, GLM fit for only six of seven cells, informative-bin restriction), though there is no dedicated limitations discussion of the strong result."
+  }
+}

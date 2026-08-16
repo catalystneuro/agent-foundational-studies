@@ -1,0 +1,33 @@
+{
+  "dandiset": "000149",
+  "subject_session": "4 IBL sessions (c7bd79c9/subj 92130c1b, 4ecb5d24, 4b7fbad4, aad23144)",
+  "headline_stat": {
+    "name": "block prior decodable from 400ms pre-stimulus activity",
+    "value": "3/4 sessions sig (p=0.050,0.010,0.005); choice on 0%-contrast 2/4 (p=0.025,0.035)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 3,
+    "honesty": 4
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The effect was not uniform across sessions, consistent with genuine biological and recording variability rather than an artificially clean result.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000149 is the canonical IBL block-prior choice-world dataset and the paradigm (0%-contrast trials in extreme blocks) is exactly the standard way to isolate an internally generated decision bias.",
+    "handling": "Real data streamed via LINDI, good units selected by label==1.0 with bulk spike-time reads, counts aligned to a 400 ms window verified to fall within the enforced pre-stimulus quiescence (min gap 0.443 s).",
+    "analysis": "Cross-validated logistic regression with a label-permutation null (which correctly handles the class imbalance) is appropriate, but there is no multiple-comparison correction across the 8 tests and the choice-vs-block confound in the choice decoder is not addressed.",
+    "correctness": "Every reported p-value and accuracy reproduces exactly from the committed notebook output, is internally consistent with the figures, and rests on sound permutation statistics with no physically impossible values.",
+    "figures": "Decoding figures (fig3/4) show observed accuracy against permutation nulls clearly with p-values, but fig5's example unit is the max-|t| unit hand-picked from the one session whose population did not decode, a flattering supplementary example.",
+    "honesty": "The write-up reports 3/4 and 2/4 sessions, names the non-significant session explicitly, gives borderline p-values at face value, and states plainly the effect is not uniform, so no claim exceeds the evidence.",
+    "verdict": "Core work is sound and believable, but I would ask for multiple-comparison correction, discussion of the choice-block confound, and a more representative example unit before fully accepting."
+  }
+}

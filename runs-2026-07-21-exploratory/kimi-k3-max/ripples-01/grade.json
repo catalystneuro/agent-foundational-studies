@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "% POST ripples with significant replay (cell-ID shuffle p<0.05)",
+    "value": 17.4,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000044 Achilles CA1 linear-track session is the canonical dataset for sharp-wave ripples, place fields, and replay.",
+    "handling": "Real LFP and spikes streamed via remfile with correct PRE/POST/Maze epochs, Non-REM state masking, cell-type-based unit selection, and data-driven ripple channel choice.",
+    "analysis": "Standard ripple detection, Skaggs spatial information with a circular time-shift null, and Bayesian replay decoding validated by two independent shuffles plus a PRE/POST experience-dependence control.",
+    "correctness": "Every headline number reproduces exactly from the committed log, but the README mislabels the ripple rate as 0.58 per min when it is 0.58 per second (34.8 per min), a minor internal inconsistency.",
+    "figures": "Figures are clearly labeled with units and sample sizes and plainly show the phenomenon; example replay events are ranked by |wc|, which is the effect itself, and are backed by honest population summaries.",
+    "honesty": "Claims are proportionate to the evidence and nothing is misrepresented, but the write-up names no specific limitations (single session, template asymmetry), placing a genuinely clean result at 3 rather than 4."
+  }
+}

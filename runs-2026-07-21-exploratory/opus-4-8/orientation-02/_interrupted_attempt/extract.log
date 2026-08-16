@@ -1,0 +1,21 @@
+sessions:   0%|          | 0/11 [00:00<?, ?it/s]  invalid trials: drifting 0.000%, static 0.000%
+719161530: 246 units {np.str_('LGd'): np.int64(71), np.str_('VISal'): np.int64(9), np.str_('VISam'): np.int64(40), np.str_('VISl'): np.int64(41), np.str_('VISp'): np.int64(52), np.str_('VISpm'): np.int64(18), np.str_('VISrl'): np.int64(15)} dg (246, 628) sg (246, 6000)
+sessions:   9%|▉         | 1/11 [05:38<56:23, 338.38s/it]  invalid trials: drifting 0.000%, static 1.303%
+721123822: 193 units {np.str_('VISal'): np.int64(37), np.str_('VISam'): np.int64(41), np.str_('VISl'): np.int64(27), np.str_('VISp'): np.int64(42), np.str_('VISrl'): np.int64(46)} dg (193, 628) sg (193, 6000)
+sessions:  18%|█▊        | 2/11 [06:15<24:08, 160.92s/it]  invalid trials: drifting 0.000%, static 1.083%
+sessions:  18%|█▊        | 2/11 [08:30<38:17, 255.31s/it]
+Traceback (most recent call last):
+  File "/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/orientation-02/02_extract.py", line 71, in <module>
+  File "/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/orientation-02/02_extract.py", line 44, in extract
+  File "/Users/bdichter/miniconda3/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 738, in savez_compressed
+    _savez(file, args, kwds, True)
+  File "/Users/bdichter/miniconda3/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 764, in _savez
+    zipf = zipfile_factory(file, mode="w", compression=compression)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bdichter/miniconda3/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 102, in zipfile_factory
+    return zipfile.ZipFile(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bdichter/miniconda3/lib/python3.12/zipfile/__init__.py", line 1336, in __init__
+    self.fp = io.open(file, filemode)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/opus-4-8/orientation-02/extracted/732592105.npz'

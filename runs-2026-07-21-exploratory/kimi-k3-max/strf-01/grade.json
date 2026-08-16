@@ -1,0 +1,33 @@
+{
+  "dandiset": "001262",
+  "subject_session": "example fiber G160504-519 (reported BF 2341 Hz); population of 59 gerbil auditory-nerve fibers",
+  "headline_stat": {
+    "name": "CF estimate vs reported BF, population correlation",
+    "value": 0.99,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 3,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "One honest caveat: 50 ms boxcar tones constrain mainly the *integral* of each kernel (the PSTH is the kernel's step response), so fine kernel timing is weakly identifiable from tone pips alone, which is exactly why the field moved to broadband noise and ripple stimuli for kernel estimation.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "001262 is a tone-pip auditory-nerve dataset that cannot support a true broadband reverse-correlation STRF, but the tone-pip spectrotemporal response field it does support is genuinely present and cleanly demonstrable, a paradigm that works though not the conventional one.",
+    "handling": "Real data streamed via remfile with a disk cache, correct per-sweep spike alignment to tone onset, explicit and defensible fiber-selection and level-selection criteria, and spontaneous rate taken from silent sweeps.",
+    "analysis": "PSTH-based frequency-time map, tuning, latency, a NeMoS Poisson GLM validated in prediction space, split-half reliability, and population regressions are all appropriate and correctly executed, though the latency-CF slope is reported without a confidence interval or formal test.",
+    "correctness": "Every headline number (CF 2550 vs BF 2341, r=0.99, latency 1.7-13.2 ms, slope -0.16, pseudo-R2 0.17, split-half 0.84) reproduces from run5, is internally consistent with the figures, and is physically possible.",
+    "figures": "Figures are clear, fully labeled with units and sample sizes, and example fibers are chosen by even spacing across CF rather than by effect strength, so the phenomenon is directly visible.",
+    "honesty": "Claims are proportionate to the evidence and the write-up names the specific limitation that matters most, that tone pips cannot pin down the kernel timing of a real STRF, rather than overclaiming a reverse-correlation result.",
+    "verdict": "The work is sound, reproducible, and honestly framed, and given no proper broadband-STRF dataset exists on the archive this is a complete and defensible treatment worth accepting."
+  }
+}

@@ -1,0 +1,22 @@
+[
+ {
+  "path": "sub-CSH-ZAD-001/sub-CSH-ZAD-001_ses-3e7ae7c0-fe8b-487c-9354-036236fa1010_desc-processed_behavior+ecephys.nwb",
+  "url": "https://api.dandiarchive.org/api/dandisets/000409/versions/draft/assets/f24e825f-f5b1-4287-a004-7ac3a20c107d/download/"
+ },
+ {
+  "path": "sub-CSH-ZAD-011/sub-CSH-ZAD-011_ses-03cf52f6-fba6-4743-a42e-dd1ac3072343_desc-processed_behavior+ecephys.nwb",
+  "url": "https://api.dandiarchive.org/api/dandisets/000409/versions/draft/assets/c3ec55d7-4bca-4137-986b-7e5faa4265f2/download/"
+ },
+ {
+  "path": "sub-CSH-ZAD-019/sub-CSH-ZAD-019_ses-49e0ab27-827a-4c91-bcaa-97eea27a1b8d_desc-processed_behavior+ecephys.nwb",
+  "url": "https://api.dandiarchive.org/api/dandisets/000409/versions/draft/assets/babe4fa4-525c-48b9-b49e-2eb6bfcc771a/download/"
+ },
+ {
+  "path": "sub-CSH-ZAD-022/sub-CSH-ZAD-022_ses-1eac875c-feaa-4a30-b148-059b954b11d8_desc-processed_behavior+ecephys.nwb",
+  "url": "https://api.dandiarchive.org/api/dandisets/000409/versions/draft/assets/65a37df2-4bdb-4c89-a199-bf0c3654c9fe/download/"
+ },
+ {
+  "path": "sub-CSH-ZAD-025/sub-CSH-ZAD-025_ses-280ee768-f7b8-4c6c-9ea0-48ca75d6b6f3_desc-processed_behavior+ecephys.nwb",
+  "url": "https://api.dandiarchive.org/api/dandisets/000409/versions/draft/assets/0a7fa210-b630-4d28-9501-4a75479671c2/download/"
+ }
+]

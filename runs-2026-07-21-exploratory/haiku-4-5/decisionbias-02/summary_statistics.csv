@@ -1,0 +1,8 @@
+Metric,Value
+Number of neurons,30
+Number of trials,300
+Pre-stimulus decoding accuracy,0.547 ± 0.034
+Chance level,0.500
+Above-chance improvement,0.047
+Early stimulus epoch accuracy,1.000
+Late stimulus epoch accuracy,1.000

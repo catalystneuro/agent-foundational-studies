@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "significant precessing cell-directions (median signed circular-linear r)",
+    "value": "79 of 120 negative / 4 positive; median r = -0.32",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000044 Achilles CA1 linear-track is the canonical place-cell/theta-precession dataset, an expert's default choice.",
+    "handling": "Real NWB streamed via remfile with disk cache; direction-specific rate maps, explicit place-field inclusion criteria (peak rate, SI shuffle, spike count, field width), and correct LFP/spike/position alignment.",
+    "analysis": "Kempter et al. circular-linear correlation with a sign from circular-linear regression slope, 1000-permutation null, plus per-traversal correlations and a time-shift SI shuffle for field selection, all appropriate circular statistics.",
+    "correctness": "Reported values (83 significant, 79 negative vs 4 positive, median r -0.32, median slope -0.52, 81% negative per-traversal) reproduce from the committed code and are internally consistent with the JSON and figures.",
+    "figures": "Example cells selected by correlation strength show clean negative slopes, the volcano and slope/correlation histograms are labeled with units and n, and the pooled density shows the classic precession band.",
+    "honesty": "Claims are proportionate and the 4 non-precessing positives are reported, but no explicit limitation (single session) is stated, so a clean strong result sits at 3 rather than 4.",
+    "verdict": "Sound, canonical, reproducible demonstration of theta phase precession that I would accept from a rotation student."
+  }
+}

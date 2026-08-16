@@ -1,0 +1,233 @@
+
+===== Achilles_10252013 =====
+theta/delta scan:   0%|          | 0/128 [00:00<?, ?it/s]theta/delta scan:   2%|▏         | 2/128 [00:00<00:16,  7.52it/s]theta/delta scan:   3%|▎         | 4/128 [00:00<00:13,  9.31it/s]theta/delta scan:   4%|▍         | 5/128 [00:00<00:15,  7.80it/s]theta/delta scan:   5%|▌         | 7/128 [00:00<00:12,  9.80it/s]theta/delta scan:   7%|▋         | 9/128 [00:00<00:11, 10.60it/s]theta/delta scan:   9%|▊         | 11/128 [00:01<00:09, 12.11it/s]theta/delta scan:  10%|█         | 13/128 [00:01<00:08, 13.63it/s]theta/delta scan:  12%|█▏        | 15/128 [00:01<00:07, 14.62it/s]theta/delta scan:  13%|█▎        | 17/128 [00:01<00:07, 15.03it/s]theta/delta scan:  15%|█▍        | 19/128 [00:01<00:06, 15.74it/s]theta/delta scan:  16%|█▋        | 21/128 [00:01<00:06, 16.61it/s]theta/delta scan:  18%|█▊        | 23/128 [00:01<00:06, 16.08it/s]theta/delta scan:  20%|██        | 26/128 [00:01<00:05, 17.57it/s]theta/delta scan:  22%|██▏       | 28/128 [00:02<00:05, 17.38it/s]theta/delta scan:  23%|██▎       | 30/128 [00:02<00:07, 13.50it/s]theta/delta scan:  25%|██▌       | 32/128 [00:02<00:07, 12.70it/s]theta/delta scan:  27%|██▋       | 34/128 [00:02<00:08, 10.78it/s]theta/delta scan:  28%|██▊       | 36/128 [00:02<00:07, 12.16it/s]theta/delta scan:  30%|██▉       | 38/128 [00:02<00:06, 13.27it/s]theta/delta scan:  32%|███▏      | 41/128 [00:03<00:05, 15.53it/s]theta/delta scan:  34%|███▍      | 44/128 [00:03<00:04, 17.77it/s]theta/delta scan:  37%|███▋      | 47/128 [00:03<00:04, 19.57it/s]theta/delta scan:  39%|███▉      | 50/128 [00:03<00:03, 20.53it/s]theta/delta scan:  41%|████▏     | 53/128 [00:03<00:03, 22.19it/s]theta/delta scan:  44%|████▍     | 56/128 [00:03<00:03, 22.70it/s]theta/delta scan:  46%|████▌     | 59/128 [00:03<00:02, 23.18it/s]theta/delta scan:  48%|████▊     | 62/128 [00:03<00:02, 22.57it/s]theta/delta scan:  51%|█████     | 65/128 [00:04<00:02, 21.63it/s]theta/delta scan:  53%|█████▎    | 68/128 [00:04<00:02, 22.20it/s]theta/delta scan:  55%|█████▌    | 71/128 [00:04<00:02, 21.77it/s]theta/delta scan:  58%|█████▊    | 74/128 [00:04<00:02, 21.81it/s]theta/delta scan:  60%|██████    | 77/128 [00:04<00:02, 23.39it/s]theta/delta scan:  62%|██████▎   | 80/128 [00:04<00:01, 24.31it/s]theta/delta scan:  65%|██████▍   | 83/128 [00:04<00:01, 23.14it/s]theta/delta scan:  67%|██████▋   | 86/128 [00:04<00:01, 22.99it/s]theta/delta scan:  70%|██████▉   | 89/128 [00:05<00:01, 23.33it/s]theta/delta scan:  72%|███████▏  | 92/128 [00:05<00:01, 23.90it/s]theta/delta scan:  74%|███████▍  | 95/128 [00:05<00:01, 24.53it/s]theta/delta scan:  77%|███████▋  | 99/128 [00:05<00:01, 26.60it/s]theta/delta scan:  80%|████████  | 103/128 [00:05<00:00, 28.36it/s]theta/delta scan:  84%|████████▎ | 107/128 [00:05<00:00, 30.85it/s]theta/delta scan:  87%|████████▋ | 111/128 [00:05<00:00, 31.97it/s]theta/delta scan:  90%|████████▉ | 115/128 [00:05<00:00, 30.82it/s]theta/delta scan:  93%|█████████▎| 119/128 [00:06<00:00, 28.15it/s]theta/delta scan:  96%|█████████▌| 123/128 [00:06<00:00, 29.55it/s]theta/delta scan:  99%|█████████▉| 127/128 [00:06<00:00, 30.46it/s]                                                                   theta reference channel: 117 (theta/delta = 4.01)
+track length 1.6 m -> 40 bins
+83 laps (41 R / 42 L), 219 s of running
+moving-only: R 108 s, L 98 s
+entrainment: 117 units, 81 significant at p<0.01
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: divide by zero encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: overflow encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: invalid value encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: divide by zero encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: overflow encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: invalid value encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: divide by zero encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: overflow encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: invalid value encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: divide by zero encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: overflow encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: invalid value encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: divide by zero encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: overflow encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: invalid value encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: divide by zero encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: overflow encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: invalid value encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+place fields: 78 cell-direction pairs pass criteria (from 119 excitatory units)
+  precession significant (perm p<0.05): 63 / 78; negative slope: 69
+
+===== Buddy_06272013 =====
+theta/delta scan:   0%|          | 0/128 [00:00<?, ?it/s]theta/delta scan:   2%|▏         | 3/128 [00:00<00:05, 24.52it/s]theta/delta scan:   5%|▍         | 6/128 [00:00<00:04, 25.45it/s]theta/delta scan:   7%|▋         | 9/128 [00:00<00:04, 24.15it/s]theta/delta scan:   9%|▉         | 12/128 [00:00<00:04, 24.08it/s]theta/delta scan:  12%|█▏        | 15/128 [00:00<00:04, 25.14it/s]theta/delta scan:  14%|█▍        | 18/128 [00:00<00:04, 25.95it/s]theta/delta scan:  16%|█▋        | 21/128 [00:00<00:03, 27.03it/s]theta/delta scan:  19%|█▉        | 24/128 [00:00<00:03, 27.60it/s]theta/delta scan:  21%|██        | 27/128 [00:01<00:03, 27.31it/s]theta/delta scan:  23%|██▎       | 30/128 [00:01<00:03, 26.07it/s]theta/delta scan:  26%|██▌       | 33/128 [00:01<00:03, 24.06it/s]theta/delta scan:  28%|██▊       | 36/128 [00:01<00:03, 23.93it/s]theta/delta scan:  30%|███       | 39/128 [00:01<00:03, 24.14it/s]theta/delta scan:  33%|███▎      | 42/128 [00:01<00:03, 23.85it/s]theta/delta scan:  35%|███▌      | 45/128 [00:01<00:03, 23.13it/s]theta/delta scan:  38%|███▊      | 48/128 [00:01<00:03, 23.72it/s]theta/delta scan:  40%|███▉      | 51/128 [00:02<00:03, 23.60it/s]theta/delta scan:  42%|████▏     | 54/128 [00:02<00:03, 23.97it/s]theta/delta scan:  45%|████▍     | 57/128 [00:02<00:02, 24.86it/s]theta/delta scan:  47%|████▋     | 60/128 [00:02<00:02, 25.13it/s]theta/delta scan:  49%|████▉     | 63/128 [00:02<00:02, 25.40it/s]theta/delta scan:  52%|█████▏    | 66/128 [00:02<00:02, 25.44it/s]theta/delta scan:  54%|█████▍    | 69/128 [00:02<00:02, 26.11it/s]theta/delta scan:  56%|█████▋    | 72/128 [00:02<00:02, 25.28it/s]theta/delta scan:  59%|█████▊    | 75/128 [00:02<00:02, 25.60it/s]theta/delta scan:  61%|██████    | 78/128 [00:03<00:01, 26.77it/s]theta/delta scan:  63%|██████▎   | 81/128 [00:03<00:01, 27.32it/s]theta/delta scan:  66%|██████▌   | 84/128 [00:03<00:01, 28.01it/s]theta/delta scan:  68%|██████▊   | 87/128 [00:03<00:01, 27.85it/s]theta/delta scan:  70%|███████   | 90/128 [00:03<00:01, 27.62it/s]theta/delta scan:  73%|███████▎  | 93/128 [00:03<00:01, 27.74it/s]theta/delta scan:  75%|███████▌  | 96/128 [00:03<00:01, 26.57it/s]theta/delta scan:  77%|███████▋  | 99/128 [00:03<00:01, 24.56it/s]theta/delta scan:  80%|███████▉  | 102/128 [00:04<00:01, 23.80it/s]theta/delta scan:  82%|████████▏ | 105/128 [00:04<00:00, 24.07it/s]theta/delta scan:  84%|████████▍ | 108/128 [00:04<00:00, 24.88it/s]theta/delta scan:  87%|████████▋ | 111/128 [00:04<00:00, 24.03it/s]theta/delta scan:  89%|████████▉ | 114/128 [00:04<00:00, 24.48it/s]theta/delta scan:  91%|█████████▏| 117/128 [00:04<00:00, 25.58it/s]theta/delta scan:  94%|█████████▍| 120/128 [00:04<00:00, 25.05it/s]theta/delta scan:  96%|█████████▌| 123/128 [00:04<00:00, 24.51it/s]theta/delta scan:  98%|█████████▊| 126/128 [00:04<00:00, 24.70it/s]                                                                   theta reference channel: 81 (theta/delta = 7.87)
+track length 1.6 m -> 40 bins
+53 laps (28 R / 25 L), 138 s of running
+moving-only: R 69 s, L 62 s
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynapple/core/time_index.py:109: UserWarning: timestamps are not sorted
+  warn("timestamps are not sorted", UserWarning)
+entrainment: 44 units, 32 significant at p<0.01
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: divide by zero encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: overflow encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: invalid value encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: divide by zero encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: overflow encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: invalid value encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: divide by zero encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: overflow encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: invalid value encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: divide by zero encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: overflow encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: invalid value encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: divide by zero encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: overflow encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: invalid value encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: divide by zero encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: overflow encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: invalid value encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+place fields: 14 cell-direction pairs pass criteria (from 45 excitatory units)
+  precession significant (perm p<0.05): 10 / 14; negative slope: 10
+
+===== Cicero_09012014 =====
+theta/delta scan:   0%|          | 0/128 [00:00<?, ?it/s]theta/delta scan:   2%|▏         | 3/128 [00:00<00:04, 28.45it/s]theta/delta scan:   5%|▌         | 7/128 [00:00<00:03, 31.00it/s]theta/delta scan:   9%|▊         | 11/128 [00:00<00:03, 29.84it/s]theta/delta scan:  11%|█         | 14/128 [00:00<00:03, 29.50it/s]theta/delta scan:  14%|█▍        | 18/128 [00:00<00:03, 29.08it/s]theta/delta scan:  16%|█▋        | 21/128 [00:00<00:03, 27.91it/s]theta/delta scan:  19%|█▉        | 24/128 [00:00<00:03, 27.46it/s]theta/delta scan:  22%|██▏       | 28/128 [00:00<00:03, 28.29it/s]theta/delta scan:  24%|██▍       | 31/128 [00:01<00:03, 28.42it/s]theta/delta scan:  27%|██▋       | 34/128 [00:01<00:03, 28.77it/s]theta/delta scan:  29%|██▉       | 37/128 [00:01<00:03, 28.31it/s]theta/delta scan:  31%|███▏      | 40/128 [00:01<00:03, 27.17it/s]theta/delta scan:  34%|███▎      | 43/128 [00:01<00:03, 27.57it/s]theta/delta scan:  36%|███▌      | 46/128 [00:01<00:02, 27.70it/s]theta/delta scan:  38%|███▊      | 49/128 [00:01<00:02, 27.30it/s]theta/delta scan:  41%|████      | 52/128 [00:01<00:03, 25.30it/s]theta/delta scan:  43%|████▎     | 55/128 [00:02<00:03, 22.80it/s]theta/delta scan:  45%|████▌     | 58/128 [00:02<00:03, 23.14it/s]theta/delta scan:  48%|████▊     | 62/128 [00:02<00:02, 25.35it/s]theta/delta scan:  51%|█████     | 65/128 [00:02<00:02, 25.71it/s]theta/delta scan:  53%|█████▎    | 68/128 [00:02<00:02, 25.87it/s]theta/delta scan:  55%|█████▌    | 71/128 [00:02<00:02, 26.90it/s]theta/delta scan:  58%|█████▊    | 74/128 [00:02<00:02, 26.60it/s]theta/delta scan:  60%|██████    | 77/128 [00:02<00:01, 26.89it/s]theta/delta scan:  63%|██████▎   | 81/128 [00:02<00:01, 28.53it/s]theta/delta scan:  66%|██████▌   | 84/128 [00:03<00:01, 28.29it/s]theta/delta scan:  69%|██████▉   | 88/128 [00:03<00:01, 28.76it/s]theta/delta scan:  71%|███████   | 91/128 [00:03<00:01, 27.93it/s]theta/delta scan:  73%|███████▎  | 94/128 [00:03<00:01, 27.74it/s]theta/delta scan:  76%|███████▌  | 97/128 [00:03<00:01, 28.08it/s]theta/delta scan:  78%|███████▊  | 100/128 [00:03<00:01, 27.77it/s]theta/delta scan:  80%|████████  | 103/128 [00:03<00:00, 28.05it/s]theta/delta scan:  83%|████████▎ | 106/128 [00:03<00:00, 28.18it/s]theta/delta scan:  85%|████████▌ | 109/128 [00:03<00:00, 27.62it/s]theta/delta scan:  88%|████████▊ | 112/128 [00:04<00:00, 27.67it/s]theta/delta scan:  90%|████████▉ | 115/128 [00:04<00:00, 27.01it/s]theta/delta scan:  92%|█████████▏| 118/128 [00:04<00:00, 27.13it/s]theta/delta scan:  95%|█████████▍| 121/128 [00:04<00:00, 27.62it/s]theta/delta scan:  97%|█████████▋| 124/128 [00:04<00:00, 27.43it/s]theta/delta scan: 100%|██████████| 128/128 [00:04<00:00, 28.67it/s]                                                                   theta reference channel: 21 (theta/delta = 4.37)
+track length 1.6 m -> 40 bins
+84 laps (41 R / 43 L), 483 s of running
+moving-only: R 177 s, L 189 s
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynapple/core/time_index.py:109: UserWarning: timestamps are not sorted
+  warn("timestamps are not sorted", UserWarning)
+entrainment: 65 units, 39 significant at p<0.01
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: divide by zero encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: overflow encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: invalid value encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: divide by zero encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: overflow encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: invalid value encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: divide by zero encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: overflow encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: invalid value encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: divide by zero encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: overflow encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: invalid value encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: divide by zero encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: overflow encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: invalid value encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: divide by zero encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: overflow encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: invalid value encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+place fields: 20 cell-direction pairs pass criteria (from 54 excitatory units)
+  precession significant (perm p<0.05): 14 / 20; negative slope: 17
+
+===== Cicero_09172014 =====
+theta/delta scan:   0%|          | 0/128 [00:00<?, ?it/s]theta/delta scan:   2%|▏         | 3/128 [00:00<00:05, 21.90it/s]theta/delta scan:   5%|▍         | 6/128 [00:00<00:05, 23.33it/s]theta/delta scan:   7%|▋         | 9/128 [00:00<00:05, 21.33it/s]theta/delta scan:   9%|▉         | 12/128 [00:00<00:04, 23.81it/s]theta/delta scan:  12%|█▏        | 15/128 [00:00<00:04, 24.81it/s]theta/delta scan:  14%|█▍        | 18/128 [00:00<00:04, 25.33it/s]theta/delta scan:  16%|█▋        | 21/128 [00:00<00:04, 26.33it/s]theta/delta scan:  19%|█▉        | 24/128 [00:00<00:03, 27.21it/s]theta/delta scan:  21%|██        | 27/128 [00:01<00:03, 27.92it/s]theta/delta scan:  23%|██▎       | 30/128 [00:01<00:03, 28.20it/s]theta/delta scan:  26%|██▌       | 33/128 [00:01<00:03, 28.09it/s]theta/delta scan:  28%|██▊       | 36/128 [00:01<00:03, 26.97it/s]theta/delta scan:  30%|███       | 39/128 [00:01<00:03, 25.72it/s]theta/delta scan:  33%|███▎      | 42/128 [00:01<00:03, 25.75it/s]theta/delta scan:  35%|███▌      | 45/128 [00:01<00:03, 26.02it/s]theta/delta scan:  38%|███▊      | 48/128 [00:01<00:03, 26.06it/s]theta/delta scan:  40%|███▉      | 51/128 [00:01<00:02, 26.19it/s]theta/delta scan:  42%|████▏     | 54/128 [00:02<00:03, 19.39it/s]theta/delta scan:  45%|████▍     | 57/128 [00:02<00:03, 18.82it/s]theta/delta scan:  47%|████▋     | 60/128 [00:02<00:03, 18.41it/s]theta/delta scan:  49%|████▉     | 63/128 [00:02<00:03, 19.39it/s]theta/delta scan:  52%|█████▏    | 66/128 [00:02<00:03, 20.50it/s]theta/delta scan:  54%|█████▍    | 69/128 [00:02<00:02, 21.75it/s]theta/delta scan:  56%|█████▋    | 72/128 [00:03<00:02, 21.45it/s]theta/delta scan:  59%|█████▊    | 75/128 [00:03<00:02, 21.50it/s]theta/delta scan:  61%|██████    | 78/128 [00:03<00:02, 21.73it/s]theta/delta scan:  63%|██████▎   | 81/128 [00:03<00:02, 22.93it/s]theta/delta scan:  66%|██████▌   | 84/128 [00:03<00:01, 23.80it/s]theta/delta scan:  68%|██████▊   | 87/128 [00:03<00:01, 24.75it/s]theta/delta scan:  70%|███████   | 90/128 [00:03<00:01, 25.45it/s]theta/delta scan:  73%|███████▎  | 93/128 [00:03<00:01, 25.60it/s]theta/delta scan:  75%|███████▌  | 96/128 [00:04<00:01, 26.64it/s]theta/delta scan:  77%|███████▋  | 99/128 [00:04<00:01, 27.09it/s]theta/delta scan:  80%|███████▉  | 102/128 [00:04<00:00, 26.64it/s]theta/delta scan:  82%|████████▏ | 105/128 [00:04<00:00, 26.29it/s]theta/delta scan:  84%|████████▍ | 108/128 [00:04<00:00, 26.62it/s]theta/delta scan:  87%|████████▋ | 111/128 [00:04<00:00, 24.97it/s]theta/delta scan:  89%|████████▉ | 114/128 [00:04<00:00, 24.59it/s]theta/delta scan:  91%|█████████▏| 117/128 [00:04<00:00, 24.98it/s]theta/delta scan:  94%|█████████▍| 120/128 [00:04<00:00, 26.14it/s]theta/delta scan:  96%|█████████▌| 123/128 [00:05<00:00, 26.80it/s]theta/delta scan:  98%|█████████▊| 126/128 [00:05<00:00, 27.46it/s]                                                                   theta reference channel: 52 (theta/delta = 6.36)
+track length 2.0 m -> 50 bins
+48 laps (24 R / 24 L), 478 s of running
+moving-only: R 153 s, L 142 s
+entrainment: 63 units, 38 significant at p<0.01
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: divide by zero encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: overflow encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: invalid value encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: divide by zero encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: overflow encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: invalid value encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: divide by zero encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: overflow encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: invalid value encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: divide by zero encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: overflow encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: invalid value encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: divide by zero encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: overflow encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: invalid value encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: divide by zero encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: overflow encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: invalid value encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+place fields: 20 cell-direction pairs pass criteria (from 57 excitatory units)
+  precession significant (perm p<0.05): 12 / 20; negative slope: 15
+
+===== Gatsby_08022013 =====
+theta/delta scan:   0%|          | 0/128 [00:00<?, ?it/s]theta/delta scan:   1%|          | 1/128 [00:07<16:10,  7.64s/it]theta/delta scan:   2%|▏         | 2/128 [00:08<08:07,  3.87s/it]theta/delta scan:   2%|▏         | 3/128 [00:12<07:53,  3.79s/it]theta/delta scan:   3%|▎         | 4/128 [00:15<06:52,  3.33s/it]theta/delta scan:   5%|▌         | 7/128 [00:16<03:05,  1.53s/it]theta/delta scan:   6%|▋         | 8/128 [00:18<03:18,  1.65s/it]theta/delta scan:   9%|▊         | 11/128 [00:19<01:54,  1.02it/s]theta/delta scan:  11%|█         | 14/128 [00:19<01:07,  1.70it/s]theta/delta scan:  14%|█▍        | 18/128 [00:20<00:49,  2.21it/s]theta/delta scan:  16%|█▋        | 21/128 [00:20<00:34,  3.11it/s]theta/delta scan:  18%|█▊        | 23/128 [00:23<01:03,  1.66it/s]theta/delta scan:  19%|█▉        | 24/128 [00:25<01:12,  1.44it/s]theta/delta scan:  20%|█▉        | 25/128 [00:26<01:26,  1.19it/s]theta/delta scan:  23%|██▎       | 29/128 [00:26<00:43,  2.27it/s]theta/delta scan:  25%|██▌       | 32/128 [00:26<00:28,  3.32it/s]theta/delta scan:  28%|██▊       | 36/128 [00:27<00:17,  5.14it/s]theta/delta scan:  30%|███       | 39/128 [00:27<00:13,  6.81it/s]theta/delta scan:  33%|███▎      | 42/128 [00:27<00:09,  8.66it/s]theta/delta scan:  35%|███▌      | 45/128 [00:34<01:05,  1.27it/s]theta/delta scan:  37%|███▋      | 47/128 [00:39<01:39,  1.23s/it]theta/delta scan:  39%|███▉      | 50/128 [00:40<01:06,  1.18it/s]theta/delta scan:  41%|████▏     | 53/128 [00:40<00:44,  1.69it/s]theta/delta scan:  44%|████▍     | 56/128 [00:40<00:30,  2.35it/s]theta/delta scan:  46%|████▌     | 59/128 [00:40<00:21,  3.26it/s]theta/delta scan:  48%|████▊     | 62/128 [00:40<00:14,  4.45it/s]theta/delta scan:  51%|█████     | 65/128 [00:40<00:10,  5.88it/s]theta/delta scan:  53%|█████▎    | 68/128 [00:40<00:07,  7.65it/s]theta/delta scan:  55%|█████▌    | 71/128 [00:41<00:05,  9.52it/s]theta/delta scan:  58%|█████▊    | 74/128 [00:41<00:04, 11.58it/s]theta/delta scan:  60%|██████    | 77/128 [00:41<00:03, 13.79it/s]theta/delta scan:  62%|██████▎   | 80/128 [00:43<00:15,  3.08it/s]theta/delta scan:  65%|██████▍   | 83/128 [00:44<00:10,  4.20it/s]theta/delta scan:  67%|██████▋   | 86/128 [00:44<00:07,  5.61it/s]theta/delta scan:  70%|██████▉   | 89/128 [00:44<00:05,  7.41it/s]theta/delta scan:  72%|███████▏  | 92/128 [00:45<00:09,  3.84it/s]theta/delta scan:  74%|███████▍  | 95/128 [00:46<00:06,  5.14it/s]theta/delta scan:  77%|███████▋  | 98/128 [00:46<00:04,  6.74it/s]theta/delta scan:  79%|███████▉  | 101/128 [00:46<00:03,  8.57it/s]theta/delta scan:  81%|████████▏ | 104/128 [00:46<00:02, 10.83it/s]theta/delta scan:  84%|████████▎ | 107/128 [00:46<00:01, 13.35it/s]theta/delta scan:  87%|████████▋ | 111/128 [00:49<00:04,  3.72it/s]theta/delta scan:  89%|████████▉ | 114/128 [00:49<00:02,  4.92it/s]theta/delta scan:  91%|█████████▏| 117/128 [00:49<00:01,  6.39it/s]theta/delta scan:  94%|█████████▍| 120/128 [00:50<00:02,  3.57it/s]theta/delta scan:  98%|█████████▊| 125/128 [00:51<00:00,  5.71it/s]theta/delta scan: 100%|██████████| 128/128 [00:52<00:00,  3.40it/s]                                                                   theta reference channel: 42 (theta/delta = 2.98)
+track length 1.6 m -> 40 bins
+83 laps (41 R / 42 L), 367 s of running
+moving-only: R 142 s, L 147 s
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynapple/core/time_index.py:109: UserWarning: timestamps are not sorted
+  warn("timestamps are not sorted", UserWarning)
+entrainment: 57 units, 43 significant at p<0.01
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: divide by zero encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: overflow encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: invalid value encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: divide by zero encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: overflow encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: invalid value encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: divide by zero encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: overflow encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: invalid value encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: divide by zero encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: overflow encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:89: RuntimeWarning: invalid value encountered in matmul
+  R = np.abs(M @ np.exp(1j * phi)) / len(x)
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: divide by zero encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: overflow encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:117: RuntimeWarning: invalid value encountered in matmul
+  obs = np.abs(M @ np.exp(1j * phi)).max() / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: divide by zero encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: overflow encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/fable-5/theta-01/theta_analysis.py:119: RuntimeWarning: invalid value encountered in matmul
+  null = np.abs(M @ np.exp(1j * perms)).max(axis=0) / n
+place fields: 23 cell-direction pairs pass criteria (from 65 excitatory units)
+  precession significant (perm p<0.05): 17 / 23; negative slope: 22
+
+wrote results.pkl

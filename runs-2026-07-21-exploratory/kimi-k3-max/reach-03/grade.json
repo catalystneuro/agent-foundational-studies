@@ -1,0 +1,33 @@
+{
+  "dandiset": "000128",
+  "subject_session": "sub-Jenkins / ses-full (desc-train), 182 units, 2295 trials",
+  "headline_stat": {
+    "name": "fraction direction-tuned (movement epoch)",
+    "value": "71% (130/182)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 3,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The NWB file labels kinematics as meters/m/s, but values are on a millimeter scale; we report mm and mm/s.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000128 MC_Maze macaque M1/PMd delayed center-out reaching is the canonical dataset for reach direction and velocity tuning.",
+    "handling": "Real data streamed via remfile with correct move-onset alignment and reach-direction computation, but all 182 units are used with no spike-quality inclusion criteria beyond a rate threshold in the GLM.",
+    "analysis": "Cosine tuning with an ANOVA plus rate-weighted-resultant shuffle null, circular statistics for preferred directions, and held-out Poisson GLMs constitute the standard, correct method set with the required null distributions.",
+    "correctness": "Reported values (71% tuned, circular corr 0.33, +30 ms lag, GLM pseudo-R2 0.0105 vs 0.0043) reproduce from the committed code, are internally consistent with the figures, and rest on sound held-out and shuffle statistics.",
+    "figures": "The population figures show the effect clearly with sample sizes, but the fig1 hand-speed panel is a broken plot and the fig3 example units are chosen by modulation depth, yielding low-rate units with poor cosine fits.",
+    "honesty": "Nothing is misrepresented and every headline number matches the figures, but the weak cross-epoch PD stability (corr 0.11) and the tiny GLM effect sizes go without explicit caveat and there is no limitations section.",
+    "verdict": "The core result is sound and well-supported; I would accept it after asking for the fig1 speed-panel fix and more representative example units."
+  }
+}

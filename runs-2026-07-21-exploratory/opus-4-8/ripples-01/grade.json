@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles maze session (hc-11 Grosmark & Buzs\u00e1ki); asset c0ac352b-9da5-44b0-b73d-41a9ee3c3b1d",
+  "headline_stat": {
+    "name": "none reported (run incomplete)",
+    "value": "none",
+    "reproduces_from_code": false,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 1,
+    "correctness": 0,
+    "figures": 0,
+    "honesty": 3
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Analysis in progress.",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 Achilles hc-11 is the canonical CA1 place-cell/replay dataset and the agent verified it contains the LFP, units, position, and sleep epochs needed for SWRs.",
+    "handling": "load_data.py correctly streams and caches real data with proper epoch/unit/LFP extraction, and the 144 MB cache confirms the load succeeded, though downstream preparation never ran to completion.",
+    "analysis": "The ripple-detection code follows standard band-pass/Hilbert/threshold conventions but never executed to completion, with no replay decoding and no controls produced.",
+    "correctness": "No numbers, statistics, or results were produced at all, so there is nothing that reproduces from the code.",
+    "figures": "No figures exist in the run directory.",
+    "honesty": "The placeholder README makes no claims and honestly discloses that the analysis is unfinished, so nothing is misrepresented."
+  }
+}

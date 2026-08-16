@@ -1,0 +1,32 @@
+{
+  "dandiset": "000986",
+  "subject_session": "5 mice, 15 sessions (sub-LA3/LA8/LA9/LA11/LA12); example figures use LA11 ses-1",
+  "headline_stat": {
+    "name": "frequency-selective units (Kruskal-Wallis, FDR<0.05)",
+    "value": "84.9%",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The NWB units table in this dandiset carries no spike-sorting quality metrics or channel positions, so no quality filter was applied and no depth-resolved tonotopy could be examined; every sorted unit enters the population statistics. The stimulus set is also coarse, five frequencies one octave apart at a single level, so this analysis establishes that units prefer different frequencies but cannot measure tuning bandwidth or a rate-level function.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000986 is the canonical pure-tone auditory-cortex Neuropixels dataset for frequency tuning, the standard expert choice.",
+    "handling": "Real data streamed via remfile across all 15 sessions with correct trial alignment, response/baseline windows, and an explicit, justified account of why no quality filter exists in this units table.",
+    "analysis": "Standard nonparametric selectivity tests with FDR correction, a label-permutation control, cross-validated tuning, shuffle control for sparseness, a decoder with shuffled-label chance, and an independent GLM cross-check.",
+    "correctness": "Every headline number (85.2% responsive, 84.9%/85.9% selective, 1180 both, sparseness 0.77 vs 0.02, decoding 0.84, 0.35 octave error, GLM r=0.99/92%, BF counts 234/187/264/281/214) reproduces exactly from the committed CSV and pickles and is internally consistent.",
+    "figures": "Figures show the effect clearly with units, sample sizes, cross-validated tuning, and example units chosen one per preferred frequency rather than by effect magnitude.",
+    "honesty": "Claims are proportionate to the strong evidence, the negative baseline-subtracted responses are diagnosed and explained rather than hidden, GLM positivity is hedged as 'most units,' and concrete limitations are stated plainly."
+  }
+}

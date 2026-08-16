@@ -1,0 +1,32 @@
+{
+  "dandiset": "000128",
+  "subject_session": "sub-Jenkins MC_Maze (primary); replication in DANDI:000129 MC_RTT, sub-Indy",
+  "headline_stat": {
+    "name": "velocity (2D-spline) vs direction-only Poisson GLM median pseudo-R^2 over tuned units",
+    "value": "0.040 vs 0.020 (96% of tuned units favor velocity)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The GLMs model instantaneous kinematics only and include no spike-history term, so a unit's own refractoriness and bursting are unmodelled. Direction sampling in MC_Maze is uneven, which leaves two of twelve 30 deg bins too sparse to use... Single-unit R2 values on 50 ms Poisson counts are small in absolute terms throughout... Most importantly, all of this is correlational. Tuning to velocity here is a statement about what firing rate predicts, not a claim that velocity is the variable the cortex explicitly represents.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Uses the canonical MC_Maze reach dataset (000128, Jenkins) and independently replicates in MC_RTT (000129, Indy), exactly the standard choice for reach direction/velocity tuning.",
+    "handling": "Real data streamed via remfile with disk cache, straight successful trials selected, reach direction measured from the hand, movement-onset alignment verified inside observed epochs, and the electrode/area mapping problem is diagnosed and handled honestly.",
+    "analysis": "Cosine fits with permutation tests, circular statistics for PD comparison, cross-validated nested Poisson GLMs, lag scans, ridge decoding, population vector, and circular-shift permutation controls are all appropriate and correctly applied.",
+    "correctness": "Every headline number I checked reproduces from the committed result files and figures and is internally consistent, with the one 0.55-vs-0.41 decode figure explicitly distinguished as during-movement vs overall peak.",
+    "figures": "Publication-quality figures with labeled units, sample sizes, clear population summaries, and example units chosen by modulation depth (the effect itself), making the velocity-scaling claim visible.",
+    "honesty": "Claims are proportionate, two negative/weak results are reported rather than smoothed over, a data-provenance caveat is flagged, and a full limitations section names the specific weaknesses of this result."
+  }
+}

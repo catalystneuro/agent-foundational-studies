@@ -1,0 +1,32 @@
+{
+  "dandiset": "000059",
+  "subject_session": "MS21/MS22/MS13, 5 sessions (Peter-MS21-180628-155921-concat and 4 others)",
+  "headline_stat": {
+    "name": "fraction of units phase-locked to theta",
+    "value": "310/483 (64%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The MRL test is conservative: some units that fail it still show spike-triggered LFP averages above their own shuffle band, so 64% should be read as a lower bound on the fraction of entrained units. Phase is referenced to a single channel per session, so preferred phases are comparable within a session but only approximately across sessions... Cell types were assigned from firing rate and autocorrelogram burstiness because this dandiset does not distribute spike waveforms, so the pyramidal/interneuron labels are putative.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000059 is a canonical Buzs\u00e1ki-lab hippocampal theta dataset explicitly known-good for theta entrainment, with the added bonus of a septal-cooling causal manipulation.",
+    "handling": "Real data streamed via remfile from two paired NWB assets, clock alignment verified, curated units only, theta reference channel correctly mapped through the DynamicTableRegion, and speed dropouts handled explicitly.",
+    "analysis": "Correct circular statistics (MRL, Rayleigh, bias-corrected MRL) with a spike-count-preserving circular-shift null, plus STA, split-half, and a NeMoS Poisson GLM controlling for speed and spike history.",
+    "correctness": "All headline numbers (64% locked, median MRL 0.073 vs chance 0.025, cooling shift -0.66 Hz) reproduce exactly from the committed unit_stats.csv, are internally consistent, and rest on 483 units with proper controls.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show the effect unambiguously, and honestly include weak/non-locked units as gray negative controls rather than only flattering examples.",
+    "honesty": "Claims are proportionate, the write-up frames 64% as a conservative lower bound and names single-channel referencing, putative cell-type labels, and the immobility-contrast caveat, all of which the figures support."
+  }
+}

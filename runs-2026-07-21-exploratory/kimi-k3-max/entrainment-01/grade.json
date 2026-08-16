@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "fraction significantly theta phase-locked (Rayleigh p<0.01)",
+    "value": "103/136 (75.7%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "We do not have layer annotations, so we select the channel with the highest theta (5-11 Hz) to delta (1-4 Hz) power ratio, computed from a 200 s window in the middle of the maze epoch.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000044 Achilles CA1 linear-maze session is the canonical dataset for hippocampal theta entrainment, an expert-standard choice.",
+    "handling": "Real NWB streamed via remfile, LFP correctly converted, spikes restricted to running bouts with an explicit >=100-spike criterion and cell-type metadata used directly.",
+    "analysis": "Correct circular statistics (MRL, Rayleigh, preferred phase) applied to spike-theta phase with a time-shift null, exactly the appropriate treatment.",
+    "correctness": "Every reported number (103/136, 87/119, 16/17, median MRL 0.116 vs shuffle 0.025, MW p=1.5e-4) reproduces exactly from the committed CSV and is internally consistent with the figures.",
+    "figures": "Polar histograms, population summary, pooled phase, and cycle-by-cycle trace all show the effect clearly with units, sample sizes, and examples ranked by MRL (the effect strength itself).",
+    "honesty": "Claims are proportionate and nothing is misrepresented, but the write-up states no result-level limitation (single session, trivially-significant high-count interneurons), capping a genuinely clean result at a minor fault.",
+    "verdict": "A clean, reproducible, methodologically sound demonstration of theta phase entrainment that a supervisor would accept and move on from."
+  }
+}

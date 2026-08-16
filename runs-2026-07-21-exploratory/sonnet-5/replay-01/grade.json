@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "% ripple events with significant replay (p<0.05 vs time-bin shuffle)",
+    "value": "not computed",
+    "reproduces_from_code": false,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 1,
+    "figures": 2,
+    "honesty": 3
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000044 sub-Achilles is the canonical Grosmark-Buzsaki CA1 linear-track dataset with PRE/POST sleep and LFP, exactly what an expert would pick for replay.",
+    "handling": "Real data streamed from S3, epochs and linearized position handled correctly, and the two completed figures confirm proper loading, alignment, and defensible place-cell selection.",
+    "analysis": "The coded pipeline (Bayesian decoding, weighted correlation, per-event time-bin shuffle null, binomial excess test) is a standard and appropriate design, but it never executed to a result so its correctness cannot be verified.",
+    "correctness": "No replay statistic was ever computed or reported; the run ended waiting on a backgrounded job, so there are no headline numbers to reproduce.",
+    "figures": "The two figures that exist are readable and show real behavior and clean place fields, but four figures are missing and none of the replay/decoding figures that would demonstrate the phenomenon were produced.",
+    "honesty": "No write-up was produced, so nothing is claimed or misrepresented, but no findings or limitations are stated either.",
+    "verdict": "The pipeline is well-built but the analysis was never completed and no replay result was delivered, so a supervisor would ask the student to finish and rerun."
+  }
+}

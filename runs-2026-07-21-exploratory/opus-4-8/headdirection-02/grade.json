@@ -1,0 +1,33 @@
+{
+  "dandiset": "000056",
+  "subject_session": "Mouse12-120807 (prototype) + Mouse12-120808, Mouse17-130130, Mouse24-131213, Mouse28-140313 pooled",
+  "headline_stat": {
+    "name": "max mean resultant vector length R (unit 31, Mouse12-120807); pooled HD cells 73/299 (24%)",
+    "value": "0.87",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Dandiset 000056 (Peyrache anterodorsal thalamus/post-subiculum) is the canonical HD-cell dataset in the exact species, region, and open-field paradigm expected.",
+    "handling": "Real data streamed via remfile, head direction correctly reconstructed from the two LEDs with invalid-sample masking, restricted to wake epochs, and a min-spike inclusion filter applied.",
+    "analysis": "Circular statistics (mean resultant vector, preferred direction, occupancy-corrected tuning) are correct, but the occupancy-resampling null ignores temporal autocorrelation and is anticonservative rather than the gold-standard temporal-shift shuffle.",
+    "correctness": "Reported values reproduce exactly from the committed CSV, are internally consistent with the figures, and are physically possible; the only ding is the mildly shaky significance null, which does not flip the visibly strong result.",
+    "figures": "Polar tuning curves, directional raster, and pooled preferred-direction rose plots clearly show sharp unimodal tuning; examples are ranked by R, which is exactly the effect strength being demonstrated.",
+    "honesty": "Claims are proportionate to a genuinely clean, strong result with representative top examples, but the write-up states no specific limitation (single-session caveats, the anticonservative null, borderline cells), holding it at 3.",
+    "verdict": "Sound, reproducible, canonical-dataset demonstration that I would accept after asking for a temporal-shuffle null to firm up the significance test."
+  }
+}

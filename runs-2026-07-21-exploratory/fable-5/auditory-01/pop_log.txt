@@ -1,0 +1,34 @@
+sessions:   0%|          | 0/15 [00:00<?, ?it/s]sessions:   7%|▋         | 1/15 [00:50<11:44, 50.30s/it]sessions:  13%|█▎        | 2/15 [01:21<08:24, 38.83s/it]sessions:  20%|██        | 3/15 [01:39<05:55, 29.61s/it]sessions:  27%|██▋       | 4/15 [02:02<04:53, 26.71s/it]sessions:  33%|███▎      | 5/15 [02:39<05:06, 30.62s/it]sessions:  40%|████      | 6/15 [02:58<03:58, 26.50s/it]sessions:  47%|████▋     | 7/15 [03:30<03:48, 28.58s/it]sessions:  53%|█████▎    | 8/15 [03:59<03:19, 28.52s/it]sessions:  60%|██████    | 9/15 [04:40<03:15, 32.60s/it]sessions:  67%|██████▋   | 10/15 [05:58<03:53, 46.61s/it]sessions:  73%|███████▎  | 11/15 [07:10<03:36, 54.19s/it]sessions:  80%|████████  | 12/15 [08:27<03:03, 61.30s/it]sessions:  87%|████████▋ | 13/15 [09:45<02:12, 66.41s/it]sessions:  93%|█████████▎| 14/15 [10:25<00:58, 58.29s/it]sessions: 100%|██████████| 15/15 [10:43<00:00, 46.04s/it]sessions: 100%|██████████| 15/15 [10:43<00:00, 42.88s/it]
+  sub-LA11/sub-LA11_ses-1_behavior.nwb: 235 units, 218 responsive, 170 tuned
+  sub-LA11/sub-LA11_ses-2_behavior.nwb: 132 units, 130 responsive, 86 tuned
+  sub-LA11/sub-LA11_ses-3_behavior.nwb: 107 units, 100 responsive, 78 tuned
+  sub-LA11/sub-LA11_ses-4_behavior.nwb: 73 units, 65 responsive, 49 tuned
+  sub-LA12/sub-LA12_ses-1_behavior.nwb: 131 units, 127 responsive, 112 tuned
+  sub-LA12/sub-LA12_ses-2_behavior.nwb: 134 units, 127 responsive, 128 tuned
+  sub-LA12/sub-LA12_ses-3_behavior.nwb: 115 units, 107 responsive, 90 tuned
+  sub-LA12/sub-LA12_ses-4_behavior.nwb: 50 units, 46 responsive, 32 tuned
+  sub-LA3/sub-LA3_ses-3_behavior.nwb: 35 units, 35 responsive, 16 tuned
+  sub-LA8/sub-LA8_ses-1_behavior.nwb: 192 units, 185 responsive, 150 tuned
+  sub-LA8/sub-LA8_ses-2_behavior.nwb: 159 units, 150 responsive, 115 tuned
+  sub-LA9/sub-LA9_ses-1_behavior.nwb: 86 units, 81 responsive, 61 tuned
+  sub-LA9/sub-LA9_ses-3_behavior.nwb: 30 units, 30 responsive, 20 tuned
+  sub-LA9/sub-LA9_ses-4_behavior.nwb: 47 units, 46 responsive, 30 tuned
+  sub-LA9/sub-LA9_ses-5_behavior.nwb: 38 units, 37 responsive, 23 tuned
+                                    path subject  n_units  n_responsive  n_tuned
+0   sub-LA11/sub-LA11_ses-1_behavior.nwb    LA11      235           218      170
+1   sub-LA11/sub-LA11_ses-2_behavior.nwb    LA11      132           130       86
+2   sub-LA11/sub-LA11_ses-3_behavior.nwb    LA11      107           100       78
+3   sub-LA11/sub-LA11_ses-4_behavior.nwb    LA11       73            65       49
+4   sub-LA12/sub-LA12_ses-1_behavior.nwb    LA12      131           127      112
+5   sub-LA12/sub-LA12_ses-2_behavior.nwb    LA12      134           127      128
+6   sub-LA12/sub-LA12_ses-3_behavior.nwb    LA12      115           107       90
+7   sub-LA12/sub-LA12_ses-4_behavior.nwb    LA12       50            46       32
+8     sub-LA3/sub-LA3_ses-3_behavior.nwb     LA3       35            35       16
+9     sub-LA8/sub-LA8_ses-1_behavior.nwb     LA8      192           185      150
+10    sub-LA8/sub-LA8_ses-2_behavior.nwb     LA8      159           150      115
+11    sub-LA9/sub-LA9_ses-1_behavior.nwb     LA9       86            81       61
+12    sub-LA9/sub-LA9_ses-3_behavior.nwb     LA9       30            30       20
+13    sub-LA9/sub-LA9_ses-4_behavior.nwb     LA9       47            46       30
+14    sub-LA9/sub-LA9_ses-5_behavior.nwb     LA9       38            37       23
+
+pooled: 1564 units, 1484 responsive, 1160 frequency-tuned

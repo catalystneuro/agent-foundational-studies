@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Buddy_06272013 (prototype), plus Achilles_10252013, Cicero_09012014, Gatsby_08022013",
+  "headline_stat": {
+    "name": "fraction of excitatory CA1 units classified as place cells (per session)",
+    "value": "0.51-0.69",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "consistent with very sparsely-firing pyramidal cells not producing enough spikes during a single session to reach significance, rather than with place cells per se being high-rate",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki CA1 linear-track) is the canonical place-cell dataset, and four sessions from four rats are used.",
+    "handling": "Real data streamed via remfile, with the mislabeled rate/period quirk caught and corrected and a PCA linearization validated (r=-1.000) against the sparse provided channel.",
+    "analysis": "Skaggs spatial information with a proper per-cell circular-shift shuffle null and a 0.2 Hz rate floor is the standard, correct method with the required control present.",
+    "correctness": "Numbers are internally consistent with the figures (68 units = 40 place + 28 non-place; 48 exc + 20 inh), but the hash-based per-session seed is non-deterministic and a few near-zero-SI cells are labeled place cells without comment.",
+    "figures": "Figures clearly show the effect: the sorted heatmap tiles the full 1.6 m track, examples are ranked by spatial information (the effect metric), and axes carry units and sample sizes.",
+    "honesty": "Claims are proportionate and it flags the data quirk and the firing-rate confound, but there is no dedicated discussion of the liberal classification or the low-SI cells passing the criterion."
+  }
+}

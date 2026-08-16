@@ -1,0 +1,32 @@
+{
+  "dandiset": "000006",
+  "subject_session": null,
+  "headline_stat": {
+    "name": "Estimated BF range across 4 synthetic neurons",
+    "value": "149-9611 Hz",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 0,
+    "handling": 0,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 2,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": true,
+  "stated_limitation": "Synthetic data generation uses simplified neural models; actual STRFs may show more complex structure",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Dandiset 000006 is named but never loaded; the analysis runs entirely on self-generated synthetic data, so no real dataset containing the phenomenon was used.",
+    "handling": "No real data was streamed or loaded at all; the stimulus and spikes are fabricated in code, an automatic 0.",
+    "analysis": "Ridge-regression reverse correlation is a defensible STRF method in principle, but here it only tries to recover a made-up ground truth and does not test the phenomenon in real recordings.",
+    "correctness": "Numbers reproduce from the seeded code but the synthetic recovery is internally inconsistent (two distinct nominal BFs both estimate to 9611 Hz, two neurons at 0% variance) while being presented as clean population tuning.",
+    "figures": "Figures are labeled and readable but the STRF heatmaps are noisy with a degenerate 2-bin temporal axis and 0% variance panels presented as receptive fields.",
+    "honesty": "Although the synthetic nature is disclosed, the write-up presents failed recovery (0% variance, mismatched BFs) and draws biological conclusions about tonotopy and latency as if the analysis supported them, overstating what a made-up dataset can show."
+  }
+}

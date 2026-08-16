@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Buddy, Achilles, Cicero, Gatsby (4 rats; prototype session = Buddy)",
+  "headline_stat": {
+    "name": "% of pooled CA1 units significantly theta-entrained (Rayleigh p<0.05)",
+    "value": "87% of 345 units",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 hippocampal CA1 from freely moving rats is the canonical dataset for theta phase entrainment, across four subjects.",
+    "handling": "Real NWB streamed via remfile, running epochs derived from position speed, cell-type labels used, and units with <30 running spikes explicitly excluded.",
+    "analysis": "Correct circular statistics (Rayleigh, MRL, circular mean) with an independent STA confirmation, but no phase-shuffle/surrogate control to account for spike non-independence that makes Rayleigh anticonservative at very large n.",
+    "correctness": "Pooled 345 units, 86.7% significant, median MRL exc=0.124 vs inh=0.207 and MW p=4.2e-12 all reproduce from the committed CSV, are internally consistent with the figures, and are physically possible.",
+    "figures": "Channel selection, raster, polar histograms, population summary, STA, and cross-session panels are readable, unit-labeled, and show the effect with examples honestly described as the most strongly locked.",
+    "honesty": "Claims are proportionate and examples are labeled as top cases rather than typical, but the write-up states no limitations (single-session caveats, the n-inflated Rayleigh significance) so it sits at proportionate-but-not-self-critical."
+  }
+}

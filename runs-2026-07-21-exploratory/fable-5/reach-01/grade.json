@@ -1,0 +1,32 @@
+{
+  "dandiset": "000128",
+  "subject_session": "sub-Jenkins, ses-full (MC_Maze, 2009-09-25)",
+  "headline_stat": {
+    "name": "population-vector reach-direction decoding median |error|",
+    "value": "23.6 deg (79% within 45 deg)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "A nonparametric field over the 2D velocity plane is the best instantaneous model, so some structure remains that the parametric gain model does not capture.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000128 MC_Maze (Jenkins, M1/PMd delayed reaching) is the canonical dataset for reach direction and velocity tuning.",
+    "handling": "Real NWB file streamed via remfile with disk cache, kinematics correctly cached and decimated, neural lead estimated by a lag scan and applied consistently, alignment and units correct.",
+    "analysis": "Cosine tuning with a permutation test, circular PD estimates cross-checked two ways, cross-validated leave-one-out population vector, and a nested Poisson GLM ladder with a proper constant-rate null are all standard and correctly done.",
+    "correctness": "Decoding and GLM headline numbers reproduce exactly from the committed npz/logs, are internally consistent with the figures, and rest on adequate samples and correct tests.",
+    "figures": "Figures show the effects clearly with labeled axes, units, and trial counts; the best-fit gallery is honestly labeled and accompanied by full population distributions and an exemplar unit.",
+    "honesty": "Claims are proportionate, and the write-up explicitly flags a misleading negative result and admits the 2D field beats the parametric gain model, acknowledging residual structure and the single session."
+  }
+}

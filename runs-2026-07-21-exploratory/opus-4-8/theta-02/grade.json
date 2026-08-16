@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles_10252013 (prototyping) + 5 linear-track sessions (Achilles/Cicero x2/Gatsby/Buddy)",
+  "headline_stat": {
+    "name": "median precession slope across 5 sessions (223 fields)",
+    "value": "-177 deg/field (83% negative slopes)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "One methodological caveat is worth stating: fields were taken from the pooled direction-specific rate map rather than lap by lap, and spikes were pooled across laps, so lap-to-lap variability in where a field begins adds phase jitter. The reported correlations are therefore, if anything, a lower bound on the strength of precession within single traversals.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (hc-11) dorsal CA1 on a linear track is the canonical dataset for theta entrainment and phase precession.",
+    "handling": "Real data streamed via LINDI with careful, documented handling of NWB quirks (sampling-period-as-rate, NaN-heavy linearized series, gap-bridging velocity), explicit running-speed and direction splitting, and correct exclusion of the three ring-track sessions.",
+    "analysis": "Standard and correct methods: Kempter circular-linear regression with a within-field phase-permutation null, Rayleigh test for locking, Skaggs spatial-information filtering.",
+    "correctness": "Reported numbers reproduce from the committed code and are internally consistent across single-session (63/96, median -202) and pooled (114/223, median -177) figures, with sound statistics and controls.",
+    "figures": "Figures clearly show place-field tiling, bimodal phase locking, single-field precession bands, and a shuffle-separated population, with units, sample sizes, and examples chosen by correlation strength.",
+    "honesty": "Claims are proportionate to strong evidence, the shuffle control is honestly interpreted, and specific limitations (pooled-lap jitter as a lower bound, ring-track exclusion) are stated plainly."
+  }
+}

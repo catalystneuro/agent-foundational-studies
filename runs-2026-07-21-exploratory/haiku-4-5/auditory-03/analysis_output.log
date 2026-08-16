@@ -1,0 +1,14 @@
+Loading NWB file from DANDI:000986
+Session: sub-LA11/sub-LA11_ses-2_behavior.nwb
+Cache directory: /tmp/dandi_cache
+
+✓ Successfully loaded NWB file
+Session start: 2022-05-13 14:00:39-07:00
+Session description: Recordings from mouse auditory cortex during passive exposure to sounds
+
+=== NWB File Contents ===
+Traceback (most recent call last):
+  File "/Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/haiku-4-5/auditory-03/frequency_tuning_analysis.py", line 103, in <module>
+    print(f"\nUnits: {nwb.units}")
+                      ^^^^^^^^^
+AttributeError: 'NWBFile' object has no attribute 'units'

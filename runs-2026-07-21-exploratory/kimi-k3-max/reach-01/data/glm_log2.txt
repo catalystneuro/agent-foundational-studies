@@ -1,0 +1,25 @@
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/nemos/glm/glm.py:728: RuntimeWarning: The fit did not converge. Consider the following:
+1) Enable float64 with ``jax.config.update('jax_enable_x64', True)`` 
+2) Increase the max number of iterations or increase tolerance (if reasonable). These parameters can be specified by providing a ``solver_kwargs`` dictionary. For the available options see the ``self.solver.__init__`` docstrings.
+  warnings.warn(
+valid bins: 109882/135127
+fold 0 done
+fold 1 done
+fold 2 done
+fold 3 done
+fold 4 done
+
+median test LL (bits-ish, log-lik per bin):
+  speed: -0.3036
+  velocity: -0.3047
+  velocity+speed: -0.3004
+units where velocity beats speed-only: 73/182 (sig-tuned: 72/174)
+units where velocity+speed beats velocity: 178/182
+
+movement-epoch scoring:
+  speed: -0.3542
+  velocity: -0.3503
+  velocity+speed: -0.3403
+velocity beats speed-only (movement bins): 83/182 (tuned: 82/174)
+velocity+speed beats velocity (movement bins): 178/182
+saved glm_stats.pkl

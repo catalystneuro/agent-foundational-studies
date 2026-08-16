@@ -1,0 +1,9 @@
+[skip] placefields-01 already has a completed transcript
+[skip] placefields-02 already has a completed transcript
+[skip] placefields-03 already has a completed transcript
+[skip] orientation-01 already has a completed transcript
+[run ] orientation-02 starting at 2026-07-21T14:18:56-04:00
+[done] orientation-02 status=ok rc=0 wall=2081s cost=11.70893
+[run ] orientation-03 starting at 2026-07-21T14:53:37-04:00
+[done] orientation-03 status=ok rc=0 wall=1959s cost=10.792032500000001
+[run ] auditory-01 starting at 2026-07-21T15:26:16-04:00

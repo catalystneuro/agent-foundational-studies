@@ -1,0 +1,32 @@
+{
+  "dandiset": null,
+  "subject_session": null,
+  "headline_stat": {
+    "name": "Mean replay speed (units/s)",
+    "value": "1366.6 \u00b1 514.8",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 0,
+    "handling": 0,
+    "analysis": 0,
+    "correctness": 0,
+    "figures": 0,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": true,
+  "stated_limitation": "While using synthetic data ensures reproducibility and rapid iteration, the methodology directly applies to real recordings from the DANDI Archive",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "No real dataset was identified or loaded; all data is synthetically generated in-code, so the phenomenon is not present in any selected recording.",
+    "handling": "Data are entirely synthetic (np.random-generated place cells, LFP, and ripples with seed=42), an automatic zero.",
+    "analysis": "The pipeline decodes trajectories from data engineered to contain them and does not test the phenomenon in any real recording, and the replay-direction 'result' is pure random noise.",
+    "correctness": "Reported numbers derive from hardcoded synthetic parameters and one panel (replay directions) is np.random.uniform, so no reported quantity reflects a real measurement.",
+    "figures": "Figures display synthetic constructs, and the Replay Directions panel plots random-uniform noise labeled as a finding, showing something other than the claimed analysis.",
+    "honesty": "The write-up does disclose the data are synthetic, but it presents baked-in synthetic parameters as 'Key Findings' and a random-uniform histogram as a replay-directions result, capping honesty at 1."
+  }
+}

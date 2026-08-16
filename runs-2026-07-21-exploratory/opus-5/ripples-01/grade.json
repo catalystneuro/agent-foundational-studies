@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles_10252013 (prototype); all 8 sessions pooled",
+  "headline_stat": {
+    "name": "POST vs PRE significant-replay rate (Achilles), chi2=32.6",
+    "value": "6.2% (52/833) vs 1.9% (35/1829), p=1.2e-8",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The honest caveat is that the sleep effect is a difference between small percentages, and it is not uniform: POST exceeds PRE in three of the five linear-maze sessions, is slightly lower in one (Cicero_09172014, 1.3% against 1.8%), and drops to zero in Buddy, which contributed only 20 POST candidate events against 175 in PRE. The PRE rate of 1.6% sitting below the nominal 5% is the sign that the three-shuffle conjunction is conservative rather than permissive",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki CA1) is the canonical known-good dataset for sharp-wave ripples and replay in exactly the right species, region, and PRE/maze/POST paradigm.",
+    "handling": "Real data streamed via remfile, correct 1250 Hz LFP, non-REM-restricted z-scoring, principled ripple-channel selection by spectral bump, and units tagged by cell type and state.",
+    "analysis": "Standard SWR detection plus memoryless Bayesian decoding scored by weighted correlation, gated on three independent shuffles (column-cycle, field-identity, time-bin) with PRE sleep as a built-in negative control.",
+    "correctness": "Every headline number reproduces exactly from the committed CSVs, values are internally consistent across figures and text, and the statistics (chi-square, three-shuffle conjunction) are sound and physically plausible.",
+    "figures": "Figures are clean, fully labeled with units and sample sizes, and show the ripple, laminar sink, place fields, and decoded replay sweeps convincingly, including an honest null-behavior panel.",
+    "honesty": "The write-up names the specific weaknesses (small percentages, effect absent or reversed in two of five sessions, conservative test, liberal column-cycle shuffle) rather than presenting the sleep effect as clean."
+  }
+}

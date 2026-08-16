@@ -1,0 +1,32 @@
+{
+  "dandiset": "001262",
+  "subject_session": "AN: 85 fibers/47 animals (example sub-G150805 unit1); Cortex: 000986 sub-LA8 ses-1, 192 units",
+  "headline_stat": {
+    "name": "STRF-CF vs published-BF correlation (log space, n=85)",
+    "value": 0.994,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 3,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "No stimulus waveforms are stored, so reverse correlation against a continuous stimulus is not possible; the tone-pip map is the appropriate estimator here.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Two appropriate auditory datasets used with an explicit, defensible reframing to tone-pip STRFs since no DANDI dataset stores the rich stimulus waveforms a full reverse-correlation STRF requires.",
+    "handling": "Real remfile-streamed data with correct per-sweep tone-onset alignment, NaN handling, explicit level/rep/frequency inclusion gates, and vectorized perievent extraction for cortex.",
+    "analysis": "Baseline-subtracted per-frequency PSTH STRFs with Wilcoxon/Kruskal significance and a strong CF-vs-published-BF validation; no explicit shuffle null for the maps and a coarse 1ms-quantized latency metric keep it just short of ideal.",
+    "correctness": "Every headline number (r=0.994, n=85, 47 animals, bw 0.46 oct, latency medians 4.5/17 ms) reproduces exactly from the committed CSV, is internally consistent with figures, and is physically plausible.",
+    "figures": "Five clear, unit-labeled figures with sample sizes, a tonotopic gallery, population summaries, and a legible periphery-vs-cortex latency comparison that shows the effect directly.",
+    "honesty": "The write-up is proportionate throughout, plainly flagging the tone-pip approximation, restricting the weak latency-CF trend with its actual p-value, and noting the coarse cortical frequency axis and single session."
+  }
+}

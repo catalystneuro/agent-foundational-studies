@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986",
+  "subject_session": "5 mice, all 15 sessions; example session sub-LA11/ses-1",
+  "headline_stat": {
+    "name": "fraction of units frequency-tuned at FDR q<0.05",
+    "value": 0.83,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Two caveats limit how far the tuning-curve shapes should be pushed. The stimulus set contains only five frequencies at octave spacing and a single intensity, so best frequency is quantized to octaves and cannot be localized more finely, and no frequency-response area can be measured. The units table in this dandiset carries no spike-sorting quality metrics and the electrodes table is absent, so no isolation-quality screen beyond the firing-rate threshold was possible and tonotopic organization along the probe could not be examined.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000986 is a canonical mouse auditory-cortex Neuropixels pure-tone dataset, exactly the standard choice for frequency tuning.",
+    "handling": "Real data was streamed from S3 for all 15 sessions with retry/caching, an explicit 0.5 Hz unit screen, and onset alignment verified against the grand-average transient.",
+    "analysis": "Kruskal-Wallis with BH-FDR, split-half reliability against a shuffled null, a cross-validated decoder with shuffle control, and a NeMoS GLM with a frequency-blind reduced model together provide converging, well-controlled tests.",
+    "correctness": "Every headline number (tuned/responsive fractions, split-half r, decoding accuracy and range, GLM improvement, arousal gain, BF distribution) reproduces exactly from the committed pkl files and is internally consistent.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show the effect unambiguously, and use representative one-per-BF examples rather than cherry-picking by effect magnitude.",
+    "honesty": "Claims are proportionate to the strong evidence and the write-up names specific real limitations (octave quantization, single intensity, absent quality metrics, no tonotopy).",
+    "verdict": "Publication-quality, fully reproducible, well-controlled multi-method analysis on the right dataset; accept."
+  }
+}

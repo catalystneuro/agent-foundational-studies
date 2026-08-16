@@ -1,0 +1,17 @@
+grading 15 runs with judge=claude-opus-4-8 at concurrency=8
+graded orientation-03: verdict=reject pass=False axes=[1, 0, 0, 0, 0, 0]
+graded reach-02: verdict=reject pass=False axes=[0, 0, 0, 1, 1, 1]
+graded theta-01: verdict=reject pass=False axes=[0, 0, 1, 0, 1, 0]
+graded auditory-02: verdict=reject pass=False axes=[0, 0, 0, 1, 1, 1]
+graded reach-03: verdict=reject pass=False axes=[3, 1, 0, 1, 1, 0]
+graded auditory-03: verdict=reject pass=False axes=[3, 1, 1, 1, 1, 1]
+graded orientation-02: verdict=reject pass=False axes=[0, 0, 1, 1, 1, 0]
+graded placefields-01: verdict=reject pass=False axes=[2, 1, 1, 1, 1, 1]
+graded theta-02: verdict=reject pass=False axes=[0, 0, 0, 1, 0, 0]
+graded theta-03: verdict=reject pass=False axes=[3, 1, 0, 1, 1, 0]
+graded placefields-03: verdict=reject pass=False axes=[4, 1, 1, 1, 1, 1]
+graded auditory-01: verdict=reject pass=False axes=[3, 2, 1, 1, 1, 1]
+graded placefields-02: verdict=reject pass=False axes=[2, 1, 1, 1, 1, 1]
+graded orientation-01: verdict=reject pass=False axes=[3, 1, 1, 1, 1, 0]
+graded reach-01: verdict=reject pass=False axes=[2, 1, 1, 1, 1, 1]
+wrote /Users/bdichter/dev/agent-foundational-studies/runs-2026-07-21-exploratory/grades.csv (60 graded)

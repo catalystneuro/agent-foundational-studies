@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles-10252013 (figures); pooled across Achilles-10252013, Cicero-09012014, Cicero-09172014, Gatsby-08022013, Buddy-06272013",
+  "headline_stat": {
+    "name": "% directional place fields with significant theta phase locking (Rayleigh p<0.05)",
+    "value": "72% (199/277)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The absolute value of the preferred phase depends on recording depth, since the theta wave reverses across the CA1 layers, and one session (`Buddy-06272013`) indeed sits about 150 deg away from the other four; it is the clustering within a session, not the numerical value across sessions, that is the result.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzs\u00e1ki dorsal CA1 linear-track) is the canonical known-good dataset for theta entrainment and precession, and the agent used five appropriate linear-track sessions.",
+    "handling": "Real data is streamed via LINDI with correct sampling-rate reconstruction, excitatory-only cell filtering, speed thresholding, directional field detection, and proper LFP conversion.",
+    "analysis": "Rayleigh test with a spike-jitter control and Kempter circular-linear regression with a 1000-shuffle permutation null are the standard, correct methods with the required nulls present.",
+    "correctness": "Every headline number reproduces from the committed CSV and is internally consistent, with only a trivial off-by-one in fitted/significant precession counts.",
+    "figures": "Figures clearly show phase locking, place-field tiling, and diagonal precession bands, are labeled with units and sample sizes, and choose examples by correlation/locking strength rather than slope.",
+    "honesty": "Claims are proportionate to the evidence, the 57% precession fraction and depth-dependent phase offset are acknowledged, and specific real limitations are stated plainly.",
+    "verdict": "The work is sound, reproducible, and honestly reported end to end; I would accept it as is."
+  }
+}

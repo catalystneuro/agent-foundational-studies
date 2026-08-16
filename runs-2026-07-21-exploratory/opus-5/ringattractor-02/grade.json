@@ -1,0 +1,32 @@
+{
+  "dandiset": "000939",
+  "subject_session": "sub-A3716 / ses-201015b (example); pipeline repeated across 19 sessions/19 mice",
+  "headline_stat": {
+    "name": "median ring score REM (data vs shuffle)",
+    "value": "0.64 vs 0.39",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Because the recordings are from postsubiculum, this shows that the ring is expressed there; it does not localise where in the head-direction circuit it is generated.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000939 is a large Peyrache-lab postsubiculum HD-cell dataset with alternating foraging and home-cage sleep, the canonical preparation for demonstrating an internally maintained ring attractor during sleep.",
+    "handling": "Real NWB files are streamed from S3 with remfile, HD cells selected via the dataset flag plus explicit rate/tuning-strength/split-half-stability criteria, and sleep epochs restricted to home-cage with REM/NREM scoring.",
+    "analysis": "Ring geometry, persistent-homology H1, Bayesian and split-half decoding, angular velocity, pairwise correlation and a cross-validated cyclic-B-spline Poisson GLM are all applied with correct circular statistics and matched per-cell circular-shift nulls.",
+    "correctness": "The reported medians match the committed cross_session_metrics.csv exactly, are internally consistent with the figures, and rest on 19 sessions with proper shuffle controls.",
+    "figures": "Figures show the annulus clearly in every state with the shuffle collapsing it, axes and sample sizes labeled, and example GLM units chosen honestly rather than to flatter.",
+    "honesty": "Claims are proportionate, weaker NREM measures are flagged with mechanistic reasons, cell-count dependence is shown, and the postsubiculum localization limit is stated explicitly."
+  }
+}

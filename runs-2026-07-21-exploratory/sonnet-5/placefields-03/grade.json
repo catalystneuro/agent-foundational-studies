@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Buddy/sub-Buddy_ses-Buddy-06272013",
+  "headline_stat": {
+    "name": "fraction of excitatory CA1 units classified as place cells (shuffle p<0.05)",
+    "value": "38/42 (90%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki dorsal CA1, 1.6 m linear track) is the canonical place-cell dataset, an expert's obvious choice.",
+    "handling": "Real NWB streamed from S3 with a documented, duration-verified fix for the inverted SpatialSeries rate attribute, plus defensible excitatory/\u226550-spike/speed>5cm-s selection.",
+    "analysis": "Skaggs spatial information with a proper 200-iteration circular time-shift null is the standard, correct method, though linear-track directions were pooled rather than split.",
+    "correctness": "Reported numbers reproduce from the committed code and are internally consistent across README, figure titles, and the bar plot; p=0.005 is the correct floor for 200 shuffles.",
+    "figures": "Figures clearly show single place fields, a track-tiling population sequence, and observed-vs-null separation, with labeled axes, units, and genuinely representative top examples.",
+    "honesty": "Nothing is misrepresented and examples are real top cells, but the write-up states no result-specific limitation (single session, high 90% fraction, direction pooling), capping a clean result at 3.",
+    "verdict": "A correct, well-documented, reproducible demonstration of the canonical phenomenon that a rotation student could hand in with only minor requested additions."
+  }
+}

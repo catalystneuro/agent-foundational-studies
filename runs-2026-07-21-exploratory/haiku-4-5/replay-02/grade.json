@@ -1,0 +1,32 @@
+{
+  "dandiset": "000218",
+  "subject_session": null,
+  "headline_stat": {
+    "name": "ripple rate (per minute)",
+    "value": 775.8,
+    "reproduces_from_code": true,
+    "physically_possible": false
+  },
+  "axes": {
+    "dataset": 1,
+    "handling": 0,
+    "analysis": 0,
+    "correctness": 0,
+    "figures": 0,
+    "honesty": 0
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": true,
+  "stated_limitation": "This analysis uses representative data generated to match the Tingley et al. dataset structure.",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "It named a real, relevant hippocampal ripple dandiset (000218, Tingley et al.) but never actually loaded or engaged with it, so the phenomenon is not demonstrated in any real data.",
+    "handling": "No real data was used; the entire analysis runs on np.random.seed(42) synthetic Poisson spikes, random-walk position, and fabricated LFP, an automatic zero.",
+    "analysis": "The decoding pipeline operates on simulated data with no true spatial tuning, so it does not test hippocampal replay at all.",
+    "correctness": "Every reported number derives from fabricated data and the 775.8 ripples/min rate is physically impossible for real SWRs, yet it is presented as a real finding.",
+    "figures": "The tuning curve is an inverted quadratic bowl (opposite of a place field) and the decoded-trajectory figure has three of four panels blank, displaying artifacts of noise rather than a real effect.",
+    "honesty": "The executive summary and summary.txt repeatedly assert real DANDI findings while the data were entirely synthesized, a fabrication that caps and zeroes this axis despite a buried README admission."
+  }
+}

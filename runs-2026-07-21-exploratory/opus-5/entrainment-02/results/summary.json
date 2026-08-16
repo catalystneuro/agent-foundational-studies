@@ -1,0 +1,17 @@
+{
+ "n_units":483.0,
+ "n_sessions":5.0,
+ "n_locked":310.0,
+ "frac_locked":0.6418219462,
+ "median_mrl":0.0731811978,
+ "median_mrl_null":0.0252926347,
+ "median_mrl_pyr":0.0596070707,
+ "median_mrl_int":0.0953354274,
+ "pref_phase_diff_deg":62.4353147814,
+ "pref_phase_perm_p":0.00039992,
+ "pref_phase_rayleigh_p_pyr":1.553501372e-26,
+ "pref_phase_rayleigh_p_int":0.000001891,
+ "pref_phase_pyr":240.5061250118,
+ "pref_phase_int":178.0708102304,
+ "mannwhitney_p":0.0000018587
+}

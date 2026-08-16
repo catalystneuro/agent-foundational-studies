@@ -1,0 +1,105 @@
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynwb/ecephys.py:159: UserWarning: ElectricalSeries 'probe01_spikeglx_ephysData_g0_t0.imec1.ap.cbin': The second dimension of data does not match the length of electrodes. Your data may be transposed.
+  warnings.warn("%s '%s': The second dimension of data does not match the length of electrodes. "
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynwb/ecephys.py:159: UserWarning: ElectricalSeries 'probe01_spikeglx_ephysData_g0_t0.imec1.lf.cbin': The second dimension of data does not match the length of electrodes. Your data may be transposed.
+  warnings.warn("%s '%s': The second dimension of data does not match the length of electrodes. "
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynwb/core.py:52: UserWarning: TimeSeries 'position.npy': Length of data does not match length of timestamps. Your data may be transposed. Time should be on the 0th dimension
+  warn(error_msg)
+root pynwb.file.NWBFile at 0x4533426928
+Fields:
+  acquisition: {
+    Video: _iblrig_bodyCamera.raw <class 'pynwb.image.ImageSeries'>,
+    Video: _iblrig_leftCamera.raw <class 'pynwb.image.ImageSeries'>,
+    Video: _iblrig_rightCamera.raw <class 'pynwb.image.ImageSeries'>,
+    probe01_spikeglx_ephysData_g0_t0.imec1.ap.cbin <class 'pynwb.ecephys.ElectricalSeries'>,
+    probe01_spikeglx_ephysData_g0_t0.imec1.lf.cbin <class 'pynwb.ecephys.ElectricalSeries'>
+  }
+  devices: {
+    NeuroPixels probe <class 'pynwb.device.Device'>,
+    probe01 <class 'abc.IblProbes'>
+  }
+  electrode_groups: {
+    probe01 <class 'pynwb.ecephys.ElectrodeGroup'>
+  }
+  electrodes: electrodes <class 'pynwb.ecephys.ElectrodesTable'>
+  experiment_description: ibl_neuropixel_brainwide_01
+  experimenter: ['11502f35']
+  file_create_date: [datetime.datetime(2021, 11, 11, 1, 1, 19, 335346, tzinfo=tzoffset(None, -18000))]
+  identifier: aad23144-0e52-4eac-80c5-c4ee2decb198
+  institution: University College London
+  intervals: {
+    trials <class 'pynwb.epoch.TimeIntervals'>
+  }
+  keywords: <LindiH5pyDataset: /general/keywords>
+  lab: cortexlab
+  lab_meta_data: {
+    Ibl_session_data <class 'abc.IblSessionData'>
+  }
+  notes: User:11502f35amps_patching_local_server2: probe01: completed, User:11502f35amps_patching_local_server: completed, User:11502f35amps_patching_local_server2: probe00: completed, User:11502f35amps_patching_local_server: completed
+  processing: {
+    behavior <class 'pynwb.base.ProcessingModule'>,
+    ecephys <class 'pynwb.base.ProcessingModule'>
+  }
+  protocol: _iblrig_tasks_ephysChoiceWorld6.1.3
+  session_description: Behavior training/tasks
+  session_id: aad23144-0e52-4eac-80c5-c4ee2decb198
+  session_start_time: 2019-12-10 16:44:12+00:00
+  subject: subject abc.IblSubject at 0x4555437216
+Fields:
+  age: P24W
+  alive: False
+  date_of_birth: 2019-06-25 00:00:00+00:00
+  death_date: 2019-12-11
+  description: 
+  expected_water: -0.045000000000000005
+  genotype: 
+  lab: cortexlab
+  line: C57BL/6J
+  litter: C57_L_026
+  nickname: KS023
+  projects: <LindiH5pyDataset: /general/subject/projects>
+  remaining_water: -0.045000000000000005
+  responsible_user: 11502f35
+  session_projects: <LindiH5pyDataset: /general/subject/session_projects>
+  sex: F
+  strain: C57BL/6J
+  subject_id: c6e8125f-b6c7-4349-b74d-32e8bd606f63
+  url: https://openalyx.internationalbrainlab.org/subjects/KS023
+  water_administrations: <LindiH5pyDataset: /general/subject/water_administrations>
+  weighings: <LindiH5pyDataset: /general/subject/weighings>
+  weight: 21.5
+
+  surgery: none
+  timestamps_reference_time: 2019-12-10 16:44:12+00:00
+  trials: trials <class 'pynwb.epoch.TimeIntervals'>
+  units: units <class 'pynwb.misc.Units'>
+
+=== INTERVALS ===
+trials 641
+=== UNITS ===
+n units: 388
+columns: ['spike_times', 'electrodes', 'waveform_mean', 'presence_ratio', 'cluster_id', 'depths.npy', 'amps.npy', 'drift', 'brainLocationIds_ccf_2017.npy', 'amp_max', 'brainLocationAcronyms_ccf_2017.npy', 'amp_min', 'missed_spikes_est', 'ks2_label', 'slidingRP_viol', 'amp_std_dB', 'label', 'mlapdv.npy', 'contamination_alt', 'presence_ratio_std', 'waveformsChannels.npy', 'firing_rate', 'peakToTrough.npy', 'contamination', 'noise_cutoff', 'amp_median', 'spike_count']
+brainLocationIds_ccf_2017.npy dtype int64 n unique: 16 [312782562, 549, 312782566, 312782554, 312782570, 312782558, 10703, 10704, 466, 725, 632, 697]
+brainLocationAcronyms_ccf_2017.npy dtype object n unique: 16 ['VISa4', 'PO', 'DG-po', 'LP', 'VISa5', 'VISa2/3', 'alv', 'VISa6b', 'VPLpc', 'ml', 'VISa6a', 'VPM']
+=== ELECTRODES ===
+n electrodes: 374
+columns: ['x', 'y', 'z', 'imp', 'location', 'filtering', 'group', 'group_name', 'rawInd.npy', 'mlapdv.npy', 'brainLocationIds_ccf_2017.npy']
+x sample: [43. 11. 59. 27. 43.]
+y sample: [20. 20. 40. 40. 60.]
+z sample: [nan nan nan nan nan]
+location sample: ['None' 'None' 'None' 'None' 'None']
+rawInd.npy sample: [0 1 2 3 4]
+mlapdv.npy sample: [[-1638 -2300 -4111]
+ [-1638 -2300 -4111]
+ [-1638 -2300 -4090]
+ [-1638 -2300 -4090]
+ [-1638 -2300 -4069]]
+brainLocationIds_ccf_2017.npy sample: [697 697 697 697 549]
+=== PROCESSING ===
+['behavior', 'ecephys']
+  behavior -> BehavioralTimeSeries <class 'pynwb.behavior.BehavioralTimeSeries'>
+  behavior -> Position <class 'pynwb.behavior.Position'>
+  behavior -> BehavioralEpochs <class 'pynwb.epoch.TimeIntervals'>
+  ecephys -> probe01_iblqc_ephysSpectralDensityAP.power.npy <class 'abc.Spectrum'>
+  ecephys -> probe01_iblqc_ephysSpectralDensityLF.power.npy <class 'abc.Spectrum'>
+  ecephys -> probe01_iblqc_ephysTimeRmsAP.rms.npy <class 'pynwb.ecephys.ElectricalSeries'>
+  ecephys -> probe01_iblqc_ephysTimeRmsLF.rms.npy <class 'pynwb.ecephys.ElectricalSeries'>

@@ -1,0 +1,32 @@
+{
+  "dandiset": "000129",
+  "subject_session": "sub-Indy, desc-train (behavior+ecephys)",
+  "headline_stat": {
+    "name": "directionally tuned units / mean tuning strength",
+    "value": "130/130 units; strength 0.61 \u00b1 0.45",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 3,
+    "handling": 2,
+    "analysis": 1,
+    "correctness": 2,
+    "figures": 2,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": false,
+  "stated_limitation": "individual units show correlations near zero (mean: 0.010). This suggests that motor cortex prioritizes direction encoding over speed encoding at the single-trial level, though population-level speed signals may emerge through other mechanisms.",
+  "pass": false,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "000129 is a real motor-cortex reaching dataset where directional tuning exists, but it is a continuous random-target task mislabeled as center-out, making it a defensible but non-obvious choice.",
+    "handling": "Real data streamed from S3, but velocity is never scaled by dt (mislabeled m/s), behavioral rate is hardcoded at 30 Hz, no unit quality filtering, and whole-trial velocity averaging is questionable for this paradigm.",
+    "analysis": "No shuffle or null control for directional tuning and a modulation-depth metric that is positive by construction, so the central 'all units tuned' claim rests on no significance test.",
+    "correctness": "Reported numbers reproduce from the code, but the interpretation is internally inconsistent (0.61 modulation-depth described as '60% modulation' and preferred directions called uniform when the figure is skewed).",
+    "figures": "Figures are readable but do not make the case: polar curves are noisy, and the preferred-direction-sorted heatmap shows no diagonal population structure the text claims it reveals.",
+    "honesty": "The write-up states preferred directions are uniformly distributed and continuously arranged when its own figures 2 and 6 show neither, presenting a noisy, unvalidated direction result as clean, which caps this axis at 1."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dandiset": "000582",
+  "subject_session": "ses-03020601 (12 units, 600 s open-field; dandiset 000582 Sargolini/Moser MEC)",
+  "headline_stat": {
+    "name": "grid cells (gridness > shuffle 95th pct) in ses-03020601",
+    "value": "6/12",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 2,
+    "honesty": 2
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Selected dandiset 000582 (Sargolini/Moser MEC open-field), the canonical grid-cell dataset in the correct species, region, and paradigm.",
+    "handling": "Real data streamed via remfile and correctly loaded/aligned for session 1, but no unit quality filtering and the multi-session script crashed on ses-01020602 (duration=0) before finishing.",
+    "analysis": "Standard, correctly implemented grid analysis: Pearson spatial autocorrelogram, gridness score over an auto-detected annulus, and a circular-shift shuffle null for per-unit classification.",
+    "correctness": "Session-1 gridness and shuffle-threshold values reproduce from the committed log, are internally consistent with the autocorrelogram figure, and are physically plausible, but results were never persisted or reported in full.",
+    "figures": "Only prototype/test figures exist; test_autocorr.png clearly shows hexagonal grid structure for the top units but lacks axis units, sample sizes, and any population summary, and the intended final figures were never generated.",
+    "honesty": "There is no write-up at all, so nothing is misrepresented and no fabrication occurred, but no conclusion, calibration, or limitations were ever stated, leaving the result unassessable as a claim.",
+    "verdict": "The dataset and method are sound and session 1 shows real grid cells, but the run crashed before completing, produced no final figures, and wrote no summary or conclusion, so it must be reworked before it could be believed."
+  }
+}

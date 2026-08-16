@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "place cells (fraction of excitatory units, shuffle p<0.05)",
+    "value": "85/120 (71%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "median Cohen pseudo-R^2 = 0.11, typical for position-only models of noisy spike trains",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000044 Achilles CA1 linear-track session is the canonical place-cell dataset in the correct species, region, and paradigm.",
+    "handling": "Real data streamed via remfile, correctly restricted to the maze epoch with the dataset's linearized position and explicit excitatory/rate/peak/spike-count inclusion criteria.",
+    "analysis": "Occupancy-normalized rate maps, Skaggs spatial information, 500 circular time-shift shuffles, and an independent Poisson-GLM cross-check are all appropriate; only multiple-comparison correction is missing, which does not affect the overwhelming population result.",
+    "correctness": "Every headline number (137 units, 71% place cells, GLM peak r=0.964, median pseudo-R^2=0.11) reproduces exactly from the committed npz files, with no negative or impossible values.",
+    "figures": "Figures clearly show fields tiling the track, representative examples across positions, the observed-vs-shuffle separation, and GLM-empirical agreement, with units and sample sizes labeled.",
+    "honesty": "Claims are proportionate and examples are honestly labeled by their selection criterion, but the clean write-up omits an explicit limitations note (single session, in-sample GLM fit, no FDR), placing it at 3.",
+    "verdict": "A thorough, reproducible, canonical demonstration that an expert would accept with at most minor requested caveats."
+  }
+}

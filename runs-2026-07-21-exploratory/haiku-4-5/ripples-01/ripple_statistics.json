@@ -1,0 +1,12 @@
+{
+  "total_ripples": 5,
+  "recording_duration_seconds": 599.999966667,
+  "ripple_rate_per_minute": 0.008333333796291692,
+  "mean_ripple_duration_ms": 141.7533333333333,
+  "std_ripple_duration_ms": 0.12220201853215559,
+  "mean_ripple_peak_power": 235.26676290634003,
+  "std_ripple_peak_power": 1.3473975072100475,
+  "total_units": 15,
+  "units_modulated": 15,
+  "mean_modulation_index": 175.50659065369828
+}

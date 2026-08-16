@@ -1,0 +1,33 @@
+{
+  "dandiset": "000053",
+  "subject_session": "sub-npI1 / ses-20190416",
+  "headline_stat": {
+    "name": "precession slope (phase vs position)",
+    "value": "0.4587 rad/cm",
+    "reproduces_from_code": true,
+    "physically_possible": false
+  },
+  "axes": {
+    "dataset": 2,
+    "handling": 2,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 1,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000053 is a spatial-navigation recording with position and LFP, but units were never verified as hippocampal or as place cells and it is not a canonical theta-precession dataset, so the demonstration was made harder than needed.",
+    "handling": "Real data was streamed from S3 and loaded correctly, but units were unfiltered (first 35, no region or quality criteria) and behavioral speed contained impossible values (-6191 cm/s) left uncleaned.",
+    "analysis": "The precession analysis regresses unwrapped LFP phase against absolute position rather than spike phase against within-field position, so it does not test precession, and entrainment has no Rayleigh or shuffle significance test.",
+    "correctness": "The precession regression line in the figure is detached from the plotted data (line at ~6400 rad, points at ~0), making the headline 0.4587 rad/cm an unwrapping artifact and internally contradictory.",
+    "figures": "The figures contradict the text: the spike-phase histogram is flat (no entrainment) and the precession fit line does not touch its data, so they do not show the claimed effects.",
+    "honesty": "A null entrainment (r=0.055, uniform histogram) and a broken precession fit are both presented as clean positive findings with no caveat and units mislabeled as place cells, triggering multiple axis-6 disqualifying acts.",
+    "verdict": "The core analysis is invalid and the write-up asserts positive results its own figures refute, so the run must be rejected."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "dandiset": "000986",
+  "subject_session": "All 15 sessions, 5 mice (sub-LA3/LA8/LA9/LA11/LA12); example figures use sub-LA11_ses-2",
+  "headline_stat": {
+    "name": "% units frequency-modulated (Kruskal-Wallis p<0.05)",
+    "value": 86.6,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "off-diagonal cases concentrated between 8 and 16 kHz where tuning is broadest",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000986 is the canonical mouse auditory-cortex pure-tone Neuropixels dataset for frequency tuning, an expert-standard choice.",
+    "handling": "Real LINDI-streamed data across all 15 sessions with correct spike_times_index unpacking and trial alignment, but no unit quality filtering and a slight response/baseline window-duration mismatch (55 vs 50 ms).",
+    "analysis": "Kruskal-Wallis, Wilcoxon, sparseness, and a Poisson B-spline GLM are all appropriate and correctly applied; the only weaknesses are the unequal-window responsiveness test and no multiple-comparison discussion, neither of which flips the result.",
+    "correctness": "Every reported number (1564 units, 80.5%/86.6%/74.0%, 63-100% per session, median pseudo-R2 0.024, 1157 tuned) reproduces exactly from the committed arrays, is internally consistent with the figures, and is physically possible.",
+    "figures": "Six clean, fully-labeled figures with units and sample sizes; the population heatmap and raster/PSTH show the effect plainly and example tuning curves display their true (including weak) pseudo-R2 values.",
+    "honesty": "Claims are proportionate and the write-up flags the 8-16 kHz GLM/raw disagreement and per-session range, but it lacks an explicit limitations statement (passive-only, no quality filtering, responsiveness-window bias), keeping it at a clean-result 3 rather than 4."
+  }
+}

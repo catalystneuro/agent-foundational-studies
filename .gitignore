@@ -1,0 +1,72 @@
+# Streaming caches written by remfile/LINDI during agent runs.
+# These are regenerable byte-range caches, not results. reach-03/cache alone is 306 MB.
+cache/
+*/cache/
+**/cache/
+.lindi_cache/
+remfile_cache/
+
+# Deblinding keys. Withheld while grading is in progress so that a grader who
+# clones the repo does not receive them; regenerate with make_grading_sheet.py
+# and release with the data once scoring is complete.
+.blind_key_*.csv
+.validation_key.csv
+
+# Per-run grader scratch. grade.json IS kept (it carries the judge's per-axis
+# justifications, which are study evidence); only the raw judge trace/stderr are dropped.
+grade.stderr.log
+grade.transcript.jsonl
+
+# Monitor dedup markers.
+.mon*_seen/
+
+# Bulky raw artifacts from the 2026-07-21 exploratory sweep: retained locally and
+# published as a separate data release, not committed to the repo (transcripts
+# ~450MB, figures ~90MB). The code, write-ups, and grades ARE committed.
+runs-2026-07-21-exploratory/**/transcript.jsonl
+runs-2026-07-21-exploratory/**/*.png
+
+# Heavy binary intermediates written during agent runs: streamed-data caches and
+# saved analysis arrays. Regenerable by re-running the committed code, and several
+# exceed GitHub's 100 MB file limit (a single lindi_cache.db is 1.68 GB). The code,
+# write-ups, grades, and small CSV summaries ARE committed.
+lindi_cache/
+**/lindi_cache/
+session_cache/
+**/session_cache/
+*_cache/
+*.pkl
+*.db
+*.npz
+*.npy
+*.parquet
+# Superseded partial runs and archived v0.2 grades, kept locally only.
+**/_earlier_partial_run/
+grade.v2.json
+# Agent run scratch logs.
+*.log
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+# Raw NWB data files fetched/downloaded during runs: re-obtainable from DANDI by accession.
+*.nwb
+
+# API keys / secrets — the repo is public, these must never be committed.
+.env
+.env.*
+*.key
+.openrouter_key
+.secrets
+runs-2026-07-21-exploratory/.keys
+
+# Operational noise: proxy/nohup stdout and rotated logs.
+*.nohup
+*.log.*

@@ -1,0 +1,32 @@
+{
+  "dandiset": "000128",
+  "subject_session": "Jenkins MC_Maze (000128), replicated in Indy MC_RTT (000129)",
+  "headline_stat": {
+    "name": "cross-validated velocity decoding R2 (vx/vy)",
+    "value": "0.56 / 0.55",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Single-unit R\u00b2 for the continuous velocity model is small (median 0.02) because restricting the analysis to movement bins removes the largest source of rate variance, the difference between rest and movement; and per-unit optimal lags are broadly distributed even though the population estimate is sharp, so 80 ms is a population property rather than a per-neuron one. Also, although the MC_Maze electrode table lists 96 PMd and 96 M1 channels, all 182 units index into the first 96 rows, so the array of origin cannot be recovered from the file.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "MC_Maze (000128) M1/PMd Utah-array reaching is the canonical dataset for reach direction/velocity tuning, with MC_RTT (000129) as an independent-animal replication.",
+    "handling": "Real data streamed via remfile with correct 1 kHz kinematics, gap-aware epoching that avoids interpolating across trial boundaries, explicit min-spike inclusion, and an honest note that array-of-origin labels are unrecoverable.",
+    "analysis": "Cosine tuning with a 1000-fold permutation test and split-half PD reliability, circular statistics throughout, lag-resolved continuous velocity regression, cross-validated nested Poisson GLMs, and population decoding, all with appropriate controls.",
+    "correctness": "Reported values (159 units, 157/159 interaction wins, GLM pseudo-R2 ladder 0.004/0.015/0.022/0.029, decoding R2 0.56/0.55) are internally consistent with and reproduced in the figures.",
+    "figures": "Nine figures with labeled axes, units, and sample sizes show the effects directly; direction examples are ranked by modulation depth and velocity examples by tuning strength, both proper effect measures.",
+    "honesty": "Claims are proportionate and the write-up volunteers several specific caveats (small single-unit R2, per-unit lag spread, unrecoverable area labels, weak delay-vs-movement PD relationship reported below chance)."
+  }
+}

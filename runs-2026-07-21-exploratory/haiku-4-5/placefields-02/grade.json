@@ -1,0 +1,33 @@
+{
+  "dandiset": "001754",
+  "subject_session": "sub-Rat1, ses-19980420T095700 (Neurolab STS-90, hippocampal CA1)",
+  "headline_stat": {
+    "name": "mean spatial information, place cells (max)",
+    "value": "34.8 bits/spike (max 136.5)",
+    "reproduces_from_code": true,
+    "physically_possible": false
+  },
+  "axes": {
+    "dataset": 2,
+    "handling": 2,
+    "analysis": 1,
+    "correctness": 0,
+    "figures": 1,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Thresholding: Place cell identification uses the 75th percentile of spatial information scores; alternative thresholds (e.g., 80th percentile, fixed information threshold) may yield different classifications.",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Hippocampal CA1 with position tracking does contain place cells, but the in-flight microgravity session, multi-unit records, and noisy tracking make this a harder-than-necessary choice.",
+    "handling": "Real NWB data are loaded and aligned, but there is no unit-quality filtering and the 2.5 cm binning over a 255 cm arena leaves most bins severely under-sampled.",
+    "analysis": "The spatial-information metric is miscomputed (unweighted mean rate against occupancy-weighted probabilities), there is no shuffle/null control, and place cells are defined by an arbitrary top-25% cutoff with no significance test.",
+    "correctness": "Reported information values (mean 34.8, max 136 bits/spike) exceed the theoretical log2(N_bins) bound and are physically impossible, forcing correctness to 0.",
+    "figures": "The 'top place cell' rate maps show scattered noise with no localized fields, directly contradicting the text's claim of localized firing, and the highest-information units are the lowest-rate noisiest cells.",
+    "honesty": "The write-up presents noise maps as demonstrated place cells with 'hallmark' localized firing and labels the noisiest low-rate units as top place-cell examples, an unsupported positive claim.",
+    "verdict": "Physically impossible headline numbers, no visible place fields, and unsupported positive claims make this a reject."
+  }
+}

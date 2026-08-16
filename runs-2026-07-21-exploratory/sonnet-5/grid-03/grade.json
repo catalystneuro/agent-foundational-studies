@@ -1,0 +1,33 @@
+{
+  "dandiset": "000582",
+  "subject_session": "sub-10073/ses-17010302 (prototype only; 17-session population run never completed)",
+  "headline_stat": {
+    "name": "gridness score (sub-10073 unit 0)",
+    "value": 0.73,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 3,
+    "correctness": 2,
+    "figures": 3,
+    "honesty": 3
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000582 (Sargolini et al. 2006), MEC layer II, open-field foraging \u2014 the canonical grid-cell dataset and an ideal choice.",
+    "handling": "Real data streamed from the archive and loaded correctly with proper position/tuning-curve alignment, but unit inclusion/quality criteria are minimal and the full preparation never completed.",
+    "analysis": "The rotational-autocorrelogram gridness score plus a circular-shift shuffle null is the standard, correct method, but only one unit's gridness was actually computed and no null distribution was ever executed.",
+    "correctness": "The single reported value (0.73) reproduces and is consistent with its figure, but there is essentially no completed quantitative result and no population statistics.",
+    "figures": "The autocorrelogram figure clearly shows a hexagonal grid and the trajectory/rate maps are readable, but axes are in bin indices without units, there is no population summary, and all figures are prototype-only.",
+    "honesty": "No write-up was produced, so no claims are made and nothing is misrepresented; the in-transcript narration ('clean textbook hexagonal grid') is accurate, but no limitations or final result were delivered.",
+    "verdict": "The run was terminated mid-analysis with no README, no completed population analysis, and no delivered result, so despite a sound prototype it must be rejected."
+  }
+}

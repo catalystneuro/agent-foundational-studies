@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986 + 001262",
+  "subject_session": "000986: 15 sessions / 5 mice (example sub-LA9 ses-1); 001262: 400 gerbil auditory-nerve fibres",
+  "headline_stat": {
+    "name": "cortical units frequency-tuned (perm p<0.01) / 5-way decoding accuracy",
+    "value": "1230/1426 (86%); acc 0.808 vs shuffled 0.196",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Cortical best frequency here is an **iso-level** preference measured at a single level (60 dB SPL), so it mixes the unit's tuning with the mouse's audiogram. It is not the same quantity as the characteristic frequency of an auditory-nerve fibre, which is defined at threshold... **We do not claim that cortical tuning is broader than peripheral tuning**, even though that is the textbook expectation. Both width estimates are biased downwards by their own measurement limits",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Both dandisets are canonical for frequency tuning (000986 is a listed known-good cortex set; 001262 single auditory-nerve fibres is the classic peripheral demonstration), covering two stages of the pathway.",
+    "handling": "Real streamed data with correct ragged-column parsing, PSTH-derived epoch windows, quality/rate filtering, NaN cleaning, and a documented rejection of 001419 for integer-rounded spike times.",
+    "analysis": "Permutation tests for frequency selectivity, Wilcoxon for responsiveness, cross-validated Bayesian decoding with a shuffled-label control, Q10/bandwidth via interpolation, and a NeMoS Poisson GLM, all appropriate and controlled.",
+    "correctness": "Every headline number (59 fibres, Q10 median 3.14 n=21, 375 selective, 0.58-octave median width, 1230/1426 tuned, decoding 0.808/0.196) reproduces from the committed batch logs and is internally consistent and physically possible.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show the effect (V-shaped threshold curves, diagonal tuning band, confusion matrix), mark resolution limits, and use representative rather than flattering example units spanning the BF and selectivity range.",
+    "honesty": "The caveats section is exemplary: it declines the textbook cortex-vs-nerve breadth claim, flags iso-level vs threshold-CF confound, onset-transient contamination at 2 kHz, and smoothing/measurement biases, with claims proportionate to the evidence.",
+    "verdict": "A careful, well-controlled, honestly qualified two-stage demonstration whose numbers fully reproduce; I would accept this and move on."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "POST vs PRE significant replay fraction (Fisher exact)",
+    "value": "13.6% (65/477) vs 4.6% (56/1228), p=7.0e-10",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Uses the canonical Buzs\u00e1ki CA1 linear-track Achilles session (000044), the standard dataset for hippocampal replay.",
+    "handling": "Real remfile-streamed NWB data with correct units, cell-type filtering, Non-REM restriction, and carefully defined run bouts.",
+    "analysis": "Poisson Bayesian decoding with posterior-weighted correlation, per-event cell-ID shuffle null, circular-shift SI selection, and a PRE biological control that validates null calibration.",
+    "correctness": "All reported numbers (place-cell count, event counts, significant fractions, p-values) are internally consistent across README, code, and figures, with adequate sample sizes and sound tests.",
+    "figures": "Figures are readable, labeled with units and sample sizes, show a clean place-field template and unambiguous forward/reverse replay sweeps chosen by effect strength.",
+    "honesty": "Claims are proportionate and the PRE-at-chance control is stated, but the write-up gives no explicit limitations (single session, shuffle assumptions), capping a genuinely clean result at 3."
+  }
+}

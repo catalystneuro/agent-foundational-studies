@@ -1,0 +1,97 @@
+/Users/bdichter/dev/hdmf/src/hdmf/spec/namespace.py:703: UserWarning: Schema conflict(s) detected in namespace 'ndx-franklab-novela': 
+ ndx-franklab-novela defines CameraDevice.model as an attribute (dtype: text) while the core schema defines it as a link to DeviceModel. 
+This may cause compatibility issues. Please update the extension version if possible or install an older version of the core schema that is compatible.
+  self._check_namespace_conflicts(extension_ns_name=ns_name,
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynwb/ecephys.py:159: UserWarning: ElectricalSeries 'e-series': The second dimension of data does not match the length of electrodes. Your data may be transposed.
+  warnings.warn("%s '%s': The second dimension of data does not match the length of electrodes. "
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynwb/behavior.py:58: UserWarning: SpatialSeries 'series_0' has data shape (55287, 4) which is not compliant with NWB 2.5 and greater. The second dimension should have length <= 3 to represent at most x, y, z.
+  warnings.warn("SpatialSeries '%s' has data shape %s which is not compliant with NWB 2.5 and greater. "
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynwb/behavior.py:58: UserWarning: SpatialSeries 'series_1' has data shape (161146, 4) which is not compliant with NWB 2.5 and greater. The second dimension should have length <= 3 to represent at most x, y, z.
+  warnings.warn("SpatialSeries '%s' has data shape %s which is not compliant with NWB 2.5 and greater. "
+/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynwb/behavior.py:58: UserWarning: SpatialSeries 'series_2' has data shape (56605, 4) which is not compliant with NWB 2.5 and greater. The second dimension should have length <= 3 to represent at most x, y, z.
+  warnings.warn("SpatialSeries '%s' has data shape %s which is not compliant with NWB 2.5 and greater. "
+/Users/bdichter/dev/hdmf/src/hdmf/build/objectmapper.py:1659: UserWarning: Device.model was detected as a string, but NWB 2.9 specifies Device.model as a link to a DeviceModel. Remapping "unknown" to a new DeviceModel.
+  override = self.__get_override_carg(argname, builder, manager)
+/Users/bdichter/dev/hdmf/src/hdmf/build/objectmapper.py:1659: UserWarning: Device.model was detected as a string, but NWB 2.9 specifies Device.model as a link to a DeviceModel. Remapping "unknown2" to a new DeviceModel.
+  override = self.__get_override_carg(argname, builder, manager)
+loaded in 3.4536068439483643
+root pynwb.file.NWBFile at 0x4544674704
+Fields:
+  acquisition: {
+    e-series <class 'pynwb.ecephys.ElectricalSeries'>
+  }
+  devices: {
+    camera_device 0 <class 'abc.CameraDevice'>,
+    camera_device 1 <class 'abc.CameraDevice'>,
+    dataacq_device0 <class 'abc.DataAcqDevice'>,
+    header_device <class 'abc.HeaderDevice'>,
+    probe 0 <class 'abc.Probe'>
+  }
+  electrode_groups: {
+    0 <class 'abc.NwbElectrodeGroup'>,
+    1 <class 'abc.NwbElectrodeGroup'>,
+    10 <class 'abc.NwbElectrodeGroup'>,
+    11 <class 'abc.NwbElectrodeGroup'>,
+    12 <class 'abc.NwbElectrodeGroup'>,
+    13 <class 'abc.NwbElectrodeGroup'>,
+    14 <class 'abc.NwbElectrodeGroup'>,
+    15 <class 'abc.NwbElectrodeGroup'>,
+    16 <class 'abc.NwbElectrodeGroup'>,
+    17 <class 'abc.NwbElectrodeGroup'>,
+    18 <class 'abc.NwbElectrodeGroup'>,
+    19 <class 'abc.NwbElectrodeGroup'>,
+    2 <class 'abc.NwbElectrodeGroup'>,
+    20 <class 'abc.NwbElectrodeGroup'>,
+    21 <class 'abc.NwbElectrodeGroup'>,
+    22 <class 'abc.NwbElectrodeGroup'>,
+    23 <class 'abc.NwbElectrodeGroup'>,
+    24 <class 'abc.NwbElectrodeGroup'>,
+    25 <class 'abc.NwbElectrodeGroup'>,
+    26 <class 'abc.NwbElectrodeGroup'>,
+    27 <class 'abc.NwbElectrodeGroup'>,
+    28 <class 'abc.NwbElectrodeGroup'>,
+    29 <class 'abc.NwbElectrodeGroup'>,
+    3 <class 'abc.NwbElectrodeGroup'>,
+    30 <class 'abc.NwbElectrodeGroup'>,
+    31 <class 'abc.NwbElectrodeGroup'>,
+    4 <class 'abc.NwbElectrodeGroup'>,
+    5 <class 'abc.NwbElectrodeGroup'>,
+    6 <class 'abc.NwbElectrodeGroup'>,
+    7 <class 'abc.NwbElectrodeGroup'>,
+    8 <class 'abc.NwbElectrodeGroup'>,
+    9 <class 'abc.NwbElectrodeGroup'>
+  }
+  electrodes: electrodes <class 'pynwb.ecephys.ElectrodesTable'>
+  epochs: epochs <class 'pynwb.epoch.TimeIntervals'>
+  experiment_description: Eight arm flexible spatial task
+  experimenter: ['Anna Gillespie']
+  file_create_date: [datetime.datetime(2021, 6, 26, 12, 52, 55, 799062, tzinfo=tzoffset(None, -25200))]
+  identifier: 19ac262e-d6b8-11eb-8d1b-6dbea9d56730
+  institution: University of California, San Francisco
+  intervals: {
+    epochs <class 'pynwb.epoch.TimeIntervals'>
+  }
+  lab: Loren Frank
+  processing: {
+    analog <class 'pynwb.base.ProcessingModule'>,
+    associated_files <class 'pynwb.base.ProcessingModule'>,
+    behavior <class 'pynwb.base.ProcessingModule'>,
+    camera_sample_frame_counts <class 'pynwb.base.ProcessingModule'>,
+    sample_count <class 'pynwb.base.ProcessingModule'>,
+    tasks <class 'pynwb.base.ProcessingModule'>,
+    video_files <class 'pynwb.base.ProcessingModule'>
+  }
+  session_description: Eight arm flexible spatial task
+  session_id: despereaux_08
+  session_start_time: 2019-11-29 09:58:50.562000-08:00
+  subject: subject pynwb.file.Subject at 0x4499595936
+Fields:
+  description: Long Evans Rat
+  genotype: Wild Type
+  sex: Male
+  species: Rat
+  subject_id: despereaux
+  weight: Unknown
+
+  timestamps_reference_time: 1970-01-01 00:00:00+00:00
+

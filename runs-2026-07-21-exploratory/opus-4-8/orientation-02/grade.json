@@ -1,0 +1,32 @@
+{
+  "dandiset": "000021",
+  "subject_session": "8 sessions/8 mice (715093703, 719161530, 721123822, 732592105, 742951821, 750332458, 760693773, 762120172)",
+  "headline_stat": {
+    "name": "median classic OSI in V1 (cortex vs LGd noise-corrected gOSI 0.221 vs 0.096, p=6e-5)",
+    "value": 0.67,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Unit counts are very unequal across areas because probe placement targeted cortex, so LGd is the most sparsely sampled structure here and its confidence intervals are correspondingly wide. Subtracting a per-unit permutation noise floor corrects the leading rate-dependent bias in gOSI but is not a complete correction. Receptive-field position relative to the monitor is not controlled, so units whose receptive field falls near the screen edge see a truncated grating; this adds noise to the tuning estimates in every area.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 (Allen Visual Coding Neuropixels) is the canonical known-good dataset for orientation selectivity, used in the standard species, regions, and paradigm.",
+    "handling": "Real NWB files streamed from S3, explicit Allen-recommended QC thresholds, per-probe invalid-times exclusion, blank-sweep baseline, and correctly truncated non-overlapping counting windows.",
+    "analysis": "Uses proper circular statistics (doubled-angle vector OSI and Jammalamadaka correlation), a preferred-TF-matched permutation null with noise-floor correction, cross-validated decoding, a periodic-basis Poisson GLM, and multiple orthogonal controls.",
+    "correctness": "Every reported number traces to committed code and stats_summary.txt, the metrics are internally consistent across figures and statistically sound (adequate n, permutation and held-out tests), and none are physically impossible.",
+    "figures": "Figures show the effect clearly with units, sample sizes, and honestly-chosen representative (median) examples, and the artifact-prone high-gOSI cases are explicitly flagged rather than passed off as typical.",
+    "honesty": "Claims are proportionate, the graded cortex-vs-thalamus story is stated with nuance, the gOSI positive bias is called out and controlled, and specific real limitations are named."
+  }
+}

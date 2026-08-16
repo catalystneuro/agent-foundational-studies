@@ -1,0 +1,32 @@
+{
+  "dandiset": "000021",
+  "subject_session": "8 sessions/8 mice; prototype session 715093703",
+  "headline_stat": {
+    "name": "median global OSI, responsive cortical units (fraction significant 37.8%)",
+    "value": 0.224,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Fitting the population GLM proved too slow to finish inside this run's compute budget, so it was stopped and no GLM or decoding results are reported here; nothing in the finding below depends on it.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000021 (Allen Visual Coding Neuropixels, drifting/static gratings) is the canonical dataset for mouse-cortex orientation selectivity.",
+    "handling": "Real data streamed via remfile with explicit Allen QC filtering, region resolved through peak channel, and the non-monotonic unit-id/TsGroup ordering pitfall correctly handled.",
+    "analysis": "Proper circular statistics (gOSI at 2\u03b8), permutation null, split-half and cross-stimulus preferred-orientation agreement, cross-validated population tuning, and a width-capped von Mises fit.",
+    "correctness": "Every headline number (2859 units, 671 significant = 37.8%, median gOSI 0.224/0.080/0.060, MW p=1.78e-40, split-half 4.7\u00b0, dg-vs-sg 9.7\u00b0) reproduces exactly from the committed CSV and is internally consistent.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show the two-lobed orientation signature, and use a CA1 control; example units ranked by gOSI, the strength of the effect being shown.",
+    "honesty": "Claims are proportionate to strong, multiply-validated evidence, the CA1 control is framed as the false-positive floor, and the unfinished GLM is disclosed rather than hidden."
+  }
+}

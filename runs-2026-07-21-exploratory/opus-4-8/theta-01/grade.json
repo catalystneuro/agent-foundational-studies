@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "Achilles-10252013, Cicero-09012014, Gatsby-08022013, Buddy-06272013 (4 linear-track sessions)",
+  "headline_stat": {
+    "name": "fraction of CA1 place cells with significant theta phase precession (shuffle p<0.05)",
+    "value": "65/98 (66%), median signed slope -206 deg/field",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "the other two assets in the dandiset use a circular maze whose linearization is not directly comparable and are excluded",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki hc-11), dorsal CA1 silicon-probe recordings on a linear track, the canonical dataset for theta entrainment and precession.",
+    "handling": "Real files streamed via LINDI with correct epoch/run detection, explicit handling of two NWB conversion quirks (period-stored-as-rate, NaN-gated linearization), and defensible unit/occupancy/rate quality filters.",
+    "analysis": "Rayleigh test for phase locking, Kempter circular-linear regression with a 200-permutation phase-shuffle null, plus an LFP-independent autocorrelogram-rhythmicity confirmation and dual-oscillator frequency check; circular statistics used correctly throughout.",
+    "correctness": "Every headline number (81%/n=155, 97%/n=67, MRL 0.145/0.223, 65/98 significant, 62 negative, -206 deg median, per-session 64-69%) reproduces exactly from the committed CSV and is internally consistent and physically possible.",
+    "figures": "Figures show the effect unambiguously with labeled units and sample sizes, and example cells are chosen by correlation strength (|rho|) rather than fitted slope.",
+    "honesty": "Claims are proportionate to a genuinely clean, strong result with no disqualifying acts, but the write-up names no specific limitation of this result beyond noting the excluded circular-maze sessions.",
+    "verdict": "A sophisticated, fully reproducible, correctly controlled demonstration of both theta entrainment and phase precession that I would accept as-is."
+  }
+}

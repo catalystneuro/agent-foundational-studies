@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "8 sessions / 4 rats; prototype Achilles_10252013 (120 CA1 pyramidal, 87 place cells)",
+  "headline_stat": {
+    "name": "pooled median Skaggs spatial information",
+    "value": 0.83,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The three circular-maze sessions are analysed with the linearized coordinate treated as a straight line, so a field straddling the lap boundary would be split in two. ... Pyramidal-cell identity is taken from the `cell_type` labels already present in the NWB files rather than re-derived from waveform features. The spike-history term in the GLM convolves across traversal boundaries within the concatenated running epochs, which slightly overstates its contribution.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzs\u00e1ki CA1) is the canonical place-cell dataset in the species, region, and linear-track paradigm expected.",
+    "handling": "Real data streamed via remfile, correct maze-epoch restriction, speed>5cm/s filtering, and explicit pyramidal selection by cell_type label plus rate bounds.",
+    "analysis": "Occupancy-normalized rate maps with a smoothing-matched circular-shift null, split-half reliability, cross-validated Bayesian decoding, and an unbiased no-reliability mask for the directionality comparison, all methodologically sound.",
+    "correctness": "Every pooled figure number reproduces to two decimals from pooled_units.csv when re-derived, internally consistent across figures and CSVs, with adequate sample sizes and correct tests.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show representative example cells and the population tiling and decoding effect plainly.",
+    "honesty": "Claims are proportionate and limitations are named specifically, including transparent disclosure that fig08/fig09 timed out and that the precession/GLM claims rest on unsaved runs rather than saved output."
+  }
+}

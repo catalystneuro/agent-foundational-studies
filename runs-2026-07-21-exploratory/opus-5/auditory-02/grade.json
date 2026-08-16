@@ -1,0 +1,32 @@
+{
+  "dandiset": "000986",
+  "subject_session": "sub-LA11 / ses-1",
+  "headline_stat": {
+    "name": "frequency-tuned units (ses-1, responsive & ANOVA-tuned)",
+    "value": "172/235 (73%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "DANDI 000986 is a canonical mouse auditory-cortex pure-tone dataset (on the known-good list) and session_description confirms auditory cortex, so the phenomenon is squarely present.",
+    "handling": "Real NWB streamed via remfile, trials aligned to tone onset with evoked/baseline windows validated against the population PSTH, and functional responsiveness/tuning criteria applied.",
+    "analysis": "The completed single-session analysis uses a correct permutation ANOVA null with BH-FDR and paired responsiveness tests, which is the right treatment for frequency tuning.",
+    "correctness": "The numbers actually shown (235 units, F/p per example unit, ses-1 yields) reproduce from committed code and are physically plausible, but the multi-session pipeline never completed and the decoder ran with LDA matmul overflow warnings.",
+    "figures": "fig02/fig03 clearly show the effect with labeled axes, units, and sample sizes, and example units are chosen by tuning strength (ANOVA F) rather than a flattering criterion.",
+    "honesty": "No scientific result is overstated and the figures honestly represent well-tuned cells, but the README is an empty template with a false claim that numbers are filled in, so there is no proper write-up naming limitations."
+  }
+}

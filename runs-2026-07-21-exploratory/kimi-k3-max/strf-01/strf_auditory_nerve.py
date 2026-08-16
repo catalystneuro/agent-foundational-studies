@@ -1,0 +1,703 @@
+# %% [markdown]
+# # Spectrotemporal Receptive Fields in the Auditory Nerve
+#
+# **Data:** DANDI Archive dandiset
+# [001262](https://dandiarchive.org/dandiset/001262/0.241205.0959):
+# *Single-unit auditory nerve fibre responses of young-adult and aging gerbils*
+# (Heeringa et al., 2024, [Sci Data](https://doi.org/10.1038/s41597-024-03259-3)).
+#
+# A neuron's **spectrotemporal receptive field (STRF)** describes which
+# combinations of frequency and time drive it to spike. The concept was
+# introduced by Aertsen & Johannesma (1981), who estimated spectrotemporal
+# response fields of auditory neurons exactly the way we do here: by recording
+# responses to short tone pips at many frequencies and displaying the evoked
+# firing rate as a function of frequency and time after tone onset.
+#
+# Each NWB file in this dandiset holds one gerbil auditory-nerve fiber. The
+# "BF" protocol presents 50 ms tone pips at 12–63 frequencies spaced around
+# the fiber's characteristic frequency (CF), with 5 repeats per frequency and
+# per-sweep spike times. Many fibers also include click trains, rate–level
+# functions, Schroeder-phase complexes, and 60 repeats of a 2.4 s frozen-noise
+# token.
+#
+# **What we do:**
+# 1. Build the spectrotemporal response field (frequency × time map of
+#    tone-evoked firing) of one example fiber, plus its tuning curve and
+#    frequency-dependent latency.
+# 2. Fit a Poisson GLM encoding model (NeMoS) that estimates the same map as a
+#    regularized regression, and validate it against the data PSTHs.
+# 3. Show temporal precision directly: click responses and spike-time locking
+#    to a frozen-noise token.
+# 4. Scale to 59 fibers spanning CFs from 350 Hz to 16 kHz: population
+#    latency–CF relationship (the cochlear traveling-wave signature),
+#    bandwidth–CF relationship, and a CF-aligned average STRF.
+#
+# All data are streamed from the DANDI S3 archive with `remfile` (with a local
+# disk cache); nothing is downloaded in full.
+
+# %% [markdown]
+# ## Setup
+
+# %%
+import json
+import re
+from concurrent.futures import ThreadPoolExecutor
+
+import h5py
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import pynapple as nap
+import remfile
+from scipy.ndimage import gaussian_filter1d
+from tqdm import tqdm
+
+import jax
+jax.config.update("jax_enable_x64", True)
+import nemos as nmo
+
+DISK_CACHE = remfile.DiskCache("/tmp/remfile_cache_strf")
+FIGDIR = "."
+DPI = 150
+
+# 59 fibers selected from the dandiset catalog (see README): >=15 tone
+# frequencies, >=1500 spikes, stratified across log(CF), preferring files
+# that also contain click / frozen-noise / Schroeder-phase protocols.
+FIBERS_JSON = r"""[["G160901-2P-826", "https://dandiarchive.s3.amazonaws.com/blobs/c8f/a22/c8fa2222-274b-4304-ae16-a48b0eea533b"], ["G170512-8P-288", "https://dandiarchive.s3.amazonaws.com/blobs/891/c3d/891c3d35-8fe3-421c-8b5e-87e73f2f2123"], ["G170425-246", "https://dandiarchive.s3.amazonaws.com/blobs/ef9/1f8/ef91f84f-bf9c-4a61-97ef-84d7d3f512ee"], ["G160504-662", "https://dandiarchive.s3.amazonaws.com/blobs/acb/e95/acbe95e9-4271-4e02-8da6-496ccbedcb83"], ["G160518-1178", "https://dandiarchive.s3.amazonaws.com/blobs/a01/ba5/a01ba51d-d615-4dac-bb49-9b3b5fc2b871"], ["G160901-3P-785", "https://dandiarchive.s3.amazonaws.com/blobs/2af/1cc/2af1cc0a-88d6-4416-85a6-dafc6a416ee7"], ["G220908-1p-667", "https://dandiarchive.s3.amazonaws.com/blobs/aae/9f2/aae9f250-80fe-4703-b6c8-f2278e9aeaf6"], ["G170512-6P-192", "https://dandiarchive.s3.amazonaws.com/blobs/ddb/b7f/ddbb7fe8-cb5f-433c-964b-b62fb0046819"], ["G200616-2p-505", "https://dandiarchive.s3.amazonaws.com/blobs/d76/02d/d7602da4-83a6-4620-af07-6812de34cdec"], ["G190806-1p-317", "https://dandiarchive.s3.amazonaws.com/blobs/dfc/d9e/dfcd9ea2-df37-4080-94ab-d88a66c0705e"], ["G190806-2p-75", "https://dandiarchive.s3.amazonaws.com/blobs/380/c46/380c464a-bdaa-4bd0-9abd-32254c38c907"], ["G200616-2p-456", "https://dandiarchive.s3.amazonaws.com/blobs/dc3/e3d/dc3e3d57-8c20-4fd8-86b4-26d6e6279095"], ["G200225-2p-498", "https://dandiarchive.s3.amazonaws.com/blobs/2a0/b32/2a0b32b7-7aaf-446f-ac3c-4e45bce6bdf2"], ["G200225-3p-427", "https://dandiarchive.s3.amazonaws.com/blobs/386/b59/386b591d-f5bb-4c57-9d1f-7a2e2e833866"], ["G190108-437", "https://dandiarchive.s3.amazonaws.com/blobs/01a/152/01a152c3-c432-42a5-ace9-1db0320c4d42"], ["G171023-2P-85", "https://dandiarchive.s3.amazonaws.com/blobs/43a/03e/43a03e15-4e10-41bc-91fe-9d6e2e77e655"], ["G200623-2p-156", "https://dandiarchive.s3.amazonaws.com/blobs/5b8/19b/5b819b03-c2ef-47a6-b03e-6b6a5aec8059"], ["G200623-2p-201", "https://dandiarchive.s3.amazonaws.com/blobs/d72/06e/d7206efc-7d85-4817-9cd9-b5a4bee7b5de"], ["G171023-2P-582", "https://dandiarchive.s3.amazonaws.com/blobs/9a2/1ee/9a21eed7-b79e-4566-a04a-17eafbafea29"], ["G171023-2P-509", "https://dandiarchive.s3.amazonaws.com/blobs/269/bdf/269bdf53-277f-4e27-97ad-3589dff1888d"], ["G150805-unit2", "https://dandiarchive.s3.amazonaws.com/blobs/976/24a/97624a61-9b1a-4c2c-9607-10289729537d"], ["G211221-2p-525", "https://dandiarchive.s3.amazonaws.com/blobs/625/54f/62554f9c-f07e-42ad-9de4-9889f2868c05"], ["G171023-2P-641", "https://dandiarchive.s3.amazonaws.com/blobs/2a3/7e5/2a37e51f-7c7a-438e-8d2a-78904fefe441"], ["G160504-1009", "https://dandiarchive.s3.amazonaws.com/blobs/3c8/094/3c809497-8aaf-4500-8eba-c729c2ef2d1d"], ["G201001-2p-322", "https://dandiarchive.s3.amazonaws.com/blobs/79b/48f/79b48f55-f9f8-48d5-8397-50007dd0248b"], ["G151203-1P-1060nm", "https://dandiarchive.s3.amazonaws.com/blobs/681/5da/6815daab-7f32-4648-8490-47270525ea47"], ["G211118-1p-177", "https://dandiarchive.s3.amazonaws.com/blobs/6a1/3d3/6a13d3e0-b679-4241-9243-2fe671674a65"], ["G160504-519", "https://dandiarchive.s3.amazonaws.com/blobs/6fd/abe/6fdabe24-53be-4ddb-a40f-161f5c4f6d2d"], ["G161110-2P-151", "https://dandiarchive.s3.amazonaws.com/blobs/6a1/1df/6a11dfc1-a98d-4990-affc-d5cb7004645c"], ["G190603-3p-260", "https://dandiarchive.s3.amazonaws.com/blobs/009/133/0091337e-9a36-40f9-b331-7c3e8cb28d5f"], ["G211118-1p-202", "https://dandiarchive.s3.amazonaws.com/blobs/95f/3d8/95f3d825-222c-446a-bde7-fb7ca196d798"], ["G190617-1p-163", "https://dandiarchive.s3.amazonaws.com/blobs/8b3/6b1/8b36b174-7ec8-4841-af89-430d721cdf41"], ["G190617-2p-67", "https://dandiarchive.s3.amazonaws.com/blobs/943/254/94325474-0744-4070-a668-6b9855332a48"], ["G160504-693", "https://dandiarchive.s3.amazonaws.com/blobs/d82/d00/d82d00d2-1235-4fe2-9706-01d2474bbf0f"], ["G190801-2p-1078", "https://dandiarchive.s3.amazonaws.com/blobs/ccb/e4f/ccbe4f74-262a-4a44-a860-71898c3bd5f5"], ["G190108-504", "https://dandiarchive.s3.amazonaws.com/blobs/e98/4f3/e984f323-437b-45e3-aecd-f08cd949485b"], ["G191128-2p-525", "https://dandiarchive.s3.amazonaws.com/blobs/c35/14f/c3514f49-acd3-4a6b-865c-c98991f42992"], ["G170512-2P-820", "https://dandiarchive.s3.amazonaws.com/blobs/25b/5c9/25b5c947-944e-4518-8a17-702f630bdf34"], ["G170512-7P-979", "https://dandiarchive.s3.amazonaws.com/blobs/713/532/71353236-e1a1-44ae-b332-c327cc8858aa"], ["G200623-1p-294", "https://dandiarchive.s3.amazonaws.com/blobs/63f/735/63f7355e-7ab7-4667-974d-158adbe30cd6"], ["G171211-530-5", "https://dandiarchive.s3.amazonaws.com/blobs/e51/b41/e51b410b-2a65-4ca9-aa5a-af44f307cc52"], ["G160504-884", "https://dandiarchive.s3.amazonaws.com/blobs/fa7/493/fa749352-02ea-48b5-9400-7683901d29f2"], ["G190617-1p-242", "https://dandiarchive.s3.amazonaws.com/blobs/345/3af/3453afb8-723a-41ff-aa16-49223556b011"], ["G201001-4p-500", "https://dandiarchive.s3.amazonaws.com/blobs/18c/462/18c46231-0247-4b34-999d-707129b89e0a"], ["G190129-4P-230nm", "https://dandiarchive.s3.amazonaws.com/blobs/7e9/a27/7e9a27b5-9736-4595-86a0-6970ed6ae6e5"], ["G160504-1066", "https://dandiarchive.s3.amazonaws.com/blobs/e7e/cfc/e7ecfcd1-7dc5-456f-89c5-9c0d988653a8"], ["G160504-856", "https://dandiarchive.s3.amazonaws.com/blobs/627/7b2/6277b21e-bc62-4165-9d98-0d71dfda7666"], ["G190326-2p-353", "https://dandiarchive.s3.amazonaws.com/blobs/320/c14/320c1406-dd19-4597-81f9-dfcb8fd9516b"], ["G160531-3P-958", "https://dandiarchive.s3.amazonaws.com/blobs/0dc/124/0dc124f8-1cf4-40e0-9af6-edf5cf2a07fb"], ["G190411-659", "https://dandiarchive.s3.amazonaws.com/blobs/e0d/650/e0d6509c-f44e-4f0c-b21d-9ccf91267b5f"], ["G190912-566", "https://dandiarchive.s3.amazonaws.com/blobs/3aa/979/3aa979e5-a9b0-4e40-8a68-16e426d251cb"], ["G190129-2P-149nm", "https://dandiarchive.s3.amazonaws.com/blobs/cc9/759/cc97594b-407a-4d3e-b380-536e14a6dc0b"], ["G201112-1p-517", "https://dandiarchive.s3.amazonaws.com/blobs/603/13e/60313e40-2dfe-4f0d-84d5-4d751c254a90"], ["G190108-415", "https://dandiarchive.s3.amazonaws.com/blobs/cf4/4a2/cf44a2c4-a2e2-4ad8-9b2a-97af4a11bab8"], ["G180406-3p-511nm", "https://dandiarchive.s3.amazonaws.com/blobs/f15/1cb/f151cbd4-8096-47ee-8cfa-914fe41ab351"], ["G191008-3p-821", "https://dandiarchive.s3.amazonaws.com/blobs/f9f/cbf/f9fcbf35-209d-42a9-a6c9-8edd613aa0ed"], ["G150922-3P-711nm", "https://dandiarchive.s3.amazonaws.com/blobs/27b/966/27b9669f-c758-4b47-8cee-70e1394d194c"], ["G190603-1p-584", "https://dandiarchive.s3.amazonaws.com/blobs/f68/a90/f68a90cc-70fa-49d4-8d91-3570103fc17d"], ["G170512-3P-177", "https://dandiarchive.s3.amazonaws.com/blobs/709/d41/709d41c6-8ad2-4312-8007-68b68e45553b"]]"""
+FIBERS = json.loads(FIBERS_JSON)  # list of [session, s3_blob_url]
+DEEP_DIVE_SESSION = "G160504-519"
+
+# PSTH grid for spectrotemporal maps (relative to tone onset)
+BIN_S = 0.0005                                   # 0.5 ms bins
+EDGES = np.arange(-0.005, 0.0705, BIN_S)         # -5..70 ms
+CENTERS = EDGES[:-1] + BIN_S / 2
+RESP_WIN = (0.005, 0.055)                        # driven-rate window for tuning
+LAT_WIN = (0.0, 0.030)                           # latency search window
+
+
+# %% [markdown]
+# ## Data access and the per-fiber data model
+#
+# Each file stores every stimulus presentation ("sweep") as one raw voltage
+# trace in `acquisition/`, with per-sweep spike times in the `units` table
+# (`units/tag` names the sweep, e.g. `BF_FREQ2350_rep3`), and per-sweep
+# stimulus parameters in
+# `general/intracellular_ephys/intracellular_recordings/stimuli`
+# (frequency, level, onset delay, duration). We read only the small metadata
+# and spike-time arrays; raw traces are read only for the example figure.
+
+# %%
+def load_fiber(url):
+    """Load sweep spike trains + stimulus metadata for one fiber file."""
+    f = h5py.File(remfile.File(url, disk_cache=DISK_CACHE), "r")
+    spike_times = np.asarray(f["units/spike_times"][:], dtype=np.float64)
+    spike_index = np.asarray(f["units/spike_times_index"][:], dtype=np.int64)
+    tags = f["units/tag"][:].astype(str)
+    starts = np.concatenate([[0], spike_index[:-1]])
+    sweeps = [spike_times[s:e] for s, e in zip(starts, spike_index)]
+    st = "general/intracellular_ephys/intracellular_recordings/stimuli"
+    meta = {k: f[f"{st}/{k}"][:] for k in
+            ("stimtype", "frequency", "level_dBSPL", "delay", "duration")}
+    at = "analysis/analysis_table"
+    analysis = {k: f[f"{at}/{k}"][:] for k in
+                ("experiment", "results_bf", "results_sr", "results_threshold")}
+    age = f["general/subject/age"][()]
+    age = age.decode() if isinstance(age, bytes) else str(age)
+    n_samp = f["acquisition"][tags[0]]["data"].shape[0]
+    fs = float(f["acquisition"][tags[0]]["starting_time"].attrs["rate"])
+    return (dict(sweeps=sweeps, tags=tags, meta=meta, analysis=analysis,
+                 age=age, sweep_dur=n_samp / fs, fs=fs), f)
+
+
+def bf_sweeps_by_level(data):
+    """Parse BF tone-pip sweeps -> {level_dBSPL: {freq_Hz: [sweep indices]}}."""
+    out = {}
+    for i, t in enumerate(data["tags"]):
+        m = re.match(r"BF_FREQ(\d+)_rep(\d+)", t)
+        if m:
+            lv = float(data["meta"]["level_dBSPL"][i])
+            out.setdefault(lv, {}).setdefault(int(m.group(1)), []).append(i)
+    return out
+
+
+def pick_level(by_level):
+    """Level with the most complete freq x rep coverage (ties -> higher level)."""
+    best, best_key = None, None
+    for lv, d in by_level.items():
+        key = (sum(len(v) for v in d.values()), lv)
+        if best_key is None or key > best_key:
+            best, best_key = lv, key
+    return best
+
+
+# %% [markdown]
+# ## Example fiber: raw data
+#
+# Fiber `G160504-519` (reported BF = 2341 Hz, spontaneous rate ≈ 65 sp/s,
+# young-adult gerbil). The BF protocol here uses 41 tone frequencies
+# (1.5–3.5 kHz, 50 Hz spacing) at 34.6 dB SPL, 5 repeats each; tones start
+# 7.75 ms into each 80 ms sweep and last 50 ms.
+
+# %%
+dd_url = dict(FIBERS)[DEEP_DIVE_SESSION]
+dd, dd_file = load_fiber(dd_url)
+by_level = bf_sweeps_by_level(dd)
+dd_level = pick_level(by_level)
+dd_freqs = np.array(sorted(by_level[dd_level]))
+n_rep = len(by_level[dd_level][dd_freqs[0]])
+delay = float(np.median(dd["meta"]["delay"][[i for v in by_level[dd_level].values() for i in v]]))
+tone_dur = float(np.median(dd["meta"]["duration"][[i for v in by_level[dd_level].values() for i in v]]))
+print(f"sweeps: {len(dd['tags'])}, BF protocol: {len(dd_freqs)} freqs x {n_rep} reps "
+      f"@ {dd_level:.1f} dB SPL, onset {delay*1e3:.2f} ms, dur {tone_dur*1e3:.0f} ms, "
+      f"sweep {dd['sweep_dur']*1e3:.0f} ms, fs {dd['fs']:.1f} Hz, age {dd['age']}")
+
+# %%
+fig, axes = plt.subplots(1, 2, figsize=(12, 4.2))
+
+# (a) one raw voltage trace with spike times
+ax = axes[0]
+tr_name = "BF_FREQ2350_rep1"
+tr = dd_file["acquisition"][tr_name]["data"][:]
+tt = np.arange(len(tr)) / dd["fs"]
+ax.plot(tt * 1e3, tr, lw=0.4, color="0.35")
+i0 = list(dd["tags"]).index(tr_name)
+for s in dd["sweeps"][i0]:
+    ax.axvline(s * 1e3, color="C3", lw=0.6, alpha=0.8)
+ax.axvspan(delay * 1e3, (delay + tone_dur) * 1e3, color="C0", alpha=0.15)
+ax.set_xlabel("time in sweep (ms)")
+ax.set_ylabel("electrode voltage (V)")
+ax.set_title(f"Raw trace {tr_name}\n(red = extracted spike times, blue band = 50 ms tone)")
+
+# (b) raster of all BF sweeps, ordered by frequency
+ax = axes[1]
+y = 0
+for fr in dd_freqs:
+    for i in by_level[dd_level][fr]:
+        sp = (dd["sweeps"][i] - delay) * 1e3
+        sp = sp[(sp > -5) & (sp < 70)]
+        ax.plot(sp, np.full_like(sp, y), "|", color="k", ms=2)
+        y += 1
+ax.axvspan(0, tone_dur * 1e3, color="C0", alpha=0.08)
+ax.set_yticks([0, y - 1])
+ax.set_yticklabels([f"{dd_freqs[0]}", f"{dd_freqs[-1]}"])
+ax.set_ylabel("tone frequency (Hz), low → high")
+ax.set_xlabel("time from tone onset (ms)")
+ax.set_title("Tone-evoked spikes, all 205 BF sweeps")
+fig.tight_layout()
+fig.savefig(f"{FIGDIR}/fig1_raw_data.png", dpi=DPI)
+plt.close(fig)
+
+# %% [markdown]
+# The raster already shows the spectrotemporal structure: spikes are densest
+# for tones near ~2.3–2.8 kHz, and the response starts earlier for higher
+# frequencies. Now we quantify this as a frequency × time firing-rate map.
+
+# %% [markdown]
+# ## The spectrotemporal response field of one fiber
+#
+# For each tone frequency we pool the 5 repeats, align spikes to tone onset,
+# and compute a peri-stimulus time histogram (PSTH, 0.5 ms bins). Stacking the
+# per-frequency PSTHs gives the **spectrotemporal response field**: firing
+# rate as a function of frequency and time. The spontaneous rate (from silent
+# sweeps) is subtracted, so red = excitation above spontaneous, blue =
+# suppression below.
+#
+# We use pynapple's `compute_perievent` on a global timeline in which each
+# sweep is placed 1 s apart; tone onsets are the alignment events.
+
+# %%
+def spectrotemporal_map(data, level):
+    """Frequency x time net-rate map via pynapple perievent alignment."""
+    by_level = bf_sweeps_by_level(data)
+    d = by_level[level]
+    freqs = np.array(sorted(d))
+    sweeps, tags = data["sweeps"], data["tags"]
+    idx_all = [i for v in d.values() for i in v]
+    delay = float(np.median(data["meta"]["delay"][idx_all]))
+
+    # global timeline: sweep i starts at i * (sweep_dur + 1 s)
+    step = data["sweep_dur"] + 1.0
+    sp_global, onsets, onset_freq = [], [], []
+    for fr in freqs:
+        for i in d[fr]:
+            sp = sweeps[i][np.isfinite(sweeps[i])]
+            sp_global.append(sp + i * step)
+            onsets.append(i * step + delay)
+            onset_freq.append(fr)
+    spikes_ts = nap.Ts(np.concatenate(sp_global))
+    onsets_ts = nap.Ts(np.array(onsets))
+    pe = nap.compute_perievent(spikes_ts, onsets_ts,
+                               window=(EDGES[0], EDGES[-1]))
+
+    # spontaneous rate from silent sweeps
+    sil = [i for i, t in enumerate(tags) if t.startswith("BF_silent")]
+    if sil:
+        sr = np.mean([np.sum(np.isfinite(sweeps[i])) for i in sil]) / data["sweep_dur"]
+    else:
+        sr = np.nan
+
+    psth = np.zeros((len(freqs), len(CENTERS)))
+    pe_keys = set(pe.keys())
+    for fi, fr in enumerate(freqs):
+        ev_idx = [k for k, f_ in enumerate(onset_freq) if f_ == fr]
+        parts = [pe[k].t for k in ev_idx if k in pe_keys]  # empty windows are dropped
+        sp = np.concatenate(parts) if parts else np.empty(0)
+        c, _ = np.histogram(sp, bins=EDGES)
+        psth[fi] = c / (len(ev_idx) * BIN_S)
+    if not np.isfinite(sr):
+        sr = np.nanmean(psth[:, CENTERS < 0])
+    net = psth - sr
+    net_s = gaussian_filter1d(net, sigma=2, axis=1)  # 1 ms temporal smoothing
+    return freqs, psth, net, net_s, sr, delay
+
+
+def fiber_metrics(freqs, net, net_s, sr):
+    """CF, peak rate, latency at CF, half-max bandwidth from a net-rate map."""
+    rw = (CENTERS >= RESP_WIN[0]) & (CENTERS < RESP_WIN[1])
+    tc = net[:, rw].mean(axis=1)
+    ci = int(np.argmax(tc))
+    cf, peak = float(freqs[ci]), float(tc[ci])
+    lw = (CENTERS >= LAT_WIN[0]) & (CENTERS < LAT_WIN[1])
+    row, tt = net_s[ci, lw], CENTERS[lw]
+    lat = np.nan
+    if row.max() > 0:
+        above = np.where(row >= 0.5 * row.max())[0]
+        if len(above):
+            lat = float(tt[above[0]])
+    bw = np.nan
+    if peak > 0:
+        lo, hi = ci, ci
+        while lo > 0 and tc[lo - 1] >= peak / 2:
+            lo -= 1
+        while hi < len(tc) - 1 and tc[hi + 1] >= peak / 2:
+            hi += 1
+        if hi > lo:
+            bw = float(np.log2(freqs[hi] / freqs[lo]))
+    return dict(cf=cf, peak_net_rate=peak, latency_s=lat, bandwidth_oct=bw,
+                sr=float(sr), tuning=tc, ci=ci)
+
+
+freqs, psth, net, net_s, sr, delay = spectrotemporal_map(dd, dd_level)
+m = fiber_metrics(freqs, net, net_s, sr)
+print(f"spontaneous rate {sr:.0f} sp/s | CF {m['cf']:.0f} Hz (reported BF 2341) | "
+      f"peak net rate {m['peak_net_rate']:.0f} sp/s | latency at CF "
+      f"{m['latency_s']*1e3:.1f} ms | bandwidth {m['bandwidth_oct']:.2f} oct")
+
+# per-frequency latency (only where the response is strong enough)
+lw = (CENTERS >= LAT_WIN[0]) & (CENTERS < LAT_WIN[1])
+lat_by_freq = np.full(len(freqs), np.nan)
+for fi in range(len(freqs)):
+    row = net_s[fi, lw]
+    if row.max() > 0.3 * net_s[:, lw].max():
+        lat_by_freq[fi] = CENTERS[lw][np.argmax(row)]
+
+# %%
+fig, axes = plt.subplots(1, 3, figsize=(14, 4.3))
+
+ax = axes[0]
+vmax = np.percentile(np.abs(net_s), 99)
+im = ax.pcolormesh(CENTERS * 1e3, freqs, net_s, cmap="RdBu_r",
+                   vmin=-vmax, vmax=vmax, shading="auto")
+ax.axvspan(0, tone_dur * 1e3, color="k", alpha=0.05)
+ax.set_xlabel("time from tone onset (ms)")
+ax.set_ylabel("frequency (Hz)")
+ax.set_title("Spectrotemporal response field\n(net firing rate, sp/s)")
+plt.colorbar(im, ax=ax, label="net rate (sp/s)")
+
+ax = axes[1]
+ax.plot(freqs, m["tuning"], "o-", color="C0", ms=4)
+ax.axvline(m["cf"], color="k", ls=":", lw=1)
+ax.axhline(0, color="0.5", lw=0.5)
+ax.set_xlabel("frequency (Hz)")
+ax.set_ylabel("net rate (sp/s)")
+ax.set_title(f"Tuning curve (5–55 ms window)\nCF ≈ {m['cf']:.0f} Hz, "
+             f"half-max width {m['bandwidth_oct']:.2f} oct")
+
+ax = axes[2]
+ok = np.isfinite(lat_by_freq)
+ax.plot(freqs[ok], lat_by_freq[ok] * 1e3, "s-", color="C1", ms=4)
+ax.set_xlabel("frequency (Hz)")
+ax.set_ylabel("response latency (ms)")
+ax.set_title("Peak-response latency vs frequency\n(only frequencies with strong responses)")
+fig.tight_layout()
+fig.savefig(f"{FIGDIR}/fig2_single_fiber_strf.png", dpi=DPI)
+plt.close(fig)
+
+# %% [markdown]
+# The map shows the classic auditory-nerve spectrotemporal structure: a
+# compact excitatory region centered on CF (~2.5 kHz) whose onset shifts to
+# longer latencies as frequency decreases, the signature of the cochlear
+# traveling wave, which takes longer to reach the apical (low-frequency)
+# place. A suppression trough follows the excitation at some frequencies
+# (post-activation suppression).
+
+# %% [markdown]
+# ## An encoding-model view: Poisson GLM (NeMoS)
+#
+# The map above is a model-free estimate. The same object can be estimated as
+# a **regularized regression**: model the spike count in each 1 ms bin as
+# Poisson with log rate = intercept + Σ over frequencies of the tone-pip
+# indicator convolved with a per-frequency temporal kernel. The collection of
+# per-frequency kernels is the STRF as a linear–nonlinear encoding model.
+#
+# We expand each frequency channel in a raised-cosine temporal basis
+# (8 functions over 40 ms) and fit with NeMoS. One honest caveat: 50 ms
+# boxcar tones constrain mainly the *integral* of each kernel (the PSTH is the
+# kernel's step response), so fine kernel timing is weakly identifiable from
+# tone pips alone, which is exactly why the field moved to broadband noise
+# and ripple stimuli for kernel estimation. We therefore validate the model in
+# prediction space: the GLM-predicted tone-response map against the PSTH map.
+
+# %%
+# build design matrix on a concatenated sweep timeline (1 ms bins)
+BIN_G = 0.001
+SWEEP_BINS = int(dd["sweep_dur"] / BIN_G)
+WIN = 40
+GAP_BINS = WIN  # >= WIN so conv-basis NaN padding lands in the first gap only
+STEP = SWEEP_BINS + GAP_BINS
+sweep_list = [(fr, i) for fr in dd_freqs for i in by_level[dd_level][fr]]
+f2i = {fr: k for k, fr in enumerate(dd_freqs)}
+F = len(dd_freqs)
+n_bins = len(sweep_list) * STEP
+X_stim = np.zeros((n_bins, F))
+y = np.zeros(n_bins)
+for n, (fr, i) in enumerate(sweep_list):
+    b0 = n * STEP
+    on, off = int(delay / BIN_G), int((delay + tone_dur) / BIN_G)
+    X_stim[b0 + on:b0 + off, f2i[fr]] = 1.0
+    sp = dd["sweeps"][i]
+    sp = sp[np.isfinite(sp) & (sp >= 0) & (sp < dd["sweep_dur"])]
+    c, _ = np.histogram(sp, bins=np.arange(SWEEP_BINS + 1) * BIN_G)
+    y[b0:b0 + SWEEP_BINS] = c
+
+basis = nmo.basis.RaisedCosineLinearConv(n_basis_funcs=8, window_size=WIN)
+X = np.asarray(basis.compute_features(X_stim))
+valid = ~np.isnan(X).any(axis=1)
+model = nmo.glm.GLM(solver_name="LBFGS", solver_kwargs={"maxiter": 5000})
+model.fit(X[valid], y[valid])
+null = nmo.glm.GLM(solver_name="LBFGS").fit(np.zeros((valid.sum(), 1)), y[valid])
+pseudo_r2 = 1 - model.score(X[valid], y[valid]) / null.score(np.zeros((valid.sum(), 1)), y[valid])
+print(f"GLM McFadden pseudo-R^2 vs intercept-only: {pseudo_r2:.3f}")
+
+# predicted per-frequency response map (average predicted rate per frequency)
+pred = np.asarray(model.predict(X[valid])) / BIN_G  # sp/s
+valid_idx = np.where(valid)[0]
+glm_map = np.zeros((F, SWEEP_BINS))
+counts = np.zeros((F, SWEEP_BINS))
+for n, (fr, i) in enumerate(sweep_list):
+    b0 = n * STEP
+    sel = (valid_idx >= b0) & (valid_idx < b0 + SWEEP_BINS)
+    rows = valid_idx[sel] - b0          # row positions within the sweep
+    iv = np.where(sel)[0]               # positions in the valid-filtered arrays
+    glm_map[f2i[fr], rows] += pred[iv]
+    counts[f2i[fr], rows] += 1
+glm_map = glm_map / np.maximum(counts, 1)
+t_glm = (np.arange(SWEEP_BINS) * BIN_G - delay) * 1e3  # ms rel onset
+glm_net = glm_map - sr
+
+# compare maps on a common 1 ms grid over -5..70 ms
+w = (t_glm >= -5) & (t_glm < 70)
+glm_ds = glm_net[:, w]                                   # (F, 75) at 1 ms
+psth_ds = net.reshape(F, 75, 2).mean(axis=2)             # (F, 75) at 1 ms
+cc_map = np.corrcoef(glm_ds.ravel(), psth_ds.ravel())[0, 1]
+print(f"GLM-predicted map vs PSTH map correlation: {cc_map:.3f}")
+
+# %%
+fig, axes = plt.subplots(1, 3, figsize=(14, 4.3))
+ax = axes[0]
+vmax = np.percentile(np.abs(net_s), 99)
+ax.pcolormesh(CENTERS * 1e3, freqs, net_s, cmap="RdBu_r", vmin=-vmax, vmax=vmax, shading="auto")
+ax.set_title("Data: PSTH-based map")
+ax.set_xlabel("time from onset (ms)"); ax.set_ylabel("frequency (Hz)")
+
+ax = axes[1]
+g = gaussian_filter1d(glm_net, 2, axis=1)
+vmax2 = np.percentile(np.abs(g[:, w]), 99)
+ax.pcolormesh(t_glm[w], dd_freqs, g[:, w], cmap="RdBu_r", vmin=-vmax2, vmax=vmax2, shading="auto")
+ax.set_title(f"GLM-predicted map (pseudo-$R^2$={pseudo_r2:.2f})")
+ax.set_xlabel("time from onset (ms)")
+
+ax = axes[2]
+ci = m["ci"]
+ax.plot(CENTERS * 1e3, net[ci], color="k", lw=1, label="data PSTH")
+ax.plot(t_glm, glm_net[ci], color="C3", lw=1.2, label="GLM prediction")
+ax.axhline(0, color="0.5", lw=0.5)
+ax.set_xlim(-5, 70)
+ax.set_xlabel("time from onset (ms)"); ax.set_ylabel("net rate (sp/s)")
+ax.set_title(f"CF = {dd_freqs[ci]} Hz cross-section\nmap correlation = {cc_map:.2f}")
+ax.legend()
+fig.tight_layout()
+fig.savefig(f"{FIGDIR}/fig3_glm_encoding.png", dpi=DPI)
+plt.close(fig)
+
+# %% [markdown]
+# The GLM recovers the same spectrotemporal field (map correlation reported in
+# the figure) and quantifies how much of the bin-to-bin spike-count
+# variability a purely spectrotemporal linear–nonlinear model explains.
+
+# %% [markdown]
+# ## Temporal precision: clicks and frozen noise
+#
+# The same file contains 500 click presentations and 60 repeats of an
+# identical 2.4 s frozen-noise token. These show the temporal precision that
+# underlies spectrotemporal coding: the click PSTH reveals the fiber's
+# impulse-like response, and the frozen-noise raster shows that the same
+# temporal pattern of spikes is reproduced on every repeat.
+
+# %%
+click_idx = [i for i, t in enumerate(dd["tags"]) if t.startswith("CLICK")]
+noise_idx = [i for i, t in enumerate(dd["tags"]) if t.startswith("NOISE")]
+noise_dur = dd_file["acquisition"]["NOISE_NOISE_1_rep1"]["data"].shape[0] / dd["fs"]
+
+fig, axes = plt.subplots(2, 2, figsize=(12, 7))
+
+ax = axes[0, 0]
+csp = np.concatenate([dd["sweeps"][i] for i in click_idx])
+csp = csp[np.isfinite(csp)]
+ax.hist(csp * 1e3, bins=np.arange(0, 10.001, 0.05), color="k", lw=0)
+ax.set_xlabel("time in sweep (ms)")
+ax.set_ylabel("spike count")
+ax.set_title(f"Click response PSTH ({len(click_idx)} clicks, 0.05 ms bins)")
+
+ax = axes[0, 1]
+for r, i in enumerate(noise_idx):
+    sp = dd["sweeps"][i]
+    sp = sp[np.isfinite(sp)]
+    ax.plot(sp, np.full_like(sp, r), "|", color="k", ms=1.5)
+ax.set_xlabel("time in sweep (s)")
+ax.set_ylabel("repeat #")
+ax.set_title(f"Frozen-noise raster ({len(noise_idx)} identical repeats)")
+
+nbins = np.arange(0, noise_dur, 0.001)
+h1 = np.concatenate([dd["sweeps"][i] for i in noise_idx[:30]])
+h2 = np.concatenate([dd["sweeps"][i] for i in noise_idx[30:]])
+h1 = h1[np.isfinite(h1)]; h2 = h2[np.isfinite(h2)]
+r1, _ = np.histogram(h1, bins=nbins)
+r2, _ = np.histogram(h2, bins=nbins)
+r1s = gaussian_filter1d(r1.astype(float), 2)
+r2s = gaussian_filter1d(r2.astype(float), 2)
+cc_noise = np.corrcoef(r1s, r2s)[0, 1]
+
+ax = axes[1, 0]
+nsp = np.concatenate([dd["sweeps"][i] for i in noise_idx])
+nsp = nsp[np.isfinite(nsp)]
+c, _ = np.histogram(nsp, bins=nbins)
+ax.plot(nbins[:-1], gaussian_filter1d(c / (len(noise_idx) * 0.001), 2), color="k", lw=0.7)
+ax.set_xlabel("time in sweep (s)")
+ax.set_ylabel("rate (sp/s)")
+ax.set_title(f"Noise-token PSTH (split-half r = {cc_noise:.2f})")
+
+ax = axes[1, 1]
+ax.plot(nbins[:-1], r1s, lw=0.8, label="repeats 1–30")
+ax.plot(nbins[:-1], r2s, lw=0.8, alpha=0.75, label="repeats 31–60")
+ax.set_xlim(0.4, 0.9)
+ax.set_xlabel("time in sweep (s)")
+ax.set_ylabel("count / 1 ms bin")
+ax.set_title("Independent halves of the repeats (zoom)")
+ax.legend()
+fig.tight_layout()
+fig.savefig(f"{FIGDIR}/fig4_temporal_precision.png", dpi=DPI)
+plt.close(fig)
+
+# %% [markdown]
+# The split-half correlation of the noise-token PSTH quantifies how
+# reproducibly the fiber encodes the fine spectrotemporal structure of an
+# unknown broadband sound, the property that makes STRF estimation with
+# naturalistic stimuli possible.
+
+# %% [markdown]
+# ## Population analysis: 59 fibers across the tonotopic axis
+#
+# We now run the same map computation on 59 fibers selected from the dandiset
+# catalog (≥15 tone frequencies, ≥1500 spikes, stratified across log CF,
+# preferring files that also contain click/noise/Schroeder protocols). For
+# each fiber we record CF, peak driven rate, latency at CF (half-peak crossing
+# of the CF PSTH), half-maximum bandwidth, spontaneous rate, tone level, and
+# the animal's age.
+
+# %%
+def analyze_fiber(session, url):
+    data, f = load_fiber(url)
+    by_level = bf_sweeps_by_level(data)
+    level = pick_level(by_level)
+    freqs, psth, net, net_s, sr, delay = spectrotemporal_map(data, level)
+    mm = fiber_metrics(freqs, net, net_s, sr)
+    mm.update(dict(session=session, level=level, n_freqs=len(freqs),
+                   n_reps=int(np.mean([len(v) for v in by_level[level].values()])),
+                   age=data["age"],
+                   bf_reported=float(data["analysis"]["results_bf"][0]),
+                   sr_reported=float(data["analysis"]["results_sr"][0])))
+    f.close()
+    return mm, freqs, net_s
+
+
+results = []
+with ThreadPoolExecutor(8) as ex:
+    futs = {ex.submit(analyze_fiber, s, u): s for s, u in FIBERS}
+    for fut in tqdm(futs, desc="analyzing fibers"):
+        results.append(fut.result())
+
+pop = pd.DataFrame([r[0] for r in results])
+pop["age_days"] = pop["age"].str.extract(r"P(\d+)D").astype(float)
+pop.to_csv("population_metrics.csv", index=False)
+maps = {r[0]["session"]: (r[1], r[2]) for r in results}
+good = pop[pop.peak_net_rate >= 30].copy()
+print(f"{len(pop)} fibers analyzed, {len(good)} with strong responses (peak >= 30 sp/s)")
+lat_ok = good.latency_s[good.latency_s >= 0.001]
+print(f"CF range {good.cf.min():.0f}-{good.cf.max():.0f} Hz; "
+      f"latency at CF {lat_ok.min()*1e3:.1f}-{lat_ok.max()*1e3:.1f} ms")
+
+# %% [markdown]
+# ### Gallery of spectrotemporal response fields across CF
+
+# %%
+gal = good.sort_values("cf")
+pick = gal.iloc[np.linspace(0, len(gal) - 1, 8).astype(int)]
+fig, axes = plt.subplots(2, 4, figsize=(15, 6.5))
+for ax, (_, r) in zip(axes.ravel(), pick.iterrows()):
+    fr, mp = maps[r.session]
+    v = np.percentile(np.abs(mp), 99)
+    ax.pcolormesh(CENTERS * 1e3, fr, mp, cmap="RdBu_r", vmin=-v, vmax=v, shading="auto")
+    ax.set_title(f"{r.session}\nCF {r.cf:.0f} Hz, lat {r.latency_s*1e3:.1f} ms", fontsize=9)
+    ax.set_xlim(-5, 40)
+    if ax.get_subplotspec().is_first_col():
+        ax.set_ylabel("frequency (Hz)")
+    if ax.get_subplotspec().is_last_row():
+        ax.set_xlabel("time from onset (ms)")
+fig.suptitle("Spectrotemporal response fields of 8 auditory nerve fibers (CF low → high)")
+fig.tight_layout(rect=[0, 0, 1, 0.96])
+fig.savefig(f"{FIGDIR}/fig5_population_gallery.png", dpi=DPI)
+plt.close(fig)
+
+# %% [markdown]
+# ### Population summaries
+#
+# Three classic auditory-nerve relationships, plus the average field:
+#
+# * **Latency vs CF**: high-CF (basal) fibers respond first; the log–log
+#   slope quantifies the cochlear traveling-wave delay.
+# * **Bandwidth vs CF**: tuning sharpness across the tonotopic axis.
+# * **Spontaneous rate vs age**: this dandiset spans young-adult to old
+#   gerbils; aging is known to reduce the high-spontaneous-rate fiber
+#   population.
+# * **CF-aligned average STRF**: each fiber's map, frequency axis rescaled to
+#   octaves relative to CF and peak-normalized, then averaged: the canonical
+#   spectrotemporal receptive field shape.
+
+# %%
+# CF-aligned average map
+rel_grid = np.arange(-1.0, 1.01, 0.1)          # octaves re CF
+t_grid = np.arange(0.0, 0.0305, 0.001)         # 0-30 ms
+acc = []
+for _, r in good.iterrows():
+    fr, mp = maps[r.session]
+    ti = (CENTERS >= t_grid[0]) & (CENTERS < t_grid[-1])  # 60 x 0.5 ms bins
+    sub = mp[:, ti]
+    tc = CENTERS[ti]
+    peak = sub.max()
+    if peak <= 0:
+        continue
+    sub = sub / peak
+    rel = np.log2(fr / r.cf)
+    interp = np.zeros((len(rel_grid), len(tc)))
+    for j in range(len(tc)):
+        interp[:, j] = np.interp(rel_grid, rel, sub[:, j], left=np.nan, right=np.nan)
+    # downsample time to 1 ms
+    it = interp.reshape(len(rel_grid), -1, 2).mean(axis=2)
+    acc.append(it)
+acc = np.array(acc)                             # (n_fibers, n_rel, n_t)
+avg_map = np.nanmean(acc, axis=0)
+t_avg = (np.arange(acc.shape[2]) + 0.5) * 0.001  # s, 1 ms bin centers
+print(f"CF-aligned average over {acc.shape[0]} fibers")
+
+# latency vs CF fit (log-log). Latencies below 1 ms are excluded: the
+# acoustic travel time plus synaptic delay sets a physical floor near 1 ms,
+# so a half-peak crossing earlier than that is an estimation artifact.
+ok = good.dropna(subset=["latency_s"])
+ok = ok[ok.latency_s >= 0.001]
+slope, intercept = np.polyfit(np.log10(ok.cf), np.log10(ok.latency_s * 1e3), 1)
+print(f"latency ~ CF^{slope:.2f} (log-log slope), n={len(ok)}")
+
+fig, axes = plt.subplots(2, 3, figsize=(15, 8))
+
+ax = axes[0, 0]
+ax.plot(pop.bf_reported, pop.cf, "o", ms=4, color="0.3")
+lim = [pop.bf_reported.min() * 0.8, pop.bf_reported.max() * 1.2]
+ax.plot(lim, lim, "k:", lw=1)
+ax.set_xscale("log"); ax.set_yscale("log")
+ax.set_xlabel("reported BF (Hz)"); ax.set_ylabel("our CF estimate (Hz)")
+r_cf = np.corrcoef(np.log10(pop.bf_reported), np.log10(pop.cf))[0, 1]
+ax.set_title(f"Validation: CF vs reported BF (r = {r_cf:.3f})")
+
+ax = axes[0, 1]
+ax.plot(ok.cf, ok.latency_s * 1e3, "o", ms=5, color="C1")
+xx = np.logspace(np.log10(ok.cf.min()), np.log10(ok.cf.max()), 50)
+ax.plot(xx, 10 ** (intercept + slope * np.log10(xx)), "k--", lw=1.2,
+        label=f"slope {slope:.2f}")
+ax.set_xscale("log"); ax.set_yscale("log")
+ax.set_xlabel("CF (Hz)"); ax.set_ylabel("latency at CF (ms)")
+ax.set_title("Response latency vs CF\n(cochlear traveling-wave delay)")
+ax.legend()
+
+ax = axes[0, 2]
+okb = good.dropna(subset=["bandwidth_oct"])
+ax.plot(okb.cf, okb.bandwidth_oct, "o", ms=5, color="C0")
+ax.set_xscale("log")
+ax.set_xlabel("CF (Hz)"); ax.set_ylabel("half-max bandwidth (octaves)")
+ax.set_title("Tuning bandwidth vs CF")
+
+ax = axes[1, 0]
+im = ax.pcolormesh(t_avg * 1e3, rel_grid, avg_map, cmap="RdBu_r",
+                   vmin=-np.nanmax(np.abs(avg_map)), vmax=np.nanmax(np.abs(avg_map)),
+                   shading="auto")
+ax.set_xlabel("time from tone onset (ms)")
+ax.set_ylabel("octaves re CF")
+ax.set_title(f"CF-aligned average STRF (n = {acc.shape[0]})")
+plt.colorbar(im, ax=ax, label="normalized rate")
+
+ax = axes[1, 1]
+groups = pd.cut(pop.age_days, [0, 300, 800, 20000],
+                labels=["young\n(<300 d)", "middle\n(300–800 d)", "old\n(>800 d)"])
+data_by_g = [pop.sr[groups == g].dropna() for g in groups.cat.categories]
+bp = ax.boxplot(data_by_g, tick_labels=groups.cat.categories, showfliers=False)
+for k, d in enumerate(data_by_g):
+    ax.plot(np.full(len(d), k + 1) + np.random.default_rng(0).normal(0, 0.04, len(d)),
+            d, "o", ms=3, color="0.4")
+ax.set_ylabel("spontaneous rate (sp/s)")
+ax.set_title(f"Spontaneous rate by age group (n = {len(pop)})")
+
+ax = axes[1, 2]
+ax.plot(pop.level, pop.peak_net_rate, "o", ms=5, color="C2")
+ax.set_xlabel("tone level (dB SPL)")
+ax.set_ylabel("peak net rate (sp/s)")
+ax.set_title("Driven rate vs stimulus level\n(recording-protocol confound check)")
+fig.tight_layout()
+fig.savefig(f"{FIGDIR}/fig6_population_summary.png", dpi=DPI)
+plt.close(fig)
+
+# %% [markdown]
+# ## Summary
+#
+# * Auditory-nerve fibers have compact, V-shaped spectrotemporal response
+#   fields: excitation centered on CF, with response latency increasing as
+#   tone frequency moves below CF.
+# * Across 59 fibers spanning 0.35–16 kHz, latency at CF decreases with CF
+#   (log–log slope reported above), the population signature of the cochlear
+#   traveling wave.
+# * A Poisson GLM encoding model (NeMoS) recovers the same field from a
+#   regularized regression, validating the linear–nonlinear encoding picture;
+#   the weak identifiability of fine kernel timing from 50 ms boxcar tones
+#   motivates broadband stimuli for kernel estimation.
+# * Frozen-noise repeats show millisecond-precision reproducible spike
+#   patterns (split-half correlation reported above), the substrate that makes
+#   spectrotemporal feature coding possible.
+# * Spontaneous-rate structure across age groups is consistent with the known
+#   loss of high-SR fibers in aging animals.
+#
+# Outputs: `fig1_raw_data.png`, `fig2_single_fiber_strf.png`,
+# `fig3_glm_encoding.png`, `fig4_temporal_precision.png`,
+# `fig5_population_gallery.png`, `fig6_population_summary.png`,
+# `population_metrics.csv`.

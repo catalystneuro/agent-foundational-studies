@@ -1,0 +1,33 @@
+{
+  "dandiset": "000003",
+  "subject_session": "sub-YutaMouse41, session 150829",
+  "headline_stat": {
+    "name": "spatial information range (bits/spike)",
+    "value": "-5.5 to 1.32",
+    "reproduces_from_code": true,
+    "physically_possible": false
+  },
+  "axes": {
+    "dataset": 2,
+    "handling": 2,
+    "analysis": 1,
+    "correctness": 0,
+    "figures": 2,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The low proportion of identified place cells reflects the conservative thresholds used and the fact that granule cells (targeted in this dataset) are generally less selective than CA1 pyramidal neurons.",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "A Buzsaki-lab hippocampal dataset that does contain place cells, but the granule-cell emphasis, 23 units, and tiny covered arena make the demonstration harder than it needed to be.",
+    "handling": "Real data is streamed and spikes are correctly aligned to position, but there is no unit quality filtering and the occupancy mask is very lenient, yielding sparse noisy maps.",
+    "analysis": "The Skaggs spatial-information formula is miscomputed (unweighted mean instead of occupancy-weighted mean), sparsity is nonstandard, and there is no shuffle/null control behind the threshold-based place-cell calls.",
+    "correctness": "The buggy normalization produces negative spatial information (to -5.5 bits/spike), which is physically impossible and is presented as a finding, capping this axis at 0.",
+    "figures": "The statistics panels are readable but the place-field maps are noisy, low-rate (~2 Hz) blobs over a tiny region that do not show the clear localized fields the text claims.",
+    "honesty": "It presents a demonstrably broken SI statistic (negative values) as a real finding and describes noisy weak maps as clear place fields, both disqualifying acts.",
+    "verdict": "A physically impossible headline statistic presented as a finding, a broken analysis, and overstated figures make this a start-over."
+  }
+}

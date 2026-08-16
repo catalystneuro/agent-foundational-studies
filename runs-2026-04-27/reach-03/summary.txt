@@ -1,0 +1,8 @@
+n_units: 182
+n_trials: 2295
+median_cosine_R2: 0.04312712143044706
+fraction_R2_above_0p05: 0.46703296703296704
+fraction_R2_above_0p2: 0.08791208791208792
+median_tuning_depth_Hz: 0.9339618179351622
+median_velocity_glm_weight_magnitude: 0.00018082535825669765
+median_abs_PD_difference_deg: 20.377063718966298

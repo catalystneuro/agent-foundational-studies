@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "5 linear-track sessions (Achilles-10252013, Buddy-06272013, Cicero-09012014, Cicero-09172014, Gatsby-08022013); 4 rats",
+  "headline_stat": {
+    "name": "median slope of significant fields",
+    "value": "-194 deg/traversal (52/204 fields significant, 75% negative)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "the mean phase advance measured model-free (figure 6, panel D, about \u221260\u00b0 from field entry to exit) is much shallower than the fitted ridge slope of \u2212194\u00b0, because a substantial fraction of in-field spikes sit off the precession ridge and pull the circular mean toward the overall preferred phase.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzsaki CA1) is the canonical theta-precession dataset, and the circular-maze sessions are correctly excluded in favor of the five bidirectional linear tracks.",
+    "handling": "Files are streamed with remfile, the maze epoch is correctly isolated, position is differentiated with gap-blanking, velocity is thresholded and split by direction, and units are filtered to excitatory cells.",
+    "analysis": "The Kempter et al. circular-linear regression is the correct method, the direction-dependent within-field sign convention is handled explicitly, and significance comes from a phase-position shuffle that preserves theta locking while destroying only the pairing.",
+    "correctness": "Every headline number (204 fields, 52 significant, median \u2212194\u00b0, 75% negative, binomial p=4.1e-4) reproduces verbatim from the transcript's printed output and is internally consistent with the figures.",
+    "figures": "The diagonal band is clearly visible in the pooled and significant-only density panels, examples are ranked by correlation strength (rho) rather than fitted slope, and axes carry units and sample sizes throughout.",
+    "honesty": "The write-up is proportionate and names specific limitations: the model-free vs fitted-slope discrepancy, spike-count-limited detection, per-session variability, excluded circular sessions, and the non-layer-referenced phase.",
+    "verdict": "Sound dataset, correct circular statistics with a proper null, reproducing numbers, and clear figures make this an accept with no required revisions."
+  }
+}

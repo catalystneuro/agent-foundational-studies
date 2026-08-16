@@ -1,0 +1,116 @@
+{
+  "dandiset": "000986",
+  "version": "0.251031.1939",
+  "n_sessions": 15,
+  "n_units_total": 1431,
+  "n_tuned": 1221,
+  "frac_tuned": 0.8532494758909853,
+  "bf_counts": {
+    "2000": 195,
+    "4000": 198,
+    "8000": 301,
+    "16000": 284,
+    "32000": 243
+  },
+  "median_selectivity": 0.4113756247722299,
+  "glm_bf_within_1_oct": 0.9582309582309583,
+  "per_session": [
+    {
+      "name": "sub-LA11_ses-1",
+      "n_units": 213,
+      "n_tuned": 184,
+      "frac_tuned": 0.863849765258216
+    },
+    {
+      "name": "sub-LA11_ses-2",
+      "n_units": 120,
+      "n_tuned": 99,
+      "frac_tuned": 0.825
+    },
+    {
+      "name": "sub-LA11_ses-3",
+      "n_units": 90,
+      "n_tuned": 81,
+      "frac_tuned": 0.9
+    },
+    {
+      "name": "sub-LA11_ses-4",
+      "n_units": 61,
+      "n_tuned": 51,
+      "frac_tuned": 0.8360655737704918
+    },
+    {
+      "name": "sub-LA12_ses-1",
+      "n_units": 123,
+      "n_tuned": 118,
+      "frac_tuned": 0.959349593495935
+    },
+    {
+      "name": "sub-LA12_ses-2",
+      "n_units": 124,
+      "n_tuned": 124,
+      "frac_tuned": 1.0
+    },
+    {
+      "name": "sub-LA12_ses-3",
+      "n_units": 103,
+      "n_tuned": 96,
+      "frac_tuned": 0.9320388349514563
+    },
+    {
+      "name": "sub-LA12_ses-4",
+      "n_units": 42,
+      "n_tuned": 27,
+      "frac_tuned": 0.6428571428571429
+    },
+    {
+      "name": "sub-LA3_ses-3",
+      "n_units": 33,
+      "n_tuned": 19,
+      "frac_tuned": 0.5757575757575758
+    },
+    {
+      "name": "sub-LA8_ses-1",
+      "n_units": 183,
+      "n_tuned": 156,
+      "frac_tuned": 0.8524590163934426
+    },
+    {
+      "name": "sub-LA8_ses-2",
+      "n_units": 147,
+      "n_tuned": 128,
+      "frac_tuned": 0.8707482993197279
+    },
+    {
+      "name": "sub-LA9_ses-1",
+      "n_units": 80,
+      "n_tuned": 60,
+      "frac_tuned": 0.75
+    },
+    {
+      "name": "sub-LA9_ses-3",
+      "n_units": 30,
+      "n_tuned": 22,
+      "frac_tuned": 0.7333333333333333
+    },
+    {
+      "name": "sub-LA9_ses-4",
+      "n_units": 45,
+      "n_tuned": 34,
+      "frac_tuned": 0.7555555555555555
+    },
+    {
+      "name": "sub-LA9_ses-5",
+      "n_units": 37,
+      "n_tuned": 22,
+      "frac_tuned": 0.5945945945945946
+    }
+  ],
+  "freqs": [
+    2000.0,
+    4000.0,
+    8000.0,
+    16000.0,
+    32000.0
+  ]
+}

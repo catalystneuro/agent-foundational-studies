@@ -1,0 +1,33 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles/ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "% POST ripples with significant sequential replay",
+    "value": "20.2% (700/3467)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "We restrict analysis to the track interior [0.1, 1.5] m: the extreme boundary bins are contaminated by reward-consumption / turnaround firing that otherwise swamps the interior place fields and pins the decoder to the track ends.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000044 (Grosmark & Buzs\u00e1ki CA1, sub-Achilles) is the canonical linear-track replay dataset, an expert's first choice.",
+    "handling": "Real ~9 GB NWB streamed via remfile, excitatory CA1 units, correct PRE/Maze/POST epochs, velocity-thresholded runs, and a defensible single ripple-band LFP channel selected by power.",
+    "analysis": "Standard Bayesian decoder validated on running (20 cm error), weighted-correlation sequence scoring, and a circular-shift place-field shuffle whose null correctly takes the max over both directional templates.",
+    "correctness": "Reported numbers reproduce and are internally consistent (700/3467 = 20.2%, median span 111 cm \u2248 1.1 m, 20 cm decoder error), rest on thousands of events, and the p<0.05 score distribution is cleanly right-shifted from n.s.",
+    "figures": "Every figure is readable with units and sample sizes; place-field diagonal, on-diagonal confusion matrix, textbook ripple, and diagonal posterior sweeps with matching rasters make the effect obvious.",
+    "honesty": "Claims are proportionate and examples are labeled as examples and ranked by effect strength, but the write-up states only the interior-restriction rationale and single session without a dedicated limitations discussion, placing a genuinely clean result at 3.",
+    "verdict": "A validated, well-controlled replay pipeline yielding a clean, internally consistent fourfold enrichment over chance; accept as-is."
+  }
+}

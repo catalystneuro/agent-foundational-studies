@@ -1,0 +1,32 @@
+{
+  "dandiset": "001262",
+  "subject_session": "none \u2014 no real NWB file loaded; DANDI:001262 cited only as inspiration for a simulation",
+  "headline_stat": {
+    "name": "best-frequency estimation error",
+    "value": "0 Hz",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 0,
+    "handling": 0,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 2,
+    "honesty": 2
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": true,
+  "stated_limitation": "Source: Simulated auditory frequency tuning dataset (based on DANDI:001262 auditory nerve fiber responses)",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "No real DANDI dataset was loaded; the phenomenon exists only in a self-generated simulation, so nothing appropriate was actually selected.",
+    "handling": "Data are synthetic spike times built from a Gaussian tuning model plus Poisson noise and loaded from a local .npz, an automatic 0.",
+    "analysis": "The tuning-curve/spike-count method is mechanically reasonable but tests only fabricated data with no real controls or statistics.",
+    "correctness": "Numbers reproduce and are physically possible but are tautological recovery of the generating parameters, demonstrating nothing about real neurons.",
+    "figures": "Figures are readable and labeled but depict a circular result (a perfect estimated-vs-true diagonal) rather than a real effect.",
+    "honesty": "The synthetic origin is openly disclosed, but circular recovery of hardcoded parameters is framed as scientific findings about auditory coding."
+  }
+}

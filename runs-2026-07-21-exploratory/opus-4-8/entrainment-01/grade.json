@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles/Achilles-10252013 and sub-Cicero/Cicero-09012014",
+  "headline_stat": {
+    "name": "% pyramidal cells significantly theta phase-locked (Rayleigh p<0.05, pooled)",
+    "value": 87,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "confidence": "high",
+  "pass": true,
+  "justification": {
+    "dataset": "DANDI:000044 (Grosmark & Buzs\u00e1ki dorsal CA1, rats running a linear maze) is the canonical dataset and region for theta phase entrainment.",
+    "handling": "Real data streamed via remfile, LFP channel chosen by theta/delta ratio, RUN epochs from speed, position-period quirk handled, and units filtered by cell type and a \u226550-spike minimum.",
+    "analysis": "Correct circular statistics (MRL, mean phase, Rayleigh test) but no shuffle or circular-shift null to guard against spike-phase non-independence inflating the extreme p-values, which would have strengthened the claim.",
+    "correctness": "Reported values reproduce from the committed output and are internally consistent across text, summary print, and all figures.",
+    "figures": "Effect is clearly visible with labeled units and sample sizes, and example cells are ranked by MRL, the genuine strength-of-locking metric, not by an unrelated criterion.",
+    "honesty": "Claims are proportionate and the write-up openly reports weaker pyramidal than interneuron locking (MRL \u22480.11 vs \u22480.19), but it states no limitations (single session per animal, no null control), holding it to 3."
+  }
+}

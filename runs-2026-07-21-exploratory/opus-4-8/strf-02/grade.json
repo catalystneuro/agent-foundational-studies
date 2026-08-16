@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986",
+  "subject_session": "5 sessions, one per mouse: LA3, LA8, LA9, LA11, LA12 (679 units total)",
+  "headline_stat": {
+    "name": "tone-responsive fraction",
+    "value": "298/679 (44%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 1,
+    "handling": 3,
+    "analysis": 2,
+    "correctness": 3,
+    "figures": 4,
+    "honesty": 2
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "A true STRF cannot be isolated in a pure-tone dataset (000986); only a coarse 5-frequency response map is recoverable, so the named phenomenon is only marginally present.",
+    "handling": "Real NWB files streamed from S3 with remfile caching, correct trial alignment and spike-time handling, but no spike-sorting quality filter beyond an arbitrary 2 Hz responsiveness threshold.",
+    "analysis": "Tone-triggered averaging is correct for a frequency-response map but no null/shuffle control validates responsiveness or the claimed suppression, and the analysis does not measure a true spectrotemporal receptive field.",
+    "correctness": "Reported counts and latencies reproduce from the committed code and are internally consistent, with a minor verbal inconsistency ('2-8 kHz' contradicts the 16 kHz modal best frequency in panel b).",
+    "figures": "Figures are well-labeled with units, sample sizes, and colorbars, and the frequency-tuned onset response is clearly visible, though the claimed inhibitory sidebands are essentially absent from them.",
+    "honesty": "Method is transparently described and core numbers are accurate, but the FRA is labeled a 'canonical STRF' with an unsupported lateral-inhibition claim and no caveat that pure tones cannot yield a true STRF, a mild-to-moderate overstatement.",
+    "verdict": "The data pipeline and tuning analysis are sound and reusable, but the result must be reframed away from 'STRF/lateral inhibition' (or rerun on spectrotemporally rich stimuli) before it can be believed."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "dandiset": "000582",
+  "subject_session": "sub-11265/ses-06020601 + 7 other sessions (subjects 11207, 11265), 115 pooled units",
+  "headline_stat": {
+    "name": "grid cells (gridness > shuffle 95th pctile 0.46)",
+    "value": "22/115 (19%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000582 (Sargolini MEC tetrode recordings) is the canonical grid-cell dataset in exactly the right species, region, and open-field paradigm.",
+    "handling": "Real NWB streamed via remfile, two-LED head centroid averaged, NaN samples dropped, and units filtered to \u2265100 spikes with correct spike-position alignment.",
+    "analysis": "Standard Moser-lab pipeline (occupancy-normalized rate maps, Pearson spatial autocorrelogram, Sargolini gridness) with an appropriate circular-shift shuffle null establishing the threshold.",
+    "correctness": "The 22/115 count, 0.46 threshold, ~60 cm median spacing, and ~1.0 bits/spike all reproduce from the committed CSV, are internally consistent with the figures, and are physically plausible.",
+    "figures": "Autocorrelograms show clear six-fold symmetry, population summary shows a real high-gridness cluster separating from the null, and examples are ranked by gridness, the actual effect measure.",
+    "honesty": "Claims are proportionate and the best cells are honestly labeled the clearest, but no explicit limitation is stated for an otherwise genuinely clean result, holding it at 3."
+  }
+}

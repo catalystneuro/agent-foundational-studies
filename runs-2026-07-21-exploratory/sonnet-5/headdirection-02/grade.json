@@ -1,0 +1,33 @@
+{
+  "dandiset": "000056",
+  "subject_session": "sub-Mouse24/ses-Mouse24-131213",
+  "headline_stat": {
+    "name": "Bayesian decoding median absolute error",
+    "value": "25.3 deg",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The analysis uses a single session, `sub-Mouse24/sub-Mouse24_ses-Mouse24-131213` (the smallest session in the dandiset, ~1.3 GB), streamed directly from the DANDI S3 bucket with `remfile` rather than downloaded in full.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI:000056 Peyrache-lab ADn/PoSub head-direction recording is the canonical choice for this phenomenon and is on the known-good list.",
+    "handling": "Data streamed correctly, HD computed from LED vector with invalid frames dropped and wake restriction applied, but unit inclusion is minimal (only silent units removed, no isolation-quality criteria).",
+    "analysis": "Circular tuning curves with a mean-resultant statistic, a circular-shift shuffle null, and a cross-validated Bayesian decoder are all appropriate and correctly applied.",
+    "correctness": "Reported numbers (9/21 cells, median error 25.3\u00b0, error resultant 0.76) are computed by the committed seeded code and are consistent with the error histogram and figures.",
+    "figures": "Figures are labeled with units and sample sizes and the decoding panel clearly shows the effect, with only cosmetic issues (an unfiltered (0,0) line in the overview, mixed strong/weak polar panels).",
+    "honesty": "The write-up honestly discloses the weak-to-strong R range and labels every unit's R, but calls near-uniform R\u22480.07 units 'head-direction cells' without caveat and states single-session only as fact rather than as a framed limitation.",
+    "verdict": "Core work is sound and the population decoding convincingly demonstrates the phenomenon, but the marginal-cell classification, missing multiple-comparison note, and absent limitations section warrant specific revisions."
+  }
+}

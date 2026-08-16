@@ -1,0 +1,168 @@
+Achilles_10252013
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┯━━━━━━━━━━━━━┑
+│ Keys                               │ Type        │
+┝━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┿━━━━━━━━━━━━━┥
+│ units                              │ TsGroup     │
+│ epochs                             │ IntervalSet │
+│ LFP                                │ TsdFrame    │
+│ states                             │ IntervalSet │
+│ 1.6mLinearMazeSpatialSeries        │ TsdFrame    │
+│ 1.6mLinearMazeLinearizedTimeSeries │ TsdFrame    │
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┷━━━━━━━━━━━━━┙
+
+--- units ---
+  Index      rate  location      shank_id  cell_type
+-------  --------  ----------  ----------  -----------
+      1   0.97547  lCA1                 0  excitatory
+      2   8.46457  lCA1                 1  inhibitory
+      6   0.18602  lCA1                 5  excitatory
+      7   1.46025  lCA1                 6  excitatory
+      9   0.26038  lCA1                 8  excitatory
+     11   0.43266  lCA1                10  excitatory
+     12   1.30016  lCA1                11  excitatory
+     13   0.81065  lCA1                12  excitatory
+     16   1.05553  lCA1                15  excitatory
+     18   6.55046  lCA1                17  inhibitory
+     20   9.87773  lCA1                19  inhibitory
+     21   1.00585  lCA1                20  excitatory
+     22   0.41622  lCA1                21  excitatory
+     23   0.24537  lCA1                22  excitatory
+     27   0.88798  lCA1                26  excitatory
+     28   1.92372  lCA1                27  excitatory
+     29   0.57494  lCA1                28  excitatory
+     33   1.06408  lCA1                 3  excitatory
+     39   0.73612  lCA1                 3  excitatory
+     41   0.69608  lCA1                 1  excitatory
+     43   0.33748  lCA1                 3  excitatory
+     48   9.47524  lCA1                 8  inhibitory
+     49   8.30213  lCA1                 9  inhibitory
+     50   0.64358  lCA1                10  excitatory
+     51   0.36686  lCA1                11  excitatory
+     52   0.86922  lCA1                12  excitatory
+     53   0.74742  lCA1                13  excitatory
+     54   1.26471  lCA1                14  excitatory
+     55   1.01661  lCA1                15  excitatory
+     56   0.25923  lCA1                16  excitatory
+     57   0.57313  lCA1                17  excitatory
+     58   0.37041  lCA1                18  excitatory
+     59   0.3826   lCA1                19  excitatory
+     60   0.27704  lCA1                20  excitatory
+     70   0.25375  lCA1                 8  excitatory
+     74   0.75944  lCA1                12  excitatory
+     76   0.59135  lCA1                14  excitatory
+     78   0.29305  lCA1                16  excitatory
+     79   0.85256  lCA1                17  excitatory
+     82   0.85617  lCA1                20  excitatory
+     83   2.4945   lCA1                21  inhibitory
+     84   0.39488  lCA1                22  excitatory
+     86   0.54568  lCA1                24  excitatory
+     87   0.25401  lCA1                25  excitatory
+     89   0.51504  lCA1                27  excitatory
+     90   0.27894  lCA1                28  excitatory
+     92   0.8235   lCA1                30  excitatory
+     93   1.19979  lCA1                31  excitatory
+     94   0.65414  lCA1                32  excitatory
+     95   0.33966  lCA1                33  excitatory
+     96   0.36597  lCA1                34  excitatory
+     97  13.2156   lCA1                35  inhibitory
+     98   0.62554  lCA1                36  excitatory
+    101   0.49436  lCA1                 1  excitatory
+    103   0.5402   lCA1                 3  excitatory
+    107  23.6228   lCA1                 7  inhibitory
+    109   0.70001  lCA1                 9  excitatory
+    110   0.53203  lCA1                10  excitatory
+    111   0.32343  lCA1                11  excitatory
+    112   0.45159  lCA1                12  excitatory
+    113   0.85468  lCA1                13  excitatory
+    114   0.58593  lCA1                14  excitatory
+    116   0.55612  lCA1                16  excitatory
+    117   0.82304  lCA1                17  excitatory
+    118   0.784    lCA1                18  excitatory
+    120   0.82926  rCA1                 0  excitatory
+    121   0.43613  rCA1                 1  excitatory
+    123   0.26084  rCA1                 3  excitatory
+    125   0.51573  rCA1                 5  excitatory
+    126   0.79777  rCA1                 6  excitatory
+    129   1.20696  rCA1                 9  excitatory
+    135   4.71222  rCA1                15  inhibitory
+    136   7.09204  rCA1                16  inhibitory
+    137   0.78678  rCA1                17  excitatory
+    140   7.43976  rCA1                20  inhibitory
+    143   0.4524   rCA1                23  excitatory
+    144   0.37824  rCA1                24  excitatory
+    145   0.49671  rCA1                25  excitatory
+    146   0.95123  rCA1                26  excitatory
+    147   0.53994  rCA1                27  excitatory
+    148   1.59783  rCA1                28  excitatory
+    151   0.49459  rCA1                 1  excitatory
+    161   0.54726  rCA1                11  excitatory
+    163   0.74103  rCA1                13  excitatory
+    168  10.0949   rCA1                18  inhibitory
+    169   0.94788  rCA1                19  excitatory
+    171   0.64662  rCA1                21  excitatory
+    172   0.43975  rCA1                22  excitatory
+    173   0.52015  rCA1                23  excitatory
+    175   0.39201  rCA1                25  excitatory
+    176   1.72169  rCA1                26  excitatory
+    177   0.39781  rCA1                27  excitatory
+    178  19.5994   rCA1                28  inhibitory
+    179   0.60973  rCA1                29  excitatory
+    180   0.78345  rCA1                30  excitatory
+    181   0.57546  rCA1                31  excitatory
+    182   0.86638  rCA1                32  excitatory
+    183   0.53145  rCA1                33  excitatory
+    186   0.27558  rCA1                 2  excitatory
+    201   1.19388  rCA1                17  excitatory
+    202   0.72611  rCA1                18  excitatory
+    203   0.40808  rCA1                19  excitatory
+    204   0.47448  rCA1                20  excitatory
+    210   0.31976  rCA1                26  excitatory
+    211   0.71332  rCA1                27  excitatory
+    214   6.80765  rCA1                30  inhibitory
+    215   0.79648  rCA1                31  excitatory
+    216   0.47962  rCA1                32  excitatory
+    217   0.34431  rCA1                33  excitatory
+    219   0.46166  rCA1                35  excitatory
+    220   0.395    rCA1                36  excitatory
+    221   0.42819  rCA1                37  excitatory
+    222   1.35317  rCA1                38  excitatory
+    225   0.39158  rCA1                 0  excitatory
+    229   0.35045  rCA1                 4  excitatory
+    236   0.43969  rCA1                11  excitatory
+    237   0.93528  rCA1                12  excitatory
+    238   0.65342  rCA1                13  excitatory
+    240   0.82183  rCA1                15  excitatory
+    241   0.51975  rCA1                16  excitatory
+    242   1.04957  rCA1                17  excitatory
+    250  13.5339   rCA1                 7  inhibitory
+    253   0.5077   rCA1                10  excitatory
+    255   0.52933  rCA1                 0  excitatory
+    256   7.55465  rCA1                 1  inhibitory
+    257   1.50845  rCA1                 2  excitatory
+    258   1.41553  rCA1                 3  excitatory
+    259   1.66573  rCA1                 4  excitatory
+    263   0.50128  rCA1                 8  excitatory
+    264   0.43186  rCA1                 9  excitatory
+    266   0.78672  rCA1                11  excitatory
+    267   2.43888  rCA1                12  inhibitory
+    268   0.74404  rCA1                13  excitatory
+    269   0.30831  rCA1                14  excitatory
+    270   0.3454   rCA1                15  excitatory
+    271   0.35487  rCA1                16  excitatory
+    272   0.61496  rCA1                17  excitatory/Users/bdichter/miniconda3/lib/python3.12/site-packages/pynapple/io/interface_nwb.py:133: UserWarning: Some starts and ends are equal. Removing 1 microsecond!
+  data = nap.IntervalSet(df)
+
+n units: 137
+n excitatory: 0
+n inhibitory: 0
+n unspecified: 0
+
+--- sessions/epochs ---
+  index    start      end  label
+      0      0    18079.5  PREEpoch
+      1  18079.5  20147    MazeEpoch
+      2  20147    34861.1  POSTEpoch
+shape: (3, 2), time unit: sec.
+[[0.0 18079.499999 'PREEpoch']
+ [18079.5 20146.999999 'MazeEpoch']
+ [20147.0 34861.1032 'POSTEpoch']]

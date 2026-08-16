@@ -1,0 +1,33 @@
+{
+  "dandiset": "000128",
+  "subject_session": "sub-Jenkins ses-full desc-train (MC_Maze); replication sub-Indy (MC_RTT, DANDI:000129)",
+  "headline_stat": {
+    "name": "fraction of units cosine-tuned peri-movement (p<0.01)",
+    "value": "0.93 (107/115)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 3,
+    "honesty": 4
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "It is worth being explicit that this is a comparison across two datasets that differ in more than target placement (different monkey, different array, different laboratory, and a session about a tenth as long), so the inference rests on the measured mediator, the position-to-velocity R^2 of 0.49 against 0.00, rather than on the dataset contrast alone. A within-animal test, in which target placement was randomised for part of a session, would settle it more firmly than anything available here.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "MC_Maze (000128) is the canonical reach-tuning dataset and the run adds MC_RTT (000129) specifically to break the position/velocity confound, an expert-level choice.",
+    "handling": "Real data streamed via LINDI with hand velocity taken from the file, the cursor/hand coordinate offset noted, units filtered above 1 Hz, and 20 ms binning aligned to move onset.",
+    "analysis": "Cosine F-test, bootstrap circular preferred directions, cross-validated GLM and decoding, a position-to-velocity confound regression, and a block-shift null that correctly addresses the autocorrelation problem.",
+    "correctness": "Headline numbers reproduce from the committed logs and cache, are internally consistent with the figures, physically possible, and rest on adequate samples and appropriate controls.",
+    "figures": "The four present figures show the effect clearly with labeled units and sample sizes, but three figures referenced in the README (GLM, replication, shuffle) are absent from the directory.",
+    "honesty": "Claims are proportionate and the write-up names the specific limitations of this result: the cross-dataset confound, the wide per-unit lead spread, and the weaker speed replication.",
+    "verdict": "The core work is sound and believable, but I would ask them to supply the three referenced figures that are missing from the deliverable before signing off."
+  }
+}

@@ -1,0 +1,4 @@
+https://dandiarchive.s3.amazonaws.com/blobs/d4c/e0b/d4ce0ba6-a2fa-49d2-a724-bc79e3aebe0f?response-content-disposition=attachment%3B%20filename%3D%22sub-Indy_desc-train_behavior%2Becephys.nwb%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAUBRWC5GAEKH3223E%2F20260723%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20260723T230635Z&X-Amz-Expires=21600&X-Amz-SignedHeaders=host&X-Amz-Signature=8a1341bd2333e57d84437b1db3629ae5cbc742bee94b32df80351d05663dd8fb
+dandiset_id=000129
+version=0.241017.1444
+path=sub-Indy/sub-Indy_desc-train_behavior+ecephys.nwb

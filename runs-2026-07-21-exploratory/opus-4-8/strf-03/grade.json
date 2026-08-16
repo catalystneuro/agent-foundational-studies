@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986",
+  "subject_session": "sub-LA11_ses-1 (prototype/GLM) + 5 more; 6 sessions across 5 mice, 811 units",
+  "headline_stat": {
+    "name": "responsive units (evoked >2 Hz over baseline)",
+    "value": "343/811 (~40%), median latency ~20 ms, GLM pseudo-R2=0.223",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 2,
+    "handling": 3,
+    "analysis": 3,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The reverse-correlation STRF is unbiased only if the stimulus is white. To cross-check, we fit a regularized Poisson GLM that predicts the spike count in each 5 ms bin from the recent stimulus.",
+  "pass": true,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "Pure-tone 000986 shows real frequency tuning but, per the rubric, a pure-tone dandiset cannot demonstrate a true spectrotemporal receptive field, so the choice makes the target phenomenon a coarse 5-frequency approximation.",
+    "handling": "Real streamed NWB data with correct trial/unit alignment and explicit inclusion criteria, weakened only by spike-count-only quality filtering with no sorting-quality metrics.",
+    "analysis": "Reverse-correlation STRF is correct for sparse tones and independently confirmed by a properly constructed NeMoS Poisson-GLM, but 'significant' responses rest on a fixed 2 Hz threshold with no shuffle/null significance test.",
+    "correctness": "Reported counts, latencies, and pseudo-R2 all reproduce from the committed code and are internally consistent across figures and physically plausible.",
+    "figures": "Figures are clearly labeled with units and sample sizes, examples are chosen by response magnitude, and the BF-grouped mean STRFs visibly tile the spectrum.",
+    "honesty": "The pure-tone stimulus is fully disclosed and no claim is contradicted by the figures, but the key caveat that pure tones cannot yield a true STRF is never stated and the tone-to-STRF reduction is overclaimed as 'exact.'",
+    "verdict": "Technically strong, honest about its stimulus, and internally sound, but I would require an explicit caveat that a pure-tone dataset yields only a coarse tuning map rather than a genuine spectrotemporal receptive field, plus a real significance test, before accepting it."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dandiset": "000149",
+  "subject_session": "4 sessions: 4b7fbad4, 4ecb5d24, aad23144, c7bd79c9 (IBL ephys)",
+  "headline_stat": {
+    "name": "mean pre-stimulus (-0.3,-0.1 s) choice-decoding AUC",
+    "value": 0.595,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 3
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "A conservative circular-shift null attenuates these effects, and only a subset of sessions survives it. This is expected rather than damning... One session (c7bd79c9) shows a strong behavioural bias but weak neural decoding, a reminder that decodability depends on which brain regions each probe happened to sample.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "DANDI 000149 (IBL standardized visual-decision task with fixed block priors) is the canonical dataset for demonstrating a latent decision bias, sampled across four Neuropixels sessions.",
+    "handling": "Real units/trials tables streamed via LINDI, IBL quality-label plus firing-rate unit selection, spike counts aligned to stimOn within the enforced quiescence window, all correct.",
+    "analysis": "Cross-validated L2 logistic decoding with both a label-shuffle permutation null and a temporally-matched circular-shift null to guard against slow drift is the appropriate and rigorous method.",
+    "correctness": "Reported AUCs and p-values reproduce exactly from the committed transcript output, are internally consistent with the figures, and rest on adequate trial counts and sound permutation tests.",
+    "figures": "Figures are labeled with units and reference nulls, the example session is chosen by effect strength (auc minus null-95), and the behavioral, time-resolved, and null-comparison panels clearly show the effect.",
+    "honesty": "The README is proportionate and names specific limitations (only a subset survives the circular-shift null; one session shows behavioral bias but weak decoding), but the notebook's opening abstract overstates with 'above both null models, in every session,' which its own output contradicts.",
+    "verdict": "Core work is sound and largely believable; I would ask for the abstract overstatement to be reconciled with the conclusion and a multiple-comparison note added to the single-unit panel before fully accepting."
+  }
+}

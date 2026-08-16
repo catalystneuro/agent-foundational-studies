@@ -1,0 +1,33 @@
+{
+  "dandiset": "000056",
+  "subject_session": "Mouse28-140310 (main) + Mouse25-140123, Mouse17-130128, Mouse20-130514, Mouse24-131213",
+  "headline_stat": {
+    "name": "pooled wake-sleep corr-of-corr (REM)",
+    "value": 0.9,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "In the lower-yield sessions the effect does not reach significance against this conservative null, so the continuity result rests on the best-recorded session, while the correlation preservation is robust across all five.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Dandiset 000056 (Peyrache ADn head-direction recordings) is the canonical dataset for the HD ring-attractor phenomenon, five sessions across five mice.",
+    "handling": "Real data streamed via remfile, HD angle correctly derived from dual-LED difference with sentinel handling, states table used, units sorted and quality-filtered by MVL plus a null.",
+    "analysis": "Circular statistics throughout, with three appropriate and distinct null distributions (random-time for HD cells, label-permutation for correlation preservation, rate-preserving circular time-shift for bump continuity).",
+    "correctness": "Every headline number reproduces from the committed run logs, is internally consistent with the figures, physically possible, and rests on adequate samples and correct tests.",
+    "figures": "Figures are labeled with units and sample sizes, show tuning curves tiling the circle, a tracking bump, and the sleep correlation structure clearly; the example REM window is honestly labeled as a display window while claims rest on full-episode statistics.",
+    "honesty": "Claims are proportionate and the write-up explicitly names its weaknesses, that bump continuity holds only in the largest-ensemble session and one NREM test is non-significant in the smallest ensemble.",
+    "verdict": "Sound, replicated, honestly caveated reproduction of the Peyrache 2015 result; I would accept it."
+  }
+}

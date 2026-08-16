@@ -1,0 +1,69 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 1314601,
+  "duration_api_ms": 618540,
+  "num_turns": 71,
+  "result": "All deliverables are in place. Final summary:\n\n**Dataset:** DANDI 000128 (MC_Maze, monkey Jenkins, Churchland/Shenoy lab) — streamed via `remfile`, 182 M1/PMd units and 1 kHz hand kinematics over 789 successful no-barrier center-out reaches.\n\n**Findings:**\n- **Cosine direction tuning** is ubiquitous: median bin-mean cosine R² = 0.67; 127/182 units have R² > 0.5; preferred directions span the full circle.\n- **Speed tuning** is real but smaller: most within-direction speed-rate correlations fall in [−0.2, +0.2], with ~14 units modulating strongly.\n- **NeMoS Poisson `PopulationGLM`** confirms direction + speed beats either alone (median pseudo-R² 0.119 vs 0.111 dir-only vs 0.018 speed-only).\n\n**Deliverables in `/Users/bdichter/dev/agent-foundational-studies/runs-2026-04-27/reach-01/`:**\n- `reach_tuning.py` (jupytext, runs end-to-end)\n- `reach_tuning.ipynb`\n- `figures/01_behavior.png` … `07_glm_comparison.png`\n- `README.md`",
+  "stop_reason": "end_turn",
+  "session_id": "56af758f-a8a6-4d29-ae54-06db883b66ec",
+  "total_cost_usd": 4.423140249999999,
+  "usage": {
+    "input_tokens": 139,
+    "cache_creation_input_tokens": 122301,
+    "cache_read_input_tokens": 5186146,
+    "output_tokens": 41862,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 122301,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 440,
+        "cache_read_input_tokens": 114644,
+        "cache_creation_input_tokens": 1106,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1106
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 11271,
+      "outputTokens": 1434,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.018441,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-opus-4-7": {
+      "inputTokens": 139,
+      "outputTokens": 41862,
+      "cacheReadInputTokens": 5186146,
+      "cacheCreationInputTokens": 122301,
+      "webSearchRequests": 0,
+      "costUSD": 4.40469925,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "c819f142-569d-48a4-b666-7af6ac251c76"
+}

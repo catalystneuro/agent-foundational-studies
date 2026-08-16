@@ -1,0 +1,32 @@
+{
+  "dandiset": "001262",
+  "subject_session": "sub-G190617 fibre 1p-242 (example); population = 126 fibres from 21 gerbils",
+  "headline_stat": {
+    "name": "r between STRF best-frequency and tone best-frequency (log freq), n=126",
+    "value": 0.884,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 4,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The stimulus is a single frozen noise token per fibre, so cross-validation tests generalization to unseen stretches of one noise process rather than to a new stimulus ensemble, and the effective number of independent stimulus samples is set by the token length rather than by the 60 repeats. Spectral width is measured at the resolution of the analysis filterbank, and most fibres' STRFs occupy one or two bands, so the bandwidth numbers are an upper bound on tuning sharpness rather than a tuning measurement.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "Gerbil auditory-nerve fibres with frozen broadband noise (DANDI:001262) is an expert-level choice for a clean STRF, and broadband noise is spectrotemporally rich enough for reverse correlation, meeting the difficulty the rubric flags for this phenomenon.",
+    "handling": "Real data streamed via remfile with disk cache, an integer-sample bin to keep stimulus and spikes on one time base, and explicit repeat/rate/ceiling/BF inclusion criteria.",
+    "analysis": "Ridge reverse-correlation on a dB gammatone cochleagram with blocked cross-validation respecting the repeating token, split-half reliability ceiling, shift/shuffle nulls, a causality control, filterbank group-delay correction, and an independent Poisson-GLM cross-check.",
+    "correctness": "Every headline number (r=0.884, 0.10-oct median error, 81% within a quarter octave, median r/ceiling=0.30, best fibre 0.65/0.89) reproduces exactly from the committed CSV and is internally consistent with the figures.",
+    "figures": "Figures are clearly labeled with units and sample sizes, the gallery honestly includes noisy low-BF fibres rather than flattering examples, and controls, population summaries, and revcor phase-locking are all shown.",
+    "honesty": "The write-up is proportionate throughout, states the model captures only ~30% of achievable correlation and explains why, shows the weak fibres, and lists specific limitations of this dataset and analysis."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "dandiset": "000070",
+  "subject_session": "sub-Jenkins/ses-20090912",
+  "headline_stat": {
+    "name": "best-unit cosine tuning R^2",
+    "value": 0.91,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 2,
+    "correctness": 3,
+    "figures": 3,
+    "honesty": 2
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "Both effects are visible in single sessions from a single animal using only openly available DANDI data and standard Pynapple tuning-curve tools, without any simulated or synthetic data.",
+  "pass": true,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "DANDI 000070 (Churchland macaque M1/PMd center-out maze reaching) is a canonical dataset for reach direction and velocity tuning.",
+    "handling": "Real remfile-streamed data with careful trial filtering and correct movement-epoch alignment, but no explicit single-unit quality criteria.",
+    "analysis": "Cosine model and circular resultant are appropriate, but no shuffle/null controls exist and the speed correlation is computed on binned tuning-curve means, inflating r.",
+    "correctness": "All headline numbers reproduce from the committed code and match the figures, with a minor .py-vs-README R^2 inconsistency and an inflated binned-mean correlation that does not flip the conclusion.",
+    "figures": "The direction and speed effects are clearly visible with labeled axes and units, examples honestly ranked by effect strength, marred only by a clipped histogram and cluttered polar labels.",
+    "honesty": "Examples are honestly labeled 'top' and all numbers reproduce, but the write-up mildly overstates weak population-level direction tuning and omits any caveat about the movement-phase speed confound or missing significance tests."
+  }
+}

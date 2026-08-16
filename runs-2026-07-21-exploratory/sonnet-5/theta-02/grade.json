@@ -1,0 +1,32 @@
+{
+  "dandiset": "000044",
+  "subject_session": "sub-Achilles / ses-Achilles-10252013",
+  "headline_stat": {
+    "name": "theta phase precession (never computed)",
+    "value": "none",
+    "reproduces_from_code": false,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 0,
+    "correctness": 1,
+    "figures": 1,
+    "honesty": 3
+  },
+  "verdict": "reject",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000044 Achilles linear-maze CA1 is the canonical dataset for theta phase precession, an expert-standard choice.",
+    "handling": "Real data streamed from S3 with correct unit/epoch alignment and a genuine 1000x position-rate corruption bug correctly diagnosed and fixed, though the maze epoch is hardcoded and end-field artifacts were left unresolved.",
+    "analysis": "The run ended before any theta or phase-precession analysis was performed, so it never tested the phenomenon it was asked about.",
+    "correctness": "No phenomenon result or numbers were produced at all; only prerequisite place-field spatial-info values exist, and the fields are dominated by track-end artifacts.",
+    "figures": "No figure shows theta phase precession; the only figures are diagnostic place-field tuning curves peaking at the track ends, not the requested phenomenon.",
+    "honesty": "There is no write-up and no claimed result, so nothing is overstated and the final status honestly reports the run stalled on a background computation."
+  }
+}

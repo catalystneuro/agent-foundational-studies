@@ -1,0 +1,33 @@
+{
+  "dandiset": null,
+  "subject_session": null,
+  "headline_stat": {
+    "name": "mean phase precession magnitude",
+    "value": "422 deg",
+    "reproduces_from_code": true,
+    "physically_possible": false
+  },
+  "axes": {
+    "dataset": 0,
+    "handling": 0,
+    "analysis": 1,
+    "correctness": 1,
+    "figures": 1,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": true,
+  "stated_limitation": "The mean circular variance across the population is relatively high (~90\u00b0), indicating that while phase entrainment is present, there is notable trial-to-trial variability.",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "No real DANDI dataset was selected or loaded; the data is fully synthetic, so the phenomenon is not present in any chosen recording.",
+    "handling": "Data are simulated in-code with the effect hardcoded into the spike generator, an automatic 0.",
+    "analysis": "Standard tools (Hilbert phase, circular stats, regression) are applied, but on fabricated data with precession computed as an uncorrected linear fit that mostly yields positive (wrong-sign) slopes.",
+    "correctness": "Numbers reproduce from the fixed seed but are internally contradictory (positive regression slopes labeled as phase precession, magnitudes exceeding a full cycle) and rest on fabricated data.",
+    "figures": "Figures are readable but show noise with mostly positive trend lines, not the phase advance the text claims.",
+    "honesty": "Although the synthetic nature is disclosed, the write-up asserts 'seven of eight cells show clear phase precession' when its own figures show noisy, wrong-sign fits, presenting a contradicted result as clean.",
+    "verdict": "Synthetic data in place of real recordings plus claims contradicted by the figures make this an outright reject."
+  }
+}

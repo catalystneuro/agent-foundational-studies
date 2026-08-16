@@ -1,0 +1,33 @@
+{
+  "dandiset": "000149",
+  "subject_session": "4 sessions; assets 31f22c47\u2026 (session_1, 173 units, 1213 trials), 81169999\u2026, e7fa5ae0\u2026, f791a116\u2026",
+  "headline_stat": {
+    "name": "Pre-stimulus block-bias decoding AUC (cross-validated)",
+    "value": "0.60-0.76",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 2,
+    "analysis": 2,
+    "correctness": 2,
+    "figures": 3,
+    "honesty": 2
+  },
+  "verdict": "revise",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "though this secondary result was weaker and less consistent across sessions (AUC 0.45-0.71, significant at p=0.008 in one session, borderline at p=0.05 in another, and not significant in the remaining two)",
+  "pass": true,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "000149 (IBL Neuropixels) is the canonical dataset whose task was explicitly designed around the block-prior decision bias, with four good sessions.",
+    "handling": "Streaming, good-unit QC, and pre-stimulus windows are all correct, but the IBL choice-sign convention is inverted (code calls choice==-1 'left' when empirically choice==+1 is left), flipping the behavioral left/right labels.",
+    "analysis": "The cross-validated ridge-logistic decode is implemented correctly, but block identity is decoded with time-interleaved folds and a trial-independence significance test, with no block-preserving null to rule out slow within-session drift, so the p-values are strongly anticonservative.",
+    "correctness": "All reported values reproduce from results.pkl, but the write-up's 'tracked the block prior directly' is internally inconsistent with its own tabulated inverse P(choose-left) numbers due to the sign bug.",
+    "figures": "Figures are readable, units-labeled, with sample sizes, ROC curves, and null distributions; the behavioral panel's left/right labels are mislabeled but internally consistent with the (buggy) text.",
+    "honesty": "The secondary choice decode is honestly reported as weak and 2/4 non-significant, but the confounded primary decode is called 'robust, consistently significant' with no limitations section and no mention of the drift confound, a mild overstatement short of fabrication.",
+    "verdict": "The dataset and core decode are sound and the numbers reproduce, but the sign bug and uncontrolled drift confound need fixing before the neural-bias interpretation can be believed."
+  }
+}

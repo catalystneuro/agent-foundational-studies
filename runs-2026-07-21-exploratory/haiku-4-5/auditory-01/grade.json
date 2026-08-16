@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986",
+  "subject_session": "sub-LA11, ses-2",
+  "headline_stat": {
+    "name": "fraction responsive units (mean rate >1 Hz)",
+    "value": "101/132 (77%)",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 2,
+    "analysis": 2,
+    "correctness": 2,
+    "figures": 3,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": false,
+  "stated_limitation": "none",
+  "pass": false,
+  "confidence": "medium",
+  "justification": {
+    "dataset": "000986 mouse A1 Neuropixels pure-tone data is the canonical dataset for auditory frequency tuning, an excellent choice despite coarse 5-frequency octave sampling.",
+    "handling": "Real data streamed correctly, but all 132 units are used with no quality filtering, no baseline subtraction, and amplitudes pooled, which are real preprocessing weaknesses.",
+    "analysis": "Firing rates per frequency are computed descriptively, but there is no statistical test of tuning, no evoked-vs-baseline comparison, and no null control, so the tuning claim rests on nothing testable and Q10 is misapplied to 5 points.",
+    "correctness": "Descriptive numbers reproduce from the code, but the write-up says the population curve peaks at 8 kHz while its own figure shows the peak at 2 kHz, and stray text lists the wrong frequency range.",
+    "figures": "Figures are readable with labeled log axes and the peaked tuning is visible in several units, but examples are selected by response magnitude rather than selectivity and the population curve does not cleanly demonstrate tuning.",
+    "honesty": "A noisy, statistically untested result with several flat or monotonic 'representative' units and a population-peak claim contradicted by its own figure is presented as robust with no limitations stated, which caps this axis at 1.",
+    "verdict": "The tuning is never statistically demonstrated and the write-up contradicts its own figure while stating no caveats, so I would ask for a restart rather than believe the result."
+  }
+}

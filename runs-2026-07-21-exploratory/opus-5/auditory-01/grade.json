@@ -1,0 +1,33 @@
+{
+  "dandiset": "000986",
+  "subject_session": "all 15 sessions, 5 mice (LA3, LA8, LA9, LA11, LA12); prototyping on sub-LA9_ses-1, decoding headline on sub-LA11_ses-1",
+  "headline_stat": {
+    "name": "best-session single-trial decoding accuracy (5 tones, chance 0.20)",
+    "value": 0.95,
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 4,
+    "handling": 3,
+    "analysis": 4,
+    "correctness": 4,
+    "figures": 4,
+    "honesty": 4
+  },
+  "verdict": "accept",
+  "fabrication_flag": false,
+  "synthetic_data_flag": false,
+  "stated_limitation": "The main limitation is the stimulus set. This dandiset uses five frequencies one octave apart at a single sound level, so tuning *width* cannot be measured with any precision and the curves are five-point samples of what is really a continuous frequency response area. The conclusions here concern the existence, reliability and readability of frequency tuning, not its bandwidth.",
+  "pass": true,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000986 is a standard mouse auditory-cortex Neuropixels pure-tone dataset, the canonical choice for demonstrating frequency tuning.",
+    "handling": "Real data streamed via remfile across all 15 sessions with correct trial alignment and mirrored baseline windows, but no spike-sorting quality metrics beyond statistical responsiveness tests.",
+    "analysis": "Wilcoxon/Kruskal-Wallis with FDR correction plus split-half shuffle control, pre-tone decoding control, and held-out GLM comparison are all appropriate with the required null distributions present.",
+    "correctness": "Reported values (decoding 0.95, split-half r=0.98, latency 18 ms, GLM deltas) reproduce from the figures and committed CSV, are internally consistent, and rest on very large samples.",
+    "figures": "Figures are clearly labeled with units and sample sizes, show the effect unambiguously, and example units chosen by drive strength are all strongly significant and honestly characterized.",
+    "honesty": "Claims are proportionate, the borderline arousal effect and the single-unit GLM exception are disclosed, and a specific stimulus-set limitation is stated plainly.",
+    "verdict": "The work is sound, well-controlled, and honestly reported; I would take the result and move on."
+  }
+}

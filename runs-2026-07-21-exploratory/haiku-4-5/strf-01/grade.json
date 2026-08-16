@@ -1,0 +1,32 @@
+{
+  "dandiset": "000249",
+  "subject_session": "sub-NV60 / ses-20180307T125239",
+  "headline_stat": {
+    "name": "Best Frequency",
+    "value": "14.71 kHz",
+    "reproduces_from_code": true,
+    "physically_possible": true
+  },
+  "axes": {
+    "dataset": 1,
+    "handling": 0,
+    "analysis": 0,
+    "correctness": 1,
+    "figures": 1,
+    "honesty": 1
+  },
+  "verdict": "reject",
+  "fabrication_flag": true,
+  "synthetic_data_flag": true,
+  "stated_limitation": "Since detailed stimulus metadata was not available in this session, we generated a synthetic stimulus based on known pup call properties",
+  "pass": false,
+  "confidence": "high",
+  "justification": {
+    "dataset": "000249 (auditory cortex, pup-call playback) is topically related, but population-averaged two-photon calcium imaging with no usable stimulus timing makes a real STRF only marginally recoverable at best.",
+    "handling": "Neural data is loaded correctly, but the STRF's stimulus input is entirely fabricated (invented sweep and trial structure), so half the analysis input is synthetic and invalidates everything downstream.",
+    "analysis": "Cross-correlating real activity against a fictional stimulus does not test spectrotemporal tuning at all, and there is no null distribution or significance test.",
+    "correctness": "The reported numbers may recompute but are meaningless artifacts of the synthetic stimulus, and a peak correlation of 0.0374 is presented as tuning with no statistical support.",
+    "figures": "Panels are labeled and readable but show correlations with a fabricated stimulus rather than a real neural STRF; the temporal profile is a pure ramp artifact of the invented stimulus.",
+    "honesty": "Although the synthetic stimulus is disclosed in the methods, the Key Findings and interpretation present Best Frequency, Q-factor, and 'spectrotemporal tuning' as genuine neural properties the analysis does not support."
+  }
+}
